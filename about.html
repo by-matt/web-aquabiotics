@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en" class="h-full">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Aquabiotics Sur</title>
+    <script src="/_sdk/element_sdk.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        * {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #0c4a6e 0%, #064e3b 100%);
+        }
+
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .section-title {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 12px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #0ea5e9, #10b981);
+        }
+    </style>
+    <style>
+        @view-transition {
+            navigation: auto;
+        }
+    </style>
+    <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+</head>
+
+<body class="h-full flex flex-col">
+    <div id="app-wrapper" class="w-full h-full overflow-auto flex-grow"><!-- Navigation -->
+        <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300">
+            <div class="max-w-7xl mx-auto px-6 py-4">
+                <div class="flex justify-between items-center">
+                    <div class="flex items-center space-x-3">
+                        <img src="logo.png" alt="Aquabiotics Sur" class="h-12 w-auto">
+                        <a href="index.html" class="hover:opacity-80 transition-opacity">
+                            <div>
+                                <div id="company-name" class="font-bold text-xl tracking-tight">
+                                    Aquabiotics Sur
+                                </div>
+                                <div id="tagline" class="text-xs opacity-80">
+                                    Marine Circular Biorefinery
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div id="nav-menu" class="hidden md:flex space-x-8"><a href="index.html"
+                            class="nav-link hover:opacity-70 transition-opacity font-medium">Home</a> <a
+                            href="technology.html"
+                            class="nav-link hover:opacity-70 transition-opacity font-medium">Technology</a> <a
+                            href="market.html"
+                            class="nav-link hover:opacity-70 transition-opacity font-medium">Market</a> <a
+                            href="sustainability.html"
+                            class="nav-link hover:opacity-70 transition-opacity font-medium">Sustainability</a> <a
+                            href="about.html" class="active-nav-link text-blue-600 font-bold">About</a> <a
+                            href="contact.html"
+                            class="nav-link hover:opacity-70 transition-opacity font-medium">Contact</a>
+                    </div><button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg></button>
+                </div>
+                <div id="mobile-menu" class="hidden md:hidden mt-4 space-y-3 pb-4"><a href="index.html"
+                        class="block nav-link hover:opacity-70 transition-opacity font-medium">Home</a> <a
+                        href="technology.html"
+                        class="block nav-link hover:opacity-70 transition-opacity font-medium">Technology</a> <a
+                        href="market.html"
+                        class="block nav-link hover:opacity-70 transition-opacity font-medium">Market</a> <a
+                        href="sustainability.html"
+                        class="block nav-link hover:opacity-70 transition-opacity font-medium">Sustainability</a> <a
+                        href="about.html" class="active-nav-link block text-blue-600 font-bold">About</a> <a
+                        href="contact.html"
+                        class="block nav-link hover:opacity-70 transition-opacity font-medium">Contact</a>
+                </div>
+            </div>
+        </nav><!-- Page Header -->
+        <header class="gradient-bg pt-32 pb-20 px-6 text-center text-white">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">About Us</h1>
+                <p class="text-xl opacity-90">Rooted in the South, innovating for the world.</p>
+            </div>
+        </header><!-- About Content -->
+        <section class="py-20 px-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-20">
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Southern Chile Fjord"
+                            class="rounded-xl shadow-lg w-full h-auto object-cover transform transition-transform hover:scale-[1.02] duration-500">
+                    </div>
+                    <div>
+                        <h2 class="text-3xl font-bold mb-6 text-gray-800">Our Origins</h2>
+                        <p class="text-lg text-gray-600 mb-6 leading-relaxed">Aquabiotics Sur was born in the heart of
+                            the Los Lagos Region in southern Chile, a territory known for its pristine fjords and
+                            thriving aquaculture industry. We recognized a paradox: while the mussel industry is a major
+                            economic driver, it also generates significant volumes of liquid waste that are currently
+                            discarded.</p>
+                        <p class="text-lg text-gray-600 leading-relaxed">We saw this not as waste, but as an untapped
+                            reservoir of valuable marine biomolecules. Our team of biologists and engineers came
+                            together with a single mission: to unlock this potential through biotechnology.</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                    <div class="p-8 rounded-xl bg-gray-50 text-center">
+                        <div
+                            class="w-16 h-16 mx-auto mb-6 bg-blue-100 rounded-full flex items-center justify-center text-blue-600">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 text-gray-800">Mission</h3>
+                        <p class="text-gray-600">To revolutionize the recovery of marine ingredients through sustainable
+                            biorefinery processes, creating value for the industry and the environment.</p>
+                    </div>
+                    <div class="p-8 rounded-xl bg-gray-50 text-center">
+                        <div
+                            class="w-16 h-16 mx-auto mb-6 bg-teal-100 rounded-full flex items-center justify-center text-teal-600">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 text-gray-800">Vision</h3>
+                        <p class="text-gray-600">To be the global leader in upcycled marine metabolites, setting the
+                            standard for circular economy in the food sector.</p>
+                    </div>
+                    <div class="p-8 rounded-xl bg-gray-50 text-center">
+                        <div
+                            class="w-16 h-16 mx-auto mb-6 bg-purple-100 rounded-full flex items-center justify-center text-purple-600">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 text-gray-800">Location</h3>
+                        <p class="text-gray-600">Strategic operations in Los Lagos Region, Chile—the hub of the Chilean
+                            mussel industry.</p>
+                    </div>
+                </div>
+            </div>
+        </section><!-- Footer -->
+        <footer class="py-12 px-6 border-t mt-auto">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                    <div>
+                        <div class="flex items-center space-x-2 mb-4">
+                            <img src="logo.png" alt="Aquabiotics Sur" class="h-10 w-auto"><span
+                                class="font-bold text-gray-800">Aquabiotics Sur</span>
+                        </div>
+                        <p class="text-sm text-gray-500">Marine circular biorefinery for natural taurine production</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold mb-4 text-gray-800">Technology</h4>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li><a href="technology.html" class="hover:text-blue-600 transition-colors">Biorefinery
+                                    Process</a></li>
+                            <li><a href="technology.html" class="hover:text-blue-600 transition-colors">Quality
+                                    Standards</a></li>
+                            <li><a href="technology.html" class="hover:text-blue-600 transition-colors">Innovation</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold mb-4 text-gray-800">Company</h4>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li><a href="about.html" class="active-nav-link text-blue-600 transition-colors">About
+                                    Us</a></li>
+                            <li><a href="sustainability.html"
+                                    class="hover:text-blue-600 transition-colors">Sustainability</a></li>
+                            <li><a href="contact.html" class="hover:text-blue-600 transition-colors">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold mb-4 text-gray-800">Markets</h4>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li><a href="market.html" class="hover:text-blue-600 transition-colors">Applications</a>
+                            </li>
+                            <li><a href="market.html" class="hover:text-blue-600 transition-colors">Natural vs
+                                    Synthetic</a></li>
+                            <li><a href="market.html" class="hover:text-blue-600 transition-colors">Industry
+                                    Insights</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pt-8 border-t text-center text-sm text-gray-400">
+                    <p>© 2024 Aquabiotics Sur. Marine biotechnology innovation for a circular economy.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script>
+        const defaultConfig = {
+            background_color: "#0c4a6e",
+            surface_color: "#ffffff",
+            text_color: "#1e293b",
+            primary_action_color: "#0ea5e9", // Lighter blue for better contrast
+            secondary_action_color: "#10b981",
+            font_family: "Inter",
+            font_size: 16,
+            company_name: "Aquabiotics Sur",
+            tagline: "Marine Circular Biorefinery"
+        };
+
+        async function onConfigChange(config) {
+            const backgroundColor = config.background_color || defaultConfig.background_color;
+            const surfaceColor = config.surface_color || defaultConfig.surface_color;
+            const textColor = config.text_color || defaultConfig.text_color;
+            const primaryActionColor = config.primary_action_color || defaultConfig.primary_action_color;
+            const secondaryActionColor = config.secondary_action_color || defaultConfig.secondary_action_color;
+            const fontFamily = config.font_family || defaultConfig.font_family;
+            const fontSize = config.font_size || defaultConfig.font_size;
+
+            // Apply colors
+            document.documentElement.style.setProperty('--bg-color', backgroundColor);
+            document.documentElement.style.setProperty('--surface-color', surfaceColor);
+            document.documentElement.style.setProperty('--text-color', textColor);
+            document.documentElement.style.setProperty('--primary-color', primaryActionColor);
+            document.documentElement.style.setProperty('--secondary-color', secondaryActionColor);
+
+            // Text colors - apply globally
+            document.body.style.color = textColor;
+            // Only apply to elements that don't have explicit color overrides (like our active link with text-blue-600)
+            document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, span, div, li, a, label').forEach(el => {
+                // Skip gradient backgrounds, active/colored links, and elements inside specific colored containers
+                if (!el.closest('.gradient-bg') &&
+                    !el.classList.contains('text-blue-600') &&
+                    !el.classList.contains('text-green-500') &&
+                    !el.classList.contains('text-white')) {
+                    el.style.color = textColor;
+                }
+            });
+
+            // Navbar
+            const navbar = document.getElementById('navbar');
+            navbar.style.backgroundColor = surfaceColor;
+            navbar.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.1)';
+
+            // Navbar links - exclude active link from color override if possible, or re-apply
+            document.querySelectorAll('.nav-link').forEach(link => {
+                if (!link.classList.contains('active-nav-link')) {
+                    link.style.color = textColor;
+                }
+            });
+            document.getElementById('mobile-menu-btn').style.color = textColor;
+
+            // Hero/Header section text (white on gradient)
+            document.querySelector('.gradient-bg').style.color = '#ffffff';
+            document.querySelectorAll('.gradient-bg h1, .gradient-bg p, .gradient-bg div').forEach(el => {
+                el.style.color = '#ffffff';
+            });
+
+            // Process numbers, ESG badges, etc.
+            document.querySelectorAll('.process-arrow > div:first-child, .process-step-4, [class*="w-10 h-10 rounded-full"]').forEach(el => {
+                el.style.backgroundColor = `${primaryActionColor}20`;
+                el.style.color = primaryActionColor;
+            });
+
+            // Apply font
+            const fontStack = `${fontFamily}, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif`;
+            document.body.style.fontFamily = fontStack;
+            document.querySelectorAll('*').forEach(el => {
+                el.style.fontFamily = fontStack;
+            });
+
+            // Apply font sizes
+            document.documentElement.style.fontSize = `${fontSize}px`;
+            // Re-apply detailed sizing for consistency
+            document.querySelector('h1').style.fontSize = `${fontSize * 3}px`;
+            document.querySelectorAll('h2').forEach(el => el.style.fontSize = `${fontSize * 2.5}px`);
+            document.querySelectorAll('h3').forEach(el => el.style.fontSize = `${fontSize * 1.75}px`);
+            // ... and so on.
+
+            // Dynamic text content if needed (company name etc) across all pages
+            const companyNameEl = document.getElementById('company-name');
+            if (companyNameEl) companyNameEl.textContent = config.company_name || defaultConfig.company_name;
+            const taglineEl = document.getElementById('tagline');
+            if (taglineEl) taglineEl.textContent = config.tagline || defaultConfig.tagline;
+
+        }
+
+        // Initialize SDK
+        if (window.elementSdk) {
+            window.elementSdk.init({
+                defaultConfig,
+                onConfigChange
+            });
+        }
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.1)';
+            } else {
+                navbar.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.1)';
+            }
+        });
+
+        // Initial render
+        onConfigChange(defaultConfig);
+    </script>
+</body>
+
+</html>
