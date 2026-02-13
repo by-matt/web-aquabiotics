@@ -51,6 +51,19 @@
             height: 3px;
             background: linear-gradient(90deg, #0ea5e9, #10b981);
         }
+
+        /* Specific override for Innovation section legibility */
+        #innovation-card * {
+            color: #ffffff !important;
+        }
+
+        #innovation-card .text-blue-400 {
+            color: #60a5fa !important;
+        }
+
+        #innovation-card .bg-blue-600 {
+            background-color: #2563eb !important;
+        }
     </style>
     <style>
         @view-transition {
@@ -242,45 +255,46 @@
                 <div id="innovation" class="mt-20">
                     <h2 class="text-3xl font-bold mb-10 text-gray-800 section-title text-center block w-full">Innovation
                         Focus</h2>
-                    <div class="bg-gray-900 rounded-2xl p-8 md:p-12 text-white relative overflow-hidden shadow-xl">
+                    <div id="innovation-card"
+                        class="bg-gray-900 rounded-2xl p-8 md:p-12 text-white relative overflow-hidden shadow-xl">
                         <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                             <div>
                                 <h3 class="text-2xl font-bold mb-6 text-blue-400 font-mono">Next-Gen Marine Tech</h3>
-                                <p class="text-lg text-white mb-8 leading-relaxed">We are pioneering the use of
+                                <p class="text-lg mb-8 leading-relaxed">We are pioneering the use of
                                     <strong>targeted enzymatic upcycling</strong> combined with <strong>advanced
                                         bioprocess engineering</strong> to build a true circular biorefinery model.
                                 </p>
                                 <div class="space-y-4">
                                     <div class="flex items-center gap-4">
                                         <div
-                                            class="w-8 h-8 rounded-full bg-blue-500/20 border border-blue-500/50 flex items-center justify-center text-blue-400">
+                                            class="w-8 h-8 rounded-full bg-blue-500/20 border border-blue-500/50 flex items-center justify-center text-blue-400 font-bold">
                                             01</div>
-                                        <span class="text-white">Systems Biology optimization for metabolic
+                                        <span>Systems Biology optimization for metabolic
                                             recovery.</span>
                                     </div>
                                     <div class="flex items-center gap-4">
                                         <div
-                                            class="w-8 h-8 rounded-full bg-blue-500/20 border border-blue-500/50 flex items-center justify-center text-blue-400">
+                                            class="w-8 h-8 rounded-full bg-blue-500/20 border border-blue-500/50 flex items-center justify-center text-blue-400 font-bold">
                                             02</div>
-                                        <span class="text-white">Selective membrane separation at molecular weight
+                                        <span>Selective membrane separation at molecular weight
                                             cutoffs.</span>
                                     </div>
                                     <div class="flex items-center gap-4">
                                         <div
-                                            class="w-8 h-8 rounded-full bg-blue-500/20 border border-blue-500/50 flex items-center justify-center text-blue-400">
+                                            class="w-8 h-8 rounded-full bg-blue-500/20 border border-blue-500/50 flex items-center justify-center text-blue-400 font-bold">
                                             03</div>
-                                        <span class="text-white">AI-driven predictive modeling for feedstock
+                                        <span>AI-driven predictive modeling for feedstock
                                             optimization.</span>
                                     </div>
                                 </div>
                             </div>
                             <div
                                 class="bg-gradient-to-br from-blue-600/20 to-teal-600/20 p-8 rounded-xl border border-white/10 backdrop-blur-sm">
-                                <h4 class="text-xl font-bold mb-4 text-white">Our IP Strategy</h4>
-                                <p class="text-white/80 mb-6">Securing the future of marine biotech through proprietary
+                                <h4 class="text-xl font-bold mb-4">Our IP Strategy</h4>
+                                <p class="opacity-90 mb-6">Securing the future of marine biotech through proprietary
                                     process patents and trade secrets in metabolite stabilization.</p>
                                 <button
-                                    class="px-6 py-3 bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors font-bold text-sm text-white">Download
+                                    class="px-6 py-3 bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors font-bold text-sm">Download
                                     Tech Specs (Soon)</button>
                             </div>
                         </div>
