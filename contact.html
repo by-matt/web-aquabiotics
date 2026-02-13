@@ -154,6 +154,8 @@
                         <form id="contact-form" class="space-y-6" action="https://formspree.io/f/mykdeqla"
                             method="POST">
                             <input type="hidden" name="_subject" value="Nuevo mensaje desde Aquabiotics Web">
+                            <input type="hidden" name="_next"
+                                value="https://by-matt.github.io/web-aquabiotics/contact.html?sent=true">
                             <input type="text" name="_gotcha" style="display:none">
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-2">Name</label>
@@ -344,6 +346,18 @@
                 navbar.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.1)';
             }
         });
+
+        // Show success message if redirected from Formspree
+        if (window.location.search.includes('sent=true')) {
+            const statusDiv = document.getElementById('form-status');
+            statusDiv.classList.remove('hidden');
+            statusDiv.classList.add('bg-green-100', 'text-green-800');
+            statusDiv.textContent = '✅ ¡Mensaje enviado con éxito! Te responderemos pronto.';
+            // Clean URL
+            window.history.replaceState({}, '', window.location.pathname);
+            // Auto-hide after 8 seconds
+            setTimeout(() => { statusDiv.classList.add('hidden'); }, 8000);
+        }
 
         // Initial render
         onConfigChange(defaultConfig);
