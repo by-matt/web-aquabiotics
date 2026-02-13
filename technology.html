@@ -246,37 +246,41 @@
                         <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                             <div>
                                 <h3 class="text-2xl font-bold mb-6 text-blue-400 font-mono">Next-Gen Marine Tech</h3>
-                                <p class="text-lg text-gray-300 mb-8 leading-relaxed">We are pioneering the use of
+                                <p class="text-lg text-white mb-8 leading-relaxed">We are pioneering the use of
                                     <strong>targeted enzymatic upcycling</strong> combined with <strong>advanced
-                                        bioprocess engineering</strong> to build a true circular biorefinery model.</p>
+                                        bioprocess engineering</strong> to build a true circular biorefinery model.
+                                </p>
                                 <div class="space-y-4">
                                     <div class="flex items-center gap-4">
                                         <div
                                             class="w-8 h-8 rounded-full bg-blue-500/20 border border-blue-500/50 flex items-center justify-center text-blue-400">
                                             01</div>
-                                        <span>Systems Biology optimization for metabolic recovery.</span>
+                                        <span class="text-white">Systems Biology optimization for metabolic
+                                            recovery.</span>
                                     </div>
                                     <div class="flex items-center gap-4">
                                         <div
                                             class="w-8 h-8 rounded-full bg-blue-500/20 border border-blue-500/50 flex items-center justify-center text-blue-400">
                                             02</div>
-                                        <span>Selective membrane separation at molecular weight cutoffs.</span>
+                                        <span class="text-white">Selective membrane separation at molecular weight
+                                            cutoffs.</span>
                                     </div>
                                     <div class="flex items-center gap-4">
                                         <div
                                             class="w-8 h-8 rounded-full bg-blue-500/20 border border-blue-500/50 flex items-center justify-center text-blue-400">
                                             03</div>
-                                        <span>AI-driven predictive modeling for feedstock optimization.</span>
+                                        <span class="text-white">AI-driven predictive modeling for feedstock
+                                            optimization.</span>
                                     </div>
                                 </div>
                             </div>
                             <div
                                 class="bg-gradient-to-br from-blue-600/20 to-teal-600/20 p-8 rounded-xl border border-white/10 backdrop-blur-sm">
                                 <h4 class="text-xl font-bold mb-4 text-white">Our IP Strategy</h4>
-                                <p class="text-gray-400 mb-6">Securing the future of marine biotech through proprietary
+                                <p class="text-white/80 mb-6">Securing the future of marine biotech through proprietary
                                     process patents and trade secrets in metabolite stabilization.</p>
                                 <button
-                                    class="px-6 py-3 bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors font-bold text-sm">Download
+                                    class="px-6 py-3 bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors font-bold text-sm text-white">Download
                                     Tech Specs (Soon)</button>
                             </div>
                         </div>
@@ -366,12 +370,14 @@
 
             // Text colors - apply globally
             document.body.style.color = textColor;
-            // Only apply to elements that don't have explicit color overrides (like our active link with text-blue-600)
+            // Only apply to elements that don't have explicit color overrides or dark containers
             document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, span, div, li, a, label').forEach(el => {
-                // Skip gradient backgrounds, active/colored links, and elements inside specific colored containers
+                // Skip gradient backgrounds, active/colored links, elements inside dark containers, and elements with explicit color classes
                 if (!el.closest('.gradient-bg') &&
+                    !el.closest('.bg-gray-900') &&
                     !el.classList.contains('text-blue-600') &&
                     !el.classList.contains('text-green-500') &&
+                    !el.classList.contains('text-blue-400') &&
                     !el.classList.contains('text-white')) {
                     el.style.color = textColor;
                 }
