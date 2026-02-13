@@ -424,10 +424,14 @@
                 el.style.color = '#ffffff';
             });
 
-            // Process numbers, ESG badges, etc.
+            // Process numbers, ESG badges, etc. - Only if they don't have explicit brand colors
             document.querySelectorAll('.process-arrow > div:first-child, .process-step-4, [class*="w-10 h-10 rounded-full"]').forEach(el => {
-                el.style.backgroundColor = `${primaryActionColor}20`;
-                el.style.color = primaryActionColor;
+                if (!el.classList.contains('text-purple-700') &&
+                    !el.classList.contains('text-teal-600') &&
+                    !el.classList.contains('text-[#FF5F1F]')) {
+                    el.style.backgroundColor = `${primaryActionColor}20`;
+                    el.style.color = primaryActionColor;
+                }
             });
 
             // Apply font
