@@ -62,7 +62,7 @@
         }
 
         #innovation-card .text-blue-400 {
-            color: #0070FF !important;
+            color: #0055FF !important;
         }
 
         #innovation-card .text-teal-400 {
@@ -156,7 +156,7 @@
                     <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
                         <div class="process-arrow relative text-center">
                             <div
-                                class="w-16 h-16 mx-auto rounded-full bg-purple-50 text-[#BF00FF] flex items-center justify-center mb-4 font-bold text-2xl">
+                                class="w-16 h-16 mx-auto rounded-full bg-purple-50 text-[#BF00FF] flex items-center justify-center mb-4 font-bold text-2xl marker-1">
                                 1
                             </div>
                             <h4 class="font-bold mb-2 text-lg">Pre-treatment</h4>
@@ -164,7 +164,7 @@
                         </div>
                         <div class="process-arrow relative text-center">
                             <div
-                                class="w-16 h-16 mx-auto rounded-full bg-blue-50 text-[#0070FF] flex items-center justify-center mb-4 font-bold text-2xl">
+                                class="w-16 h-16 mx-auto rounded-full bg-blue-50 text-[#0055FF] flex items-center justify-center mb-4 font-bold text-2xl marker-2">
                                 2
                             </div>
                             <h4 class="font-bold mb-2 text-lg">Selective Concentration</h4>
@@ -173,7 +173,7 @@
                         </div>
                         <div class="process-arrow relative text-center">
                             <div
-                                class="w-16 h-16 mx-auto rounded-full bg-teal-50 text-[#00E5FF] flex items-center justify-center mb-4 font-bold text-2xl">
+                                class="w-16 h-16 mx-auto rounded-full bg-teal-50 text-[#00E5FF] flex items-center justify-center mb-4 font-bold text-2xl marker-3">
                                 3
                             </div>
                             <h4 class="font-bold mb-2 text-lg">Purification</h4>
@@ -182,7 +182,7 @@
                         </div>
                         <div class="relative text-center">
                             <div
-                                class="w-16 h-16 mx-auto rounded-full bg-orange-50 text-[#FF5F1F] flex items-center justify-center mb-4 font-bold text-2xl">
+                                class="w-16 h-16 mx-auto rounded-full bg-orange-50 text-[#FF5F1F] flex items-center justify-center mb-4 font-bold text-2xl marker-4">
                                 4
                             </div>
                             <h4 class="font-bold mb-2 text-lg">Drying &amp; Stabilization</h4>
@@ -275,21 +275,21 @@
                                 <div class="space-y-4">
                                     <div class="flex items-center gap-4">
                                         <div
-                                            class="w-8 h-8 rounded-full bg-purple-500/20 border border-purple-500/50 flex items-center justify-center text-[#BF00FF] font-bold">
+                                            class="w-8 h-8 rounded-full bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-[#BF00FF] font-bold marker-01">
                                             01</div>
                                         <span>Systems Biology optimization for metabolic
                                             recovery.</span>
                                     </div>
                                     <div class="flex items-center gap-4">
                                         <div
-                                            class="w-8 h-8 rounded-full bg-blue-500/20 border border-blue-500/50 flex items-center justify-center text-[#0070FF] font-bold">
+                                            class="w-8 h-8 rounded-full bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-[#0055FF] font-bold marker-02">
                                             02</div>
                                         <span>Selective membrane separation at molecular weight
                                             cutoffs.</span>
                                     </div>
                                     <div class="flex items-center gap-4">
                                         <div
-                                            class="w-8 h-8 rounded-full bg-teal-500/20 border border-teal-500/50 flex items-center justify-center text-[#00E5FF] font-bold">
+                                            class="w-8 h-8 rounded-full bg-teal-500/10 border border-teal-500/30 flex items-center justify-center text-[#00E5FF] font-bold marker-03">
                                             03</div>
                                         <span>AI-driven predictive modeling for feedstock
                                             optimization.</span>
@@ -400,7 +400,8 @@
                     !el.classList.contains('text-blue-600') &&
                     !el.classList.contains('text-green-500') &&
                     !el.classList.contains('text-blue-400') &&
-                    !el.classList.contains('text-white')) {
+                    !el.classList.contains('text-white') &&
+                    !Array.from(el.classList).some(cls => cls.startsWith('marker-'))) {
                     el.style.color = textColor;
                 }
             });
@@ -424,12 +425,10 @@
                 el.style.color = '#ffffff';
             });
 
-            // Process numbers, ESG badges, etc. - Only if they don't have explicit brand colors
-            document.querySelectorAll('.process-arrow > div:first-child, .process-step-4, [class*="w-10 h-10 rounded-full"]').forEach(el => {
-                if (!el.classList.contains('text-[#BF00FF]') &&
-                    !el.classList.contains('text-[#0070FF]') &&
-                    !el.classList.contains('text-[#00E5FF]') &&
-                    !el.classList.contains('text-[#FF5F1F]')) {
+            // Process numbers, ESG badges, etc. - Protect any element with a 'marker-' class
+            document.querySelectorAll('.process-arrow > div:first-child, [class*="marker-"]').forEach(el => {
+                const hasCustomMarker = Array.from(el.classList).some(cls => cls.startsWith('marker-'));
+                if (!hasCustomMarker) {
                     el.style.backgroundColor = `${primaryActionColor}20`;
                     el.style.color = primaryActionColor;
                 }
