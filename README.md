@@ -20,8 +20,10 @@ Sustainability is our core driver. Our operations are designed to deliver measur
 ## 📈 ESG Alignment
 We are committed to the United Nations Sustainable Development Goals (SDGs), focusing on:
 - **SDG 2 (Zero Hunger)**: Enriching food chains with natural nutrients.
-- **SDG 12 (Responsible Consumption & Production)**: Promoting circularity in industrial processes.
-- **SDG 14 (Life Below Water)**: Protecting marine health through cleaner industrial effluents.
+- **SDG 8 (Decent Work & Economic Growth)**: Strengthening coastal economies and creating high-tech industrial efficiency.
+- **SDG 9 (Industry, Innovation & Infrastructure)**: Pioneering circular biorefinery technologies.
+- **SDG 12 (Responsible Consumption & Production)**: Promoting zero-waste circularity in industrial processes.
+- **SDG 14 (Life Below Water)**: Protecting marine health by reducing organic load in industrial effluents.
 
 ---
 © 2024 Aquabiotics Sur. Nature, Replicated.
