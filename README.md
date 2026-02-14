@@ -26,7 +26,7 @@ AquAbiotics Sur is built upon the United Nations Sustainable Development Goals, 
   - **Target 12.4**: Achieve environmentally sound management of wastes throughout their life cycle to minimize adverse impacts on human health and the environment.
 - **SDG 14: Life Below Water**: *Conserve and sustainably use the oceans and marine resources.*
   - **Target 14.1**: Prevent and significantly reduce marine nutrient pollution from land-based activities.
-  - **Target 14.a**: Increase scientific knowledge and develop research capacity to transfer marine technology.
+  - **Target 14.2**: Sustainably manage and protect marine and coastal ecosystems to avoid significant adverse impacts.
 - **SDG 6: Clean Water & Sanitation**: *Ensure availability and sustainable management of water.*
   - **Target 6.3**: Improve water quality by reducing pollution and halving untreated wastewater.
 - **SDG 9: Industry, Innovation & Infrastructure**: *Build resilient infrastructure and foster innovation.*
