@@ -51,6 +51,59 @@
             height: 3px;
             background: linear-gradient(90deg, #0ea5e9, #10b981);
         }
+
+        /* SDG Interactive Cards */
+        .sdg-card {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            min-height: 180px;
+        }
+
+        .sdg-overlay {
+            position: absolute;
+            inset: 0;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(100%);
+            transition: all 0.4s ease-in-out;
+            color: white;
+            z-index: 10;
+            backdrop-filter: blur(4px);
+        }
+
+        .sdg-card:hover .sdg-overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .sdg-card:hover .sdg-content {
+            opacity: 0;
+            transform: scale(0.9);
+        }
+
+        .sdg-content {
+            transition: all 0.4s ease;
+        }
+
+        .sdg-overlay p {
+            font-size: 9px;
+            line-height: 1.4;
+        }
+
+        .sdg-overlay h5 {
+            font-size: 10px;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            padding-bottom: 0.25rem;
+            width: 100%;
+        }
     </style>
     <style>
         @view-transition {
@@ -183,86 +236,140 @@
                         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-4">
                             <!-- SDG 12 -->
                             <div
-                                class="p-4 rounded-xl bg-white border border-gray-100 shadow-sm card-hover flex flex-col items-center text-center">
-                                <div
-                                    class="w-12 h-12 bg-[#BF8B2E] text-white rounded-lg flex items-center justify-center font-bold text-xl mb-3 shadow-sm">
-                                    12</div>
-                                <h4 class="font-bold text-xs text-gray-800 mb-1">Responsible Production</h4>
-                                <p class="text-[9px] leading-tight text-gray-500 mb-2">Sustainable consumption
-                                    patterns.</p>
-                                <p class="text-[9px] leading-tight text-emerald-600 font-medium"><strong>Target
-                                        12.5</strong>: Upcycling effluents.</p>
+                                class="sdg-card p-4 rounded-xl bg-white border border-gray-100 shadow-sm flex flex-col items-center text-center group">
+                                <div class="sdg-content flex flex-col items-center">
+                                    <div
+                                        class="w-12 h-12 bg-[#BF8B2E] text-white rounded-lg flex items-center justify-center font-bold text-xl mb-3 shadow-sm">
+                                        12</div>
+                                    <h4 class="font-bold text-xs text-gray-800 mb-1">Responsible Production</h4>
+                                    <p class="text-[9px] leading-tight text-gray-500 mb-2">Sustainable consumption
+                                        patterns.</p>
+                                    <p class="text-[9px] leading-tight text-emerald-600 font-medium"><strong>Target
+                                            12.5</strong>: Upcycling effluents.</p>
+                                </div>
+                                <div class="sdg-overlay bg-[#BF8B2E]">
+                                    <h5>Targets & Alignment</h5>
+                                    <p class="mb-2"><strong>Target 12.5:</strong> Substantially reduce waste generation
+                                        through upcycling industrial effluents.</p>
+                                    <p><strong>Target 12.4:</strong> Environmentally sound management of wastes
+                                        throughout their life cycle.</p>
+                                </div>
                             </div>
                             <!-- SDG 14 -->
                             <div
-                                class="p-4 rounded-xl bg-white border border-gray-100 shadow-sm card-hover flex flex-col items-center text-center">
-                                <div
-                                    class="w-12 h-12 bg-[#0A97D9] text-white rounded-lg flex items-center justify-center font-bold text-xl mb-3 shadow-sm">
-                                    14</div>
-                                <h4 class="font-bold text-xs text-gray-800 mb-1">Life Below Water</h4>
-                                <p class="text-[9px] leading-tight text-gray-500 mb-2">Ocean conservation and use.
-                                </p>
-                                <p class="text-[9px] leading-tight text-blue-600 font-medium"><strong>Target
-                                        14.1</strong>: Reducing pollution.</p>
+                                class="sdg-card p-4 rounded-xl bg-white border border-gray-100 shadow-sm flex flex-col items-center text-center group">
+                                <div class="sdg-content flex flex-col items-center">
+                                    <div
+                                        class="w-12 h-12 bg-[#0A97D9] text-white rounded-lg flex items-center justify-center font-bold text-xl mb-3 shadow-sm">
+                                        14</div>
+                                    <h4 class="font-bold text-xs text-gray-800 mb-1">Life Below Water</h4>
+                                    <p class="text-[9px] leading-tight text-gray-500 mb-2">Ocean conservation and use.
+                                    </p>
+                                    <p class="text-[9px] leading-tight text-blue-600 font-medium"><strong>Target
+                                            14.1</strong>: Reducing pollution.</p>
+                                </div>
+                                <div class="sdg-overlay bg-[#0A97D9]">
+                                    <h5>Targets & Alignment</h5>
+                                    <p class="mb-2"><strong>Target 14.1:</strong> Prevent and significantly reduce
+                                        marine nutrient pollution from land-based activities.</p>
+                                    <p><strong>Target 14.a:</strong> Develop research capacity and increase scientific
+                                        knowledge to transfer marine technology.</p>
+                                </div>
                             </div>
                             <!-- SDG 6 -->
                             <div
-                                class="p-4 rounded-xl bg-white border border-gray-100 shadow-sm card-hover flex flex-col items-center text-center">
-                                <div
-                                    class="w-12 h-12 bg-[#26BDE2] text-white rounded-lg flex items-center justify-center font-bold text-xl mb-3 shadow-sm">
-                                    6</div>
-                                <h4 class="font-bold text-xs text-gray-800 mb-1">Clean Water</h4>
-                                <p class="text-[9px] leading-tight text-gray-500 mb-2">Sustainable water
-                                    management.</p>
-                                <p class="text-[9px] leading-tight text-cyan-600 font-medium"><strong>Target
-                                        6.3</strong>: Water quality.</p>
+                                class="sdg-card p-4 rounded-xl bg-white border border-gray-100 shadow-sm flex flex-col items-center text-center group">
+                                <div class="sdg-content flex flex-col items-center">
+                                    <div
+                                        class="w-12 h-12 bg-[#26BDE2] text-white rounded-lg flex items-center justify-center font-bold text-xl mb-3 shadow-sm">
+                                        6</div>
+                                    <h4 class="font-bold text-xs text-gray-800 mb-1">Clean Water</h4>
+                                    <p class="text-[9px] leading-tight text-gray-500 mb-2">Sustainable water management.
+                                    </p>
+                                    <p class="text-[9px] leading-tight text-cyan-600 font-medium"><strong>Target
+                                            6.3</strong>: Water quality.</p>
+                                </div>
+                                <div class="sdg-overlay bg-[#26BDE2]">
+                                    <h5>Targets & Alignment</h5>
+                                    <p><strong>Target 6.3:</strong> Improve water quality by reducing pollution and
+                                        halving the proportion of untreated wastewater.</p>
+                                </div>
                             </div>
                             <!-- SDG 9 -->
                             <div
-                                class="p-4 rounded-xl bg-white border border-gray-100 shadow-sm card-hover flex flex-col items-center text-center">
-                                <div
-                                    class="w-12 h-12 bg-[#FD6925] text-white rounded-lg flex items-center justify-center font-bold text-xl mb-3 shadow-sm">
-                                    9</div>
-                                <h4 class="font-bold text-xs text-gray-800 mb-1">Innovation</h4>
-                                <p class="text-[9px] leading-tight text-gray-500 mb-2">Fostering resilient
-                                    ecosystems.</p>
-                                <p class="text-[9px] leading-tight text-orange-600 font-medium"><strong>Target
-                                        9.4</strong>: Clean technology.</p>
+                                class="sdg-card p-4 rounded-xl bg-white border border-gray-100 shadow-sm flex flex-col items-center text-center group">
+                                <div class="sdg-content flex flex-col items-center">
+                                    <div
+                                        class="w-12 h-12 bg-[#FD6925] text-white rounded-lg flex items-center justify-center font-bold text-xl mb-3 shadow-sm">
+                                        9</div>
+                                    <h4 class="font-bold text-xs text-gray-800 mb-1">Innovation</h4>
+                                    <p class="text-[9px] leading-tight text-gray-500 mb-2">Fostering resilient
+                                        ecosystems.</p>
+                                    <p class="text-[9px] leading-tight text-orange-600 font-medium"><strong>Target
+                                            9.4</strong>: Clean technology.</p>
+                                </div>
+                                <div class="sdg-overlay bg-[#FD6925]">
+                                    <h5>Targets & Alignment</h5>
+                                    <p class="mb-2"><strong>Target 9.4:</strong> Retrofit industries with clean
+                                        technologies and increased resource-use efficiency.</p>
+                                    <p><strong>Target 9.5:</strong> Enhance scientific research and upgrade industrial
+                                        technological capabilities.</p>
+                                </div>
                             </div>
                             <!-- SDG 13 -->
                             <div
-                                class="p-4 rounded-xl bg-white border border-gray-100 shadow-sm card-hover flex flex-col items-center text-center">
-                                <div
-                                    class="w-12 h-12 bg-[#3F7E44] text-white rounded-lg flex items-center justify-center font-bold text-xl mb-3 shadow-sm">
-                                    13</div>
-                                <h4 class="font-bold text-xs text-gray-800 mb-1">Climate Action</h4>
-                                <p class="text-[9px] leading-tight text-gray-500 mb-2">Combating climate change.
-                                </p>
-                                <p class="text-[9px] leading-tight text-green-700 font-medium"><strong>Target
-                                        13.2</strong>: Climate measures.</p>
+                                class="sdg-card p-4 rounded-xl bg-white border border-gray-100 shadow-sm flex flex-col items-center text-center group">
+                                <div class="sdg-content flex flex-col items-center">
+                                    <div
+                                        class="w-12 h-12 bg-[#3F7E44] text-white rounded-lg flex items-center justify-center font-bold text-xl mb-3 shadow-sm">
+                                        13</div>
+                                    <h4 class="font-bold text-xs text-gray-800 mb-1">Climate Action</h4>
+                                    <p class="text-[9px] leading-tight text-gray-500 mb-2">Combating climate change.</p>
+                                    <p class="text-[9px] leading-tight text-green-700 font-medium"><strong>Target
+                                            13.2</strong>: Climate measures.</p>
+                                </div>
+                                <div class="sdg-overlay bg-[#3F7E44]">
+                                    <h5>Targets & Alignment</h5>
+                                    <p><strong>Target 13.2:</strong> Integrate low-carbon bio-extraction measures into
+                                        our industrial and operational strategies.</p>
+                                </div>
                             </div>
                             <!-- SDG 15 -->
                             <div
-                                class="p-4 rounded-xl bg-white border border-gray-100 shadow-sm card-hover flex flex-col items-center text-center">
-                                <div
-                                    class="w-12 h-12 bg-[#56C02B] text-white rounded-lg flex items-center justify-center font-bold text-xl mb-3 shadow-sm">
-                                    15</div>
-                                <h4 class="font-bold text-xs text-gray-800 mb-1">Life on Land</h4>
-                                <p class="text-[9px] leading-tight text-gray-500 mb-2">Restoring ecosystems.</p>
-                                <p class="text-[9px] leading-tight text-lime-600 font-medium"><strong>Target
-                                        15.5</strong>: Habitat optimization.</p>
+                                class="sdg-card p-4 rounded-xl bg-white border border-gray-100 shadow-sm flex flex-col items-center text-center group">
+                                <div class="sdg-content flex flex-col items-center">
+                                    <div
+                                        class="w-12 h-12 bg-[#56C02B] text-white rounded-lg flex items-center justify-center font-bold text-xl mb-3 shadow-sm">
+                                        15</div>
+                                    <h4 class="font-bold text-xs text-gray-800 mb-1">Life on Land</h4>
+                                    <p class="text-[9px] leading-tight text-gray-500 mb-2">Restoring ecosystems.</p>
+                                    <p class="text-[9px] leading-tight text-lime-600 font-medium"><strong>Target
+                                            15.5</strong>: Habitat optimization.</p>
+                                </div>
+                                <div class="sdg-overlay bg-[#56C02B]">
+                                    <h5>Targets & Alignment</h5>
+                                    <p><strong>Target 15.5:</strong> Reduce habitat degradation by optimizing marine
+                                        resources and reducing pressure on land-fertilizers.</p>
+                                </div>
                             </div>
                             <!-- SDG 7 -->
                             <div
-                                class="p-4 rounded-xl bg-white border border-gray-100 shadow-sm card-hover flex flex-col items-center text-center">
-                                <div
-                                    class="w-12 h-12 bg-[#FCC30B] text-white rounded-lg flex items-center justify-center font-bold text-xl mb-3 shadow-sm">
-                                    7</div>
-                                <h4 class="font-bold text-xs text-gray-800 mb-1">Clean Energy</h4>
-                                <p class="text-[9px] leading-tight text-gray-500 mb-2">Sustainable energy access.
-                                </p>
-                                <p class="text-[9px] leading-tight text-yellow-600 font-medium"><strong>Target
-                                        7.3</strong>: Energy efficiency.</p>
+                                class="sdg-card p-4 rounded-xl bg-white border border-gray-100 shadow-sm flex flex-col items-center text-center group">
+                                <div class="sdg-content flex flex-col items-center">
+                                    <div
+                                        class="w-12 h-12 bg-[#FCC30B] text-white rounded-lg flex items-center justify-center font-bold text-xl mb-3 shadow-sm">
+                                        7</div>
+                                    <h4 class="font-bold text-xs text-gray-800 mb-1">Clean Energy</h4>
+                                    <p class="text-[9px] leading-tight text-gray-500 mb-2">Sustainable energy access.
+                                    </p>
+                                    <p class="text-[9px] leading-tight text-yellow-600 font-medium"><strong>Target
+                                            7.3</strong>: Energy efficiency.</p>
+                                </div>
+                                <div class="sdg-overlay bg-[#FCC30B]">
+                                    <h5>Targets & Alignment</h5>
+                                    <p><strong>Target 7.3:</strong> Double the improvement in energy efficiency through
+                                        our optimized biorefinery processes.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -274,72 +381,118 @@
                         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
                             <!-- SDG 8 -->
                             <div
-                                class="p-4 rounded-xl bg-white border border-gray-100 shadow-sm card-hover flex flex-col items-center text-center">
-                                <div
-                                    class="w-12 h-12 bg-[#A21942] text-white rounded-lg flex items-center justify-center font-bold text-xl mb-3 shadow-sm">
-                                    8</div>
-                                <h4 class="font-bold text-xs text-gray-800 mb-1">Decent Work</h4>
-                                <p class="text-[9px] leading-tight text-gray-500 mb-2">Incentivizing economic
-                                    growth.</p>
-                                <p class="text-[9px] leading-tight text-rose-700 font-medium"><strong>Target
-                                        8.2</strong>: Productivity.</p>
+                                class="sdg-card p-4 rounded-xl bg-white border border-gray-100 shadow-sm flex flex-col items-center text-center group">
+                                <div class="sdg-content flex flex-col items-center">
+                                    <div
+                                        class="w-12 h-12 bg-[#A21942] text-white rounded-lg flex items-center justify-center font-bold text-xl mb-3 shadow-sm">
+                                        8</div>
+                                    <h4 class="font-bold text-xs text-gray-800 mb-1">Decent Work</h4>
+                                    <p class="text-[9px] leading-tight text-gray-500 mb-2">Sustainable economic growth.
+                                    </p>
+                                    <p class="text-[9px] leading-tight text-rose-700 font-medium"><strong>Target
+                                            8.2</strong>: Productivity.</p>
+                                </div>
+                                <div class="sdg-overlay bg-[#A21942]">
+                                    <h5>Targets & Alignment</h5>
+                                    <p class="mb-2"><strong>Target 8.2:</strong> Higher economic productivity through
+                                        technological upgrading and value addition.</p>
+                                    <p><strong>Target 8.4:</strong> Improve global resource efficiency, decoupling
+                                        growth from degradation.</p>
+                                </div>
                             </div>
                             <!-- SDG 1 -->
                             <div
-                                class="p-4 rounded-xl bg-white border border-gray-100 shadow-sm card-hover flex flex-col items-center text-center">
-                                <div
-                                    class="w-12 h-12 bg-[#E5243B] text-white rounded-lg flex items-center justify-center font-bold text-xl mb-3 shadow-sm">
-                                    1</div>
-                                <h4 class="font-bold text-xs text-gray-800 mb-1">No Poverty</h4>
-                                <p class="text-[9px] leading-tight text-gray-500 mb-2">End poverty in all forms.
-                                </p>
-                                <p class="text-[9px] leading-tight text-red-600 font-medium"><strong>Target
-                                        1.4</strong>: Equal technology access.</p>
+                                class="sdg-card p-4 rounded-xl bg-white border border-gray-100 shadow-sm flex flex-col items-center text-center group">
+                                <div class="sdg-content flex flex-col items-center">
+                                    <div
+                                        class="w-12 h-12 bg-[#E5243B] text-white rounded-lg flex items-center justify-center font-bold text-xl mb-3 shadow-sm">
+                                        1</div>
+                                    <h4 class="font-bold text-xs text-gray-800 mb-1">No Poverty</h4>
+                                    <p class="text-[9px] leading-tight text-gray-500 mb-2">Ending poverty everywhere.
+                                    </p>
+                                    <p class="text-[9px] leading-tight text-red-600 font-medium"><strong>Target
+                                            1.4</strong>: Tech access.</p>
+                                </div>
+                                <div class="sdg-overlay bg-[#E5243B]">
+                                    <h5>Targets & Alignment</h5>
+                                    <p><strong>Target 1.4:</strong> Ensure access to appropriate new technologies for
+                                        regional value generation in Southern Chile.</p>
+                                </div>
                             </div>
                             <!-- SDG 10 -->
                             <div
-                                class="p-4 rounded-xl bg-white border border-gray-100 shadow-sm card-hover flex flex-col items-center text-center">
-                                <div
-                                    class="w-12 h-12 bg-[#DD1367] text-white rounded-lg flex items-center justify-center font-bold text-xl mb-3 shadow-sm">
-                                    10</div>
-                                <h4 class="font-bold text-xs text-gray-800 mb-1">Reduced Equality</h4>
-                                <p class="text-[9px] leading-tight text-gray-500 mb-2">Inclusive economic growth.
-                                </p>
-                                <p class="text-[9px] leading-tight text-pink-600 font-medium"><strong>Target
-                                        10.2</strong>: Southern inclusion.</p>
+                                class="sdg-card p-4 rounded-xl bg-white border border-gray-100 shadow-sm flex flex-col items-center text-center group">
+                                <div class="sdg-content flex flex-col items-center">
+                                    <div
+                                        class="w-12 h-12 bg-[#DD1367] text-white rounded-lg flex items-center justify-center font-bold text-xl mb-3 shadow-sm">
+                                        10</div>
+                                    <h4 class="font-bold text-xs text-gray-800 mb-1">Reduced Inequalities</h4>
+                                    <p class="text-[9px] leading-tight text-gray-500 mb-2">Equality within countries.
+                                    </p>
+                                    <p class="text-[9px] leading-tight text-pink-600 font-medium"><strong>Target
+                                            10.2</strong>: Inclusion.</p>
+                                </div>
+                                <div class="sdg-overlay bg-[#DD1367]">
+                                    <h5>Targets & Alignment</h5>
+                                    <p><strong>Target 10.2:</strong> Empower socio-economic inclusion through the
+                                        decentralization of high-tech biotechnology.</p>
+                                </div>
                             </div>
                             <!-- SDG 11 -->
                             <div
-                                class="p-4 rounded-xl bg-white border border-gray-100 shadow-sm card-hover flex flex-col items-center text-center">
-                                <div
-                                    class="w-12 h-12 bg-[#FD9D24] text-white rounded-lg flex items-center justify-center font-bold text-xl mb-3 shadow-sm">
-                                    11</div>
-                                <h4 class="font-bold text-xs text-gray-800 mb-1">Sustainable Cities</h4>
-                                <p class="text-[9px] leading-tight text-gray-500 mb-2">Making cities inclusive.</p>
-                                <p class="text-[9px] leading-tight text-orange-500 font-medium"><strong>Target
-                                        11.6</strong>: Urban coexistence.</p>
+                                class="sdg-card p-4 rounded-xl bg-white border border-gray-100 shadow-sm flex flex-col items-center text-center group">
+                                <div class="sdg-content flex flex-col items-center">
+                                    <div
+                                        class="w-12 h-12 bg-[#FD9D24] text-white rounded-lg flex items-center justify-center font-bold text-xl mb-3 shadow-sm">
+                                        11</div>
+                                    <h4 class="font-bold text-xs text-gray-800 mb-1">Sustainable Cities</h4>
+                                    <p class="text-[9px] leading-tight text-gray-500 mb-2">Resilient settlements.</p>
+                                    <p class="text-[9px] leading-tight text-orange-600 font-medium"><strong>Target
+                                            11.6</strong>: Urban impact.</p>
+                                </div>
+                                <div class="sdg-overlay bg-[#FD9D24]">
+                                    <h5>Targets & Alignment</h5>
+                                    <p><strong>Target 11.6:</strong> Reduce urban environmental impact by
+                                        improvingindustrial-urban coexistence and waste control.</p>
+                                </div>
                             </div>
                             <!-- SDG 17 -->
                             <div
-                                class="p-4 rounded-xl bg-white border border-gray-100 shadow-sm card-hover flex flex-col items-center text-center">
-                                <div
-                                    class="w-12 h-12 bg-[#19486A] text-white rounded-lg flex items-center justify-center font-bold text-xl mb-3 shadow-sm">
-                                    17</div>
-                                <h4 class="font-bold text-xs text-gray-800 mb-1">Partnerships</h4>
-                                <p class="text-[9px] leading-tight text-gray-500 mb-2">Sustainable cooperation.</p>
-                                <p class="text-[9px] leading-tight text-blue-900 font-medium"><strong>Target
-                                        17.6</strong>: Science cooperation.</p>
+                                class="sdg-card p-4 rounded-xl bg-white border border-gray-100 shadow-sm flex flex-col items-center text-center group">
+                                <div class="sdg-content flex flex-col items-center">
+                                    <div
+                                        class="w-12 h-12 bg-[#19486A] text-white rounded-lg flex items-center justify-center font-bold text-xl mb-3 shadow-sm">
+                                        17</div>
+                                    <h4 class="font-bold text-xs text-gray-800 mb-1">Partnerships</h4>
+                                    <p class="text-[9px] leading-tight text-gray-500 mb-2">Global cooperation.</p>
+                                    <p class="text-[9px] leading-tight text-blue-800 font-medium"><strong>Target
+                                            17.6</strong>: Cooperation.</p>
+                                </div>
+                                <div class="sdg-overlay bg-[#19486A]">
+                                    <h5>Targets & Alignment</h5>
+                                    <p class="mb-2"><strong>Target 17.6:</strong> Enhance regional science, technology,
+                                        and innovation cooperation.</p>
+                                    <p><strong>Target 17.7:</strong> Promote the development and transfer of
+                                        environmentally sound technologies.</p>
+                                </div>
                             </div>
                             <!-- SDG 16 -->
                             <div
-                                class="p-4 rounded-xl bg-white border border-gray-100 shadow-sm card-hover flex flex-col items-center text-center">
-                                <div
-                                    class="w-12 h-12 bg-[#00689D] text-white rounded-lg flex items-center justify-center font-bold text-xl mb-3 shadow-sm">
-                                    16</div>
-                                <h4 class="font-bold text-xs text-gray-800 mb-1">Strong Institutions</h4>
-                                <p class="text-[9px] leading-tight text-gray-500 mb-2">Accountable societies.</p>
-                                <p class="text-[9px] leading-tight text-sky-800 font-medium"><strong>Target
-                                        16.6</strong>: Transparency.</p>
+                                class="sdg-card p-4 rounded-xl bg-white border border-gray-100 shadow-sm flex flex-col items-center text-center group">
+                                <div class="sdg-content flex flex-col items-center">
+                                    <div
+                                        class="w-12 h-12 bg-[#00689D] text-white rounded-lg flex items-center justify-center font-bold text-xl mb-3 shadow-sm">
+                                        16</div>
+                                    <h4 class="font-bold text-xs text-gray-800 mb-1">Strong Institutions</h4>
+                                    <p class="text-[9px] leading-tight text-gray-500 mb-2">Peaceful societies.</p>
+                                    <p class="text-[9px] leading-tight text-blue-700 font-medium"><strong>Target
+                                            16.6</strong>: Transparency.</p>
+                                </div>
+                                <div class="sdg-overlay bg-[#00689D]">
+                                    <h5>Targets & Alignment</h5>
+                                    <p><strong>Target 16.6:</strong> Develop transparent industrial reporting systems
+                                        and environmental compliance standards.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -351,48 +504,77 @@
                         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                             <!-- SDG 2 -->
                             <div
-                                class="p-4 rounded-xl bg-white border border-gray-100 shadow-sm card-hover flex flex-col items-center text-center">
-                                <div
-                                    class="w-12 h-12 bg-[#DDA63A] text-white rounded-lg flex items-center justify-center font-bold text-xl mb-3 shadow-sm">
-                                    2</div>
-                                <h4 class="font-bold text-xs text-gray-800 mb-1">Zero Hunger</h4>
-                                <p class="text-[9px] leading-tight text-gray-500 mb-2">Global food security.</p>
-                                <p class="text-[9px] leading-tight text-amber-600 font-medium"><strong>Target
-                                        2.4</strong>: Sustainable production.</p>
+                                class="sdg-card p-4 rounded-xl bg-white border border-gray-100 shadow-sm flex flex-col items-center text-center group">
+                                <div class="sdg-content flex flex-col items-center">
+                                    <div
+                                        class="w-12 h-12 bg-[#DDA63A] text-white rounded-lg flex items-center justify-center font-bold text-xl mb-3 shadow-sm">
+                                        2</div>
+                                    <h4 class="font-bold text-xs text-gray-800 mb-1">Zero Hunger</h4>
+                                    <p class="text-[9px] leading-tight text-gray-500 mb-2">Sustainable food production.
+                                    </p>
+                                    <p class="text-[9px] leading-tight text-amber-600 font-medium"><strong>Target
+                                            2.4</strong>: Nutrition chains.</p>
+                                </div>
+                                <div class="sdg-overlay bg-[#DDA63A]">
+                                    <h5>Targets & Alignment</h5>
+                                    <p><strong>Target 2.4:</strong> Ensure sustainable food production by enriching
+                                        chains with high-quality natural nutrients.</p>
+                                </div>
                             </div>
                             <!-- SDG 3 -->
                             <div
-                                class="p-4 rounded-xl bg-white border border-gray-100 shadow-sm card-hover flex flex-col items-center text-center">
-                                <div
-                                    class="w-12 h-12 bg-[#4C9F38] text-white rounded-lg flex items-center justify-center font-bold text-xl mb-3 shadow-sm">
-                                    3</div>
-                                <h4 class="font-bold text-xs text-gray-800 mb-1">Health & Wellbeing</h4>
-                                <p class="text-[9px] leading-tight text-gray-500 mb-2">Promoting healthy lives.</p>
-                                <p class="text-[9px] leading-tight text-green-600 font-medium"><strong>Target
-                                        3.4</strong>: Fighting NCDs.</p>
+                                class="sdg-card p-4 rounded-xl bg-white border border-gray-100 shadow-sm flex flex-col items-center text-center group">
+                                <div class="sdg-content flex flex-col items-center">
+                                    <div
+                                        class="w-12 h-12 bg-[#4C9F38] text-white rounded-lg flex items-center justify-center font-bold text-xl mb-3 shadow-sm">
+                                        3</div>
+                                    <h4 class="font-bold text-xs text-gray-800 mb-1">Health & Wellbeing</h4>
+                                    <p class="text-[9px] leading-tight text-gray-500 mb-2">Promoting healthy lives.</p>
+                                    <p class="text-[9px] leading-tight text-green-600 font-medium"><strong>Target
+                                            3.4</strong>: Taurine provision.</p>
+                                </div>
+                                <div class="sdg-overlay bg-[#4C9F38]">
+                                    <h5>Targets & Alignment</h5>
+                                    <p><strong>Target 3.4:</strong> Reduce premature mortality through the provision of
+                                        natural metabolites like Taurine.</p>
+                                </div>
                             </div>
                             <!-- SDG 4 -->
                             <div
-                                class="p-4 rounded-xl bg-white border border-gray-100 shadow-sm card-hover flex flex-col items-center text-center">
-                                <div
-                                    class="w-12 h-12 bg-[#C5192D] text-white rounded-lg flex items-center justify-center font-bold text-xl mb-3 shadow-sm">
-                                    4</div>
-                                <h4 class="font-bold text-xs text-gray-800 mb-1">Quality Education</h4>
-                                <p class="text-[9px] leading-tight text-gray-500 mb-2">Inclusive lifelong learning.
-                                </p>
-                                <p class="text-[9px] leading-tight text-red-700 font-medium"><strong>Target
-                                        4.4</strong>: Technical skills.</p>
+                                class="sdg-card p-4 rounded-xl bg-white border border-gray-100 shadow-sm flex flex-col items-center text-center group">
+                                <div class="sdg-content flex flex-col items-center">
+                                    <div
+                                        class="w-12 h-12 bg-[#C5192D] text-white rounded-lg flex items-center justify-center font-bold text-xl mb-3 shadow-sm">
+                                        4</div>
+                                    <h4 class="font-bold text-xs text-gray-800 mb-1">Quality Education</h4>
+                                    <p class="text-[9px] leading-tight text-gray-500 mb-2">Inclusive lifelong learning.
+                                    </p>
+                                    <p class="text-[9px] leading-tight text-red-700 font-medium"><strong>Target
+                                            4.4</strong>: Technical skills.</p>
+                                </div>
+                                <div class="sdg-overlay bg-[#C5192D]">
+                                    <h5>Targets & Alignment</h5>
+                                    <p><strong>Target 4.4:</strong> Increase the number of people with relevant
+                                        technical skills for the Blue Biotechnology Economy.</p>
+                                </div>
                             </div>
                             <!-- SDG 5 -->
                             <div
-                                class="p-4 rounded-xl bg-white border border-gray-100 shadow-sm card-hover flex flex-col items-center text-center">
-                                <div
-                                    class="w-12 h-12 bg-[#FF3A21] text-white rounded-lg flex items-center justify-center font-bold text-xl mb-3 shadow-sm">
-                                    5</div>
-                                <h4 class="font-bold text-xs text-gray-800 mb-1">Gender Equality</h4>
-                                <p class="text-[9px] leading-tight text-gray-500 mb-2">Empowering females.</p>
-                                <p class="text-[9px] leading-tight text-orange-700 font-medium"><strong>Target
-                                        5.5</strong>: Leadership in STEM.</p>
+                                class="sdg-card p-4 rounded-xl bg-white border border-gray-100 shadow-sm flex flex-col items-center text-center group">
+                                <div class="sdg-content flex flex-col items-center">
+                                    <div
+                                        class="w-12 h-12 bg-[#FF3A21] text-white rounded-lg flex items-center justify-center font-bold text-xl mb-3 shadow-sm">
+                                        5</div>
+                                    <h4 class="font-bold text-xs text-gray-800 mb-1">Gender Equality</h4>
+                                    <p class="text-[9px] leading-tight text-gray-500 mb-2">Empowering females.</p>
+                                    <p class="text-[9px] leading-tight text-orange-700 font-medium"><strong>Target
+                                            5.5</strong>: Leadership in STEM.</p>
+                                </div>
+                                <div class="sdg-overlay bg-[#FF3A21]">
+                                    <h5>Targets & Alignment</h5>
+                                    <p><strong>Target 5.5:</strong> Ensure women’s leadership and participation in
+                                        industrial STEM and modern biotechnology.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
