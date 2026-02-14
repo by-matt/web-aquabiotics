@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="es" class="h-full">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-95YGFVTCSF"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-95YGFVTCSF');
+    </script>
+    <title>Nosotros - Aquabiotics Sur</title>
+    <link rel="icon" type="image/png" href="../logo.png">
+    <script src="/_sdk/element_sdk.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        * {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #0c4a6e 0%, #064e3b 100%);
+        }
+
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .section-title {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 12px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #0ea5e9, #10b981);
+        }
+    </style>
+    <style>
+        @view-transition {
+            navigation: auto;
+        }
+    </style>
+    <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+</head>
+
+<body class="h-full flex flex-col">
+    <div id="app-wrapper" class="w-full h-full overflow-auto flex-grow"><!-- Navigation -->
+        <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-white shadow-sm">
+            <div class="max-w-7xl mx-auto px-6 py-4">
+                <div class="flex justify-between items-center">
+                    <div class="flex items-center space-x-3">
+                        <img src="../logo.png" alt="Aquabiotics Sur" class="h-12 w-auto text-gray-800">
+                        <a href="index.html" class="hover:opacity-80 transition-opacity">
+                            <div>
+                                <div id="company-name" class="font-bold text-xl tracking-tight text-gray-900">
+                                    Aquabiotics Sur
+                                </div>
+                                <div id="tagline" class="text-xs opacity-80 text-gray-600">
+                                    Naturaleza, Replicada.
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div id="nav-menu" class="hidden md:flex items-center space-x-8">
+                        <a href="index.html"
+                            class="nav-link text-gray-700 hover:text-blue-600 transition-colors font-medium">Inicio</a>
+                        <a href="technology.html"
+                            class="nav-link text-gray-700 hover:text-blue-600 transition-colors font-medium">Tecnología</a>
+                        <a href="market.html"
+                            class="nav-link text-gray-700 hover:text-blue-600 transition-colors font-medium">Mercado</a>
+                        <a href="sustainability.html"
+                            class="nav-link text-gray-700 hover:text-blue-600 transition-colors font-medium">Sustentabilidad</a>
+                        <a href="about.html" class="active-nav-link text-blue-600 font-bold">Nosotros</a>
+                        <a href="contact.html"
+                            class="nav-link text-gray-700 hover:text-blue-600 transition-colors font-medium">Contacto</a>
+                        <div class="flex items-center space-x-2 border-l pl-8 ml-4 border-gray-200">
+                            <a href="../about.html"
+                                class="text-xs font-bold text-gray-400 hover:text-blue-600 transition-colors">EN</a>
+                            <span class="text-gray-300">|</span>
+                            <span class="text-xs font-bold text-blue-600">ES</span>
+                        </div>
+                    </div><button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-gray-700">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg></button>
+                </div>
+                <div id="mobile-menu" class="hidden md:hidden mt-4 space-y-3 pb-4">
+                    <a href="index.html" class="block nav-link text-gray-700 hover:text-blue-600 font-medium">Inicio</a>
+                    <a href="technology.html"
+                        class="block nav-link text-gray-700 hover:text-blue-600 font-medium">Tecnología</a>
+                    <a href="market.html"
+                        class="block nav-link text-gray-700 hover:text-blue-600 font-medium">Mercado</a>
+                    <a href="sustainability.html"
+                        class="block nav-link text-gray-700 hover:text-blue-600 font-medium">Sustentabilidad</a>
+                    <a href="about.html" class="active-nav-link block text-blue-600 font-bold">Nosotros</a>
+                    <a href="contact.html"
+                        class="block nav-link text-gray-700 hover:text-blue-600 font-medium">Contacto</a>
+                    <div class="pt-4 border-t flex space-x-4">
+                        <a href="../about.html" class="text-sm font-bold text-gray-400">English</a>
+                        <span class="text-sm font-bold text-blue-600">Español</span>
+                    </div>
+                </div>
+            </div>
+        </nav><!-- Page Header -->
+        <header class="gradient-bg pt-32 pb-20 px-6 text-center text-white">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Nosotros</h1>
+                <p class="text-xl opacity-90">Arraigados en el Sur, innovando para el mundo.</p>
+            </div>
+        </header><!-- About Content -->
+        <section class="py-20 px-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-20">
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Fiordo del Sur de Chile"
+                            class="rounded-xl shadow-lg w-full h-auto object-cover transform transition-transform hover:scale-[1.02] duration-500">
+                    </div>
+                    <div>
+                        <h2 class="text-3xl font-bold mb-6 text-gray-800">Nuestros Orígenes</h2>
+                        <p class="text-lg text-gray-600 mb-6 leading-relaxed">Aquabiotics Sur nació en el corazón de la
+                            Región de Los Lagos, en el sur de Chile, un territorio conocido por sus fiordos prístinos y
+                            su próspera industria acuícola. Reconocimos una paradoja: mientras que la industria del
+                            mejillón es un motor económico importante, también genera volúmenes significativos de
+                            residuos líquidos que actualmente se descartan.</p>
+                        <p class="text-lg text-gray-600 leading-relaxed">No vimos esto como un desperdicio, sino como un
+                            depósito sin explotar de valiosas biomoléculas marinas. Nuestro equipo de biólogos e
+                            ingenieros se unió con una única misión: liderar la Economía Circular Azul a través de la
+                            biotecnología marina.</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-20">
+                    <div>
+                        <h2 class="text-3xl font-bold mb-6 text-gray-800 section-title">Misión y Visión</h2>
+                        <p class="text-lg text-gray-600 mb-6 leading-relaxed">Nuestra misión es liderar la Economía
+                            Circular Azul saneando nuestras costas, reemplazando los productos sintéticos con pureza
+                            sostenible y posicionando a la Patagonia como un centro global para la innovación
+                            biotecnológica.</p>
+                        <p class="text-lg text-gray-600 leading-relaxed">Visualizamos un futuro donde la industria del
+                            procesamiento marino lidere el estándar global de economía circular, convirtiendo cada
+                            residuo en un recurso valioso para la salud planetaria.</p>
+                    </div>
+                    <div class="bg-gray-50 p-8 rounded-2xl shadow-inner">
+                        <h3 class="text-xl font-bold mb-4 text-blue-600">Nuestros Valores</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <span class="bg-blue-100 text-blue-600 p-2 rounded-lg mr-4 font-bold">01</span>
+                                <div>
+                                    <h4 class="font-bold">Excelencia Científica</h4>
+                                    <p class="text-gray-500">I+D rigurosa y validación metodológica.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="bg-blue-100 text-blue-600 p-2 rounded-lg mr-4 font-bold">02</span>
+                                <div>
+                                    <h4 class="font-bold">Responsabilidad Ambiental</h4>
+                                    <p class="text-gray-500">Compromiso con la contaminación cero.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="bg-blue-100 text-blue-600 p-2 rounded-lg mr-4 font-bold">03</span>
+                                <div>
+                                    <h4 class="font-bold">Impacto Territorial</h4>
+                                    <p class="text-gray-500">Empoderando a las comunidades del sur de Chile.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Section -->
+                <div class="mt-32">
+                    <h2 class="text-3xl font-bold mb-12 text-center text-gray-800 section-title">Quiénes Somos</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                        <!-- Byron Calderón -->
+                        <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 card-hover">
+                            <div class="flex flex-col items-center text-center mb-6">
+                                <div
+                                    class="w-[100px] h-[100px] rounded-full overflow-hidden border-2 border-blue-600 mb-4 shadow-lg flex items-center justify-center bg-gray-100">
+                                    <img src="../byron.jpg" alt="Byron Calderón"
+                                        class="w-full h-full object-cover scale-110">
+                                </div>
+                                <h3 class="text-2xl font-bold text-gray-800">Byron Calderón</h3>
+                                <p class="text-blue-600 font-medium">CEO | Ingeniero en Biotecnología</p>
+                                <p class="text-sm text-gray-400 mt-1 italic">Sustentando procesos con
+                                    circularidad</p>
+                            </div>
+                            <p class="text-gray-600 leading-relaxed text-center">
+                                Liderando la visión estratégica y científica de Aquabiotics Sur. Con una sólida
+                                formación
+                                en Ingeniería en Biotecnología de la Universidad de Chile, biología de sistemas y
+                                analítica de datos, Byron transforma la ciencia compleja en soluciones industriales
+                                innovadoras. Su experiencia en gestión de calidad (GMP/GCLP/GCP) asegura que nuestros
+                                procesos de biorrefinería operen bajo los más altos estándares globales de excelencia y
+                                circularidad.
+                            </p>
+                            <div class="mt-8 pt-6 border-t border-gray-50 flex justify-center">
+                                <a href="https://www.linkedin.com/in/byron-calder%C3%B3n/" target="_blank"
+                                    class="text-blue-600 hover:text-blue-800 flex items-center gap-2 font-medium">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                                    </svg>
+                                    Perfil LinkedIn
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Francisco Farkas -->
+                        <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 card-hover">
+                            <div class="flex flex-col items-center text-center mb-6">
+                                <div
+                                    class="w-[100px] h-[100px] rounded-full overflow-hidden border-2 border-blue-600 mb-4 shadow-lg flex items-center justify-center bg-gray-100">
+                                    <img src="../francisco.jpg" alt="Francisco Farkas"
+                                        class="w-full h-full object-cover scale-110">
+                                </div>
+                                <h3 class="text-2xl font-bold text-gray-800">Francisco Farkas</h3>
+                                <p class="text-blue-600 font-medium">CMO | MBA</p>
+                                <p class="text-sm text-gray-400 mt-1 italic">Conector Global y Líder en Desarrollo de
+                                    Negocios</p>
+                            </div>
+                            <p class="text-gray-600 leading-relaxed text-center">
+                                Arquitecto de la expansión comercial y excelencia operacional. Francisco aporta una
+                                disciplina de ejecución de alto rendimiento a través del sistema EOS® (Entrepreneurial
+                                Operating System). Su experiencia internacional escalando marcas premium y su enfoque en
+                                la gestión impulsada por KPIs aseguran que la visión de Aquabiotics se transforme en una
+                                realidad escalable y rentable con impacto global en el mercado de la biotecnología
+                                marina.
+                            </p>
+                            <div class="mt-8 pt-6 border-t border-gray-50 flex justify-center">
+                                <a href="https://www.linkedin.com/in/francisco-farkas/" target="_blank"
+                                    class="text-blue-600 hover:text-blue-800 flex items-center gap-2 font-medium">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                                    </svg>
+                                    Perfil LinkedIn
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!-- Footer -->
+        <footer class="py-12 px-6 border-t mt-auto bg-white">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 text-gray-800">
+                    <div>
+                        <div class="flex items-center space-x-2 mb-4">
+                            <img src="../logo.png" alt="Aquabiotics Sur" class="h-10 w-auto"><span
+                                class="font-bold text-gray-800">Aquabiotics Sur</span>
+                        </div>
+                        <p class="text-sm text-gray-500">Biorrefinería circular azul para el bioprocesamiento de taurina
+                            orgánica, trazable y sostenible.</p>
+                        <div class="mt-4 flex space-x-4">
+                            <a href="https://cl.linkedin.com/company/aquabiotics-sur" target="_blank"
+                                rel="noopener noreferrer" class="text-gray-500 hover:text-[#0077B5] transition-colors">
+                                <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="font-bold mb-4">Tecnología</h4>
+                        <ul class="space-y-2 text-sm text-gray-500">
+                            <li><a href="technology.html" class="hover:text-blue-600 transition-colors">Proceso de
+                                    Biorrefinería</a></li>
+                            <li><a href="technology.html" class="hover:text-blue-600 transition-colors">Estándares de
+                                    Calidad</a></li>
+                            <li><a href="technology.html" class="hover:text-blue-600 transition-colors">Innovación</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold mb-4">Compañía</h4>
+                        <ul class="space-y-2 text-sm text-gray-500">
+                            <li><a href="about.html"
+                                    class="hover:text-blue-600 transition-colors border-b border-blue-600">Nosotros</a>
+                            </li>
+                            <li><a href="sustainability.html"
+                                    class="hover:text-blue-600 transition-colors">Sustentabilidad</a></li>
+                            <li><a href="contact.html" class="hover:text-blue-600 transition-colors">Contacto</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold mb-4">Mercados</h4>
+                        <ul class="space-y-2 text-sm text-gray-500">
+                            <li><a href="market.html" class="hover:text-blue-600 transition-colors">Aplicaciones</a>
+                            </li>
+                            <li><a href="market.html" class="hover:text-blue-600 transition-colors">Natural vs
+                                    Sintético</a></li>
+                            <li><a href="market.html" class="hover:text-blue-600 transition-colors">Perspectivas
+                                    Industriales</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pt-8 border-t text-center text-sm text-gray-400">
+                    <p>© 2026 Aquabiotics Sur. Economía circular azul a través de la innovación sostenible.</p>
+                    <div class="mt-2 text-[10px] opacity-60">
+                        <a href="privacy.html" class="hover:text-blue-600 transition-colors">Política de Privacidad</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script>
+        const defaultConfig = {
+            background_color: "#0c4a6e",
+            surface_color: "#ffffff",
+            text_color: "#1e293b",
+            primary_action_color: "#0ea5e9", // Lighter blue for better contrast
+            secondary_action_color: "#10b981",
+            font_family: "Inter",
+            font_size: 16,
+            company_name: "Aquabiotics Sur",
+            tagline: "Naturaleza, Replicada."
+        };
+
+        async function onConfigChange(config) {
+            const backgroundColor = config.background_color || defaultConfig.background_color;
+            const surfaceColor = config.surface_color || defaultConfig.surface_color;
+            const textColor = config.text_color || defaultConfig.text_color;
+            const primaryActionColor = config.primary_action_color || defaultConfig.primary_action_color;
+            const secondaryActionColor = config.secondary_action_color || defaultConfig.secondary_action_color;
+            const fontFamily = config.font_family || defaultConfig.font_family;
+            const fontSize = config.font_size || defaultConfig.font_size;
+
+            // Apply colors
+            document.documentElement.style.setProperty('--bg-color', backgroundColor);
+            document.documentElement.style.setProperty('--surface-color', surfaceColor);
+            document.documentElement.style.setProperty('--text-color', textColor);
+            document.documentElement.style.setProperty('--primary-color', primaryActionColor);
+            document.documentElement.style.setProperty('--secondary-color', secondaryActionColor);
+
+            // Text colors - apply globally
+            document.body.style.color = textColor;
+            // Only apply to elements that don't have explicit color overrides
+            document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, span, div, li, a, label').forEach(el => {
+                if (!el.closest('.gradient-bg') &&
+                    !el.classList.contains('text-blue-600') &&
+                    !el.classList.contains('text-green-500') &&
+                    !el.classList.contains('text-white')) {
+                    el.style.color = textColor;
+                }
+            });
+
+            // Navbar
+            const navbar = document.getElementById('navbar');
+            navbar.style.backgroundColor = surfaceColor;
+            navbar.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.1)';
+
+            // Navbar links
+            document.querySelectorAll('.nav-link').forEach(link => {
+                if (!link.classList.contains('active-nav-link')) {
+                    link.style.color = textColor;
+                }
+            });
+            document.getElementById('mobile-menu-btn').style.color = textColor;
+
+            // Hero/Header section text (white on gradient)
+            document.querySelector('.gradient-bg').style.color = '#ffffff';
+            document.querySelectorAll('.gradient-bg h1, .gradient-bg p, .gradient-bg div').forEach(el => {
+                el.style.color = '#ffffff';
+            });
+
+            // Team cards and badges
+            document.querySelectorAll('.border-blue-600, .text-blue-600').forEach(el => {
+                if (el.tagName === 'A' || el.classList.contains('text-blue-600')) {
+                    el.style.color = primaryActionColor;
+                }
+                if (el.classList.contains('border-blue-600')) {
+                    el.style.borderColor = primaryActionColor;
+                }
+            });
+
+            // Apply font
+            const fontStack = `${fontFamily}, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif`;
+            document.body.style.fontFamily = fontStack;
+            document.querySelectorAll('*').forEach(el => {
+                el.style.fontFamily = fontStack;
+            });
+
+            // Apply font sizes
+            document.documentElement.style.fontSize = `${fontSize}px`;
+            const h1 = document.querySelector('h1');
+            if (h1) h1.style.fontSize = `${fontSize * 3}px`;
+            document.querySelectorAll('h2').forEach(el => el.style.fontSize = `${fontSize * 2.5}px`);
+            document.querySelectorAll('h3').forEach(el => el.style.fontSize = `${fontSize * 1.75}px`);
+
+            // Dynamic text content
+            const companyNameEl = document.getElementById('company-name');
+            if (companyNameEl) companyNameEl.textContent = config.company_name || defaultConfig.company_name;
+            const taglineEl = document.getElementById('tagline');
+            if (taglineEl) taglineEl.textContent = config.tagline || defaultConfig.tagline;
+        }
+
+        // Initialize SDK
+        if (window.elementSdk) {
+            window.elementSdk.init({
+                defaultConfig,
+                onConfigChange
+            });
+        }
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.1)';
+            } else {
+                navbar.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.1)';
+            }
+        });
+
+        // Initial render
+        onConfigChange(defaultConfig);
+    </script>
+</body>
+
+</html>
