@@ -4,6 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
     <title>Contact - Aquabiotics Sur</title>
     <link rel="icon" type="image/png" href="logo.png">
     <script src="/_sdk/element_sdk.js"></script>
@@ -232,6 +241,9 @@
                 </div>
                 <div class="pt-8 border-t text-center text-sm text-gray-400">
                     <p>© 2024 Aquabiotics Sur. Blue circular economy through sustainable innovation.</p>
+                    <div class="mt-2 text-[10px] opacity-60">
+                        <a href="#" class="hover:text-blue-600 transition-colors">Privacy Policy</a>
+                    </div>
                 </div>
             </div>
         </footer>
