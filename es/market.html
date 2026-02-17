@@ -60,6 +60,18 @@
             height: 3px;
             background: linear-gradient(90deg, #0ea5e9, #10b981);
         }
+
+        /* Scroll Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
     <style>
         @view-transition {
@@ -130,7 +142,7 @@
             </div>
         </nav><!-- Page Header -->
         <header class="gradient-bg pt-32 pb-20 px-6 text-center text-white">
-            <div class="max-w-4xl mx-auto">
+            <div class="max-w-4xl mx-auto reveal">
                 <h1 class="text-4xl md:text-5xl font-bold mb-6">Disrupción y Oportunidad de Mercado</h1>
                 <p class="text-xl opacity-90">Escalando metabolitos marinos naturales para una resiliencia
                     biotecnológica global.</p>
@@ -139,7 +151,7 @@
         <section class="py-20 px-6 bg-white">
             <div class="max-w-7xl mx-auto">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-                    <div class="p-8 rounded-xl bg-gray-50 shadow-sm">
+                    <div class="p-8 rounded-xl bg-gray-50 shadow-sm reveal">
                         <h3 class="text-2xl font-bold mb-6 text-gray-800">¿Por qué Taurina Natural?</h3>
                         <p class="text-lg mb-6 text-gray-600">La taurina es un aminoácido vital ampliamente utilizado en
                             comida para mascotas, acuicultura, nutracéuticos y alimentos funcionales. Actualmente, el
@@ -166,7 +178,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="space-y-6">
+                    <div class="space-y-6 reveal" style="transition-delay: 0.2s;">
                         <h3 class="text-2xl font-bold mb-6 text-gray-800">Mercados Objetivo</h3>
                         <div class="p-6 rounded-xl bg-white border border-gray-200 shadow-sm card-hover">
                             <h4 class="font-bold text-xl mb-2 text-indigo-700">Comida para Mascotas</h4>
@@ -373,6 +385,28 @@
 
         // Initial render
         onConfigChange(defaultConfig);
+
+        // Scroll Animation Observer
+        function setupScrollAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: "0px 0px -50px 0px"
+            });
+
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        }
+
+        // Initialize animations after load
+        document.addEventListener('DOMContentLoaded', setupScrollAnimations);
+        if (document.readyState === 'complete' || document.readyState === 'interactive') {
+            setupScrollAnimations();
+        }
     </script>
 </body>
 

@@ -114,6 +114,18 @@
             padding-bottom: 0.25rem;
             width: 100%;
         }
+
+        /* Scroll Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
     <style>
         @view-transition {
@@ -183,21 +195,21 @@
             </div>
         </nav><!-- Page Header -->
         <header class="gradient-bg pt-32 pb-20 px-6 text-center text-white">
-            <div class="max-w-4xl mx-auto">
+            <div class="max-w-4xl mx-auto reveal">
                 <h1 class="text-4xl md:text-5xl font-bold mb-6">Sustainability &amp; Impact</h1>
                 <p class="text-xl opacity-90">Transforming waste into value through circular innovation.</p>
             </div>
         </header><!-- Sustainability Content -->
         <section class="py-20 px-6">
             <div class="max-w-7xl mx-auto">
-                <div class="max-w-4xl mx-auto mb-16 text-center">
+                <div class="max-w-4xl mx-auto mb-16 text-center reveal">
                     <h2 class="text-3xl font-bold mb-6 text-gray-800">Our Circular Model</h2>
                     <p class="text-lg text-gray-600 leading-relaxed">Aquabiotics Sur operates at the intersection of the
                         marine industry and biotechnology, creating a closed-loop system where waste from one process
                         becomes the raw material for another. This approach not only generates economic value but also
                         significantly reduces the environmental footprint of the mussel processing industry.</p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 reveal">
                     <div class="p-8 rounded-xl bg-white shadow-lg border-t-4 border-green-500 card-hover">
                         <h3 class="text-2xl font-bold mb-6 text-gray-800 flex items-center">
                             <svg class="w-8 h-8 mr-3 text-green-500" fill="none" stroke="currentColor"
@@ -246,11 +258,11 @@
                     </div>
                 </div>
                 <div class="mt-20">
-                    <h2 class="text-3xl font-bold mb-12 text-center text-gray-800 section-title">UN Sustainable
+                    <h2 class="text-3xl font-bold mb-12 text-center text-gray-800 section-title reveal">UN Sustainable
                         Development Goals (SDGs)</h2>
 
                     <!-- Group 1: Environmental & Circular -->
-                    <div class="mb-12">
+                    <div class="mb-12 reveal">
                         <h3 class="text-xl font-bold mb-6 text-emerald-700 border-l-4 border-emerald-500 pl-4">Core
                             Environmental & Circular Impact</h3>
                         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
@@ -383,7 +395,7 @@
                     </div>
 
                     <!-- Group 2: Socio-Economic & Territorial -->
-                    <div class="mb-12">
+                    <div class="mb-12 reveal">
                         <h3 class="text-xl font-bold mb-6 text-sky-700 border-l-4 border-sky-500 pl-4">
                             Socio-Economic & Territorial Impact</h3>
                         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
@@ -494,7 +506,7 @@
                     </div>
 
                     <!-- Group 3: Health, Wellbeing & Knowledge -->
-                    <div class="mb-12">
+                    <div class="mb-12 reveal">
                         <h3 class="text-xl font-bold mb-6 text-purple-700 border-l-4 border-purple-500 pl-4">Health,
                             Wellbeing & Knowledge</h3>
                         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -748,6 +760,28 @@
 
         // Initial render
         onConfigChange(defaultConfig);
+
+        // Scroll Animation Observer
+        function setupScrollAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: "0px 0px -50px 0px"
+            });
+
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        }
+
+        // Initialize animations after load
+        document.addEventListener('DOMContentLoaded', setupScrollAnimations);
+        if (document.readyState === 'complete' || document.readyState === 'interactive') {
+            setupScrollAnimations();
+        }
     </script>
 </body>
 

@@ -60,6 +60,18 @@
             height: 3px;
             background: linear-gradient(90deg, #0ea5e9, #10b981);
         }
+
+        /* Scroll Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
     <style>
         @view-transition {
@@ -129,7 +141,7 @@
             </div>
         </nav><!-- Page Header -->
         <header class="gradient-bg pt-32 pb-20 px-6 text-center text-white">
-            <div class="max-w-4xl mx-auto">
+            <div class="max-w-4xl mx-auto reveal">
                 <h1 class="text-4xl md:text-5xl font-bold mb-6">About Us</h1>
                 <p class="text-xl opacity-90">Rooted in the South, innovating for the world.</p>
             </div>
@@ -137,12 +149,12 @@
         <section class="py-20 px-6">
             <div class="max-w-7xl mx-auto">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-20">
-                    <div>
+                    <div class="reveal">
                         <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                             alt="Southern Chile Fjord"
                             class="rounded-xl shadow-lg w-full h-auto object-cover transform transition-transform hover:scale-[1.02] duration-500">
                     </div>
-                    <div>
+                    <div class="reveal" style="transition-delay: 0.2s;">
                         <h2 class="text-3xl font-bold mb-6 text-gray-800">Our Origins</h2>
                         <p class="text-lg text-gray-600 mb-6 leading-relaxed">Aquabiotics Sur was born in the heart of
                             the Los Lagos Region in southern Chile, a territory known for its pristine fjords and
@@ -155,7 +167,7 @@
                             biotechnology.</p>
                     </div>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 reveal">
                     <div class="p-8 rounded-xl bg-gray-50 text-center card-hover shadow-lg">
                         <div
                             class="w-16 h-16 mx-auto mb-6 bg-blue-100 rounded-full flex items-center justify-center text-blue-600">
@@ -201,8 +213,8 @@
 
                 <!-- Team Section -->
                 <div class="mt-32">
-                    <h2 class="text-3xl font-bold mb-12 text-center text-gray-800 section-title">Who We Are</h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <h2 class="text-3xl font-bold mb-12 text-center text-gray-800 section-title reveal">Who We Are</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 reveal">
                         <!-- Byron Calderón -->
                         <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 card-hover">
                             <div class="flex flex-col items-center text-center mb-6">
@@ -448,6 +460,28 @@
 
         // Initial render
         onConfigChange(defaultConfig);
+
+        // Scroll Animation Observer
+        function setupScrollAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: "0px 0px -50px 0px"
+            });
+
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        }
+
+        // Initialize animations after load
+        document.addEventListener('DOMContentLoaded', setupScrollAnimations);
+        if (document.readyState === 'complete' || document.readyState === 'interactive') {
+            setupScrollAnimations();
+        }
     </script>
 </body>
 

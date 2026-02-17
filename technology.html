@@ -81,6 +81,58 @@
         #innovation-card .bg-blue-600 {
             background-color: #2563eb !important;
         }
+
+        /* Scroll Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Glassmorphism Utilities */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .gradient-border-card {
+            position: relative;
+            background: #111827;
+            z-index: 1;
+        }
+
+        .gradient-border-card::before {
+            content: "";
+            position: absolute;
+            inset: -2px;
+            z-index: -1;
+            background: linear-gradient(45deg, #0ea5e9, #10b981, #0ea5e9);
+            background-size: 200% 200%;
+            animation: gradient-flow 10s ease infinite;
+            border-radius: 1rem;
+            opacity: 0.5;
+        }
+
+        @keyframes gradient-flow {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
     </style>
     <style>
         @view-transition {
@@ -156,7 +208,7 @@
         </header><!-- Technology Content -->
         <section class="py-20 px-6">
             <div class="max-w-7xl mx-auto">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 reveal">
                     <div class="p-8 rounded-xl bg-gray-50 card-hover">
                         <h3 class="text-2xl font-bold mb-6 text-gray-800">Raw Material</h3>
                         <p class="text-lg text-gray-600">Mussel cooking broth from industrial processing plants. This
@@ -170,7 +222,8 @@
                             for aquaculture species.</p>
                     </div>
                 </div>
-                <div id="biorefinery-process" class="p-8 rounded-xl bg-white shadow-lg border border-gray-100 mb-12">
+                <div id="biorefinery-process"
+                    class="p-8 rounded-xl bg-white shadow-lg border border-gray-100 mb-12 reveal">
                     <h3 class="text-2xl font-bold mb-8 text-gray-800 text-center">Biorefinery Process</h3>
                     <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
                         <div class="process-arrow relative text-center">
@@ -211,7 +264,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 reveal">
                     <div class="p-8 rounded-xl bg-gray-50 card-hover shadow-sm">
                         <h3 class="text-2xl font-bold mb-6 text-gray-800">Platform Potential</h3>
                         <ul class="space-y-4 text-lg text-gray-600">
@@ -281,11 +334,11 @@
                 </div>
 
                 <!-- Innovation Section -->
-                <div id="innovation" class="mt-20">
+                <div id="innovation" class="mt-20 reveal">
                     <h2 class="text-3xl font-bold mb-10 text-gray-800 section-title text-center block w-full">Innovation
                         Focus</h2>
                     <div id="innovation-card"
-                        class="bg-gray-900 rounded-2xl p-8 md:p-12 text-white relative overflow-hidden shadow-xl">
+                        class="gradient-border-card rounded-2xl p-8 md:p-12 text-white relative overflow-hidden shadow-2xl">
                         <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                             <div>
                                 <h3 class="text-2xl font-bold mb-6 text-blue-400 font-mono">Next-Gen Marine Tech</h3>
@@ -318,7 +371,7 @@
                                 </div>
                             </div>
                             <div
-                                class="bg-gradient-to-br from-blue-600/20 to-teal-600/20 p-8 rounded-xl border border-white/10 backdrop-blur-sm">
+                                class="glass-panel p-8 rounded-xl backdrop-blur-sm transition-transform hover:scale-[1.02] duration-300">
                                 <h4 class="text-xl font-bold mb-4">Our IP Strategy</h4>
                                 <p class="opacity-90 mb-6">Securing the future of marine biotech through proprietary
                                     process patents and trade secrets in metabolite stabilization.</p>
@@ -518,6 +571,29 @@
 
         // Initial render
         onConfigChange(defaultConfig);
+
+        // Scroll Animation Observer
+        function setupScrollAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: "0px 0px -50px 0px"
+            });
+
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        }
+
+        // Initialize animations after load
+        document.addEventListener('DOMContentLoaded', setupScrollAnimations);
+        // Fallback if DOMContentLoaded already fired
+        if (document.readyState === 'complete' || document.readyState === 'interactive') {
+            setupScrollAnimations();
+        }
     </script>
 </body>
 

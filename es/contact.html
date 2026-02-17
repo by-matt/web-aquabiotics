@@ -60,6 +60,18 @@
             height: 3px;
             background: linear-gradient(90deg, #0ea5e9, #10b981);
         }
+
+        /* Scroll Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
     <style>
         @view-transition {
@@ -130,7 +142,7 @@
             </div>
         </nav><!-- Page Header -->
         <header class="gradient-bg pt-32 pb-20 px-6 text-center text-white">
-            <div class="max-w-4xl mx-auto">
+            <div class="max-w-4xl mx-auto reveal">
                 <h1 class="text-4xl md:text-5xl font-bold mb-6">Ponte en Contacto</h1>
                 <p class="text-xl opacity-90">Colaboremos por un futuro más sostenible.</p>
             </div>
@@ -138,7 +150,7 @@
         <section class="py-20 px-6">
             <div class="max-w-5xl mx-auto">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                    <div class="space-y-6">
+                    <div class="space-y-6 reveal">
                         <h2 class="text-3xl font-bold mb-6 text-gray-800">Información de Contacto</h2>
                         <p class="text-lg text-gray-600 mb-8">Ya seas un socio potencial, inversor o cliente, nos
                             encantaría saber de ti.</p>
@@ -172,7 +184,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="bg-gray-50 p-8 rounded-xl shadow-sm">
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-sm reveal" style="transition-delay: 0.2s;">
                         <form id="contact-form" class="space-y-6" action="https://formspree.io/f/mykdeqla"
                             method="POST">
                             <input type="hidden" name="_subject" value="Nuevo mensaje desde Aquabiotics Web">
@@ -397,6 +409,28 @@
 
         // Initial render
         onConfigChange(defaultConfig);
+
+        // Scroll Animation Observer
+        function setupScrollAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: "0px 0px -50px 0px"
+            });
+
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        }
+
+        // Initialize animations after load
+        document.addEventListener('DOMContentLoaded', setupScrollAnimations);
+        if (document.readyState === 'complete' || document.readyState === 'interactive') {
+            setupScrollAnimations();
+        }
     </script>
 </body>
 
