@@ -170,41 +170,46 @@
                 <div id="biorefinery-process" class="p-8 rounded-xl bg-white shadow-lg border border-gray-100 mb-12">
                     <h3 class="text-2xl font-bold mb-8 text-gray-800 text-center">Proceso de Biorrefinería</h3>
                     <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-                        <div class="relative text-center">
+                        <div class="process-arrow relative text-center">
                             <div
-                                class="w-16 h-16 mx-auto rounded-full bg-purple-50 text-[#BF00FF] flex items-center justify-center mb-4 font-bold text-2xl">
-                                1</div>
+                                class="w-16 h-16 mx-auto rounded-full bg-purple-50 text-[#BF00FF] flex items-center justify-center mb-4 font-bold text-2xl marker-1">
+                                1
+                            </div>
                             <h4 class="font-bold mb-2 text-lg">Pre-acondicionamiento Avanzado</h4>
                             <p class="text-sm text-gray-500">Filtración multietapa y clarificación de la matriz del
                                 caldo.</p>
                         </div>
-                        <div class="relative text-center">
+                        <div class="process-arrow relative text-center">
                             <div
-                                class="w-16 h-16 mx-auto rounded-full bg-blue-50 text-[#0055FF] flex items-center justify-center mb-4 font-bold text-2xl">
-                                2</div>
+                                class="w-16 h-16 mx-auto rounded-full bg-blue-50 text-[#0055FF] flex items-center justify-center mb-4 font-bold text-2xl marker-2">
+                                2
+                            </div>
                             <h4 class="font-bold mb-2 text-lg">Concentración Selectiva</h4>
                             <p class="text-sm text-gray-500">Filtración por membranas para retener macromoléculas y
                                 concentrar metabolitos objetivo.</p>
                         </div>
-                        <div class="relative text-center">
+                        <div class="process-arrow relative text-center">
                             <div
-                                class="w-16 h-16 mx-auto rounded-full bg-teal-50 text-[#00E5FF] flex items-center justify-center mb-4 font-bold text-2xl">
-                                3</div>
+                                class="w-16 h-16 mx-auto rounded-full bg-teal-50 text-[#00E5FF] flex items-center justify-center mb-4 font-bold text-2xl marker-3">
+                                3
+                            </div>
                             <h4 class="font-bold mb-2 text-lg">Purificación Molecular Selectiva</h4>
                             <p class="text-sm text-gray-500">Pulido cromatográfico patentado para aislar taurina con un
-                                99%+ de pureza.</p>
+                                99%+ de pureza.
+                            </p>
                         </div>
                         <div class="relative text-center">
                             <div
-                                class="w-16 h-16 mx-auto rounded-full bg-orange-50 text-[#FF5F1F] flex items-center justify-center mb-4 font-bold text-2xl">
-                                4</div>
+                                class="w-16 h-16 mx-auto rounded-full bg-orange-50 text-[#FF5F1F] flex items-center justify-center mb-4 font-bold text-2xl marker-4">
+                                4
+                            </div>
                             <h4 class="font-bold mb-2 text-lg">Secado y Estabilización</h4>
                             <p class="text-sm text-gray-500">Formulación final en un ingrediente seco y estable.</p>
                         </div>
                     </div>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="p-8 rounded-xl bg-gray-50">
+                    <div class="p-8 rounded-xl bg-gray-50 card-hover shadow-sm">
                         <h3 class="text-2xl font-bold mb-6 text-gray-800">Potencial de la Plataforma</h3>
                         <ul class="space-y-4 text-lg text-gray-600">
                             <li class="flex items-start"><span class="text-blue-500 mr-3 mt-1">•</span>
@@ -218,7 +223,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="p-8 rounded-xl bg-gray-50">
+                    <div class="p-8 rounded-xl bg-gray-50 card-hover shadow-sm">
                         <h3 class="text-2xl font-bold mb-6 text-gray-800">Etapa de Desarrollo</h3>
                         <div class="space-y-4 text-gray-600">
                             <p class="text-lg"><strong>TRL Actual:</strong> 3 (Prueba de Concepto Experimental)</p>
@@ -372,14 +377,15 @@
                         </ul>
                     </div>
                     <div>
-                        <h4 class="font-bold mb-4">Mercados</h4>
+                        <h4 class="font-bold mb-4">Mercado</h4>
                         <ul class="space-y-2 text-sm text-gray-500">
-                            <li><a href="market.html" class="hover:text-blue-600 transition-colors">Aplicaciones</a>
-                            </li>
                             <li><a href="market.html" class="hover:text-blue-600 transition-colors">Natural vs
-                                    Sintético</a></li>
-                            <li><a href="market.html" class="hover:text-blue-600 transition-colors">Perspectivas
-                                    Industriales</a></li>
+                                    Sintético</a>
+                            </li>
+                            <li><a href="market.html" class="hover:text-blue-600 transition-colors">Propuesta de
+                                    Valor</a></li>
+                            <li><a href="market.html" class="hover:text-blue-600 transition-colors">Industrias
+                                    Objetivos</a></li>
                         </ul>
                     </div>
                 </div>
@@ -428,7 +434,8 @@
                 if (!el.closest('.gradient-bg') &&
                     !el.classList.contains('text-blue-600') &&
                     !el.classList.contains('text-green-500') &&
-                    !el.classList.contains('text-white')) {
+                    !el.classList.contains('text-white') &&
+                    !Array.from(el.classList).some(cls => cls.startsWith('marker-'))) {
                     el.style.color = textColor;
                 }
             });
@@ -452,10 +459,13 @@
                 el.style.color = '#ffffff';
             });
 
-            // Process steps, etc.
-            document.querySelectorAll('.process-arrow > div:first-child, .process-step-4, [class*="w-10 h-10 rounded-full"]').forEach(el => {
-                el.style.backgroundColor = `${primaryActionColor}20`;
-                el.style.color = primaryActionColor;
+            // Process steps, custom markers, etc.
+            document.querySelectorAll('.process-arrow > div:first-child, .process-step-4, [class*="w-10 h-10 rounded-full"], [class*="marker-"]').forEach(el => {
+                const hasCustomMarker = Array.from(el.classList).some(cls => cls.startsWith('marker-'));
+                if (!hasCustomMarker && !el.classList.contains('text-blue-600') && !el.classList.contains('text-[#BF00FF]') && !el.classList.contains('text-[#0055FF]')) {
+                    el.style.backgroundColor = `${primaryActionColor}20`;
+                    el.style.color = primaryActionColor;
+                }
             });
 
             // Apply font
