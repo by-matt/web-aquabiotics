@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon.png">
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-95YGFVTCSF"></script>
@@ -144,12 +145,16 @@
 </head>
 
 <body class="h-full flex flex-col">
-    <div id="app-wrapper" class="w-full h-full overflow-auto flex-grow"><!-- Navigation -->
-        <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300">
+    <!-- Main App Wrapper -->
+    <div id="app-wrapper" class="w-full h-full overflow-auto flex-grow">
+        <!-- Navigation Bar -->
+        <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300" role="navigation"
+            aria-label="Main Navigation">
             <div class="max-w-7xl mx-auto px-6 py-4">
                 <div class="flex justify-between items-center">
                     <div class="flex items-center space-x-3">
-                        <img src="logo.png" alt="Aquabiotics Sur" class="h-12 w-auto">
+                        <!-- Company Logo -->
+                        <img src="logo.png" alt="Aquabiotics Sur logo" class="h-12 w-auto">
                         <a href="index.html" class="hover:opacity-80 transition-opacity">
                             <div>
                                 <div id="company-name" class="font-bold text-xl tracking-tight">
@@ -162,52 +167,61 @@
                         </a>
                     </div>
                     <div id="nav-menu" class="hidden md:flex space-x-8"><a href="index.html"
-                            class="nav-link hover:opacity-70 transition-opacity font-medium">Home</a> <a
-                            href="technology.html" class="active-nav-link text-blue-600 font-bold">Technology</a> <a
-                            href="market.html"
-                            class="nav-link hover:opacity-70 transition-opacity font-medium">Market</a> <a
-                            href="sustainability.html"
-                            class="nav-link hover:opacity-70 transition-opacity font-medium">Sustainability</a> <a
-                            href="about.html" class="nav-link hover:opacity-70 transition-opacity font-medium">About</a>
+                            class="nav-link hover:opacity-70 transition-opacity font-medium">Home</a>
+                        <a href="technology.html" class="active-nav-link text-blue-600 font-bold">Technology</a>
+                        <a href="market.html"
+                            class="nav-link hover:opacity-70 transition-opacity font-medium">Market</a>
+                        <a href="sustainability.html"
+                            class="nav-link hover:opacity-70 transition-opacity font-medium">Sustainability</a>
+                        <a href="about.html" class="nav-link hover:opacity-70 transition-opacity font-medium">About</a>
                         <a href="contact.html"
                             class="nav-link hover:opacity-70 transition-opacity font-medium">Contact</a>
+                        <!-- Language Switcher -->
                         <div class="flex items-center space-x-2 border-l pl-8 ml-4 border-gray-200">
                             <span class="text-xs font-bold text-blue-600">EN</span>
                             <span class="text-gray-300">|</span>
                             <a href="es/technology.html"
                                 class="text-xs font-bold text-gray-400 hover:text-blue-600 transition-colors">ES</a>
                         </div>
-                    </div><button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg">
+                    </div>
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg" aria-label="Open mobile menu">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M4 6h16M4 12h16M4 18h16" />
                         </svg></button>
                 </div>
                 <div id="mobile-menu" class="hidden md:hidden mt-4 space-y-3 pb-4"><a href="index.html"
-                        class="block nav-link hover:opacity-70 transition-opacity font-medium">Home</a> <a
-                        href="technology.html" class="active-nav-link block text-blue-600 font-bold">Technology</a> <a
-                        href="market.html"
-                        class="block nav-link hover:opacity-70 transition-opacity font-medium">Market</a> <a
-                        href="sustainability.html"
-                        class="block nav-link hover:opacity-70 transition-opacity font-medium">Sustainability</a> <a
-                        href="about.html"
-                        class="block nav-link hover:opacity-70 transition-opacity font-medium">About</a> <a
-                        href="contact.html"
+                        class="block nav-link hover:opacity-70 transition-opacity font-medium">Home</a>
+                    <a href="technology.html" class="active-nav-link block text-blue-600 font-bold">Technology</a>
+                    <a href="market.html"
+                        class="block nav-link hover:opacity-70 transition-opacity font-medium">Market</a>
+                    <a href="sustainability.html"
+                        class="block nav-link hover:opacity-70 transition-opacity font-medium">Sustainability</a>
+                    <a href="about.html"
+                        class="block nav-link hover:opacity-70 transition-opacity font-medium">About</a>
+                    <a href="contact.html"
                         class="block nav-link hover:opacity-70 transition-opacity font-medium">Contact</a>
+                    <!-- Mobile Language Switcher -->
                     <div class="pt-4 border-t flex space-x-4">
                         <span class="text-sm font-bold text-blue-600">English</span>
                         <a href="es/technology.html" class="text-sm font-bold text-gray-400">Español</a>
                     </div>
                 </div>
             </div>
-        </nav><!-- Page Header -->
+        </nav>
+        <!-- Page Header -->
         <header class="gradient-bg pt-32 pb-20 px-6 text-center text-white">
+            <!-- Technology Page Header -->
             <div class="max-w-4xl mx-auto">
                 <h1 class="text-4xl md:text-5xl font-bold mb-6">Technology Platform</h1>
                 <p class="text-xl opacity-90">Advanced marine biorefinery and selective separation technologies.</p>
             </div>
         </header><!-- Technology Content -->
         <section class="py-20 px-6">
+            <!-- ...existing code... -->
+            <!-- Technology Content Section -->
+
             <div class="max-w-7xl mx-auto">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 reveal">
                     <div class="p-8 rounded-xl bg-gray-50 card-hover">
@@ -321,7 +335,7 @@
                             </div>
                             <h4 class="font-bold text-xl mb-3">Industrial Compliance</h4>
                             <p class="text-gray-600">Our operations adhere to international Quality Management
-                                standards, including GMP and GCLP, ensuring safety for food applications.</p>
+                                standards, including GMP and GLP, ensuring safety for food applications.</p>
                         </div>
                         <div class="p-6 bg-white border border-gray-100 rounded-xl shadow-sm card-hover">
                             <div
@@ -391,12 +405,13 @@
             </div>
         </section><!-- Footer -->
         <footer class="py-12 px-6 border-t mt-auto">
+            <!-- Footer -->
             <div class="max-w-7xl mx-auto">
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
                     <div>
                         <div class="flex items-center space-x-2 mb-4">
-                            <img src="logo.png" alt="Aquabiotics Sur" class="h-10 w-auto"><span
-                                class="font-bold text-gray-800">Aquabiotics Sur</span>
+                            <img src="logo.png" alt="Aquabiotics Sur logo" class="h-10 w-auto">
+                            <span class="font-bold text-gray-800">Aquabiotics Sur</span>
                         </div>
                         <p class="text-sm text-gray-500">Blue circular biorefinery for organic, traceable, and
                             sustainable taurine bioprocessing</p>
@@ -414,15 +429,14 @@
                     <div>
                         <h4 class="font-bold mb-4 text-gray-800">Technology</h4>
                         <ul class="space-y-2 text-sm text-gray-600">
-                            <li><a href="technology.html"
+                            <li><a href="#biorefinery-process"
                                     class="text-blue-600 border-b border-blue-600 transition-colors">Biorefinery
                                     Process</a></li>
-                            <li><a href="technology.html"
+                            <li><a href="#quality-standards"
                                     class="text-blue-600 border-b border-blue-600 transition-colors">Quality
                                     Standards</a></li>
-                            <li><a href="technology.html"
-                                    class="text-blue-600 border-b border-blue-600 transition-colors">Innovation</a>
-                            </li>
+                            <li><a href="#innovation"
+                                    class="text-blue-600 border-b border-blue-600 transition-colors">Innovation</a></li>
                         </ul>
                     </div>
                     <div>

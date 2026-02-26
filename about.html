@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon.png">
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-95YGFVTCSF"></script>
@@ -83,12 +84,16 @@
 </head>
 
 <body class="h-full flex flex-col">
-    <div id="app-wrapper" class="w-full h-full overflow-auto flex-grow"><!-- Navigation -->
-        <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300">
+    <!-- Main App Wrapper -->
+    <div id="app-wrapper" class="w-full h-full overflow-auto flex-grow">
+        <!-- Navigation Bar -->
+        <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300" role="navigation"
+            aria-label="Main Navigation">
             <div class="max-w-7xl mx-auto px-6 py-4">
                 <div class="flex justify-between items-center">
                     <div class="flex items-center space-x-3">
-                        <img src="logo.png" alt="Aquabiotics Sur" class="h-12 w-auto">
+                        <!-- Company Logo -->
+                        <img src="logo.png" alt="Aquabiotics Sur logo" class="h-12 w-auto">
                         <a href="index.html" class="hover:opacity-80 transition-opacity">
                             <div>
                                 <div id="company-name" class="font-bold text-xl tracking-tight">
@@ -101,55 +106,63 @@
                         </a>
                     </div>
                     <div id="nav-menu" class="hidden md:flex space-x-8"><a href="index.html"
-                            class="nav-link hover:opacity-70 transition-opacity font-medium">Home</a> <a
-                            href="technology.html"
-                            class="nav-link hover:opacity-70 transition-opacity font-medium">Technology</a> <a
-                            href="market.html"
-                            class="nav-link hover:opacity-70 transition-opacity font-medium">Market</a> <a
-                            href="sustainability.html"
-                            class="nav-link hover:opacity-70 transition-opacity font-medium">Sustainability</a> <a
-                            href="about.html" class="active-nav-link text-blue-600 font-bold">About</a> <a
-                            href="contact.html"
+                            class="nav-link hover:opacity-70 transition-opacity font-medium">Home</a>
+                        <a href="technology.html"
+                            class="nav-link hover:opacity-70 transition-opacity font-medium">Technology</a>
+                        <a href="market.html"
+                            class="nav-link hover:opacity-70 transition-opacity font-medium">Market</a>
+                        <a href="sustainability.html"
+                            class="nav-link hover:opacity-70 transition-opacity font-medium">Sustainability</a>
+                        <a href="about.html" class="active-nav-link text-blue-600 font-bold">About</a>
+                        <a href="contact.html"
                             class="nav-link hover:opacity-70 transition-opacity font-medium">Contact</a>
+                        <!-- Language Switcher -->
                         <div class="flex items-center space-x-2 border-l pl-8 ml-4 border-gray-200">
                             <span class="text-xs font-bold text-blue-600">EN</span>
                             <span class="text-gray-300">|</span>
                             <a href="es/about.html"
                                 class="text-xs font-bold text-gray-400 hover:text-blue-600 transition-colors">ES</a>
                         </div>
-                    </div><button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg">
+                    </div>
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg" aria-label="Open mobile menu">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M4 6h16M4 12h16M4 18h16" />
                         </svg></button>
                 </div>
                 <div id="mobile-menu" class="hidden md:hidden mt-4 space-y-3 pb-4"><a href="index.html"
-                        class="block nav-link hover:opacity-70 transition-opacity font-medium">Home</a> <a
-                        href="technology.html"
-                        class="block nav-link hover:opacity-70 transition-opacity font-medium">Technology</a> <a
-                        href="market.html"
-                        class="block nav-link hover:opacity-70 transition-opacity font-medium">Market</a> <a
-                        href="sustainability.html"
-                        class="block nav-link hover:opacity-70 transition-opacity font-medium">Sustainability</a> <a
-                        href="about.html" class="active-nav-link block text-blue-600 font-bold">About</a> <a
-                        href="contact.html"
+                        class="block nav-link hover:opacity-70 transition-opacity font-medium">Home</a>
+                    <a href="technology.html"
+                        class="block nav-link hover:opacity-70 transition-opacity font-medium">Technology</a>
+                    <a href="market.html"
+                        class="block nav-link hover:opacity-70 transition-opacity font-medium">Market</a>
+                    <a href="sustainability.html"
+                        class="block nav-link hover:opacity-70 transition-opacity font-medium">Sustainability</a>
+                    <a href="about.html" class="active-nav-link block text-blue-600 font-bold">About</a>
+                    <a href="contact.html"
                         class="block nav-link hover:opacity-70 transition-opacity font-medium">Contact</a>
+                    <!-- Mobile Language Switcher -->
                     <div class="pt-4 border-t flex space-x-4">
                         <span class="text-sm font-bold text-blue-600">English</span>
                         <a href="es/about.html" class="text-sm font-bold text-gray-400">Español</a>
                     </div>
                 </div>
             </div>
-        </nav><!-- Page Header -->
+        </nav>
+        <!-- Page Header -->
         <header class="gradient-bg pt-32 pb-20 px-6 text-center text-white">
+            <!-- About Page Header -->
             <div class="max-w-4xl mx-auto reveal">
                 <h1 class="text-4xl md:text-5xl font-bold mb-6">About Us</h1>
                 <p class="text-xl opacity-90">Rooted in the South, innovating for the world.</p>
             </div>
         </header><!-- About Content -->
         <section class="py-20 px-6">
+            <!-- About Content Section -->
             <div class="max-w-7xl mx-auto">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-20">
+                    <!-- About Image and Origins -->
                     <div class="reveal">
                         <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                             alt="Southern Chile Fjord"
@@ -169,6 +182,7 @@
                     </div>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 reveal">
+                    <!-- Mission, Vision, Values Cards -->
                     <div class="p-8 rounded-xl bg-gray-50 text-center card-hover shadow-lg">
                         <div
                             class="w-16 h-16 mx-auto mb-6 bg-blue-100 rounded-full flex items-center justify-center text-blue-600">
@@ -360,15 +374,99 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Timeline -->
+                <div class="mt-32 reveal">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl font-bold text-gray-800 section-title">Our Journey</h2>
+                    </div>
+
+                    <div class="max-w-3xl mx-auto relative pl-6 md:pl-0">
+                        <div
+                            class="absolute left-6 md:left-1/2 top-0 bottom-0 w-1 bg-gray-100 -translate-x-1/2 hidden md:block">
+                        </div>
+                        <div class="absolute left-[26px] top-0 bottom-0 w-1 bg-gray-100 md:hidden"></div>
+
+                        <div class="space-y-12 pb-12">
+                            <!-- 2023 -->
+                            <div class="relative reveal">
+                                <div
+                                    class="md:w-1/2 flex flex-col md:flex-row items-center md:ml-auto md:pl-12 pl-12 md:pl-0">
+                                    <div
+                                        class="absolute top-4 md:top-1/2 left-[10px] md:left-1/2 w-8 h-8 rounded-full bg-white border-4 border-blue-400 flex items-center justify-center -translate-y-1/2 md:-translate-x-1/2 shadow-md z-10">
+                                    </div>
+                                    <div
+                                        class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 w-full hover:shadow-md transition-shadow">
+                                        <div class="text-blue-500 font-extrabold text-2xl mb-1">2023</div>
+                                        <h3 class="text-xl font-bold text-gray-800 mb-2">Idea Conception</h3>
+                                        <p class="text-gray-600">Research in circular economy, sustainability, and
+                                            high-impact industries.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 2024 -->
+                            <div class="relative reveal">
+                                <div
+                                    class="md:w-1/2 flex flex-col md:flex-row items-center md:mr-auto md:pr-12 md:text-right pl-12 md:pl-0">
+                                    <div
+                                        class="absolute top-4 md:top-1/2 left-[10px] md:left-1/2 w-8 h-8 rounded-full bg-white border-4 border-blue-400 flex items-center justify-center -translate-y-1/2 md:-translate-x-1/2 shadow-md z-10">
+                                    </div>
+                                    <div
+                                        class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 w-full hover:shadow-md transition-shadow">
+                                        <div class="text-blue-500 font-extrabold text-2xl mb-1">2024</div>
+                                        <h3 class="text-xl font-bold text-gray-800 mb-2">Project Conception</h3>
+                                        <p class="text-gray-600">Research projection in taurine, revaluation of
+                                            high-volume effluents with high organic load.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 2025 -->
+                            <div class="relative reveal">
+                                <div
+                                    class="md:w-1/2 flex flex-col md:flex-row items-center md:ml-auto md:pl-12 pl-12 md:pl-0">
+                                    <div
+                                        class="absolute top-4 md:top-1/2 left-[10px] md:left-1/2 w-8 h-8 rounded-full bg-white border-4 border-blue-400 flex items-center justify-center -translate-y-1/2 md:-translate-x-1/2 shadow-md z-10">
+                                    </div>
+                                    <div
+                                        class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 w-full hover:shadow-md transition-shadow">
+                                        <div class="text-blue-500 font-extrabold text-2xl mb-1">2025</div>
+                                        <h3 class="text-xl font-bold text-gray-800 mb-2">Fundraising & Investment</h3>
+                                        <p class="text-gray-600">Development of upcycled taurine valorization project,
+                                            postbiotics, parabiotics, human consumption algae, and impacted industries.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 2026 -->
+                            <div class="relative reveal">
+                                <div
+                                    class="md:w-1/2 flex flex-col md:flex-row items-center md:mr-auto md:pr-12 md:text-right pl-12 md:pl-0">
+                                    <div
+                                        class="absolute top-4 md:top-1/2 left-[10px] md:left-1/2 w-8 h-8 rounded-full bg-white border-4 border-blue-400 flex items-center justify-center -translate-y-1/2 md:-translate-x-1/2 shadow-md z-10">
+                                    </div>
+                                    <div
+                                        class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 w-full hover:shadow-md transition-shadow">
+                                        <div class="text-blue-500 font-extrabold text-2xl mb-1">2026</div>
+                                        <h3 class="text-xl font-bold text-gray-800 mb-2">Commercialization & AI
+                                            Integration</h3>
+                                        <p class="text-gray-600">First B2B partnerships, market entry, and application
+                                            of AI/ML models for process optimization.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section><!-- Footer -->
         <footer class="py-12 px-6 border-t mt-auto">
+            <!-- Footer -->
             <div class="max-w-7xl mx-auto">
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
                     <div>
                         <div class="flex items-center space-x-2 mb-4">
-                            <img src="logo.png" alt="Aquabiotics Sur" class="h-10 w-auto"><span
-                                class="font-bold text-gray-800">Aquabiotics Sur</span>
+                            <img src="logo.png" alt="Aquabiotics Sur logo" class="h-10 w-auto">
+                            <span class="font-bold text-gray-800">Aquabiotics Sur</span>
                         </div>
                         <p class="text-sm text-gray-500">Blue circular biorefinery for organic, traceable, and
                             sustainable taurine bioprocessing</p>

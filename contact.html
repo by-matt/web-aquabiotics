@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon.png">
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-95YGFVTCSF"></script>
@@ -83,12 +84,16 @@
 </head>
 
 <body class="h-full flex flex-col">
-    <div id="app-wrapper" class="w-full h-full overflow-auto flex-grow"><!-- Navigation -->
-        <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300">
+    <!-- Main App Wrapper -->
+    <div id="app-wrapper" class="w-full h-full overflow-auto flex-grow">
+        <!-- Navigation Bar -->
+        <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300" role="navigation"
+            aria-label="Main Navigation">
             <div class="max-w-7xl mx-auto px-6 py-4">
                 <div class="flex justify-between items-center">
                     <div class="flex items-center space-x-3">
-                        <img src="logo.png" alt="Aquabiotics Sur" class="h-12 w-auto">
+                        <!-- Company Logo -->
+                        <img src="logo.png" alt="Aquabiotics Sur logo" class="h-12 w-auto">
                         <a href="index.html" class="hover:opacity-80 transition-opacity">
                             <div>
                                 <div id="company-name" class="font-bold text-xl tracking-tight">
@@ -101,54 +106,62 @@
                         </a>
                     </div>
                     <div id="nav-menu" class="hidden md:flex space-x-8"><a href="index.html"
-                            class="nav-link hover:opacity-70 transition-opacity font-medium">Home</a> <a
-                            href="technology.html"
-                            class="nav-link hover:opacity-70 transition-opacity font-medium">Technology</a> <a
-                            href="market.html"
-                            class="nav-link hover:opacity-70 transition-opacity font-medium">Market</a> <a
-                            href="sustainability.html"
-                            class="nav-link hover:opacity-70 transition-opacity font-medium">Sustainability</a> <a
-                            href="about.html" class="nav-link hover:opacity-70 transition-opacity font-medium">About</a>
+                            class="nav-link hover:opacity-70 transition-opacity font-medium">Home</a>
+                        <a href="technology.html"
+                            class="nav-link hover:opacity-70 transition-opacity font-medium">Technology</a>
+                        <a href="market.html"
+                            class="nav-link hover:opacity-70 transition-opacity font-medium">Market</a>
+                        <a href="sustainability.html"
+                            class="nav-link hover:opacity-70 transition-opacity font-medium">Sustainability</a>
+                        <a href="about.html" class="nav-link hover:opacity-70 transition-opacity font-medium">About</a>
                         <a href="contact.html" class="active-nav-link text-blue-600 font-bold">Contact</a>
+                        <!-- Language Switcher -->
                         <div class="flex items-center space-x-2 border-l pl-8 ml-4 border-gray-200">
                             <span class="text-xs font-bold text-blue-600">EN</span>
                             <span class="text-gray-300">|</span>
                             <a href="es/contact.html"
                                 class="text-xs font-bold text-gray-400 hover:text-blue-600 transition-colors">ES</a>
                         </div>
-                    </div><button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg">
+                    </div>
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg" aria-label="Open mobile menu">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M4 6h16M4 12h16M4 18h16" />
                         </svg></button>
                 </div>
                 <div id="mobile-menu" class="hidden md:hidden mt-4 space-y-3 pb-4"><a href="index.html"
-                        class="block nav-link hover:opacity-70 transition-opacity font-medium">Home</a> <a
-                        href="technology.html"
-                        class="block nav-link hover:opacity-70 transition-opacity font-medium">Technology</a> <a
-                        href="market.html"
-                        class="block nav-link hover:opacity-70 transition-opacity font-medium">Market</a> <a
-                        href="sustainability.html"
-                        class="block nav-link hover:opacity-70 transition-opacity font-medium">Sustainability</a> <a
-                        href="about.html"
-                        class="block nav-link hover:opacity-70 transition-opacity font-medium">About</a> <a
-                        href="contact.html" class="active-nav-link block text-blue-600 font-bold">Contact</a>
+                        class="block nav-link hover:opacity-70 transition-opacity font-medium">Home</a>
+                    <a href="technology.html"
+                        class="block nav-link hover:opacity-70 transition-opacity font-medium">Technology</a>
+                    <a href="market.html"
+                        class="block nav-link hover:opacity-70 transition-opacity font-medium">Market</a>
+                    <a href="sustainability.html"
+                        class="block nav-link hover:opacity-70 transition-opacity font-medium">Sustainability</a>
+                    <a href="about.html"
+                        class="block nav-link hover:opacity-70 transition-opacity font-medium">About</a>
+                    <a href="contact.html" class="active-nav-link block text-blue-600 font-bold">Contact</a>
+                    <!-- Mobile Language Switcher -->
                     <div class="pt-4 border-t flex space-x-4">
                         <span class="text-sm font-bold text-blue-600">English</span>
                         <a href="es/contact.html" class="text-sm font-bold text-gray-400">Español</a>
                     </div>
                 </div>
             </div>
-        </nav><!-- Page Header -->
+        </nav>
+        <!-- Page Header -->
         <header class="gradient-bg pt-32 pb-20 px-6 text-center text-white">
+            <!-- Contact Page Header -->
             <div class="max-w-4xl mx-auto reveal">
                 <h1 class="text-4xl md:text-5xl font-bold mb-6">Get in Touch</h1>
                 <p class="text-xl opacity-90">Let's collaborate for a more sustainable future.</p>
             </div>
         </header><!-- Contact Content -->
         <section class="py-20 px-6">
+            <!-- Contact Content Section -->
             <div class="max-w-5xl mx-auto">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <!-- Contact Info and Form -->
                     <div class="space-y-6 reveal">
                         <h2 class="text-3xl font-bold mb-6 text-gray-800">Contact Information</h2>
                         <p class="text-lg text-gray-600 mb-8">Whether you are a potential partner, investor, or
@@ -219,12 +232,13 @@
             </div>
         </section><!-- Footer -->
         <footer class="py-12 px-6 border-t mt-auto">
+            <!-- Footer -->
             <div class="max-w-7xl mx-auto">
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
                     <div>
                         <div class="flex items-center space-x-2 mb-4">
-                            <img src="logo.png" alt="Aquabiotics Sur" class="h-10 w-auto"><span
-                                class="font-bold text-gray-800">Aquabiotics Sur</span>
+                            <img src="logo.png" alt="Aquabiotics Sur logo" class="h-10 w-auto">
+                            <span class="font-bold text-gray-800">Aquabiotics Sur</span>
                         </div>
                         <p class="text-sm text-gray-500">Blue circular biorefinery for organic, traceable, and
                             sustainable taurine bioprocessing</p>

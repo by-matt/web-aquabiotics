@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../favicon.png">
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-95YGFVTCSF"></script>
@@ -165,192 +166,270 @@
             </div>
         </header><!-- Technology Content -->
         <section class="py-20 px-6 bg-white">
+            <!-- Navegación de secciones de Tecnología -->
+            <nav class="mb-12 flex justify-center gap-6" aria-label="Navegación de secciones de tecnología">
+                <a href="#biorefinery-process"
+                    class="tech-section-link px-4 py-2 rounded-lg font-semibold text-gray-700 hover:text-blue-600 transition-colors border-b-2 border-transparent focus:outline-none"
+                    id="link-biorefinery">Biorrefinería</a>
+                <a href="#quality-standards"
+                    class="tech-section-link px-4 py-2 rounded-lg font-semibold text-gray-700 hover:text-blue-600 transition-colors border-b-2 border-transparent focus:outline-none"
+                    id="link-quality">Calidad</a>
+                <a href="#innovation"
+                    class="tech-section-link px-4 py-2 rounded-lg font-semibold text-gray-700 hover:text-blue-600 transition-colors border-b-2 border-transparent focus:outline-none"
+                    id="link-innovation">Innovación</a>
+            </nav>
             <div class="max-w-7xl mx-auto">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 reveal">
-                    <div class="p-8 rounded-xl bg-gray-50 card-hover">
-                        <h3 class="text-2xl font-bold mb-6 text-gray-800">Materia Prima</h3>
-                        <p class="text-lg text-gray-600">Caldo de cocción de mejillones proveniente de plantas
-                            industriales de procesamiento. Este efluente es rico en proteínas, péptidos y aminoácidos
-                            libres, específicamente taurina, la cual es naturalmente abundante en moluscos marinos.</p>
-                    </div>
-                    <div class="p-8 rounded-xl bg-gray-50 card-hover">
-                        <h3 class="text-2xl font-bold mb-6 text-gray-800">Producto Principal</h3>
-                        <p class="text-lg text-gray-600">Taurina natural de origen marino. Un aminoácido esencial con
-                            potentes propiedades antioxidantes y osmorreguladoras, crítico para la salud felina y
-                            beneficioso para especies de acuicultura.</p>
-                    </div>
-                </div>
-                <div id="biorefinery-process"
-                    class="p-8 rounded-xl bg-white shadow-lg border border-gray-100 mb-12 reveal">
-                    <h3 class="text-2xl font-bold mb-8 text-gray-800 text-center">Proceso de Biorrefinería en Cascada
-                    </h3>
-                    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-                        <div class="process-arrow relative text-center">
-                            <div
-                                class="w-16 h-16 mx-auto rounded-full bg-purple-50 text-[#BF00FF] flex items-center justify-center mb-4 font-bold text-2xl marker-1">
-                                1
-                            </div>
-                            <h4 class="font-bold mb-2 text-lg">Pre-acondicionamiento Avanzado</h4>
-                            <p class="text-sm text-gray-500">Filtración multietapa y clarificación de la matriz del
-                                caldo.</p>
-                        </div>
-                        <div class="process-arrow relative text-center">
-                            <div
-                                class="w-16 h-16 mx-auto rounded-full bg-blue-50 text-[#0055FF] flex items-center justify-center mb-4 font-bold text-2xl marker-2">
-                                2
-                            </div>
-                            <h4 class="font-bold mb-2 text-lg">Concentración Selectiva</h4>
-                            <p class="text-sm text-gray-500">Filtración por membranas para retener macromoléculas y
-                                concentrar metabolitos objetivo.</p>
-                        </div>
-                        <div class="process-arrow relative text-center">
-                            <div
-                                class="w-16 h-16 mx-auto rounded-full bg-teal-50 text-[#00E5FF] flex items-center justify-center mb-4 font-bold text-2xl marker-3">
-                                3
-                            </div>
-                            <h4 class="font-bold mb-2 text-lg">Purificación Molecular Selectiva</h4>
-                            <p class="text-sm text-gray-500">Pulido cromatográfico patentado para aislar taurina con un
-                                99%+ de pureza.
+                </head>
+
+                <body class="h-full flex flex-col">
+                    <!-- ...existing code... -->
+                    <script>
+                        // Navegación dinámica de secciones de tecnología (solo para los links de navegación, no footer)
+                        function setActiveTechLink() {
+                            const sections = [
+                                { id: 'biorefinery-process', link: 'link-biorefinery' },
+                                { id: 'quality-standards', link: 'link-quality' },
+                                { id: 'innovation', link: 'link-innovation' }
+                            ];
+                            let active = null;
+                            const scrollY = window.scrollY + 120;
+                            for (const section of sections) {
+                                const el = document.getElementById(section.id);
+                                if (el && el.offsetTop <= scrollY) {
+                                    active = section.link;
+                                }
+                            }
+                            sections.forEach(section => {
+                                const link = document.getElementById(section.link);
+                                if (link && link.classList.contains('tech-section-link')) {
+                                    if (section.link === active) {
+                                        link.classList.add('text-blue-700', 'border-blue-600', 'bg-blue-50', 'shadow-sm');
+                                        link.classList.remove('text-gray-700');
+                                    } else {
+                                        link.classList.remove('text-blue-700', 'border-blue-600', 'bg-blue-50', 'shadow-sm');
+                                        link.classList.add('text-gray-700');
+                                    }
+                                }
+                            });
+                        }
+                        document.addEventListener('scroll', setActiveTechLink);
+                        document.addEventListener('DOMContentLoaded', () => {
+                            setActiveTechLink();
+                            document.querySelectorAll('.tech-section-link').forEach(link => {
+                                link.addEventListener('click', function (e) {
+                                    const targetId = this.getAttribute('href').substring(1);
+                                    const target = document.getElementById(targetId);
+                                    if (target) {
+                                        e.preventDefault();
+                                        window.scrollTo({
+                                            top: target.offsetTop - 100,
+                                            behavior: 'smooth'
+                                        });
+                                    }
+                                });
+                            });
+                        });
+                    </script>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 reveal">
+                        <div class="p-8 rounded-xl bg-gray-50 card-hover">
+                            <h3 class="text-2xl font-bold mb-6 text-gray-800">Materia Prima</h3>
+                            <p class="text-lg text-gray-600">Caldo de cocción de mejillones proveniente de plantas
+                                industriales de procesamiento. Este efluente es rico en proteínas, péptidos y
+                                aminoácidos
+                                libres, específicamente taurina, la cual es naturalmente abundante en moluscos marinos.
                             </p>
                         </div>
-                        <div class="relative text-center">
-                            <div
-                                class="w-16 h-16 mx-auto rounded-full bg-orange-50 text-[#FF5F1F] flex items-center justify-center mb-4 font-bold text-2xl marker-4">
-                                4
+                        <div class="p-8 rounded-xl bg-gray-50 card-hover">
+                            <h3 class="text-2xl font-bold mb-6 text-gray-800">Producto Principal</h3>
+                            <p class="text-lg text-gray-600">Taurina natural de origen marino. Un aminoácido esencial
+                                con
+                                potentes propiedades antioxidantes y osmorreguladoras, crítico para la salud felina y
+                                beneficioso para especies de acuicultura.</p>
+                        </div>
+                    </div>
+                    <div id="biorefinery-process"
+                        class="p-8 rounded-xl bg-white shadow-lg border border-gray-100 mb-12 reveal">
+                        <h3 class="text-2xl font-bold mb-8 text-gray-800 text-center">Proceso de Biorrefinería en
+                            Cascada
+                        </h3>
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                            <div class="process-arrow relative text-center">
+                                <div
+                                    class="w-16 h-16 mx-auto rounded-full bg-purple-50 text-[#BF00FF] flex items-center justify-center mb-4 font-bold text-2xl marker-1">
+                                    1
+                                </div>
+                                <h4 class="font-bold mb-2 text-lg">Pre-acondicionamiento Avanzado</h4>
+                                <p class="text-sm text-gray-500">Filtración multietapa y clarificación de la matriz del
+                                    caldo.</p>
                             </div>
-                            <h4 class="font-bold mb-2 text-lg">Secado y Estabilización</h4>
-                            <p class="text-sm text-gray-500">Formulación final en un ingrediente seco y estable.</p>
+                            <div class="process-arrow relative text-center">
+                                <div
+                                    class="w-16 h-16 mx-auto rounded-full bg-blue-50 text-[#0055FF] flex items-center justify-center mb-4 font-bold text-2xl marker-2">
+                                    2
+                                </div>
+                                <h4 class="font-bold mb-2 text-lg">Concentración Selectiva</h4>
+                                <p class="text-sm text-gray-500">Filtración por membranas para retener macromoléculas y
+                                    concentrar metabolitos objetivo.</p>
+                            </div>
+                            <div class="process-arrow relative text-center">
+                                <div
+                                    class="w-16 h-16 mx-auto rounded-full bg-teal-50 text-[#00E5FF] flex items-center justify-center mb-4 font-bold text-2xl marker-3">
+                                    3
+                                </div>
+                                <h4 class="font-bold mb-2 text-lg">Purificación Molecular Selectiva</h4>
+                                <p class="text-sm text-gray-500">Pulido cromatográfico patentado para aislar taurina con
+                                    un
+                                    99%+ de pureza.
+                                </p>
+                            </div>
+                            <div class="relative text-center">
+                                <div
+                                    class="w-16 h-16 mx-auto rounded-full bg-orange-50 text-[#FF5F1F] flex items-center justify-center mb-4 font-bold text-2xl marker-4">
+                                    4
+                                </div>
+                                <h4 class="font-bold mb-2 text-lg">Secado y Estabilización</h4>
+                                <p class="text-sm text-gray-500">Formulación final en un ingrediente seco y estable.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 reveal">
-                    <div class="p-8 rounded-xl bg-gray-50 card-hover shadow-sm">
-                        <h3 class="text-2xl font-bold mb-6 text-gray-800">Potencial de la Plataforma</h3>
-                        <ul class="space-y-4 text-lg text-gray-600">
-                            <li class="flex items-start"><span class="text-blue-500 mr-3 mt-1">•</span>
-                                <span><strong>Eficiencia en Cascada:</strong> Valorización de doble flujo (Extracción de
-                                    Taurina + Producción de Biomasa Microalgal), asegurando residuos casi cero.</span>
-                            </li>
-                            <li class="flex items-start"><span class="text-blue-500 mr-3 mt-1">•</span>
-                                <span><strong>Recuperación multiproducto:</strong> Potencial para extraer valor
-                                    adicional de otros aminoácidos y péptidos marinos.</span>
-                            </li>
-                            <li class="flex items-start"><span class="text-blue-500 mr-3 mt-1">•</span>
-                                <span><strong>Ingredientes funcionales:</strong> Desarrollo de nuevos compuestos
-                                    bioactivos para aplicaciones nutracéuticas mediante funcionalización biológica
-                                    controlada.</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="p-8 rounded-xl bg-gray-50 card-hover shadow-sm">
-                        <h3 class="text-2xl font-bold mb-6 text-gray-800">Etapa de Desarrollo</h3>
-                        <div class="space-y-4 text-gray-600">
-                            <p class="text-lg"><strong>TRL Actual:</strong> 3 (Prueba de Concepto Experimental)</p>
-                            <p class="">Validación a escala de laboratorio completada (TRL 1-2). Avanzando hacia la
-                                validación a escala piloto para demostrar la factibilidad industrial y viabilidad
-                                económica.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 reveal">
+                        <div class="p-8 rounded-xl bg-gray-50 card-hover shadow-sm">
+                            <h3 class="text-2xl font-bold mb-6 text-gray-800">Potencial de la Plataforma</h3>
+                            <ul class="space-y-4 text-lg text-gray-600">
+                                <li class="flex items-start"><span class="text-blue-500 mr-3 mt-1">•</span>
+                                    <span><strong>Eficiencia en Cascada:</strong> Valorización de doble flujo
+                                        (Extracción de
+                                        Taurina + Producción de Biomasa Microalgal), asegurando residuos casi
+                                        cero.</span>
+                                </li>
+                                <li class="flex items-start"><span class="text-blue-500 mr-3 mt-1">•</span>
+                                    <span><strong>Recuperación multiproducto:</strong> Potencial para extraer valor
+                                        adicional de otros aminoácidos y péptidos marinos.</span>
+                                </li>
+                                <li class="flex items-start"><span class="text-blue-500 mr-3 mt-1">•</span>
+                                    <span><strong>Ingredientes funcionales:</strong> Desarrollo de nuevos compuestos
+                                        bioactivos para aplicaciones nutracéuticas mediante funcionalización biológica
+                                        controlada.</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="p-8 rounded-xl bg-gray-50 card-hover shadow-sm">
+                            <h3 class="text-2xl font-bold mb-6 text-gray-800">Etapa de Desarrollo</h3>
+                            <div class="space-y-4 text-gray-600">
+                                <p class="text-lg"><strong>TRL Actual:</strong> 3 (Prueba de Concepto Experimental)</p>
+                                <p class="">Validación a escala de laboratorio completada (TRL 1-2). Avanzando hacia la
+                                    validación a escala piloto para demostrar la factibilidad industrial y viabilidad
+                                    económica.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Quality Standards Section -->
-                <div id="quality-standards" class="mt-20">
-                    <h2 class="text-3xl font-bold mb-10 text-gray-800 section-title reveal">Estándares de Calidad</h2>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 reveal">
-                        <div class="p-6 bg-white border border-gray-100 rounded-xl shadow-sm card-hover">
-                            <div
-                                class="w-12 h-12 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center mb-4">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                </svg>
+                    <!-- Quality Standards Section -->
+                    <div id="quality-standards" class="mt-20">
+                        <h2 class="text-3xl font-bold mb-10 text-gray-800 section-title reveal">Estándares de Calidad
+                        </h2>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 reveal">
+                            <div class="p-6 bg-white border border-gray-100 rounded-xl shadow-sm card-hover">
+                                <div
+                                    class="w-12 h-12 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center mb-4">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                </div>
+                                <h4 class="font-bold text-xl mb-3">Alta Pureza</h4>
+                                <p class="text-gray-600">La separación cromatográfica selectiva garantiza una taurina
+                                    natural de alta concentración, libre de residuos sintéticos y contaminantes.</p>
                             </div>
-                            <h4 class="font-bold text-xl mb-3">Alta Pureza</h4>
-                            <p class="text-gray-600">La separación cromatográfica selectiva garantiza una taurina
-                                natural de alta concentración, libre de residuos sintéticos y contaminantes.</p>
-                        </div>
-                        <div class="p-6 bg-white border border-gray-100 rounded-xl shadow-sm card-hover">
-                            <div
-                                class="w-12 h-12 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center mb-4">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 9.172V5L8 4z">
-                                    </path>
-                                </svg>
+                            <div class="p-6 bg-white border border-gray-100 rounded-xl shadow-sm card-hover">
+                                <div
+                                    class="w-12 h-12 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center mb-4">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 9.172V5L8 4z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <h4 class="font-bold text-xl mb-3">Cumplimiento Industrial</h4>
+                                <p class="text-gray-600">Nuestras operaciones se adhieren a los estándares
+                                    internacionales
+                                    de Gestión de Calidad, incluyendo BPM y BPL, garantizando la seguridad para
+                                    aplicaciones alimenticias.</p>
                             </div>
-                            <h4 class="font-bold text-xl mb-3">Cumplimiento Industrial</h4>
-                            <p class="text-gray-600">Nuestras operaciones se adhieren a los estándares internacionales
-                                de Gestión de Calidad, incluyendo GMP y GCLP, garantizando la seguridad para
-                                aplicaciones alimenticias.</p>
-                        </div>
-                        <div class="p-6 bg-white border border-gray-100 rounded-xl shadow-sm card-hover">
-                            <div
-                                class="w-12 h-12 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center mb-4">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
-                                    </path>
-                                </svg>
+                            <div class="p-6 bg-white border border-gray-100 rounded-xl shadow-sm card-hover">
+                                <div
+                                    class="w-12 h-12 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center mb-4">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <h4 class="font-bold text-xl mb-3">Trazabilidad Total</h4>
+                                <p class="text-gray-600">Control total sobre la fuente de materia prima proveniente de
+                                    las
+                                    aguas prístinas de las plantas procesadoras de mejillón del sur de Chile.</p>
                             </div>
-                            <h4 class="font-bold text-xl mb-3">Trazabilidad Total</h4>
-                            <p class="text-gray-600">Control total sobre la fuente de materia prima proveniente de las
-                                aguas prístinas de las plantas procesadoras de mejillón del sur de Chile.</p>
                         </div>
                     </div>
-                </div>
 
-                <!-- Innovation Section -->
-                <div id="innovation" class="mt-20">
-                    <h2 class="text-3xl font-bold mb-10 text-gray-800 section-title text-center block w-full reveal">
-                        Foco en
-                        Innovación</h2>
-                    <div id="innovation-card"
-                        class="bg-gray-900 rounded-2xl p-8 md:p-12 text-white relative overflow-hidden shadow-xl reveal">
-                        <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                            <div>
-                                <h3 class="text-2xl font-bold mb-6 text-blue-400 font-mono">Tecnología Marina de
-                                    Siguiente Generación</h3>
-                                <p class="text-lg mb-8 leading-relaxed">Somos pioneros en el uso de <strong>upcycling
-                                        molecular dirigido</strong> combinado con <strong>ingeniería avanzada de
-                                        bioprocesos</strong> para construir un verdadero modelo de biorrefinería
-                                    circular.</p>
-                                <div class="space-y-4">
-                                    <div class="flex items-center gap-4">
-                                        <div
-                                            class="w-8 h-8 flex-shrink-0 rounded-full bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-[#BF00FF] font-bold">
-                                            01</div>
-                                        <span>Optimización científica para la recuperación
-                                            bioquímica.</span>
-                                    </div>
-                                    <div class="flex items-center gap-4">
-                                        <div
-                                            class="w-8 h-8 flex-shrink-0 rounded-full bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-[#0055FF] font-bold">
-                                            02</div>
-                                        <span>Separación selectiva por membranas en puntos de corte de peso
-                                            molecular.</span>
-                                    </div>
-                                    <div class="flex items-center gap-4">
-                                        <div
-                                            class="w-8 h-8 flex-shrink-0 rounded-full bg-teal-500/10 border border-teal-500/30 flex items-center justify-center text-[#00E5FF] font-bold">
-                                            03</div>
-                                        <span>Modelado predictivo impulsado por IA para la optimización de la materia
-                                            prima.</span>
+                    <!-- Innovation Section -->
+                    <div id="innovation" class="mt-20">
+                        <h2
+                            class="text-3xl font-bold mb-10 text-gray-800 section-title text-center block w-full reveal">
+                            Foco en
+                            Innovación</h2>
+                        <div id="innovation-card"
+                            class="bg-gray-900 rounded-2xl p-8 md:p-12 text-white relative overflow-hidden shadow-xl reveal">
+                            <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                                <div>
+                                    <h3 class="text-2xl font-bold mb-6 text-blue-400 font-mono">Tecnología Marina de
+                                        Siguiente Generación</h3>
+                                    <p class="text-lg mb-8 leading-relaxed">Somos pioneros en el uso de
+                                        <strong>upcycling
+                                            molecular dirigido</strong> combinado con <strong>ingeniería avanzada de
+                                            bioprocesos</strong> para construir un verdadero modelo de biorrefinería
+                                        circular.
+                                    </p>
+                                    <div class="space-y-4">
+                                        <div class="flex items-center gap-4">
+                                            <div
+                                                class="w-8 h-8 flex-shrink-0 rounded-full bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-[#BF00FF] font-bold">
+                                                01</div>
+                                            <span>Optimización científica para la recuperación
+                                                bioquímica.</span>
+                                        </div>
+                                        <div class="flex items-center gap-4">
+                                            <div
+                                                class="w-8 h-8 flex-shrink-0 rounded-full bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-[#0055FF] font-bold">
+                                                02</div>
+                                            <span>Separación selectiva por membranas en puntos de corte de peso
+                                                molecular.</span>
+                                        </div>
+                                        <div class="flex items-center gap-4">
+                                            <div
+                                                class="w-8 h-8 flex-shrink-0 rounded-full bg-teal-500/10 border border-teal-500/30 flex items-center justify-center text-[#00E5FF] font-bold">
+                                                03</div>
+                                            <span>Modelado predictivo impulsado por IA para la optimización de la
+                                                materia
+                                                prima.</span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div
-                                class="bg-gradient-to-br from-blue-600/20 to-teal-600/20 p-8 rounded-xl border border-white/10 backdrop-blur-sm">
-                                <h4 class="text-xl font-bold mb-4">Nuestra Estrategia de IP</h4>
-                                <p class="opacity-90 mb-6">Asegurando el futuro de la biotecnología marina a través de
-                                    patentes de proceso propias y secretos comerciales en la estabilización de
-                                    metabolitos.</p>
-                                <button
-                                    class="px-6 py-3 bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors font-bold text-sm">Descargar
-                                    Specs Técnicos (Próximamente)</button>
+                                <div
+                                    class="bg-gradient-to-br from-blue-600/20 to-teal-600/20 p-8 rounded-xl border border-white/10 backdrop-blur-sm">
+                                    <h4 class="text-xl font-bold mb-4">Nuestra Estrategia de IP</h4>
+                                    <p class="opacity-90 mb-6">Asegurando el futuro de la biotecnología marina a través
+                                        de
+                                        patentes de proceso propias y secretos comerciales en la estabilización de
+                                        metabolitos.</p>
+                                    <button
+                                        class="px-6 py-3 bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors font-bold text-sm">Descargar
+                                        Specs Técnicos (Próximamente)</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
             </div>
         </section><!-- Footer -->
         <footer class="py-12 px-6 border-t mt-auto bg-white">
