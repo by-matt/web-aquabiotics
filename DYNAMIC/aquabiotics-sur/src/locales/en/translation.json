@@ -70,22 +70,22 @@
         "our_journey": "Our Journey",
         "timeline": [
             {
-                "year": "2023",
+                "year": "2024",
                 "title": "Idea Conception",
                 "desc": "Research in circular economy, sustainability, and high-impact industries."
             },
             {
-                "year": "2024",
+                "year": "2025",
                 "title": "Project Conception",
                 "desc": "Research projection in taurine, revaluation of high-volume effluents with high organic load."
             },
             {
-                "year": "2025",
+                "year": "2026",
                 "title": "Fundraising & Investment",
                 "desc": "Development of upcycled taurine valorization project, postbiotics, parabiotics, human consumption algae, and impacted industries."
             },
             {
-                "year": "2026",
+                "year": "2027",
                 "title": "Commercialization & AI Integration",
                 "desc": "First B2B partnerships, market entry, and application of AI/ML models for process optimization."
             }
@@ -468,30 +468,26 @@
                 "nat": "Full origin traceability"
             }
         ],
-        "proj_title": "Market Projection (2024 - 2030)",
-        "proj_desc": "The global taurine market is projected to reach approximately $7.6 Billion by 2032, growing at a CAGR of 5.92%. This growth is driven by rising demand in pet food, aquaculture, and functional beverages, where natural marine-origin alternatives are captured as premium, sought-after segments.",
-        "proj_trend_nat": "Natural Taurine Segment Projection",
-        "proj_trend_synth": "Synthetic Taurine Market Baseline",
+        "proj_title": "Market Projection & Opportunities",
+        "proj_desc": "According to Fundación Chile (FMI 2019), the global taurine market represents 84,819 tons annually, valued at US$ 256.3 million with an accelerated growth rate (5.7% CAGR). Driven by demand in energy beverages (24%), animal nutrition (23%), and pharmaceuticals (16%), the market is currently dominated by synthetic taurine (93.8%) due to its low cost. This presents a unique opportunity for natural, traceable, marine-derived alternatives that respond to the global shift toward 'Clean Label' products.",
+        "proj_trend_value": "Market Value (US$ Millions)",
+        "proj_trend_volume": "Market Volume (Tons)",
         "sources_title": "Market Data Sources",
         "sources": [
             {
-                "name": "Grand View Research",
-                "report": "Taurine Market Size & Share Analysis Report (2024-2030)",
-                "link": "https://www.grandviewresearch.com"
-            },
-            {
-                "name": "Market Research Future",
-                "report": "Taurine Market Research Perspective (2024-2032)",
-                "link": "https://www.marketresearchfuture.com"
-            },
-            {
-                "name": "SkyQuest Technology",
-                "report": "Global Taurine Market Forecast (2024-2031)",
-                "link": "https://www.skyquestt.com"
+                "name": "Fundación Chile (FMI 2019)",
+                "report": "Estudio de Mercado de Bioproductos Marinos (Taller 1)",
+                "link": "https://fch.cl/wp-content/uploads/2019/12/taller-1-estudio-mercado-bioproductos.pdf"
             }
         ],
         "target_industries": "Target Industries",
         "industries": [
+            {
+                "name": "Functional Foods",
+                "icon": "energy",
+                "focus": "Energy drinks & wellness products.",
+                "desc": "Certified Upcycled & Clean Label energy drinks seeking to replace synthetic ingredients with sustainable, marine-derived alternatives."
+            },
             {
                 "name": "Pet Food Manufacturers",
                 "icon": "pet",
@@ -509,12 +505,6 @@
                 "icon": "nutra",
                 "focus": "Human health supplements.",
                 "desc": "High-purity natural taurine for heart health and athletic performance supplements."
-            },
-            {
-                "name": "Functional Foods",
-                "icon": "energy",
-                "focus": "Energy drinks & wellness products.",
-                "desc": "Certified Upcycled & Clean Label energy drinks seeking to replace synthetic ingredients with sustainable, marine-derived alternatives."
             }
         ]
     },

@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "date": "14 Feb, 2026",
+    "dateEs": "14 de Febrero, 2026",
+    "category": "Circular Economy",
+    "categoryEs": "Economía Circular",
+    "title": "Biorefinery Prototype Integration: Scale-up Phase",
+    "titleEs": "Integración de Prototipo de Biorrefinería: Fase de Escalamiento",
+    "excerpt": "We have successfully integrated our proprietary selective separation technology into the main processing line.",
+    "excerptEs": "Hemos integrado con éxito nuestra tecnología propia de separación selectiva en la línea principal de proceso.",
+    "url": "https://cl.linkedin.com/company/aquabiotics-sur"
+  },
+  {
+    "id": 2,
+    "date": "10 Feb, 2026",
+    "dateEs": "10 de Febrero, 2026",
+    "category": "Sustainability",
+    "categoryEs": "Sustentabilidad",
+    "title": "Territorial Impact: Partnering with Local Producers",
+    "titleEs": "Impacto Territorial: Alianza con Productores Locales de Mejillón",
+    "excerpt": "Deepening our commitment to the territorial impact in Southern Chile through new operational partnerships.",
+    "excerptEs": "Profundizando nuestro compromiso con el impacto territorial en el sur de Chile a través de nuevas asociaciones operativas.",
+    "url": "https://cl.linkedin.com/company/aquabiotics-sur"
+  },
+  {
+    "id": 3,
+    "date": "05 Feb, 2026",
+    "dateEs": "05 de Febrero, 2026",
+    "category": "Innovation",
+    "categoryEs": "Innovación",
+    "title": "Blue Circular Economy: 0% Waste, 100% Value",
+    "titleEs": "Economía Circular Azul: 0% Residuo, 100% Valor",
+    "excerpt": "Explaining our core philosophy: why natural taurine from cooking broth is the key to a sustainable market.",
+    "excerptEs": "Explicando nuestra filosofía central: por qué la taurina natural a partir del caldo de cocción es la clave.",
+    "url": "https://cl.linkedin.com/company/aquabiotics-sur"
+  }
+]

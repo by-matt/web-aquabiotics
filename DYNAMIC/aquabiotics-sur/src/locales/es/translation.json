@@ -70,22 +70,22 @@
         "our_journey": "Nuestra Trayectoria",
         "timeline": [
             {
-                "year": "2023",
+                "year": "2024",
                 "title": "Concepción de Idea",
                 "desc": "Investigación en economía circular, sostenibilidad e industrias de alto impacto."
             },
             {
-                "year": "2024",
+                "year": "2025",
                 "title": "Concepción de Proyecto",
                 "desc": "Proyección de investigación en taurina, revalorización de efluentes de alto volumen de alta carga orgánica."
             },
             {
-                "year": "2025",
+                "year": "2026",
                 "title": "Búsqueda de Fondos e Inversión",
                 "desc": "Desarrollo de proyecto de valorización de taurina suprareclicada, postbioticos, parabioticos, algas de consumo humano, e industrias impactadas."
             },
             {
-                "year": "2026",
+                "year": "2027",
                 "title": "Comercialización e Integración con IA",
                 "desc": "Primeras alianzas B2B, entrada al mercado y aplicación de modelos de IA/ML para la optimización de procesos."
             }
@@ -443,30 +443,26 @@
                 "nat": "Trazabilidad total de origen"
             }
         ],
-        "proj_title": "Proyección de Mercado (2024 - 2030)",
-        "proj_desc": "Se proyecta que el mercado global de taurina alcance aproximadamente los $7.6 mil millones para 2032, creciendo a una tasa compuesta anual (CAGR) del 5.92%. Este crecimiento está impulsado por la creciente demanda en pet food, acuicultura y bebidas funcionales, donde las alternativas naturales de origen marino se posicionan como segmentos premium altamente demandados.",
-        "proj_trend_nat": "Segmento Taurina Natural (Proyectado)",
-        "proj_trend_synth": "Mercado Taurina Sintética (Base)",
+        "proj_title": "Proyección de Mercado y Oportunidades",
+        "proj_desc": "Según Fundación Chile (FMI 2019), el mercado global de taurina alcanza las 84.819 toneladas anuales, valorizadas en US$ 256,3 millones, con un crecimiento acelerado (CAGR del 5,7%). Impulsado por la demanda en bebidas estimulantes (24%), nutrición animal (23%) y farmacéuticos (16%), el mercado está dominado actualmente por la taurina sintética (93.8%) debido a su bajo costo. Esto presenta una oportunidad única para introducir alternativas naturales, trazables y de origen marino que respondan a la tendencia global hacia productos 'Clean Label'.",
+        "proj_trend_value": "Valor de Mercado (US$ Millones)",
+        "proj_trend_volume": "Volumen de Mercado (Toneladas)",
         "sources_title": "Fuentes de Datos de Mercado",
         "sources": [
             {
-                "name": "Grand View Research",
-                "report": "Análisis de Tamaño y Participación del Mercado de Taurina (2024-2030)",
-                "link": "https://www.grandviewresearch.com"
-            },
-            {
-                "name": "Market Research Future",
-                "report": "Perspectiva de Investigación del Mercado de Taurina (2024-2032)",
-                "link": "https://www.marketresearchfuture.com"
-            },
-            {
-                "name": "SkyQuest Technology",
-                "report": "Pronóstico del Mercado Global de Taurina (2024-2031)",
-                "link": "https://www.skyquestt.com"
+                "name": "Fundación Chile (FMI 2019)",
+                "report": "Estudio de Mercado de Bioproductos Marinos (Taller 1)",
+                "link": "https://fch.cl/wp-content/uploads/2019/12/taller-1-estudio-mercado-bioproductos.pdf"
             }
         ],
         "target_industries": "Industrias Objetivo",
         "industries": [
+            {
+                "name": "Alimentos Funcionales",
+                "icon": "energy",
+                "focus": "Bebidas energéticas y productos de bienestar.",
+                "desc": "Bebidas energéticas con certificación Upcycled & Clean Label que buscan reemplazar ingredientes sintéticos con alternativas sostenibles de origen marino."
+            },
             {
                 "name": "Productores de Pet Food",
                 "icon": "pet",
@@ -484,12 +480,6 @@
                 "icon": "nutra",
                 "focus": "Suplementos para la salud humana.",
                 "desc": "Taurina natural de alta pureza para suplementos de salud cardíaca y rendimiento deportivo."
-            },
-            {
-                "name": "Alimentos Funcionales",
-                "icon": "energy",
-                "focus": "Bebidas energéticas y productos de bienestar.",
-                "desc": "Bebidas energéticas con certificación Upcycled & Clean Label que buscan reemplazar ingredientes sintéticos con alternativas sostenibles de origen marino."
             }
         ]
     },
