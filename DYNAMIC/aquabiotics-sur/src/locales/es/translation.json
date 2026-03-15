@@ -1,0 +1,629 @@
+{
+    "nav": {
+        "home": "Inicio",
+        "technology": "Tecnología",
+        "market": "Mercado",
+        "sustainability": "Sostenibilidad",
+        "about": "Nosotros",
+        "contact": "Contacto",
+        "tagline": "Naturaleza, replicada."
+    },
+    "hero": {
+        "title": "Taurina Natural mediante Biorrefinería Circular Marina",
+        "hero_subtitle": "Biorrefinería circular azul para el bioprocesamiento de taurina orgánica, trazable y sostenible.",
+        "subtitle": "Valorizando los efluentes de cocción del mejillón en metabolitos marinos de alto valor",
+        "cta_primary": "Explorar Tecnología",
+        "cta_secondary": "Contactar"
+    },
+    "stats": {
+        "natural": "100%",
+        "natural_label": "Origen Natural",
+        "waste": "Cero",
+        "waste_label": "Descarga de Residuos",
+        "esg": "ESG",
+        "esg_label": "Alineados"
+    },
+    "about_blurb": "Aquabiotics Sur es un proyecto de biotecnología marina enfocado en la recuperación y purificación de taurina natural a partir de los caldos residuales de cocción generados por la industria del mejillón en el sur de Chile. Mediante un enfoque de biorrefinería sostenible, transformamos una corriente de residuos líquidos industriales en un ingrediente funcional de alto valor, alineado con los principios de la economía circular y el impacto territorial.",
+    "challenge": {
+        "title": "El Desafío",
+        "body": "El proceso de cocción del mejillón genera grandes volúmenes de efluentes líquidos con alta carga orgánica, actualmente gestionados como residuos. Estas corrientes residuales contienen valiosos metabolitos endógenos, como la taurina, que se pierden a pesar de su significativo valor industrial y funcional. Esto representa tanto un pasivo ambiental como una oportunidad económica perdida para el sector transformador de alimentos marinos."
+    },
+    "solution": {
+        "title": "Nuestra Solución",
+        "intro": "Aquabiotics Sur aplica tecnologías de biorrefinería marina y separación selectiva para recuperar la taurina presente de forma natural en el caldo de cocción de mejillones.",
+        "process_title": "Nuestro proceso permite:",
+        "bullets": [
+            "La valorización de un residuo industrial existente",
+            "La producción de taurina con origen marino y trazabilidad",
+            "La reducción de la carga ambiental asociada a los efluentes líquidos"
+        ],
+        "closing": "El resultado es una plataforma escalable para la producción sostenible de metabolitos derivados del mar."
+    },
+    "updates": {
+        "title": "Últimas Novedades",
+        "subtitle": "Sigue nuestro viaje en la biotecnología marina y la economía circular mientras escalamos nuestro impacto.",
+        "cta": "Ver todas las publicaciones en LinkedIn",
+        "view_post": "Ver publicación completa"
+    },
+    "footer": {
+        "tagline": "Biorrefinería circular azul para bioprocesamiento de taurina orgánica, trazable y sostenible",
+        "technology": "Tecnología",
+        "company": "Compañía",
+        "market": "Mercado",
+        "copyright": "© 2026 Aquabiotics Sur. Economía circular azul mediante innovación sostenible.",
+        "privacy": "Política de Privacidad",
+        "links": {
+            "biorefinery": "Proceso de Biorrefinería",
+            "quality": "Estándares de Calidad",
+            "innovation": "Innovación",
+            "about": "Sobre Nosotros",
+            "sustainability": "Sostenibilidad",
+            "contact": "Contacto",
+            "natural_vs": "Natural vs Sintético",
+            "value": "Propuesta de Valor",
+            "industries": "Industrias Objetivo"
+        }
+    },
+    "about_page": {
+        "hero_subtitle": "Arraigados en el Sur, innovando para el mundo.",
+        "who_we_are": "Quiénes Somos",
+        "our_journey": "Nuestra Trayectoria",
+        "timeline": [
+            {
+                "year": "2023",
+                "title": "Concepción de Idea",
+                "desc": "Investigación en economía circular, sostenibilidad e industrias de alto impacto."
+            },
+            {
+                "year": "2024",
+                "title": "Concepción de Proyecto",
+                "desc": "Proyección de investigación en taurina, revalorización de efluentes de alto volumen de alta carga orgánica."
+            },
+            {
+                "year": "2025",
+                "title": "Búsqueda de Fondos e Inversión",
+                "desc": "Desarrollo de proyecto de valorización de taurina suprareclicada, postbioticos, parabioticos, algas de consumo humano, e industrias impactadas."
+            },
+            {
+                "year": "2026",
+                "title": "Comercialización e Integración con IA",
+                "desc": "Primeras alianzas B2B, entrada al mercado y aplicación de modelos de IA/ML para la optimización de procesos."
+            }
+        ],
+        "values": [
+            {
+                "title": "Circularidad desde el Diseño",
+                "desc": "Eliminamos los residuos y mantenemos los materiales en uso."
+            },
+            {
+                "title": "Rigor Científico",
+                "desc": "Biotecnología basada en evidencia que asegura la máxima calidad."
+            },
+            {
+                "title": "Valor Territorial",
+                "desc": "Empoderando a las comunidades locales en el sur de Chile."
+            }
+        ],
+        "origins_title": "Nuestros Orígenes",
+        "origins_p1": "Aquabiotics Sur nació en el corazón de la Región de Los Lagos, en el sur de Chile, un territorio conocido por sus fiordos prístinos y su próspera industria acuícola. Reconocimos una paradoja: mientras que la industria del mejillón es un motor económico importante, también genera volúmenes significativos de residuos líquidos que actualmente se descartan.",
+        "origins_p2": "No vimos esto como un desperdicio, sino como un depósito sin explotar de valiosas biomoléculas marinas. Nuestro equipo de biólogos e ingenieros se unió con una única misión: liderar la Economía Circular Azul a través de la biotecnología marina.",
+        "cards": [
+            {
+                "title": "Misión",
+                "desc": "Liderar la Economía Circular Azul saneando nuestras costas, reemplazando los productos sintéticos con pureza sostenible y posicionando a la Patagonia como un centro global para la innovación biotecnológica."
+            },
+            {
+                "title": "Visión",
+                "desc": "Ser el líder global en metabolitos marinos reciclados, estableciendo el estándar de excelencia en economía circular y biotecnología desde el corazón de la Patagonia."
+            },
+            {
+                "title": "Ubicación",
+                "desc": "Operaciones estratégicas en la Región de Los Lagos, Chile, el centro de la industria del mejillón chileno."
+            }
+        ],
+        "team_title": "Quiénes Somos",
+        "team": [
+            {
+                "name": "Byron Calderón",
+                "role": "CEO | Biotecnólogo | Desarrollo de Bioprocesos Sostenibles | Estrategia Científica",
+                "sub_role": "Líder Científico y Estratégico",
+                "img": "byron.jpg",
+                "linkedin": "https://www.linkedin.com/in/byron-calder%C3%B3n/",
+                "paragraphs": [
+                    "Especializado en el diseño de bioprocesos sostenibles, microbiología industrial e innovación basada en la ciencia. Su trabajo se fundamenta en la integración de la biología molecular, la ingeniería bioquímica y los principios de economía circular para transformar desafíos ambientales en soluciones biológicas escalables y de alto valor.",
+                    "Con experiencia en investigación, biotecnología industrial y gestión de proyectos, aporta un enfoque estructurado y basado en evidencia a la innovación. Su trayectoria profesional abarca microbiología aplicada, optimización de bioprocesos, sistemas de agua, estándares de calidad y redacción técnica científica. Combina el rigor analítico con la capacidad de ejecución, asegurando que los conceptos científicos trasciendan el potencial de laboratorio hacia sistemas comercialmente viables.",
+                    "En Aquabiotics Sur, desempeña un papel clave en el desarrollo científico y estratégico del modelo de biorrefinería circular azul de la empresa. Su enfoque se centra en el diseño y validación de procesos de bio-minería orgánica que transforman los flujos secundarios industriales de la industria mitilicultora de la Patagonia en compuestos bioactivos de origen marino, trazables y de alta pureza. Su trabajo apoya la transición de modelos extractivos a una biotecnología marina regenerativa y de valor agregado."
+                ],
+                "contributions_title": "Contribuciones Clave:",
+                "contributions": [
+                    "Diseño y optimización de bioprocesos",
+                    "Validación científica y marcos de calidad",
+                    "Métricas de sostenibilidad e integración de circularidad",
+                    "Documentación técnica y alineación regulatoria",
+                    "Desarrollo de hoja de ruta de innovación"
+                ],
+                "paragraphs_end": [
+                    "Su visión se alinea con posicionar a la Patagonia chilena como un referente global en biotecnología marina sostenible. Le motiva particularmente la oportunidad de reemplazar ingredientes derivados de petroquímicos con alternativas biológicamente recicladas que preserven la integridad del ecosistema mientras generan valor económico.",
+                    "Más allá del desarrollo operativo, aporta una mentalidad de pensamiento sistémico a la organización. Concibe la biotecnología marina no como un esfuerzo de un solo producto, sino como una plataforma para la transformación industrial regenerativa a largo plazo. Su trabajo refleja un compromiso con la integridad científica, la gestión ambiental y el impacto escalable.",
+                    "En Aquabiotics Sur, representa la integración de un profundo entendimiento científico con una ejecución pragmática — asegurando que la innovación sea medible, trazable y globalmente competitiva."
+                ]
+            }
+        ]
+    },
+    "sustainability_page": {
+        "hero_subtitle": "Valorizando los efluentes de cocción del mejillón en metabolitos marinos de alto valor.",
+        "impact_metrics": "Métricas de Impacto",
+        "circular_economy": "Nuestro Modelo Circular",
+        "circular_model_desc": "Aquabiotics Sur opera en la intersección de la industria marina y la biotecnología, creando un sistema de ciclo cerrado donde el residuo de un proceso se convierte en la materia prima de otro. Este enfoque no solo genera valor económico, sino que también reduce significativamente la huella ambiental de la industria del procesamiento de mejillones.",
+        "impact_cards": [
+            {
+                "title": "Impacto Ambiental",
+                "color": "emerald",
+                "items": [
+                    {
+                        "label": "Reducción de Residuos:",
+                        "text": "Reutiliza directamente 120-160 millones de litros anuales de residuos líquidos orgánicos, evitando su descarga en ecosistemas marinos delicados."
+                    },
+                    {
+                        "label": "Prevención de la Contaminación:",
+                        "text": "Disminuye la demanda biológica de oxígeno (DBO) y la demanda química de oxígeno (DQO) de los efluentes."
+                    },
+                    {
+                        "label": "Eficiencia de Recursos:",
+                        "text": "Maximiza la utilidad de los recursos marinos cosechados sin necesidad de extracción adicional."
+                    }
+                ]
+            },
+            {
+                "title": "Valor Social y Económico",
+                "color": "blue",
+                "items": [
+                    {
+                        "label": "Desarrollo Territorial:",
+                        "text": "Aporta valor a la economía local en el sur de Chile (Región de Los Lagos)."
+                    },
+                    {
+                        "label": "Ecosistema de Innovación:",
+                        "text": "Fomenta la colaboración entre la pesca artesanal/industrial y el sector biotecnológico de alta tecnología."
+                    },
+                    {
+                        "label": "Nuevas Fuentes de Ingresos:",
+                        "text": "Convierte un centro de costos (disposición de residuos) en un centro de beneficios para la industria."
+                    }
+                ]
+            }
+        ],
+        "sdg_title": "Objetivos de Desarrollo Sostenible (ODS) de la ONU",
+        "sdg_groups": [
+            {
+                "title": "Impacto Ambiental y Circular Central",
+                "color": "emerald",
+                "items": [
+                    {
+                        "id": 12,
+                        "color": "#BF8B2E",
+                        "title": "Producción Responsable",
+                        "subtitle": "Patrones de consumo sostenibles.",
+                        "overlay_title": "Metas y Alineación",
+                        "targets": [
+                            "Meta 12.5: Reducir sustancialmente la generación de residuos mediante el upcycling de efluentes.",
+                            "Meta 12.4: Gestión ecológicamente racional de los desechos a lo largo de su ciclo de vida."
+                        ]
+                    },
+                    {
+                        "id": 14,
+                        "color": "#0A97D9",
+                        "title": "Vida Submarina",
+                        "subtitle": "Conservación y uso del océano.",
+                        "overlay_title": "Metas y Alineación",
+                        "targets": [
+                            "Meta 14.1: Prevenir y reducir significativamente la contaminación marina por nutrientes.",
+                            "Meta 14.2: Gestionar y proteger los ecosistemas marinos y costeros de manera sostenible."
+                        ]
+                    },
+                    {
+                        "id": 6,
+                        "color": "#26BDE2",
+                        "title": "Agua Limpia",
+                        "subtitle": "Gestión sostenible del agua.",
+                        "overlay_title": "Metas y Alineación",
+                        "targets": [
+                            "Meta 6.3: Mejorar la calidad del agua reduciendo la contaminación y las aguas residuales sin tratar."
+                        ]
+                    },
+                    {
+                        "id": 9,
+                        "color": "#FD6925",
+                        "title": "Innovación",
+                        "subtitle": "Fomento de ecosistemas resilientes.",
+                        "overlay_title": "Metas y Alineación",
+                        "targets": [
+                            "Meta 9.4: Modernizar industrias con tecnologías limpias y mayor eficiencia de recursos.",
+                            "Meta 9.5: Aumentar la investigación científica y mejorar las capacidades tecnológicas industriales."
+                        ]
+                    },
+                    {
+                        "id": 13,
+                        "color": "#3F7E44",
+                        "title": "Acción Climática",
+                        "subtitle": "Lucha contra el cambio climático.",
+                        "overlay_title": "Metas y Alineación",
+                        "targets": [
+                            "Meta 13.2: Integrar medidas de bio-extracción bajas en carbono en nuestras estrategias industriales."
+                        ]
+                    },
+                    {
+                        "id": 15,
+                        "color": "#56C02B",
+                        "title": "Vida Terrestre",
+                        "subtitle": "Restauración de ecosistemas.",
+                        "overlay_title": "Metas y Alineación",
+                        "targets": [
+                            "Meta 15.5: Reducir la degradación del hábitat optimizando los recursos marinos."
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Impacto Socioeconómico y Territorial",
+                "color": "sky",
+                "items": [
+                    {
+                        "id": 8,
+                        "color": "#A21942",
+                        "title": "Trabajo Decente",
+                        "subtitle": "Crecimiento económico sostenible.",
+                        "overlay_title": "Metas y Alineación",
+                        "targets": [
+                            "Meta 8.2: Mayor productividad económica mediante la modernización tecnológica.",
+                            "Meta 8.4: Mejorar la eficiencia de los recursos, desvinculando el crecimiento de la degradación."
+                        ]
+                    },
+                    {
+                        "id": 1,
+                        "color": "#E5243B",
+                        "title": "Fin de la Pobreza",
+                        "subtitle": "Acabar con la pobreza en todo el mundo.",
+                        "overlay_title": "Metas y Alineación",
+                        "targets": [
+                            "Meta 1.4: Garantizar el acceso a nuevas tecnologías apropiadas para la generación de valor regional."
+                        ]
+                    },
+                    {
+                        "id": 10,
+                        "color": "#DD1367",
+                        "title": "Reducir Desigualdades",
+                        "subtitle": "Igualdad dentro de los países.",
+                        "overlay_title": "Metas y Alineación",
+                        "targets": [
+                            "Meta 10.2: Empoderar la inclusión socioeconómica mediante la descentralización de la biotecnología."
+                        ]
+                    },
+                    {
+                        "id": 11,
+                        "color": "#FD9D24",
+                        "title": "Ciudades Sostenibles",
+                        "subtitle": "Asentamientos resilientes.",
+                        "overlay_title": "Metas y Alineación",
+                        "targets": [
+                            "Meta 11.6: Reducir el impacto ambiental mejorando la coexistencia industrial-urbana y el control de residuos."
+                        ]
+                    },
+                    {
+                        "id": 17,
+                        "color": "#19486A",
+                        "title": "Alianzas",
+                        "subtitle": "Cooperación global.",
+                        "overlay_title": "Metas y Alineación",
+                        "targets": [
+                            "Meta 17.6: Mejorar la cooperación regional en ciencia, tecnología e innovación."
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Salud, Bienestar y Conocimiento",
+                "color": "purple",
+                "items": [
+                    {
+                        "id": 2,
+                        "color": "#DDA63A",
+                        "title": "Hambre Cero",
+                        "subtitle": "Producción sostenible de alimentos.",
+                        "overlay_title": "Metas y Alineación",
+                        "targets": [
+                            "Meta 2.4: Garantizar la producción sostenible de alimentos enriqueciendo cadenas con nutrientes naturales."
+                        ]
+                    },
+                    {
+                        "id": 3,
+                        "color": "#4C9F38",
+                        "title": "Salud y Bienestar",
+                        "subtitle": "Promoviendo vidas saludables.",
+                        "overlay_title": "Metas y Alineación",
+                        "targets": [
+                            "Meta 3.4: Reducir la mortalidad prematura mediante la provisión de metabolitos naturales como la Taurina."
+                        ]
+                    },
+                    {
+                        "id": 4,
+                        "color": "#C5192D",
+                        "title": "Educación de Calidad",
+                        "subtitle": "Aprendizaje de por vida e inclusivo.",
+                        "overlay_title": "Metas y Alineación",
+                        "targets": [
+                            "Meta 4.4: Aumentar el número de personas con habilidades técnicas para la Economía Biotecnológica Azul."
+                        ]
+                    },
+                    {
+                        "id": 5,
+                        "color": "#FF3A21",
+                        "title": "Igualdad de Género",
+                        "subtitle": "Empoderando a las mujeres.",
+                        "overlay_title": "Metas y Alineación",
+                        "targets": [
+                            "Meta 5.5: Garantizar el liderazgo y la participación de las mujeres en STEM industrial."
+                        ]
+                    }
+                ]
+            }
+        ],
+        "mussel_farm": "Cultivo Mejillón",
+        "cooking_broth": "Caldo de Cocción",
+        "effluent": "(Efluente)",
+        "biorefinery": "Biorrefinería",
+        "step_1": "FUENTE",
+        "step_2": "UPCYCLING",
+        "step_3": "REFINERÍA",
+        "farm_desc": "Cultivo sostenible en las aguas prístinas del sur de Chile.",
+        "broth_desc": "Captura de efluentes marinos valiosos de plantas de proceso.",
+        "refinery_desc": "Biotecnología avanzada para extraer componentes naturales.",
+        "territorial_impact": "Impacto Territorial",
+        "territory_desc": "Operando en la Región de Los Lagos, Chile, el epicentro de la industria mundial del mejillón.",
+        "metrics": [
+            {
+                "label": "Efluente Valorizado"
+            },
+            {
+                "label": "Recuperación de Agua"
+            },
+            {
+                "label": "Reducción de Huella de Carbono"
+            }
+        ]
+    },
+    "contact_page": {
+        "hero_title": "Ponte en Contacto",
+        "hero_subtitle": "Colaboremos por un futuro más sostenible.",
+        "hero_sub": "Colaboremos por un futuro más sostenible.",
+        "contact_info": "Información de Contacto",
+        "contact_desc": "Ya sea un socio potencial, inversor o cliente, nos encantaría escucharlo. Contáctenos para conversar sobre posibles colaboraciones.",
+        "email_us": "Escríbenos",
+        "location": "Ubicación",
+        "location_desc": "Región de Los Lagos, Sur de Chile",
+        "linkedin": "LinkedIn",
+        "follow": "Sigue a Aquabiotics Sur",
+        "form": {
+            "name": "Nombre",
+            "name_ph": "Tu nombre",
+            "email": "Correo Electrónico",
+            "email_ph": "tu@email.com",
+            "message": "Mensaje",
+            "message_ph": "¿Cómo podemos ayudarte?",
+            "send": "Enviar Mensaje",
+            "sending": "Enviando...",
+            "success": "✅ ¡Mensaje enviado con éxito! Nos comunicaremos pronto.",
+            "error": "❌ Algo salió mal. Por favor, intenta de nuevo o escríbenos directamente."
+        }
+    },
+    "market_page": {
+        "hero_subtitle": "Liderando la transición global hacia ingredientes de origen natural y trazable.",
+        "comp_title": "Atributo",
+        "synth_col": "Taurina Sintética",
+        "nat_col": "Taurina Natural (Aquabiotics)",
+        "rows": [
+            {
+                "attr": "Fuente",
+                "synth": "Derivados petroquímicos",
+                "nat": "Biomasa marina (upcycled)"
+            },
+            {
+                "attr": "Impacto Ambiental",
+                "synth": "Alta huella de carbono",
+                "nat": "Carbono negativo / Circular"
+            },
+            {
+                "attr": "Percepción del Consumidor",
+                "synth": "Aditivo artificial",
+                "nat": "Etiqueta limpia, origen natural"
+            },
+            {
+                "attr": "Traceability",
+                "synth": "Baja a nula",
+                "nat": "Trazabilidad total de origen"
+            }
+        ],
+        "proj_title": "Proyección de Mercado (2024 - 2030)",
+        "proj_desc": "Se proyecta que el mercado global de taurina alcance aproximadamente los $7.6 mil millones para 2032, creciendo a una tasa compuesta anual (CAGR) del 5.92%. Este crecimiento está impulsado por la creciente demanda en pet food, acuicultura y bebidas funcionales, donde las alternativas naturales de origen marino se posicionan como segmentos premium altamente demandados.",
+        "proj_trend_nat": "Segmento Taurina Natural (Proyectado)",
+        "proj_trend_synth": "Mercado Taurina Sintética (Base)",
+        "sources_title": "Fuentes de Datos de Mercado",
+        "sources": [
+            {
+                "name": "Grand View Research",
+                "report": "Análisis de Tamaño y Participación del Mercado de Taurina (2024-2030)",
+                "link": "https://www.grandviewresearch.com"
+            },
+            {
+                "name": "Market Research Future",
+                "report": "Perspectiva de Investigación del Mercado de Taurina (2024-2032)",
+                "link": "https://www.marketresearchfuture.com"
+            },
+            {
+                "name": "SkyQuest Technology",
+                "report": "Pronóstico del Mercado Global de Taurina (2024-2031)",
+                "link": "https://www.skyquestt.com"
+            }
+        ],
+        "target_industries": "Industrias Objetivo",
+        "industries": [
+            {
+                "name": "Productores de Pet Food",
+                "icon": "pet",
+                "focus": "Nutrición felina (nutriente esencial).",
+                "desc": "Marcas premium de alimentos naturales para mascotas que buscan aditivos no sintéticos."
+            },
+            {
+                "name": "Alimento para Acuicultura",
+                "icon": "fish",
+                "focus": "Nutrición sustentable para peces.",
+                "desc": "Reemplazo de harina de pescado con alimentos funcionales de origen vegetal suplementados con taurina natural."
+            },
+            {
+                "name": "Nutracéuticos",
+                "icon": "nutra",
+                "focus": "Suplementos para la salud humana.",
+                "desc": "Taurina natural de alta pureza para suplementos de salud cardíaca y rendimiento deportivo."
+            },
+            {
+                "name": "Alimentos Funcionales",
+                "icon": "energy",
+                "focus": "Bebidas energéticas y productos de bienestar.",
+                "desc": "Bebidas energéticas con certificación Upcycled & Clean Label que buscan reemplazar ingredientes sintéticos con alternativas sostenibles de origen marino."
+            }
+        ]
+    },
+    "technology_page": {
+        "hero_subtitle": "Escalando la recuperación de metabolitos marinos mediante bioprocesos circulares.",
+        "biorefinery": "Proceso de Biorrefinería",
+        "steps": [
+            {
+                "title": "Pre-acondicionamiento Avanzado",
+                "desc": "Filtración multietapa y clarificación de la matriz del caldo."
+            },
+            {
+                "title": "Concentración Selectiva",
+                "desc": "Filtración por membrana para retener macromoléculas y concentrar metabolitos objetivo."
+            },
+            {
+                "title": "Purificación Molecular Selectiva",
+                "desc": "Pulido cromatográfico patentado para aislar taurina con un 99%+ de pureza."
+            },
+            {
+                "title": "Secado y Estabilización",
+                "desc": "Formulación final en un ingrediente seco y estable."
+            },
+            {
+                "title": "Mercado",
+                "desc": "Integración en alimentos funcionales y nutracéuticos."
+            }
+        ],
+        "quality_desc": "Nuestro proceso asegura los más altos estándares de pureza y trazabilidad, alineados con las normativas internacionales de seguridad alimentaria. Al mantener una línea de biorrefinería controlada de principio a fin, garantizamos un ingrediente de primera calidad para las aplicaciones más exigentes.",
+        "innov_desc": "Optimizamos continuamente nuestros métodos de separación selectiva, combinando biotecnología con ingeniería de procesos avanzada. Esto nos permite escalar eficientemente mientras maximizamos las tasas de recuperación de metabolitos marinos endógenos que de otro modo se perderían.",
+        "innovation_nextgen": {
+            "title": "Tecnología Marina de Próxima Generación",
+            "subtitle": "Somos pioneros en el uso de suprareciclaje molecular dirigido combinado con ingeniería de bioprocesos avanzada para construir un modelo de biorrefinería circular real.",
+            "items": [
+                "Optimización científica para la recuperación bioquímica.",
+                "Separación selectiva por membranas en puntos de corte de peso molecular.",
+                "Modelado predictivo impulsado por IA para la optimización de materias primas."
+            ],
+            "ip_strategy_title": "Nuestra Estrategia de IP",
+            "ip_strategy_desc": "Asegurando el futuro de la biotecnología marina a través de patentes de procesos propietarias y secretos comerciales en la estabilización de metabolitos.",
+            "download_btn": "Descargar Ficha Técnica (Próximamente)"
+        },
+        "innovation_cards": [
+            {
+                "title": "Potencial de la Plataforma",
+                "items": [
+                    {
+                        "label": "Eficiencia en Cascada",
+                        "desc": "Valorización de doble flujo (extracción de Taurina + producción de biomasa microalgal) asegurando residuos cercanos a cero y el máximo retorno económico."
+                    },
+                    {
+                        "label": "Recuperación de Multi-productos",
+                        "desc": "Potencial para extraer valor adicional de otros aminoácidos y péptidos marinos."
+                    },
+                    {
+                        "label": "Ingredientes Funcionales",
+                        "desc": "Desarrollo de nuevos compuestos bioactivos para aplicaciones nutracéuticas mediante funcionalización biológica controlada."
+                    }
+                ]
+            },
+            {
+                "title": "Etapa de Desarrollo",
+                "trl_label": "TRL Actual",
+                "trl_value": "3 (Prueba de Concepto Experimental)",
+                "desc": "Validación a escala de laboratorio completada (TRL 1-2). Avanzando hacia la validación a escala piloto para demostrar la viabilidad industrial y económica."
+            }
+        ],
+        "quality_cards": [
+            {
+                "title": "Alta Pureza",
+                "desc": "La separación cromatográfica selectiva garantiza una taurina natural de alta concentración, libre de residuos sintéticos y contaminantes."
+            },
+            {
+                "title": "Cumplimiento Industrial",
+                "desc": "Nuestras operaciones se adhieren a los estándares internacionales de Gestión de Calidad, incluyendo BPM y BPL, garantizando la seguridad para aplicaciones alimenticias."
+            },
+            {
+                "title": "Trazabilidad Total",
+                "desc": "Control total sobre la fuente de materia prima proveniente de las aguas prístinas de las plantas procesadoras de mejillón del sur de Chile."
+            }
+        ],
+        "raw_material_title": "Materia Prima",
+        "raw_material_desc": "Caldo de cocción de mejillones proveniente de plantas industriales de procesamiento. Este efluente es rico en proteínas, péptidos y aminoácidos libres, específicamente taurina, la cual es naturalmente abundante en moluscos marinos.",
+        "main_product_title": "Producto Principal",
+        "main_product_desc": "Taurina natural de origen marino. Un aminoácido esencial con potentes propiedades antioxidantes y osmorreguladoras, crítico para la salud felina y beneficioso para especies de acuicultura."
+    },
+    "updates_new": {
+        "u1_title": "Integración de Prototipo de Biorrefinería: Fase de Escalamiento",
+        "u1_cat": "Economía Circular",
+        "u1_date": "14 de Febrero, 2026",
+        "u1_exc": "Hemos integrado con éxito nuestra tecnología propia de separación selectiva en la línea principal de proceso, mejorando las tasas de recuperación.",
+        "u2_title": "Impacto Territorial: Alianza con Productores Locales de Mejillón",
+        "u2_cat": "Sustentabilidad",
+        "u2_date": "10 de Febrero, 2026",
+        "u2_exc": "Profundizando nuestro compromiso con el impacto territorial en el sur de Chile a través de nuevas asociaciones operativas.",
+        "u3_title": "Economía Circular Azul: 0% Residuo, 100% Valor",
+        "u3_cat": "Innovación",
+        "u3_date": "05 de Febrero, 2026",
+        "u3_exc": "Explicando nuestra filosofía central: por qué la taurina natural a partir del caldo de cocción es la clave."
+    },
+    "privacy_page": {
+        "title": "Política de Privacidad",
+        "last_updated": "Última actualización: 14 de febrero de 2026",
+        "sections": [
+            {
+                "title": "1. Introducción",
+                "content": "En Aquabiotics Sur, estamos comprometidos a proteger su privacidad y garantizar la seguridad de su información técnica. Esta política describe cómo recopilamos y utilizamos los datos técnicos para mejorar nuestra plataforma de \"Economía Circular Azul\"."
+            },
+            {
+                "title": "2. Datos que Recopilamos",
+                "content": "Utilizamos Google Analytics 4 (GA4) para entender cómo los usuarios interactúan con nuestro sitio web. La información recopilada incluye:",
+                "bullets": [
+                    "Identificadores técnicos (dirección IP, anonimizada).",
+                    "Datos geográficos (País, Región y Municipio/Comuna).",
+                    "Información del dispositivo (Tipo de navegador, sistema operativo).",
+                    "Comportamiento de navegación (Tiempo de permanencia en las páginas, enlaces visitados)."
+                ]
+            },
+            {
+                "title": "3. Propósito de la Recopilación",
+                "content": "Los datos se utilizan exclusivamente para análisis estadísticos e informes internos con el fin de optimizar nuestro contenido técnico, mejorar el rendimiento del sitio y comprender mejor el interés del mercado global en la biotecnología marina."
+            },
+            {
+                "title": "4. Cumplimiento Legal (Chile)",
+                "content": "Esta política está diseñada para cumplir con la Ley Chilena N° 19.628 sobre la Protección de la Vida Privada. No vendemos, alquilamos ni compartimos sus datos personales con terceros para fines de marketing."
+            },
+            {
+                "title": "5. Cookies",
+                "content": "Nuestro sitio utiliza cookies estrictamente para la funcionalidad de Google Analytics. Puede optar por desactivar las cookies en la configuración de su navegador si desea excluirse de este seguimiento."
+            },
+            {
+                "title": "6. Contacto",
+                "content": "Si tiene alguna pregunta sobre esta política de privacidad, comuníquese con nosotros a través de nuestra Página de Contacto oficial."
+            }
+        ]
+    }
+}
