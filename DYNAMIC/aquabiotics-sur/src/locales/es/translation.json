@@ -417,7 +417,32 @@
         }
     },
     "market_page": {
+        "title": "Oportunidad de Mercado",
         "hero_subtitle": "Liderando la transición global hacia ingredientes de origen natural y trazable.",
+        "subtitle": "Liderando la transición hacia ingredientes naturales de origen marino en los mercados globales.",
+        "why_natural": {
+            "title": "¿Por qué Taurina Natural?",
+            "description": "La taurina es un aminoácido vital ampliamente utilizado en alimentos para mascotas, acuicultura, nutracéuticos y alimentos funcionales. Actualmente, el mercado está dominado en más del 90% por la taurina sintética derivada de procesos petroquímicos.",
+            "highlight": "Existe un creciente cambio en el consumidor hacia ingredientes de \"Etiqueta Limpia\" y de origen natural que las alternativas sintéticas no pueden satisfacer.",
+            "value_prop": {
+                "title": "Nuestra Propuesta de Valor",
+                "items": [
+                    {
+                        "label": "Natural, de origen marino:",
+                        "text": "Extraída directamente del caldo de mejillón, no sintetizada en un laboratorio."
+                    },
+                    {
+                        "label": "Diferenciación Premium:",
+                        "text": "Permite a las marcas declarar \"Fuente Natural\" y \"Origen Sostenible\"."
+                    },
+                    {
+                        "label": "Economía Circular:",
+                        "text": "Producida mediante el suprareciclaje de un flujo de residuos existente, reduciendo el impacto ambiental."
+                    }
+                ]
+            }
+        },
+        "comparison_title": "Natural vs Sintético",
         "comp_title": "Atributo",
         "synth_col": "Taurina Sintética",
         "nat_col": "Taurina Natural (Aquabiotics)",
@@ -438,7 +463,7 @@
                 "nat": "Etiqueta limpia, origen natural"
             },
             {
-                "attr": "Traceability",
+                "attr": "Trazabilidad",
                 "synth": "Baja a nula",
                 "nat": "Trazabilidad total de origen"
             }
@@ -497,7 +522,7 @@
             },
             {
                 "title": "Purificación Molecular Selectiva",
-                "desc": "Pulido cromatográfico patentado para aislar taurina con un 99%+ de pureza."
+                "desc": "Pulido cromatográfico propio para aislar taurina con un 99%+ de pureza."
             },
             {
                 "title": "Secado y Estabilización",
@@ -519,7 +544,7 @@
                 "Modelado predictivo impulsado por IA para la optimización de materias primas."
             ],
             "ip_strategy_title": "Nuestra Estrategia de IP",
-            "ip_strategy_desc": "Asegurando el futuro de la biotecnología marina a través de patentes de procesos propietarias y secretos comerciales en la estabilización de metabolitos.",
+            "ip_strategy_desc": "Asegurando el futuro de la biotecnología marina a través de desarrollo de procesos propios y secretos comerciales en la estabilización de metabolitos.",
             "download_btn": "Descargar Ficha Técnica (Próximamente)"
         },
         "innovation_cards": [
@@ -564,7 +589,7 @@
         "raw_material_title": "Materia Prima",
         "raw_material_desc": "Caldo de cocción de mejillones proveniente de plantas industriales de procesamiento. Este efluente es rico en proteínas, péptidos y aminoácidos libres, específicamente taurina, la cual es naturalmente abundante en moluscos marinos.",
         "main_product_title": "Producto Principal",
-        "main_product_desc": "Taurina natural de origen marino. Un aminoácido esencial con potentes propiedades antioxidantes y osmorreguladoras, crítico para la salud felina y beneficioso para especies de acuicultura."
+        "main_product_desc": "Taurina Natural Marina y Parabióticos. Ingredientes térmicamente estables resistentes a la extrusión industrial (>120°C), a diferencia de los probióticos tradicionales. Críticos para alimentos de alto rendimiento para mascotas y acuicultura."
     },
     "updates_new": {
         "u1_title": "Integración de Prototipo de Biorrefinería: Fase de Escalamiento",
