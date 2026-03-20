@@ -566,10 +566,21 @@
                 ]
             },
             {
-                "title": "Development Stage",
-                "trl_label": "Current TRL",
-                "trl_value": "3 (Experimental Proof of Concept)",
-                "desc": "Laboratory-scale validation completed (TRL 1-2). Moving towards pilot-scale validation to demonstrate industrial feasibility and economic viability."
+                "title": "Maturity Levels",
+                "items": [
+                    {
+                        "label": "TRL (Technology): 2",
+                        "desc": "Formulation of the technological concept. The source (mussel cooking water) and the theoretical process (biorefinery) have been identified, but experimental evidence is still needed to show that the compounds of interest can be extracted with the necessary purity and efficiency."
+                    },
+                    {
+                        "label": "CRL (Market): 1 - 2",
+                        "desc": "Market hypothesis. An opportunity in the circular economy and nutraceuticals has been identified, but it has not yet been validated with the real \"pains\" of potential buyers or mussel processors."
+                    },
+                    {
+                        "label": "BRL (Business): 2",
+                        "desc": "Initial business plan. A clear vision and potential team are identified, and the project is applying for acceleration programs, which is the first firm administrative step."
+                    }
+                ]
             }
         ],
         "quality_cards": [

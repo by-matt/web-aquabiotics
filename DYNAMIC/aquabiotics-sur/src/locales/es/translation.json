@@ -566,10 +566,21 @@
                 ]
             },
             {
-                "title": "Etapa de Desarrollo",
-                "trl_label": "TRL Actual",
-                "trl_value": "3 (Prueba de Concepto Experimental)",
-                "desc": "Validación a escala de laboratorio completada (TRL 1-2). Avanzando hacia la validación a escala piloto para demostrar la viabilidad industrial y económica."
+                "title": "Niveles de Madurez",
+                "items": [
+                    {
+                        "label": "TRL (Tecnología): 2",
+                        "desc": "Formulación del concepto tecnológico. Tienes identificada la fuente (agua de cocción de choritos) y el proceso teórico (biorrefinería), pero falta la evidencia experimental de que los compuestos de interés se pueden extraer con la pureza y eficiencia necesarias."
+                    },
+                    {
+                        "label": "CRL (Mercado): 1 - 2",
+                        "desc": "Hipótesis de mercado. Has identificado una oportunidad en la economía circular y los nutracéuticos, pero aún no se ha validado con \"dolores\" reales de potenciales compradores o procesadoras de moluscos."
+                    },
+                    {
+                        "label": "BRL (Negocio): 2",
+                        "desc": "Plan de negocios inicial. Tienes una visión clara, un equipo potencial identificado y estás postulando a programas de aceleración, lo cual es el primer paso administrativo firme."
+                    }
+                ]
             }
         ],
         "quality_cards": [
