@@ -15,6 +15,7 @@ export default function ContactForm() {
     const schema = z.object({
         name: z.string().min(2, { message: "Invalid name" }),
         email: z.string().email({ message: "Invalid email" }),
+        industry: z.string().optional(),
         message: z.string().min(5, { message: "Message too short" }),
     });
 
@@ -31,6 +32,7 @@ export default function ContactForm() {
                 body: JSON.stringify({
                     name: data.name,
                     email: data.email,
+                    industry: data.industry || 'Not specified',
                     message: data.message,
                     _subject: 'New message from Aquabiotics Web',
                 }),
@@ -67,6 +69,19 @@ export default function ContactForm() {
                 <input {...register('email')} type="email" placeholder={t('contact_page.form.email_ph')}
                     className="w-full px-4 py-3 rounded-xl border border-white/50 shadow-inner focus:ring-2 focus:ring-aqua focus:border-aqua outline-none transition-all bg-white/50 backdrop-blur-sm focus:bg-white/90" />
                 {errors.email && <p className="text-red-500 text-xs mt-1 font-medium">{t('contact_page.form.email')} is invalid</p>}
+            </div>
+
+            <div>
+                <label className="block text-sm font-bold text-navy mb-2">Industry / Sector</label>
+                <select {...register('industry')} className="w-full px-4 py-3 rounded-xl border border-white/50 shadow-inner focus:ring-2 focus:ring-aqua focus:border-aqua outline-none transition-all bg-white/50 backdrop-blur-sm focus:bg-white/90 text-navy cursor-pointer appearance-none">
+                    <option value="">Select your industry...</option>
+                    <option value="Functional Foods">Functional Foods & Beverages</option>
+                    <option value="Pet Food">Pet Food Manufacturers</option>
+                    <option value="Aquaculture">Aquaculture Feed</option>
+                    <option value="Nutraceuticals">Nutraceuticals</option>
+                    <option value="Investor">Investment / VC</option>
+                    <option value="Other">Other</option>
+                </select>
             </div>
 
             <div>
