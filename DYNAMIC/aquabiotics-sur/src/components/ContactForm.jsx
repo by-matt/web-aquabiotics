@@ -48,9 +48,9 @@ export default function ContactForm() {
     };
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 bg-white p-8 rounded-2xl shadow-xl shadow-navy/5 border border-gray-100 relative overflow-hidden">
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 bg-white/80 backdrop-blur-xl p-8 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/50 relative overflow-hidden">
             {/* Decorative */}
-            <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-ocean to-teal" />
+            <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-ocean via-aqua to-teal" />
 
             {/* Honeypot anti-spam */}
             <input type="text" name="_gotcha" style={{ display: 'none' }} />
@@ -58,35 +58,40 @@ export default function ContactForm() {
             <div>
                 <label className="block text-sm font-bold text-navy mb-2">{t('contact_page.form.name')}</label>
                 <input {...register('name')} type="text" placeholder={t('contact_page.form.name_ph')}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-teal focus:border-teal outline-none transition-all bg-gray-50 focus:bg-white" />
+                    className="w-full px-4 py-3 rounded-xl border border-white/50 shadow-inner focus:ring-2 focus:ring-aqua focus:border-aqua outline-none transition-all bg-white/50 backdrop-blur-sm focus:bg-white/90" />
                 {errors.name && <p className="text-red-500 text-xs mt-1 font-medium">{t('contact_page.form.name')} is missing</p>}
             </div>
 
             <div>
                 <label className="block text-sm font-bold text-navy mb-2">{t('contact_page.form.email')}</label>
                 <input {...register('email')} type="email" placeholder={t('contact_page.form.email_ph')}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-teal focus:border-teal outline-none transition-all bg-gray-50 focus:bg-white" />
+                    className="w-full px-4 py-3 rounded-xl border border-white/50 shadow-inner focus:ring-2 focus:ring-aqua focus:border-aqua outline-none transition-all bg-white/50 backdrop-blur-sm focus:bg-white/90" />
                 {errors.email && <p className="text-red-500 text-xs mt-1 font-medium">{t('contact_page.form.email')} is invalid</p>}
             </div>
 
             <div>
                 <label className="block text-sm font-bold text-navy mb-2">{t('contact_page.form.message')}</label>
                 <textarea {...register('message')} placeholder={t('contact_page.form.message_ph')}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-teal focus:border-teal outline-none transition-all bg-gray-50 focus:bg-white h-32 resize-none" />
+                    className="w-full px-4 py-3 rounded-xl border border-white/50 shadow-inner focus:ring-2 focus:ring-aqua focus:border-aqua outline-none transition-all bg-white/50 backdrop-blur-sm focus:bg-white/90 h-32 resize-none" />
                 {errors.message && <p className="text-red-500 text-xs mt-1 font-medium">{t('contact_page.form.message')} is too short</p>}
             </div>
 
             <button type="submit" disabled={status === 'loading'}
-                className="w-full bg-teal text-white font-bold py-3 px-6 rounded-lg hover:bg-ocean transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
-                {status === 'loading' ? (
-                    <span className="flex items-center justify-center gap-2">
-                        <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24" fill="none">
-                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z" />
-                        </svg>
-                        {t('contact_page.form.sending')}
-                    </span>
-                ) : t('contact_page.form.send')}
+                className="w-full bg-gradient-to-r from-ocean to-teal text-white font-bold py-4 px-6 rounded-xl hover:from-ocean hover:to-aqua transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed shadow-md hover:shadow-[0_4px_15px_rgba(20,184,166,0.4)] transform hover:-translate-y-0.5 relative group overflow-hidden">
+                <div className="absolute top-0 -left-[100%] w-1/2 h-full bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-[-20deg] group-hover:left-[200%] transition-all duration-700 ease-in-out" />
+                <span className="relative z-10 flex items-center justify-center">
+                    {status === 'loading' ? (
+                        <span className="flex items-center justify-center gap-2">
+                            <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24" fill="none">
+                                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z" />
+                            </svg>
+                            {t('contact_page.form.sending')}
+                        </span>
+                    ) : (
+                        t('contact_page.form.send')
+                    )}
+                </span>
             </button>
 
             {status === 'success' && (

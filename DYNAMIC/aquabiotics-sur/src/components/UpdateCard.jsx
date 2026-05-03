@@ -24,7 +24,7 @@ export default function UpdateCard({ date, category, title, excerpt, url }) {
     return (
         <a href={url} target="_blank" rel="noopener noreferrer" className="block group h-full">
             <motion.div
-                className="bg-white p-6 md:p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 h-full flex flex-col relative overflow-hidden"
+                className="bg-white/80 backdrop-blur-xl p-6 md:p-8 rounded-3xl shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-500 border border-white/50 h-full flex flex-col relative overflow-hidden"
                 whileHover={{ y: -8 }}
             >
                 <div className="absolute top-0 left-0 w-1 h-full bg-transparent group-hover:bg-teal transition-colors duration-300" />

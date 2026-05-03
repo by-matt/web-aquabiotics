@@ -24,7 +24,7 @@ export default function Home() {
                         transition={{ duration: 0.8, delay: 0.2 }}
                         className="max-w-4xl"
                     >
-                        <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
+                        <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter mb-6 leading-tight bg-gradient-to-r from-white via-seafoam to-aqua-light text-transparent bg-clip-text drop-shadow-lg">
                             {t('hero.title')}
                         </h1>
 
@@ -32,7 +32,7 @@ export default function Home() {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ duration: 0.8, delay: 0.6 }}
-                            className="text-xl md:text-2xl text-seafoam font-light mb-10 max-w-2xl border-l-4 border-aqua pl-6"
+                            className="text-xl md:text-2xl text-sand font-light mb-10 max-w-2xl border-l-4 border-aqua-light pl-6 drop-shadow-md"
                         >
                             {t('hero.hero_subtitle')}
                         </motion.p>
@@ -43,11 +43,11 @@ export default function Home() {
                             transition={{ duration: 0.5, delay: 0.9 }}
                             className="flex flex-col sm:flex-row gap-4"
                         >
-                            <Link to="/technology" className="bg-aqua hover:bg-ocean text-white font-bold py-4 px-8 rounded-lg shadow-lg hover:shadow-aqua/50 transition-all duration-300 transform hover:-translate-y-1 text-center overflow-hidden relative group">
-                                <span className="relative z-10">{t('hero.cta_primary')}</span>
-                                <div className="absolute inset-0 h-full w-full bg-white/20 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 ease-out" />
+                            <Link to="/technology" className="relative group overflow-hidden bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white font-bold py-4 px-8 rounded-xl shadow-[0_0_20px_rgba(14,165,233,0.3)] hover:shadow-[0_0_30px_rgba(14,165,233,0.5)] transition-all duration-300 transform hover:-translate-y-1 text-center">
+                                <div className="absolute top-0 -left-[100%] w-1/2 h-full bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-[-20deg] group-hover:left-[200%] transition-all duration-700 ease-in-out" />
+                                <span className="relative z-10 drop-shadow-md">{t('hero.cta_primary')}</span>
                             </Link>
-                            <Link to="/contact" className="border-2 border-white text-white hover:bg-white/10 font-bold py-4 px-8 rounded-lg transition-all duration-300 text-center">
+                            <Link to="/contact" className="border-2 border-white/30 hover:border-white text-white hover:bg-white/5 backdrop-blur-sm font-bold py-4 px-8 rounded-xl transition-all duration-300 text-center">
                                 {t('hero.cta_secondary')}
                             </Link>
                         </motion.div>
@@ -88,11 +88,16 @@ export default function Home() {
             </section>
 
             {/* Challenge / Solution */}
-            <section className="py-24 bg-white overflow-hidden text-navy">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <section className="py-24 bg-sand/20 relative overflow-hidden text-navy">
+                <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+                    <div className="absolute -top-40 -right-40 w-96 h-96 bg-aqua/5 rounded-full blur-3xl animate-blob" />
+                    <div className="absolute top-1/2 -left-40 w-96 h-96 bg-emerald/5 rounded-full blur-3xl animate-blob animation-delay-2000" />
+                </div>
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-                        <AnimatedSection direction="left" className="bg-sand p-10 md:p-12 rounded-2xl shadow-sm border border-gray-100">
+                        <AnimatedSection direction="left" className="bg-white/60 backdrop-blur-xl p-10 md:p-12 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-500 relative overflow-hidden group">
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/5 rounded-full blur-3xl group-hover:bg-red-500/10 transition-colors duration-500" />
                             <h2 className="text-3xl font-bold mb-6 flex items-center">
                                 <span className="w-8 h-8 rounded-full bg-red-100 text-red-600 flex items-center justify-center mr-4">
                                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -107,8 +112,8 @@ export default function Home() {
                         </AnimatedSection>
 
                         <AnimatedSection direction="right" delay={0.2} className="relative">
-                            <div className="absolute -inset-4 bg-gradient-to-r from-ocean to-teal opacity-10 blur-2xl rounded-3xl" />
-                            <div className="relative bg-white p-10 md:p-12 rounded-2xl shadow-xl shadow-navy/5 border border-ocean/10">
+                            <div className="absolute -inset-4 bg-gradient-to-r from-ocean to-teal opacity-10 blur-2xl rounded-3xl group-hover:opacity-20 transition-opacity duration-500" />
+                            <div className="relative bg-white/80 backdrop-blur-xl p-10 md:p-12 rounded-3xl shadow-xl shadow-navy/5 border border-white/50 hover:-translate-y-1 transition-transform duration-500">
                                 <h2 className="text-3xl font-bold mb-6 flex items-center">
                                     <span className="w-8 h-8 rounded-full bg-emerald/20 text-emerald flex items-center justify-center mr-4">
                                         <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">

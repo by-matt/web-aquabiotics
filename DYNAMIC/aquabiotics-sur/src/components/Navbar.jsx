@@ -53,9 +53,9 @@ export default function Navbar() {
     return (
         <>
             <nav
-                className={`fixed top-0 w-full z-50 transition-all duration-300 ease-in-out ${isHidden ? '-translate-y-full' : 'translate-y-0'
+                className={`fixed top-0 w-full z-50 transition-all duration-500 ease-in-out ${isHidden ? '-translate-y-full' : 'translate-y-0'
                     } ${isScrolled
-                        ? 'bg-navy/90 backdrop-blur-md shadow-lg py-3'
+                        ? 'bg-navy/80 backdrop-blur-xl shadow-[0_10px_30px_rgba(0,0,0,0.1)] border-b border-white/5 py-3'
                         : 'bg-transparent py-5'
                     }`}
             >

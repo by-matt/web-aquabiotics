@@ -13,8 +13,10 @@ export default function About() {
     return (
         <PageWrapper>
             {/* Hero */}
-            <header className="bg-gradient-to-br from-[#0c4a6e] to-[#064e3b] pt-32 pb-20 px-6 text-center text-white relative">
-                <div className="absolute inset-0 bg-black/10"></div>
+            <header className="bg-gradient-to-br from-navy via-ocean to-teal pt-32 pb-20 px-6 text-center text-white relative overflow-hidden">
+                <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPjxyZWN0IHdpZHRoPSI0IiBoZWlnaHQ9IjQiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSIvPjwvc3ZnPg==')] opacity-20 mix-blend-overlay"></div>
+                <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-aqua/20 rounded-full mix-blend-screen filter blur-[100px] animate-blob" />
+                <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-emerald/20 rounded-full mix-blend-screen filter blur-[100px] animate-blob animation-delay-2000" />
                 <div className="max-w-4xl mx-auto relative z-10">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -31,8 +33,12 @@ export default function About() {
                 </div>
             </header>
 
-            <section className="py-20 bg-white relative z-20 min-h-[60vh]">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-32">
+            <section className="py-20 bg-sand/20 relative z-20 min-h-[60vh] overflow-hidden backdrop-blur-xl">
+                <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
+                    <div className="absolute top-20 left-20 w-80 h-80 bg-aqua/5 rounded-full blur-3xl animate-blob" />
+                    <div className="absolute bottom-40 right-20 w-80 h-80 bg-emerald/5 rounded-full blur-3xl animate-blob animation-delay-2000" />
+                </div>
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-32 relative">
 
                     {/* Our Origins */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -64,8 +70,9 @@ export default function About() {
                                 ];
                                 return (
                                     <AnimatedSection key={i} direction="up" delay={i * 0.15}>
-                                        <div className="p-8 rounded-xl bg-gray-50 text-center hover:-translate-y-1 hover:shadow-lg transition-all duration-300 h-full border border-gray-100">
-                                            <div className={`w-16 h-16 mx-auto mb-6 rounded-full flex items-center justify-center ${iconColors[i]}`}>
+                                        <div className="relative p-8 rounded-3xl bg-white/80 backdrop-blur-xl text-center hover:-translate-y-2 hover:shadow-[0_12px_40px_rgb(0,0,0,0.08)] transition-all duration-500 h-full border border-white/50 shadow-[0_4px_20px_rgb(0,0,0,0.03)] overflow-hidden">
+                                            <div className={`absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r ${i === 0 ? 'from-ocean to-blue-400' : i === 1 ? 'from-teal to-emerald-400' : 'from-purple-500 to-fuchsia-400'}`} />
+                                            <div className={`w-16 h-16 mx-auto mb-6 rounded-full flex items-center justify-center ${iconColors[i]} relative z-10`}>
                                                 {svgs[i]}
                                             </div>
                                             <h3 className="text-xl font-bold mb-4 text-navy">{card.title}</h3>
@@ -91,7 +98,7 @@ export default function About() {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                                 {team.map((member, i) => (
                                     <AnimatedSection key={i} direction="up" delay={0.2 + (i * 0.2)}>
-                                        <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:-translate-y-1 hover:shadow-md transition-all duration-300">
+                                        <div className="bg-white/80 backdrop-blur-xl p-8 md:p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/50 hover:-translate-y-2 hover:shadow-[0_12px_40px_rgb(0,0,0,0.08)] transition-all duration-500">
                                             <div className="flex flex-col items-center text-center mb-6">
                                                 <div className="w-[95px] h-[95px] rounded-full overflow-hidden border-2 border-ocean mb-4 shadow-lg flex items-center justify-center bg-gray-100">
                                                     <img src={`/${member.img}`} alt={member.name} className="w-full h-full object-cover scale-110" />
@@ -147,10 +154,10 @@ export default function About() {
                                         <AnimatedSection key={i} direction={i % 2 === 0 ? "right" : "left"} delay={0.2} className="relative">
                                             <div className={`md:w-1/2 flex flex-col md:flex-row items-center ${i % 2 === 0 ? 'md:ml-auto md:pl-12' : 'md:mr-auto md:pr-12 md:text-right'} pl-12 md:pl-0`}>
 
-                                                <div className={`absolute top-4 md:top-1/2 left-[10px] md:left-1/2 w-8 h-8 rounded-full bg-white border-4 border-aqua flex items-center justify-center -translate-y-1/2 md:-translate-x-1/2 shadow-md z-10`} />
+                                                <div className={`absolute top-4 md:top-1/2 left-[10px] md:left-1/2 w-8 h-8 rounded-full bg-white border-4 border-aqua flex items-center justify-center -translate-y-1/2 md:-translate-x-1/2 shadow-lg z-10`} />
 
-                                                <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 w-full hover:shadow-md transition-shadow">
-                                                    <div className="text-aqua font-extrabold text-2xl mb-1">{item.year}</div>
+                                                <div className="bg-white/90 backdrop-blur-md p-6 md:p-8 rounded-3xl shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-white/50 w-full hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-1">
+                                                    <div className="text-aqua font-extrabold text-2xl mb-2">{item.year}</div>
                                                     <h3 className="text-xl font-bold text-navy mb-2">{item.title}</h3>
                                                     <p className="text-gray-600">{item.desc}</p>
                                                 </div>

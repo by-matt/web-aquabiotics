@@ -1,13 +1,20 @@
 export default function WaveBackground() {
     return (
         <div className="absolute inset-0 overflow-hidden pointer-events-none w-full h-full bg-navy flex items-end">
-            <div className="absolute inset-0 bg-gradient-to-br from-[#0c4a6e] to-[#064e3b] opacity-80" />
-            <svg className="absolute bottom-0 w-full text-ocean/40 animate-wave min-w-[200%]" viewBox="0 0 1440 320" preserveAspectRatio="none">
+            <div className="absolute inset-0 bg-gradient-to-br from-navy via-[#0c4a6e] to-[#064e3b] opacity-90" />
+            
+            {/* Glowing Bio-Orbs */}
+            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-aqua/20 rounded-full mix-blend-screen filter blur-[100px] animate-blob" />
+            <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-emerald/20 rounded-full mix-blend-screen filter blur-[100px] animate-blob animation-delay-2000" />
+            <div className="absolute -bottom-32 left-1/2 w-[500px] h-[500px] bg-teal/30 rounded-full mix-blend-screen filter blur-[120px] animate-blob animation-delay-4000" />
+
+            <svg className="absolute bottom-0 w-full text-ocean/30 animate-wave min-w-[200%]" viewBox="0 0 1440 320" preserveAspectRatio="none">
                 <path fill="currentColor" fillOpacity="1" d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
             </svg>
             <svg className="absolute bottom-0 w-full text-teal/40 animate-wave-slow min-w-[200%]" viewBox="0 0 1440 320" preserveAspectRatio="none">
                 <path fill="currentColor" fillOpacity="1" d="M0,224L48,213.3C96,203,192,181,288,186.7C384,192,480,224,576,240.3C672,256,768,256,864,234.7C960,213,1056,171,1152,144.3C1248,117,1344,107,1392,101.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
             </svg>
+            <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPjxyZWN0IHdpZHRoPSI0IiBoZWlnaHQ9IjQiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSIvPjwvc3ZnPg==')] opacity-20 mix-blend-overlay"></div>
         </div>
     );
 }

@@ -46,8 +46,10 @@ export default function Market() {
     return (
         <PageWrapper>
             {/* Hero */}
-            <header className="bg-gradient-to-br from-[#0c4a6e] to-[#064e3b] pt-32 pb-20 px-6 text-center text-white relative">
-                <div className="absolute inset-0 bg-black/10"></div>
+            <header className="bg-gradient-to-br from-navy via-ocean to-teal pt-32 pb-20 px-6 text-center text-white relative overflow-hidden">
+                <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPjxyZWN0IHdpZHRoPSI0IiBoZWlnaHQ9IjQiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSIvPjwvc3ZnPg==')] opacity-20 mix-blend-overlay"></div>
+                <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-aqua/20 rounded-full mix-blend-screen filter blur-[100px] animate-blob" />
+                <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-emerald/20 rounded-full mix-blend-screen filter blur-[100px] animate-blob animation-delay-2000" />
                 <div className="max-w-4xl mx-auto relative z-10">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -65,8 +67,10 @@ export default function Market() {
             </header>
 
             {/* Why Natural Taurine Section */}
-            <section id="value-prop" className="py-20 bg-white">
-                <div className="container mx-auto px-4">
+            <section id="value-prop" className="py-20 bg-white relative overflow-hidden">
+                <div className="absolute -left-32 -top-32 w-96 h-96 bg-aqua/5 rounded-full blur-3xl animate-blob" />
+                <div className="absolute right-0 bottom-0 w-64 h-64 bg-teal/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2 animate-blob animation-delay-2000" />
+                <div className="container mx-auto px-4 relative z-10">
                     <div className="max-w-4xl mx-auto">
                         <motion.div
 
@@ -112,7 +116,7 @@ export default function Market() {
             </section>
 
             {/* Comparison Section */}
-            <section className="py-20 bg-gray-50 min-h-[60vh] relative z-20 -mt-8 rounded-t-3xl shadow-[0_-10px_40px_rgba(0,0,0,0.1)]">
+            <section className="py-20 bg-sand/20 min-h-[60vh] relative z-20 -mt-8 rounded-t-3xl shadow-[0_-10px_40px_rgba(0,0,0,0.1)] backdrop-blur-xl">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
 
                     {/* Natural vs Synthetic Comparison */}
@@ -124,7 +128,7 @@ export default function Market() {
                         </div>
 
                         <AnimatedSection direction="up" delay={0.2}>
-                            <div className="overflow-x-auto rounded-2xl shadow-sm border border-gray-100 bg-white">
+                            <div className="overflow-x-auto rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/50 bg-white/70 backdrop-blur-xl">
                                 <table className="w-full text-left border-collapse">
                                     <thead>
                                         <tr>
@@ -189,7 +193,7 @@ export default function Market() {
                         </AnimatedSection>
 
                         <div className="space-y-4">
-                            <AnimatedSection direction="right" delay={0.2} className="h-[400px] w-full bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                            <AnimatedSection direction="right" delay={0.2} className="h-[400px] w-full bg-white/80 backdrop-blur-xl p-6 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/50">
                                 <ResponsiveContainer width="100%" height="100%">
                                     <LineChart data={data} margin={{ top: 20, right: 30, left: 10, bottom: 0 }}>
                                         <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#E5E7EB" />
@@ -240,9 +244,10 @@ export default function Market() {
                                 const colors = industryColors[i % industryColors.length];
                                 return (
                                 <AnimatedSection key={i} direction="up" delay={i * 0.15}>
-                                    <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 text-center group hover:-translate-y-2 transition-transform duration-300 h-full">
+                                    <div className="relative overflow-hidden bg-white/80 backdrop-blur-xl p-8 rounded-3xl shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-white/50 text-center group hover:-translate-y-2 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300 h-full">
+                                        <div className={`absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r ${i % 4 === 0 ? 'from-purple-500 to-fuchsia-400' : i % 4 === 1 ? 'from-ocean to-blue-400' : i % 4 === 2 ? 'from-teal to-emerald-400' : 'from-orange-500 to-amber-400'}`} />
                                         <motion.div
-                                            className={`w-16 h-16 mx-auto ${colors.bg} ${colors.text} rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}
+                                            className={`relative z-10 w-16 h-16 mx-auto ${colors.bg} ${colors.text} rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}
                                             animate={{ y: [0, -5, 0] }}
                                             transition={{ duration: 4, repeat: Infinity, delay: i }}
                                         >

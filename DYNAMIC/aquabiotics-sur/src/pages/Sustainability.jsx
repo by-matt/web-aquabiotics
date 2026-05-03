@@ -26,8 +26,10 @@ export default function Sustainability() {
     return (
         <PageWrapper>
             {/* Hero */}
-            <header className="bg-gradient-to-br from-[#0c4a6e] to-[#064e3b] pt-32 pb-20 px-6 text-center text-white relative">
-                <div className="absolute inset-0 bg-black/10"></div>
+            <header className="bg-gradient-to-br from-navy via-ocean to-teal pt-32 pb-20 px-6 text-center text-white relative overflow-hidden">
+                <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPjxyZWN0IHdpZHRoPSI0IiBoZWlnaHQ9IjQiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSIvPjwvc3ZnPg==')] opacity-20 mix-blend-overlay"></div>
+                <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-aqua/20 rounded-full mix-blend-screen filter blur-[100px] animate-blob" />
+                <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-emerald/20 rounded-full mix-blend-screen filter blur-[100px] animate-blob animation-delay-2000" />
                 <div className="max-w-4xl mx-auto relative z-10">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -44,8 +46,12 @@ export default function Sustainability() {
                 </div>
             </header>
 
-            <section className="py-20 px-6 bg-white relative z-20">
-                <div className="max-w-7xl mx-auto">
+            <section className="py-20 px-6 bg-sand/20 relative z-20 min-h-screen overflow-hidden backdrop-blur-xl">
+                <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
+                    <div className="absolute top-20 right-20 w-80 h-80 bg-aqua/5 rounded-full blur-3xl animate-blob" />
+                    <div className="absolute bottom-40 left-20 w-80 h-80 bg-emerald/5 rounded-full blur-3xl animate-blob animation-delay-2000" />
+                </div>
+                <div className="max-w-7xl mx-auto relative">
                     {/* Circular Economy Title */}
                     <div className="max-w-4xl mx-auto mb-16 text-center">
                         <AnimatedSection>
@@ -62,8 +68,9 @@ export default function Sustainability() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
                         {impactCards && impactCards.map((card, i) => (
                             <AnimatedSection key={i} direction="up" delay={i * 0.15}>
-                                <div className={`p-8 rounded-2xl bg-white shadow-lg border-t-8 h-full transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl ${card.color === 'emerald' ? 'border-emerald-500' : 'border-blue-500'}`}>
-                                    <h3 className="text-2xl font-bold mb-6 text-gray-800 flex items-center">
+                                <div className="relative p-8 rounded-3xl bg-white/80 backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/50 h-full transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_12px_40px_rgb(0,0,0,0.08)] overflow-hidden">
+                                    <div className={`absolute top-0 left-0 w-full h-2 bg-gradient-to-r ${card.color === 'emerald' ? 'from-emerald-400 to-teal' : 'from-ocean to-aqua'}`} />
+                                    <h3 className="text-2xl font-bold mb-6 text-gray-800 flex items-center mt-2">
                                         {card.color === 'emerald' ? (
                                             <svg className="w-8 h-8 mr-3 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
@@ -111,7 +118,7 @@ export default function Sustainability() {
                                         <AnimatedSection key={i} direction="up" delay={i * 0.05}>
                                             <div className="relative group perspective-1000 h-[220px]">
                                                 {/* Front */}
-                                                <div className="absolute inset-0 bg-white rounded-xl border border-gray-100 shadow-sm p-4 flex flex-col items-center text-center transition-all duration-500 group-hover:opacity-0 group-hover:scale-90 z-20">
+                                                <div className="absolute inset-0 bg-white/80 backdrop-blur-md rounded-2xl border border-white/50 shadow-[0_4px_20px_rgb(0,0,0,0.03)] p-4 flex flex-col items-center text-center transition-all duration-500 group-hover:opacity-0 group-hover:scale-90 z-20">
                                                     <div
                                                         className="w-12 h-12 text-white rounded-lg flex items-center justify-center font-bold text-xl mb-4 shadow-md"
                                                         style={{ backgroundColor: sdg.color }}
@@ -123,7 +130,7 @@ export default function Sustainability() {
                                                 </div>
                                                 {/* Back / Overlay (Hover) */}
                                                 <div
-                                                    className="absolute inset-0 rounded-xl p-4 flex flex-col items-center justify-center text-center text-white opacity-0 scale-110 group-hover:opacity-100 group-hover:scale-100 transition-all duration-500 z-10 shadow-xl overflow-hidden"
+                                                    className="absolute inset-0 rounded-2xl p-4 flex flex-col items-center justify-center text-center text-white opacity-0 scale-110 group-hover:opacity-100 group-hover:scale-100 transition-all duration-500 z-10 shadow-xl overflow-hidden"
                                                     style={{ backgroundColor: sdg.color }}
                                                 >
                                                     <div className="absolute top-0 right-0 p-2 opacity-20">
@@ -155,7 +162,7 @@ export default function Sustainability() {
                             </AnimatedSection>
                         </div>
 
-                        <AnimatedSection direction="up" delay={0.2} className="h-[500px] rounded-3xl overflow-hidden shadow-2xl border-8 border-white z-0 relative">
+                        <AnimatedSection direction="up" delay={0.2} className="h-[500px] rounded-3xl overflow-hidden shadow-[0_10px_40px_rgb(0,0,0,0.08)] border border-white/50 z-0 relative">
                             <MapContainer center={[-41.4693, -72.9424]} zoom={6} scrollWheelZoom={false} className="h-full w-full absolute inset-0">
                                 <TileLayer
                                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

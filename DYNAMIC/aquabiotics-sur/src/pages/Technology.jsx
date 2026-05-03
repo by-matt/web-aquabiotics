@@ -67,8 +67,10 @@ export default function Technology() {
     return (
         <PageWrapper>
             {/* Hero */}
-            <header className="bg-gradient-to-br from-[#0c4a6e] to-[#064e3b] pt-32 pb-20 px-6 text-center text-white relative">
-                <div className="absolute inset-0 bg-black/10"></div>
+            <header className="bg-gradient-to-br from-navy via-ocean to-teal pt-32 pb-20 px-6 text-center text-white relative overflow-hidden">
+                <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPjxyZWN0IHdpZHRoPSI0IiBoZWlnaHQ9IjQiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSIvPjwvc3ZnPg==')] opacity-20 mix-blend-overlay"></div>
+                <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-aqua/20 rounded-full mix-blend-screen filter blur-[100px] animate-blob" />
+                <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-emerald/20 rounded-full mix-blend-screen filter blur-[100px] animate-blob animation-delay-2000" />
                 <div className="max-w-4xl mx-auto relative z-10">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -86,8 +88,12 @@ export default function Technology() {
             </header>
 
             {/* Main Content */}
-            <section className="py-20 bg-gray-50 min-h-[60vh] relative z-20 -mt-8 rounded-t-3xl shadow-[0_-10px_40px_rgba(0,0,0,0.1)]">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <section className="py-20 bg-sand/20 min-h-[60vh] relative z-20 -mt-8 rounded-t-3xl shadow-[0_-10px_40px_rgba(0,0,0,0.1)] backdrop-blur-xl">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+                    <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none -z-10">
+                        <div className="absolute top-10 right-10 w-64 h-64 bg-aqua/5 rounded-full blur-3xl animate-blob" />
+                        <div className="absolute bottom-10 left-10 w-64 h-64 bg-emerald/5 rounded-full blur-3xl animate-blob animation-delay-2000" />
+                    </div>
 
                     {/* Tabs */}
                     <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-16">
@@ -96,8 +102,8 @@ export default function Technology() {
                                 key={tab.id}
                                 onClick={() => setActiveTab(tab.id)}
                                 className={`px-6 py-3 rounded-full font-bold text-sm md:text-base transition-all duration-300 ${activeTab === tab.id
-                                    ? 'bg-aqua text-white shadow-lg shadow-aqua/30 translate-y-px'
-                                    : 'bg-white text-gray-500 hover:bg-gray-100 border border-gray-200'
+                                    ? 'bg-gradient-to-r from-ocean to-teal text-white shadow-lg shadow-ocean/30 translate-y-px'
+                                    : 'bg-white/80 backdrop-blur-sm text-navy hover:bg-white border border-white/50 shadow-sm'
                                     }`}
                             >
                                 {tab.label}
@@ -106,7 +112,7 @@ export default function Technology() {
                     </div>
 
                     {/* Tab Content */}
-                    <div id="biorefinery-top" className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 md:p-12 min-h-[400px]">
+                    <div id="biorefinery-top" className="bg-white/70 backdrop-blur-xl rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/60 p-8 md:p-12 min-h-[400px]">
 
                         <AnimatePresence mode="wait">
                             {activeTab === 'biorefinery' && (
@@ -245,9 +251,10 @@ export default function Technology() {
                                                 whileInView={{ opacity: 1, y: 0 }}
                                                 viewport={{ once: true }}
                                                 transition={{ delay: idx * 0.1 }}
-                                                className="bg-white p-10 rounded-3xl shadow-xl shadow-gray-200/50 border border-gray-50 hover:scale-[1.02] transition-transform duration-300"
+                                                className="relative overflow-hidden bg-white/80 backdrop-blur-xl p-10 rounded-3xl shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-white hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-1"
                                             >
-                                                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-8 ${idx === 0 ? 'bg-blue-50 text-blue-600' :
+                                                <div className={`absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r ${idx === 0 ? 'from-blue-500 to-indigo-400' : idx === 1 ? 'from-indigo-500 to-purple-400' : 'from-sky-500 to-cyan-400'}`} />
+                                                <div className={`relative z-10 w-14 h-14 rounded-2xl flex items-center justify-center mb-8 ${idx === 0 ? 'bg-blue-50 text-blue-600' :
                                                     idx === 1 ? 'bg-indigo-50 text-indigo-600' :
                                                         'bg-sky-50 text-sky-600'
                                                     }`}>
@@ -351,9 +358,9 @@ export default function Technology() {
                                                 whileInView={{ opacity: 1, y: 0 }}
                                                 viewport={{ once: true }}
                                                 transition={{ delay: idx * 0.1 }}
-                                                className="bg-white p-10 rounded-3xl shadow-xl shadow-gray-200/50 border border-gray-50 flex flex-col"
+                                                className="bg-white/80 backdrop-blur-xl p-10 rounded-3xl shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-white hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-500 flex flex-col hover:-translate-y-1"
                                             >
-                                                <h3 className="text-2xl font-extrabold text-navy mb-8 border-b border-gray-100 pb-4">
+                                                <h3 className="text-2xl font-extrabold text-navy mb-8 border-b border-gray-100/50 pb-4">
                                                     {card.title}
                                                 </h3>
 

@@ -9,8 +9,10 @@ export default function Contact() {
     return (
         <PageWrapper>
             {/* Hero */}
-            <section className="bg-gradient-to-br from-[#0c4a6e] to-[#064e3b] pt-32 pb-24 text-white relative overflow-hidden">
-                <div className="absolute inset-0 bg-navy/10"></div>
+            <section className="bg-gradient-to-br from-navy via-ocean to-teal pt-32 pb-24 text-white relative overflow-hidden">
+                <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPjxyZWN0IHdpZHRoPSI0IiBoZWlnaHQ9IjQiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSIvPjwvc3ZnPg==')] opacity-20 mix-blend-overlay"></div>
+                <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-aqua/20 rounded-full mix-blend-screen filter blur-[100px] animate-blob" />
+                <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-emerald/20 rounded-full mix-blend-screen filter blur-[100px] animate-blob animation-delay-2000" />
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
                     <AnimatedSection>
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 tracking-tight">{t('contact_page.hero_title')}</h1>
@@ -21,8 +23,8 @@ export default function Contact() {
                 </div>
             </section>
 
-            <section className="py-20 bg-gray-50 min-h-[60vh] relative z-20 -mt-8 rounded-t-3xl shadow-[0_-10px_40px_rgba(0,0,0,0.1)]">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <section className="py-20 bg-sand/20 min-h-[60vh] relative z-20 -mt-8 rounded-t-3xl shadow-[0_-10px_40px_rgba(0,0,0,0.1)] backdrop-blur-xl">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
 
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
 
