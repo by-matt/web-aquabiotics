@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -33,7 +34,7 @@ function ScrollToTop() {
 
 function SEOManager() {
   const { pathname } = useLocation();
-  const { t, i18n } = require('react-i18next').useTranslation();
+  const { t, i18n } = useTranslation();
 
   import('react').then(React => {
     React.useEffect(() => {
