@@ -1,5 +1,5 @@
 @import 'tailwindcss';
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Raleway:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap');
 
 /* @tailwind base; */
 /* @tailwind components; */
@@ -8,17 +8,39 @@
 @source "../src/**/*.{js,ts,jsx,tsx}";
 
 @theme {
-  --color-navy: #050B14;
-  --color-navy-light: #0A1628;
-  --color-ocean: #0c4a6e;
-  --color-teal: #064e3b;
-  --color-aqua: #0ea5e9;
-  --color-aqua-light: #38bdf8;
-  --color-emerald: #10b981;
-  --color-seafoam: #E8F5F5;
-  --color-sand: #F5F0E8;
+  --color-coral: #D9715A;
+  --color-coral-light: #F0A892;
+  --color-coral-dark: #A04030;
   
-  --font-sans: 'Inter', system-ui, sans-serif;
+  --color-teal: #3ABFB2;
+  --color-teal-light: #7ADBD3;
+  --color-teal-dark: #1E8C82;
+  
+  --color-navy: #0A1628;
+  --color-navy-mid: #142236;
+  --color-navy-light: #1E3350;
+  
+  --color-lavender: #7B7DC0;
+  --color-lavender-light: #A9AADC;
+  
+  --color-steel: #6B8FAB;
+  --color-cream: #F7F3ED;
+  --color-warm-white: #FAFAF8;
+  --color-charcoal: #1E1E2A;
+  --color-muted: rgba(247,243,237,0.5);
+  --color-muted-strong: rgba(247,243,237,0.75);
+
+  /* Fallbacks for older components */
+  --color-ocean: #0A1628;
+  --color-aqua: #3ABFB2;
+  --color-aqua-light: #7ADBD3;
+  --color-emerald: #3ABFB2;
+  --color-seafoam: #F7F3ED;
+  --color-sand: #F7F3ED;
+  
+  --font-sans: 'Raleway', sans-serif;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-mono: 'Space Mono', monospace;
   
   --animate-wave: wave 8s ease-in-out infinite;
   --animate-wave-slow: wave 12s ease-in-out infinite reverse;
@@ -47,12 +69,49 @@
 
 @layer base {
   html { scroll-behavior: smooth; }
-  body { @apply bg-white text-gray-800 font-sans; }
+  body { @apply bg-white text-gray-800 font-sans tracking-wide; }
+  h1, h2, h3, h4, h5, h6 { @apply font-display tracking-tight text-navy; }
+  
+  /* Micro-Branding: Selection Color */
+  ::selection {
+    background-color: var(--teal);
+    color: var(--cream);
+  }
+
+  /* Micro-Branding: Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--navy);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--teal-dark);
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--teal);
+  }
 }
 
 @layer utilities {
   .animate-wave { animation: var(--animate-wave); }
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
+
+  /* Brand Rules (Dividers) */
+  .brand-rule {
+    @apply w-12 h-[2px] bg-teal mb-8;
+  }
+  .brand-rule.coral {
+    @apply bg-coral;
+  }
+  .brand-rule.lavender {
+    @apply bg-lavender;
+  }
+  .brand-rule.center {
+    @apply mx-auto;
   }
 }

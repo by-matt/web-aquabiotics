@@ -7,6 +7,11 @@ import PageWrapper from '../components/PageWrapper';
 import AnimatedSection from '../components/AnimatedSection';
 
 const data = [
+    { year: '2014', value: 206.1, volume: 69151 },
+    { year: '2015', value: 214.7, volume: 71859 },
+    { year: '2016', value: 223.8, volume: 74744 },
+    { year: '2017', value: 233.7, volume: 77849 },
+    { year: '2018', value: 244.5, volume: 81196 },
     { year: '2019', value: 256.4, volume: 84817 },
     { year: '2020', value: 269.5, volume: 88773 },
     { year: '2021', value: 284.1, volume: 93106 },
@@ -56,10 +61,10 @@ export default function Market() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
                     >
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 tracking-tight">
+                        <h1 className="text-4xl md:text-5xl lg:text-[80px] font-light mb-6 tracking-tight leading-none text-cream">
                             {t('nav.market')}
                         </h1>
-                        <p className="text-xl md:text-2xl font-light opacity-90 max-w-2xl mx-auto">
+                        <p className="text-xl md:text-2xl font-light italic text-muted-strong max-w-2xl mx-auto border-l-2 border-coral pl-4">
                             {t('market_page.hero_subtitle')}
                         </p>
                     </motion.div>
@@ -73,14 +78,14 @@ export default function Market() {
                 <div className="container mx-auto px-4 relative z-10">
                     <div className="max-w-4xl mx-auto">
                         <motion.div
-
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                         >
-                            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-8">
+                            <h2 className="text-4xl md:text-5xl font-light text-navy mb-8 tracking-tight">
                                 {t('market_page.why_natural.title')}
                             </h2>
+                            <div className="brand-rule coral"></div>
                             <p className="text-lg text-gray-700 mb-8 leading-relaxed">
                                 {t('market_page.why_natural.description')}
                             </p>
@@ -155,16 +160,23 @@ export default function Market() {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
                         <AnimatedSection direction="left">
                             <h2 className="text-3xl font-bold text-navy mb-6">{t('market_page.proj_title')}</h2>
-                            <p className="text-gray-600 text-lg leading-relaxed mb-8">
-                                {t('market_page.proj_desc')}
-                            </p>
+                            <ul className="space-y-3 mb-8">
+                                {(t('market_page.proj_bullets', { returnObjects: true }) || []).map((bullet, idx) => (
+                                    <li key={idx} className="flex items-start text-gray-700">
+                                        <svg className="w-5 h-5 text-teal mr-3 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 13l4 4L19 7" />
+                                        </svg>
+                                        <span className="leading-relaxed font-light">{bullet}</span>
+                                    </li>
+                                ))}
+                            </ul>
                             <div className="flex flex-col space-y-4 mb-10">
                                 <div className="flex items-center">
-                                    <span className="w-5 h-5 rounded-sm bg-aqua mr-3 shadow-sm"></span>
+                                    <span className="w-5 h-5 rounded-sm bg-[#0ea5e9] mr-3 shadow-sm"></span>
                                     <span className="text-navy font-medium">{t('market_page.proj_trend_value')}</span>
                                 </div>
                                 <div className="flex items-center">
-                                    <span className="w-5 h-5 rounded-sm bg-teal mr-3 shadow-sm"></span>
+                                    <span className="w-5 h-5 rounded-sm bg-[#14b8a6] mr-3 shadow-sm"></span>
                                     <span className="text-gray-500">{t('market_page.proj_trend_volume')}</span>
                                 </div>
                             </div>

@@ -148,7 +148,9 @@
                     "En Aquabiotics Sur, representa la integración de un profundo entendimiento científico con una ejecución pragmática — asegurando que la innovación sea medible, trazable y globalmente competitiva."
                 ]
             }
-        ]
+        ],
+        "brand_quote_1": "\"No somos una empresa de tratamiento de residuos. Somos una empresa que encontró ",
+        "brand_quote_2": "valor donde nadie miraba.\""
     },
     "sustainability_page": {
         "hero_subtitle": "Valorizando los efluentes de cocción del mejillón en metabolitos marinos de alto valor.",
@@ -469,7 +471,13 @@
             }
         ],
         "proj_title": "Proyección de Mercado y Oportunidades",
-        "proj_desc": "Según Fundación Chile (FMI 2019), el mercado global de taurina alcanza las 84.819 toneladas anuales, valorizadas en US$ 256,3 millones, con un crecimiento acelerado (CAGR del 5,7%). Impulsado por la demanda en bebidas estimulantes (24%), nutrición animal (23%) y farmacéuticos (16%), el mercado está dominado actualmente por la taurina sintética (93.8%) debido a su bajo costo. Esto presenta una oportunidad única para introducir alternativas naturales, trazables y de origen marino que respondan a la tendencia global hacia productos 'Clean Label'.",
+        "proj_bullets": [
+            "El crecimiento del mercado es moderado, pero se espera que acelere en el mediano plazo debido al aumento de demanda de bebidas energéticas.",
+            "Tamaño mundial del mercado en torno a los US$ 250 millones.",
+            "Hasta 2019 el crecimiento anual del mercado era de 4,4%.",
+            "El crecimiento acelera a partir de 2019 a un 5,7% anual.",
+            "Se mantiene la proporción de volumen y valor de mercado (precio relativamente estable)."
+        ],
         "proj_trend_value": "Valor de Mercado (US$ Millones)",
         "proj_trend_volume": "Volumen de Mercado (Toneladas)",
         "sources_title": "Fuentes de Datos de Mercado",
@@ -651,5 +659,10 @@
                 "content": "Si tiene alguna pregunta sobre esta política de privacidad, comuníquese con nosotros a través de nuestra Página de Contacto oficial."
             }
         ]
+    },
+    "archetypes": {
+        "explorer": "El Origen - El Explorador",
+        "creator": "Economía Azul - El Creador",
+        "sage": "Innovación - El Sabio"
     }
 }

@@ -1,21 +1,40 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}', './src/locales/**/*.json'],
   theme: {
     extend: {
       colors: {
-        navy:    '#050B14',
-        'navy-light': '#0A1628',
-        ocean:   '#0c4a6e',
-        teal:    '#064e3b',
-        aqua:    '#0ea5e9',
-        'aqua-light': '#38bdf8',
-        emerald: '#10b981',
-        seafoam: '#E8F5F5',
-        sand:    '#F5F0E8',
+        coral: {
+          DEFAULT: '#D9715A',
+          light: '#F0A892',
+          dark: '#A04030',
+        },
+        teal: {
+          DEFAULT: '#3ABFB2',
+          light: '#7ADBD3',
+          dark: '#1E8C82',
+        },
+        navy: {
+          DEFAULT: '#0A1628',
+          mid: '#142236',
+          light: '#1E3350',
+        },
+        lavender: {
+          DEFAULT: '#7B7DC0',
+          light: '#A9AADC',
+        },
+        steel: '#6B8FAB',
+        cream: '#F7F3ED',
+        'warm-white': '#FAFAF8',
+        charcoal: '#1E1E2A',
+        ocean: '#0A1628', /* fallback to map old classes to navy */
+        emerald: '#3ABFB2', /* fallback to map old classes to teal */
+        aqua: '#3ABFB2', /* fallback */
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['Raleway', 'sans-serif'],
+        display: ['Cormorant Garamond', 'Georgia', 'serif'],
+        mono: ['Space Mono', 'monospace'],
       },
       animation: {
         'wave': 'wave 8s ease-in-out infinite',

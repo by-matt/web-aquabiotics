@@ -15,8 +15,8 @@ export default function Contact() {
                 <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-emerald/20 rounded-full mix-blend-screen filter blur-[100px] animate-blob animation-delay-2000" />
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
                     <AnimatedSection>
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 tracking-tight">{t('contact_page.hero_title')}</h1>
-                        <p className="text-xl md:text-2xl text-seafoam font-light max-w-2xl mx-auto">
+                        <h1 className="text-4xl md:text-5xl lg:text-[80px] font-light mb-6 tracking-tight leading-none text-cream">{t('contact_page.hero_title')}</h1>
+                        <p className="text-xl md:text-2xl text-muted-strong font-light italic border-l-2 border-teal pl-4 max-w-2xl mx-auto">
                             {t('contact_page.hero_sub')}
                         </p>
                     </AnimatedSection>
@@ -30,7 +30,7 @@ export default function Contact() {
 
                         {/* Contact Information */}
                         <AnimatedSection direction="left" className="py-8">
-                            <h2 className="text-3xl font-bold text-navy mb-6">{t('contact_page.contact_info')}</h2>
+                            <h2 className="text-4xl md:text-5xl font-light text-navy mb-6 tracking-tight">{t('contact_page.contact_info')}</h2>
                             <p className="text-gray-600 text-lg leading-relaxed mb-10">
                                 {t('contact_page.contact_desc')}
                             </p>

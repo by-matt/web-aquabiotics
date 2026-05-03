@@ -23,10 +23,10 @@ export default function About() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
                     >
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 tracking-tight">
+                        <h1 className="text-4xl md:text-5xl lg:text-[80px] font-light mb-6 tracking-tight leading-none text-cream">
                             {t('nav.about')}
                         </h1>
-                        <p className="text-xl md:text-2xl font-light opacity-90 max-w-2xl mx-auto">
+                        <p className="text-xl md:text-2xl font-light italic text-muted-strong max-w-2xl mx-auto border-l-2 border-coral pl-4">
                             {t('about_page.hero_subtitle')}
                         </p>
                     </motion.div>
@@ -48,7 +48,8 @@ export default function About() {
                                 className="rounded-xl shadow-lg w-full h-auto object-cover transform transition-transform hover:scale-[1.02] duration-500" />
                         </AnimatedSection>
                         <AnimatedSection direction="left" delay={0.2}>
-                            <h2 className="text-3xl font-bold mb-6 text-navy">{t('about_page.origins_title')}</h2>
+                            <span className="font-mono text-[10px] tracking-widest text-teal uppercase mb-4 block">{t('archetypes.explorer')}</span>
+                            <h2 className="text-4xl md:text-5xl font-light mb-6 text-navy tracking-tight">{t('about_page.origins_title')}</h2>
                             <p className="text-lg text-gray-600 mb-6 leading-relaxed">
                                 {t('about_page.origins_p1')}
                             </p>
@@ -56,6 +57,21 @@ export default function About() {
                                 {t('about_page.origins_p2')}
                             </p>
                         </AnimatedSection>
+                    </div>
+
+                    {/* Brand Quote */}
+                    <div className="py-16 my-20 border-y border-teal/20 text-center max-w-4xl mx-auto relative">
+                        <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-cream px-4">
+                            <svg width="24" height="24" viewBox="0 0 48 48" fill="none">
+                                <circle cx="24" cy="24" r="18" stroke="#D9715A" strokeWidth="1.5"/>
+                                <path d="M24 6 L24 10 M24 38 L24 42 M6 24 L10 24 M38 24 L42 24" stroke="#D9715A" strokeWidth="1.5" strokeLinecap="round"/>
+                                <path d="M16 16 L24 24 L32 18" stroke="#D9715A" strokeWidth="1.5" strokeLinecap="round"/>
+                                <circle cx="24" cy="24" r="3" fill="#D9715A" opacity="0.5"/>
+                            </svg>
+                        </div>
+                        <h3 className="text-3xl md:text-5xl font-display font-light italic text-navy leading-tight">
+                            {t('about_page.brand_quote_1')}<span className="text-teal font-normal">{t('about_page.brand_quote_2')}</span>
+                        </h3>
                     </div>
 
                     {/* Mission Vision Location Cards */}
@@ -89,7 +105,7 @@ export default function About() {
                         <div>
                             <div className="text-center mb-12">
                                 <AnimatedSection>
-                                    <h2 className="text-3xl font-bold text-navy mb-4 inline-block relative pb-3 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-16 after:h-[3px] after:bg-gradient-to-r after:from-aqua after:to-emerald">
+                                    <h2 className="text-4xl md:text-5xl font-light text-navy tracking-tight mb-8">
                                         {t('about_page.team_title')}
                                     </h2>
                                 </AnimatedSection>

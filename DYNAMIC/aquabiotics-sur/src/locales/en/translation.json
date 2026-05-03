@@ -143,12 +143,14 @@
                     "Innovation roadmap development"
                 ],
                 "paragraphs_end": [
-                    "His vision aligns with positioning Chilean Patagonia as a global reference in sustainable marine biotech. He is particularly driven by the opportunity to replace petrochemical-derived ingredients with biologically upcycled alternatives that preserve ecosystem integrity while generating economic value.",
-                    "Beyond operational development, he brings a systems-thinking mindset to the organization. He views marine biotechnology not as a single-product endeavor but as a platform for long-term regenerative industry transformation. His work reflects a commitment to scientific integrity, environmental stewardship, and scalable impact.",
-                    "At Aquabiotics Sur, he represents the integration of deep scientific understanding with pragmatic execution — ensuring that innovation is measurable, traceable, and globally competitive."
+                    "His vision aligns with positioning Chilean Patagonia as a global reference in sustainable marine biotechnology. He is particularly motivated by the opportunity to replace petrochemical-derived ingredients with biologically upcycled alternatives that preserve ecosystem integrity while generating economic value.",
+                    "Beyond operational development, he brings a systems-thinking mindset to the organization. He envisions marine biotechnology not as a single-product endeavor, but as a platform for long-term regenerative industrial transformation. His work reflects a commitment to scientific integrity, environmental stewardship, and scalable impact.",
+                    "At Aquabiotics Sur, he represents the integration of deep scientific understanding with pragmatic execution—ensuring that innovation is measurable, traceable, and globally competitive."
                 ]
             }
-        ]
+        ],
+        "brand_quote_1": "\"We are not a waste treatment company. We are a company that found ",
+        "brand_quote_2": "value where no one was looking.\""
     },
     "sustainability_page": {
         "hero_subtitle": "Valorizing mussel cooking effluents into high-value marine metabolites.",
@@ -469,7 +471,13 @@
             }
         ],
         "proj_title": "Market Projection & Opportunities",
-        "proj_desc": "According to Fundación Chile (FMI 2019), the global taurine market represents 84,819 tons annually, valued at US$ 256.3 million with an accelerated growth rate (5.7% CAGR). Driven by demand in energy beverages (24%), animal nutrition (23%), and pharmaceuticals (16%), the market is currently dominated by synthetic taurine (93.8%) due to its low cost. This presents a unique opportunity for natural, traceable, marine-derived alternatives that respond to the global shift toward 'Clean Label' products.",
+        "proj_bullets": [
+            "Market growth is moderate but expected to accelerate in the medium term due to increased demand for energy drinks.",
+            "Global market size is around US$ 250 million.",
+            "Until 2019, the annual market growth was 4.4%.",
+            "Growth accelerates from 2019 onwards to 5.7% annually.",
+            "The proportion of market volume and value remains stable (relatively stable price)."
+        ],
         "proj_trend_value": "Market Value (US$ Millions)",
         "proj_trend_volume": "Market Volume (Tons)",
         "sources_title": "Market Data Sources",
@@ -622,21 +630,21 @@
         "sections": [
             {
                 "title": "1. Introduction",
-                "content": "At Aquabiotics Sur, we are committed to protecting your privacy and ensuring the security of your technical information. This policy describes how we collect and use technical data to improve our \"Blue Circular Economy\" platform."
+                "content": "At Aquabiotics Sur, we are committed to protecting your privacy and ensuring the security of your technical information. This policy outlines how we collect and use technical data to improve our \"Blue Circular Economy\" platform."
             },
             {
                 "title": "2. Data We Collect",
-                "content": "We use Google Analytics 4 (GA4) to understand how users interact with our website. The information collected includes:",
+                "content": "We use Google Analytics 4 (GA4) to understand how users interact with our website. Information collected includes:",
                 "bullets": [
                     "Technical identifiers (IP address, anonymized).",
-                    "Geographic data (Country, Region, and Municipality/Commune).",
-                    "Device information (Browser type, operating system).",
-                    "Browsing behavior (Time spent on pages, links clicked)."
+                    "Geographical data (Country, Region, and Municipality).",
+                    "Device information (Browser type, OS).",
+                    "Browsing behavior (Time spent on pages, links visited)."
                 ]
             },
             {
                 "title": "3. Purpose of Collection",
-                "content": "The data is used exclusively for statistical analysis and internal reporting to optimize our technical content, improve site performance, and better understand our global market interest in marine biotechnology."
+                "content": "Data is used exclusively for statistical analysis and internal reporting to optimize our technical content, improve site performance, and better understand global market interest in marine biotechnology."
             },
             {
                 "title": "4. Legal Compliance (Chile)",
@@ -644,12 +652,17 @@
             },
             {
                 "title": "5. Cookies",
-                "content": "Our site uses cookies strictly for the functionality of Google Analytics. You can choose to disable cookies in your browser settings if you wish to opt-out of this tracking."
+                "content": "Our site uses cookies strictly for Google Analytics functionality. You can opt out of this tracking by disabling cookies in your browser settings."
             },
             {
                 "title": "6. Contact",
-                "content": "If you have any questions regarding this privacy policy, please contact us through our official Contact Page."
+                "content": "If you have any questions regarding this privacy policy, please contact us via our official Contact Page."
             }
         ]
+    },
+    "archetypes": {
+        "explorer": "The Origin - The Explorer",
+        "creator": "Blue Economy - The Creator",
+        "sage": "Innovation - The Sage"
     }
 }

@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import CookieBanner from './components/CookieBanner';
+import Loader from './components/Loader';
 
 // Pages
 import Home from './pages/Home';
@@ -103,10 +104,11 @@ function AnimatedRoutes() {
 export default function App() {
   return (
     <Router>
+      <Loader />
       <ScrollToTop />
       <SEOManager />
       <Navbar />
-      <main className="flex-grow flex flex-col bg-gray-50 min-h-screen">
+      <main className="flex-grow flex flex-col bg-cream min-h-screen text-charcoal">
         <AnimatedRoutes />
       </main>
       <Footer />

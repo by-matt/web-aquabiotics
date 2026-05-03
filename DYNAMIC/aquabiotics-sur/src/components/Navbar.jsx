@@ -82,7 +82,7 @@ export default function Navbar() {
                                     key={link.path}
                                     to={link.path}
                                     className={({ isActive }) =>
-                                        `text-sm font-medium transition-colors relative pb-1 ${isActive ? 'text-aqua' : 'text-gray-300 hover:text-white'
+                                        `font-mono text-[10px] uppercase tracking-[0.12em] transition-colors relative pb-1 ${isActive ? 'text-cream font-bold' : 'text-muted hover:text-cream'
                                         }`
                                     }
                                 >
@@ -92,7 +92,7 @@ export default function Navbar() {
                                             {isActive && (
                                                 <motion.div
                                                     layoutId="navbar-indicator"
-                                                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-aqua"
+                                                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-teal"
                                                     initial={false}
                                                     transition={{ type: "spring", stiffness: 300, damping: 30 }}
                                                 />
@@ -106,14 +106,14 @@ export default function Navbar() {
                             <div className="flex items-center space-x-2 border-l pl-6 ml-2 border-white/20">
                                 <button
                                     onClick={() => i18n.changeLanguage('en')}
-                                    className={`text-xs font-bold transition-colors ${i18n.language === 'en' ? 'text-aqua' : 'text-gray-400 hover:text-white'}`}
+                                    className={`font-mono text-[10px] uppercase tracking-[0.12em] transition-colors ${i18n.language === 'en' ? 'text-teal font-bold' : 'text-muted hover:text-cream'}`}
                                 >
                                     EN
                                 </button>
                                 <span className="text-gray-500/50">|</span>
                                 <button
                                     onClick={() => i18n.changeLanguage('es')}
-                                    className={`text-xs font-bold transition-colors ${i18n.language === 'es' ? 'text-aqua' : 'text-gray-400 hover:text-white'}`}
+                                    className={`font-mono text-[10px] uppercase tracking-[0.12em] transition-colors ${i18n.language === 'es' ? 'text-teal font-bold' : 'text-muted hover:text-cream'}`}
                                 >
                                     ES
                                 </button>

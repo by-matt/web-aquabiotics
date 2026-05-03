@@ -36,10 +36,10 @@ export default function Sustainability() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
                     >
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 tracking-tight">
+                        <h1 className="text-4xl md:text-5xl lg:text-[80px] font-light mb-6 tracking-tight leading-none text-cream">
                             {t('nav.sustainability')}
                         </h1>
-                        <p className="text-xl md:text-2xl font-light opacity-90 max-w-2xl mx-auto">
+                        <p className="text-xl md:text-2xl font-light italic text-muted-strong max-w-2xl mx-auto border-l-2 border-teal pl-4">
                             {t('sustainability_page.hero_subtitle')}
                         </p>
                     </motion.div>
@@ -55,9 +55,11 @@ export default function Sustainability() {
                     {/* Circular Economy Title */}
                     <div className="max-w-4xl mx-auto mb-16 text-center">
                         <AnimatedSection>
-                            <h2 className="text-3xl font-bold mb-6 text-navy">
+                            <span className="font-mono text-[10px] tracking-widest text-teal uppercase mb-4 block">{t('archetypes.creator')}</span>
+                            <h2 className="text-4xl md:text-5xl font-light mb-6 text-navy tracking-tight">
                                 {t('sustainability_page.circular_economy')}
                             </h2>
+                            <div className="brand-rule center"></div>
                             <p className="text-lg text-gray-600 leading-relaxed font-light">
                                 {t('sustainability_page.circular_model_desc')}
                             </p>

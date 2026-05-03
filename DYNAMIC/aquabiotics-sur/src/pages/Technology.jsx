@@ -77,10 +77,11 @@ export default function Technology() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
                     >
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 tracking-tight">
+                        <h1 className="text-4xl md:text-5xl lg:text-[80px] font-light mb-6 tracking-tight leading-none text-cream">
                             {t('nav.technology')}
                         </h1>
-                        <p className="text-xl md:text-2xl font-light opacity-90 max-w-2xl mx-auto">
+                        <span className="font-mono text-[10px] tracking-widest text-teal uppercase mb-6 block opacity-80">{t('archetypes.sage')}</span>
+                        <p className="text-xl md:text-2xl font-light italic text-muted-strong max-w-2xl mx-auto border-l-2 border-lavender pl-4">
                             {t('technology_page.hero_subtitle')}
                         </p>
                     </motion.div>
@@ -101,9 +102,9 @@ export default function Technology() {
                             <button
                                 key={tab.id}
                                 onClick={() => setActiveTab(tab.id)}
-                                className={`px-6 py-3 rounded-full font-bold text-sm md:text-base transition-all duration-300 ${activeTab === tab.id
-                                    ? 'bg-gradient-to-r from-ocean to-teal text-white shadow-lg shadow-ocean/30 translate-y-px'
-                                    : 'bg-white/80 backdrop-blur-sm text-navy hover:bg-white border border-white/50 shadow-sm'
+                                className={`px-6 py-3 rounded-full font-mono text-[10px] uppercase tracking-widest transition-all duration-300 ${activeTab === tab.id
+                                    ? 'bg-teal text-white shadow-lg shadow-teal/30 translate-y-px'
+                                    : 'bg-cream/80 backdrop-blur-sm text-navy hover:bg-cream border border-teal/20 shadow-sm'
                                     }`}
                             >
                                 {tab.label}
@@ -123,7 +124,10 @@ export default function Technology() {
                                     exit={{ opacity: 0, y: -20 }}
                                     transition={{ duration: 0.3 }}
                                 >
-                                    <h2 className="text-2xl font-bold text-navy mb-8 text-center">{t('technology_page.biorefinery')}</h2>
+                                    <div className="text-center mb-16">
+                                        <h2 className="text-4xl md:text-5xl font-light text-navy tracking-tight mb-6">{t('technology_page.biorefinery')}</h2>
+                                        <div className="brand-rule center lavender"></div>
+                                    </div>
 
                                     {/* Raw Material & Main Product Section */}
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">

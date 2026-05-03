@@ -24,7 +24,7 @@ export default function Home() {
                         transition={{ duration: 0.8, delay: 0.2 }}
                         className="max-w-4xl"
                     >
-                        <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter mb-6 leading-tight bg-gradient-to-r from-white via-seafoam to-aqua-light text-transparent bg-clip-text drop-shadow-lg">
+                        <h1 className="text-5xl md:text-6xl lg:text-[100px] font-light tracking-tight mb-6 leading-[1.0] text-cream drop-shadow-lg">
                             {t('hero.title')}
                         </h1>
 
@@ -32,7 +32,7 @@ export default function Home() {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ duration: 0.8, delay: 0.6 }}
-                            className="text-xl md:text-2xl text-sand font-light mb-10 max-w-2xl border-l-4 border-aqua-light pl-6 drop-shadow-md"
+                            className="text-xl md:text-2xl text-muted-strong font-light italic mb-10 max-w-2xl border-l-4 border-teal pl-6"
                         >
                             {t('hero.hero_subtitle')}
                         </motion.p>
@@ -43,11 +43,11 @@ export default function Home() {
                             transition={{ duration: 0.5, delay: 0.9 }}
                             className="flex flex-col sm:flex-row gap-4"
                         >
-                            <Link to="/technology" className="relative group overflow-hidden bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white font-bold py-4 px-8 rounded-xl shadow-[0_0_20px_rgba(14,165,233,0.3)] hover:shadow-[0_0_30px_rgba(14,165,233,0.5)] transition-all duration-300 transform hover:-translate-y-1 text-center">
+                            <Link to="/technology" className="relative group overflow-hidden bg-coral hover:bg-coral-light backdrop-blur-md text-white font-sans font-medium tracking-wider text-sm uppercase py-4 px-8 rounded-full shadow-[0_0_20px_rgba(217,113,90,0.3)] hover:shadow-[0_0_30px_rgba(217,113,90,0.5)] transition-all duration-300 transform hover:-translate-y-1 text-center">
                                 <div className="absolute top-0 -left-[100%] w-1/2 h-full bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-[-20deg] group-hover:left-[200%] transition-all duration-700 ease-in-out" />
                                 <span className="relative z-10 drop-shadow-md">{t('hero.cta_primary')}</span>
                             </Link>
-                            <Link to="/contact" className="border-2 border-white/30 hover:border-white text-white hover:bg-white/5 backdrop-blur-sm font-bold py-4 px-8 rounded-xl transition-all duration-300 text-center">
+                            <Link to="/contact" className="border border-white/30 hover:border-white text-white hover:bg-white/5 backdrop-blur-sm font-sans font-medium tracking-wider text-sm uppercase py-4 px-8 rounded-full transition-all duration-300 text-center">
                                 {t('hero.cta_secondary')}
                             </Link>
                         </motion.div>
@@ -101,7 +101,7 @@ export default function Home() {
                             <h2 className="text-3xl font-bold mb-6 flex items-center">
                                 <span className="w-8 h-8 rounded-full bg-red-100 text-red-600 flex items-center justify-center mr-4">
                                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M6 18L18 6M6 6l12 12" />
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
                                     </svg>
                                 </span>
                                 {t('challenge.title')}
@@ -117,7 +117,7 @@ export default function Home() {
                                 <h2 className="text-3xl font-bold mb-6 flex items-center">
                                     <span className="w-8 h-8 rounded-full bg-emerald/20 text-emerald flex items-center justify-center mr-4">
                                         <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 13l4 4L19 7" />
                                         </svg>
                                     </span>
                                     {t('solution.title')}
@@ -138,7 +138,7 @@ export default function Home() {
                                             transition={{ delay: 0.4 + (idx * 0.1) }}
                                         >
                                             <svg className="w-5 h-5 text-aqua mr-3 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                             </svg>
                                             <span className="text-gray-600">{bullet}</span>
                                         </motion.li>
