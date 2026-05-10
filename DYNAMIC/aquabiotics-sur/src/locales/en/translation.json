@@ -157,6 +157,51 @@
         "impact_metrics": "Impact Metrics",
         "circular_economy": "Our Circular Model",
         "circular_model_desc": "Aquabiotics Sur operates at the intersection of the marine industry and biotechnology, creating a closed-loop system where waste from one process becomes the raw material for another. This approach not only generates economic value but also significantly reduces the environmental footprint of the mussel processing industry.",
+        "comparison": {
+            "title": "Comparative Analysis of Alternatives",
+            "criterio": "Evaluation Criteria",
+            "sintetica": "Synthetic Taurine (Current Standard)",
+            "fermentacion": "Fermentation Taurine (Microalgae)",
+            "aquabiotics": "AquaBiotics Sur (Blue Taurine)",
+            "rows": [
+                {
+                    "criterio": "Origin / Source",
+                    "sintetica": "Chemical synthesis (Petrochemical derivatives)",
+                    "fermentacion": "Biotechnological cultivation (Bioreactors)",
+                    "aquabiotics": "Upcycled Marine Source (Mussel farming waste)"
+                },
+                {
+                    "criterio": "Raw Material Cost",
+                    "sintetica": "Volatile (Depends on crude oil prices)",
+                    "fermentacion": "High (Culture media and nutrients)",
+                    "aquabiotics": "Zero / Negative (Industrial liability)"
+                },
+                {
+                    "criterio": "Water & Energy Footprint",
+                    "sintetica": "Very High (Heavy industrial processes)",
+                    "fermentacion": "High (Requires constant energy and fresh water)",
+                    "aquabiotics": "Ultra-Low (Captures existing thermal flow)"
+                },
+                {
+                    "criterio": "Traceability & Certification",
+                    "sintetica": "None (Hidden in supply chain)",
+                    "fermentacion": "Medium (Biological origin)",
+                    "aquabiotics": "Total (Patagonia Deep-Tech)"
+                },
+                {
+                    "criterio": "Environmental Impact",
+                    "sintetica": "Polluting (Solvent emission)",
+                    "fermentacion": "Neutral (Requires new inputs)",
+                    "aquabiotics": "Regenerative (Cleans fjord effluents)"
+                },
+                {
+                    "criterio": "Business Model",
+                    "sintetica": "Commodity (Price war)",
+                    "fermentacion": "Premium (High production cost)",
+                    "aquabiotics": "Circular & Cost-Efficient (High B2B profitability)"
+                }
+            ]
+        },
         "impact_cards": [
             {
                 "title": "Environmental Impact",

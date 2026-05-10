@@ -22,6 +22,7 @@ export default function Sustainability() {
 
     const impactCards = t('sustainability_page.impact_cards', { returnObjects: true });
     const sdgGroups = t('sustainability_page.sdg_groups', { returnObjects: true });
+    const comparison = t('sustainability_page.comparison', { returnObjects: true });
 
     return (
         <PageWrapper>
@@ -98,6 +99,42 @@ export default function Sustainability() {
                             </AnimatedSection>
                         ))}
                     </div>
+
+                    {/* Comparison Table */}
+                    {comparison && comparison.rows && (
+                        <div className="mb-24" id="comparative-table">
+                            <div className="text-center mb-12">
+                                <AnimatedSection>
+                                    <h2 className="text-3xl font-bold text-navy mb-4">{comparison.title}</h2>
+                                    <div className="brand-rule center"></div>
+                                </AnimatedSection>
+                            </div>
+                            <AnimatedSection direction="up" delay={0.2}>
+                                <div className="overflow-x-auto rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/50 bg-white/70 backdrop-blur-xl">
+                                    <table className="w-full text-left border-collapse min-w-[800px]">
+                                        <thead>
+                                            <tr>
+                                                <th className="p-6 border-b border-gray-100 font-bold text-navy w-1/4 text-sm md:text-base">{comparison.criterio}</th>
+                                                <th className="p-6 border-b border-gray-100 font-bold bg-gray-50 text-gray-500 w-1/4 text-center text-sm md:text-base">{comparison.sintetica}</th>
+                                                <th className="p-6 border-b border-gray-100 font-bold bg-emerald-50 text-emerald-600 w-1/4 text-center text-sm md:text-base">{comparison.fermentacion}</th>
+                                                <th className="p-6 border-b border-gray-100 font-bold bg-teal/5 text-teal w-1/4 text-center text-sm md:text-base">{comparison.aquabiotics}</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody className="divide-y divide-gray-100">
+                                            {comparison.rows.map((row, idx) => (
+                                                <tr key={idx} className="hover:bg-gray-50 transition-colors">
+                                                    <td className="p-6 font-medium text-gray-700 text-sm md:text-base">{row.criterio}</td>
+                                                    <td className="p-6 text-gray-500 text-center text-sm md:text-base">{row.sintetica}</td>
+                                                    <td className="p-6 text-emerald-600 font-medium text-center text-sm md:text-base">{row.fermentacion}</td>
+                                                    <td className="p-6 text-teal font-bold text-center text-sm md:text-base">{row.aquabiotics}</td>
+                                                </tr>
+                                            ))}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </AnimatedSection>
+                        </div>
+                    )}
 
                     {/* SDG Interactive Grid */}
                     <div className="mb-24">

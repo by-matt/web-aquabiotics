@@ -157,6 +157,51 @@
         "impact_metrics": "Métricas de Impacto",
         "circular_economy": "Nuestro Modelo Circular",
         "circular_model_desc": "Aquabiotics Sur opera en la intersección de la industria marina y la biotecnología, creando un sistema de ciclo cerrado donde el residuo de un proceso se convierte en la materia prima de otro. Este enfoque no solo genera valor económico, sino que también reduce significativamente la huella ambiental de la industria del procesamiento de mejillones.",
+        "comparison": {
+            "title": "Análisis Comparativo de Alternativas",
+            "criterio": "Criterio de Evaluación",
+            "sintetica": "Taurina Sintética (Estándar Actual)",
+            "fermentacion": "Taurina de Fermentación (Microalgas)",
+            "aquabiotics": "AquaBiotics Sur (Taurina Azul)",
+            "rows": [
+                {
+                    "criterio": "Origen / Fuente",
+                    "sintetica": "Síntesis química (Derivados del petróleo)",
+                    "fermentacion": "Cultivo biotecnológico (Biorreactores)",
+                    "aquabiotics": "Upcycled Marine Source (Residuos de Mitilicultura)"
+                },
+                {
+                    "criterio": "Costo de Materia Prima",
+                    "sintetica": "Volátil (Depende del precio del crudo)",
+                    "fermentacion": "Alto (Medios de cultivo y nutrientes)",
+                    "aquabiotics": "Cero / Negativo (Es un pasivo industrial)"
+                },
+                {
+                    "criterio": "Huella Hídrica y Energética",
+                    "sintetica": "Muy Alta (Procesos industriales pesados)",
+                    "fermentacion": "Alta (Requiere energía constante y agua dulce)",
+                    "aquabiotics": "Ultra-Baja (Captura de flujo térmico existente)"
+                },
+                {
+                    "criterio": "Trazabilidad y Sello",
+                    "sintetica": "Nula (Oculta en la cadena de suministro)",
+                    "fermentacion": "Media (Origen biológico)",
+                    "aquabiotics": "Total (Patagonia Deep-Tech)"
+                },
+                {
+                    "criterio": "Impacto Ambiental",
+                    "sintetica": "Contaminante (Emisión de solventes)",
+                    "fermentacion": "Neutro (Requiere insumos nuevos)",
+                    "aquabiotics": "Regenerativo (Limpia efluentes de los fiordos)"
+                },
+                {
+                    "criterio": "Modelo de Negocio",
+                    "sintetica": "Commodity (Guerra de precios)",
+                    "fermentacion": "Premium (Costo de producción alto)",
+                    "aquabiotics": "Circular & Cost-Efficient (Alta rentabilidad B2B)"
+                }
+            ]
+        },
         "impact_cards": [
             {
                 "title": "Impacto Ambiental",
