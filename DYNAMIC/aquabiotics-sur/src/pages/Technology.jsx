@@ -6,7 +6,7 @@ import PageWrapper from '../components/PageWrapper';
 import AnimatedSection from '../components/AnimatedSection';
 
 export default function Technology() {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
     const navigate = useNavigate();
     const location = useLocation();
     const [activeTab, setActiveTab] = useState('biorefinery');
