@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaBiotics Sur - Executive One Pager</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --coral: #ef9a86;
+            --teal: #49b6ad;
+            --blue: #6d9cc6;
+            --purple: #8c81e8;
+            --bg-color: #030508;
+            --text-main: #f0f0f0;
+            --text-muted: #a0aab5;
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --frame-border: rgba(73, 182, 173, 0.25);
+        }
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            font-size: 9.5pt;
+            line-height: 1.5;
+            -webkit-print-color-adjust: exact;
+        }
+
+        .container {
+            width: 210mm;
+            height: 297mm;
+            padding: 12mm 15mm;
+            box-sizing: border-box;
+            margin: 0 auto;
+            position: relative;
+            background: linear-gradient(180deg, #070e17 0%, #000000 100%);
+            border: 6px solid #000000;
+            outline: 1px solid var(--frame-border);
+            outline-offset: -6px;
+            overflow: hidden;
+        }
+
+        /* Corner accents */
+        .container::before, .container::after {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border: 1px solid var(--teal);
+            z-index: 10;
+        }
+        .container::before { top: 10px; left: 10px; border-right: none; border-bottom: none; }
+        .container::after { bottom: 10px; right: 10px; border-left: none; border-top: none; }
+
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            color: #ffffff;
+            margin-top: 0;
+            font-weight: 600;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding-bottom: 12px;
+            margin-bottom: 15px;
+            border-bottom: none;
+            position: relative;
+            z-index: 2;
+        }
+
+        .header-logo {
+            max-width: 135px;
+        }
+
+        .header-title {
+            text-align: right;
+        }
+
+        .header-title h1 {
+            font-size: 22pt;
+            margin: 0 0 4px 0;
+            line-height: 1.1;
+        }
+
+        .header-title p {
+            font-size: 8.5pt;
+            color: var(--teal);
+            margin: 0;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .executive-summary {
+            margin-bottom: 15px;
+            padding: 15px 18px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-left: 4px solid var(--coral);
+            border-radius: 4px;
+        }
+        
+        .executive-summary p { margin: 0; font-size: 10pt; font-weight: 300; }
+        .executive-summary .section-title { margin-bottom: 8px; border:none; padding:0; font-size: 15pt; }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .section {
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: 13.5pt;
+            color: #ffffff;
+            border-bottom: 1px solid var(--glass-border);
+            padding-bottom: 6px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title span {
+            color: var(--coral);
+            margin-right: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 10.5pt;
+            font-weight: 600;
+        }
+
+        .highlight-data {
+            color: var(--teal);
+            font-weight: 600;
+        }
+
+        .glass-box {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 14px 16px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+
+        .diagram {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(0,0,0,0.4);
+            border: 1px solid var(--glass-border);
+            padding: 15px;
+            border-radius: 4px;
+            margin: 15px 0;
+            font-size: 8pt;
+            text-align: center;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .diagram-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 30%;
+        }
+
+        .diagram-step .icon {
+            font-size: 16pt;
+            margin-bottom: 5px;
+            opacity: 0.9;
+        }
+
+        .diagram-arrow {
+            color: var(--purple);
+            font-size: 13pt;
+            text-shadow: 0 0 8px rgba(140, 129, 232, 0.6);
+        }
+
+        ul {
+            padding-left: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        li {
+            margin-bottom: 8px;
+            padding-left: 14px;
+            position: relative;
+            font-weight: 300;
+            font-size: 9.5pt;
+        }
+
+        li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 7px;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background-color: var(--coral);
+        }
+        
+        li strong {
+            font-weight: 600;
+            color: #ffffff;
+            font-size: 9.5pt;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 12mm;
+            left: 15mm;
+            right: 15mm;
+            padding-top: 15px;
+            border-top: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .footer-contact {
+            font-size: 8.5pt;
+            color: var(--text-muted);
+            line-height: 1.5;
+            font-weight: 300;
+        }
+
+        .footer-contact strong {
+            color: #ffffff;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 12pt;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-social {
+            text-align: right;
+            font-size: 8.5pt;
+            color: var(--text-muted);
+        }
+        
+        .footer-social span {
+            color: var(--teal);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 11.5pt;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-logo">
+                <img src="aquabiotics-sur_logo_primary_transparent.png" alt="AquaBiotics Sur Logo" style="width: 100%; max-width: 135px;" onerror="this.outerHTML='<h1 style=\'margin:0;color:#ffffff\'>AquaBiotics Sur</h1>'">
+            </div>
+            <div class="header-title">
+                <h1>Liderando la Bio-Minería<br>Circular en la Patagonia</h1>
+                <p>Deeptech | Economía Azul | Ingredientes Upcycled</p>
+            </div>
+        </header>
+
+        <!-- Executive Summary -->
+        <div class="executive-summary">
+            <h2 class="section-title"><span>01</span> Executive Summary: El Pitch</h2>
+            <p>
+                Chile procesa 400.000 toneladas de mejillones al año, generando 160.000 m³ de pasivos ambientales por los que las plantas pagan sobrecargos tarifarios de hasta 3 veces. AquaBiotics Sur es una deeptech que transforma este costo operativo en activos biotecnológicos. Mediante biominería circular, proyectamos recuperar <span class="highlight-data">2,4 g/L</span> de taurina natural, reduciendo simultáneamente el <span class="highlight-data">98%</span> de la carga orgánica de los efluentes.
+            </p>
+        </div>
+
+        <div class="content-grid">
+            <!-- Left Column -->
+            <div>
+                <!-- Problema -->
+                <div class="section glass-box" style="border-left: 2px solid var(--purple);">
+                    <h2 class="section-title" style="border-bottom: none; margin-bottom: 8px;"><span>02</span> El Problema: Un Pasivo Invisible</h2>
+                    <p style="margin: 0 0 10px 0; font-size: 8.5pt; color: var(--text-muted);">La industria mitilicultora en la Región de Los Lagos enfrenta una crisis de sostenibilidad y costos:</p>
+                    <ul>
+                        <li><strong style="color: var(--purple);">Volumen Crítico:</strong> 160.000 metros cúbicos de agua de cocción vertidos anualmente.</li>
+                        <li><strong style="color: var(--purple);">Hemorragia Financiera:</strong> Penalizaciones severas por exceso de carga orgánica (DS 609).</li>
+                        <li><strong style="color: var(--purple);">Dependencia Sintética:</strong> El mercado global depende de taurina derivada del petróleo, sin trazabilidad y con alta huella de carbono.</li>
+                    </ul>
+                </div>
+
+                <!-- Mercado -->
+                <div class="section">
+                    <h2 class="section-title"><span>03</span> Oportunidad de Mercado SOM: <span class="highlight-data" style="margin-left: 5px;">US$ 40M</span></h2>
+                    <p style="margin: 0 0 10px 0; font-size: 8.5pt; color: var(--text-muted);">Apuntamos a la sustitución estratégica de importaciones en tres verticales de alto crecimiento:</p>
+                    <ul>
+                        <li style="--coral: var(--teal);"><strong>Pet Food Premium:</strong> Ingrediente obligatorio para dietas felinas con sello Clean Label.</li>
+                        <li style="--coral: var(--teal);"><strong>Acuicultura (Salmón):</strong> Mayor crecimiento y ahorro energético evitando la síntesis endógena.</li>
+                        <li style="--coral: var(--teal);"><strong>Nutracéutica:</strong> Suplementos de alta pureza con origen Patagonia y trazabilidad total.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div>
+                <!-- Solución -->
+                <div class="section">
+                    <h2 class="section-title"><span>04</span> La Solución: Bio-Minería Orgánica</h2>
+                    <p style="margin: 0 0 10px 0; font-size: 8.5pt; color: var(--text-muted);">Nuestra tecnología de nanofiltración modular permite una intervención in-situ sin interrumpir la operación de la planta:</p>
+                    <ul>
+                        <li><strong>Valorización:</strong> Recuperación selectiva de aminoácidos esenciales (Taurina Azul).</li>
+                        <li><strong>Saneamiento:</strong> Remoción del <span class="highlight-data">98%</span> de la DQO (Demanda Química de Oxígeno), eliminando sobrecargos.</li>
+                        <li><strong>Eficiencia:</strong> Proceso de bajo consumo energético y huella de carbono negativa.</li>
+                    </ul>
+                    
+                    <div class="diagram">
+                        <div class="diagram-step">
+                            <div class="icon" style="color: var(--blue);">🌊</div>
+                            <span style="color:#fff;">Efluente Sucio</span>
+                            <span style="font-size:7.5pt; color:var(--coral);">(Pasivo / Costo)</span>
+                        </div>
+                        <div class="diagram-arrow">➔</div>
+                        <div class="diagram-step">
+                            <div class="icon" style="color: var(--purple);">⚙️</div>
+                            <span style="color:#fff;">Membrana AB</span>
+                            <span style="font-size:7.5pt; color:var(--text-muted);">(Biominería)</span>
+                        </div>
+                        <div class="diagram-arrow">➔</div>
+                        <div class="diagram-step">
+                            <div class="icon" style="color: var(--teal);">💧</div>
+                            <span style="color:#fff;">Taurina Premium</span>
+                            <span style="font-size:7.5pt; color:var(--teal);">(Activo / Valor)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Roadmap -->
+                <div class="section glass-box" style="border-left: 2px solid var(--blue);">
+                    <h2 class="section-title" style="border-bottom: none; margin-bottom: 8px;"><span>05</span> Roadmap Estratégico 2026</h2>
+                    <ul>
+                        <li style="--coral: var(--blue);"><strong>Fase 1:</strong> Scientific De-risking y validación analítica de rendimientos (TRL 3).</li>
+                        <li style="--coral: var(--blue);"><strong>Fase 2:</strong> Pilotaje industrial en planta de la Región de Los Lagos (TRL 5).</li>
+                        <li style="--coral: var(--blue);"><strong>Fase 3:</strong> Escalamiento comercial y primera exportación de Taurina Azul Upcycled.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-contact">
+                <strong>Byron Calderón</strong><br>
+                CEO & Founder<br>
+                <span style="color: var(--teal);">byroncalderon@aqua-biotics.com</span><br>
+                Región de Los Lagos, Chile
+            </div>
+            <div class="footer-social">
+                <span>AquaBiotics Sur</span><br>
+                <div style="margin-top:5px; display:flex; align-items:center; justify-content:flex-end;">
+                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="12" style="margin-right:6px; filter: brightness(0) invert(1) opacity(0.7);"> 
+                    /company/aquabiotics-sur
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
