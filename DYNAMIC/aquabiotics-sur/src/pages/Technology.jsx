@@ -345,7 +345,7 @@ export default function Technology() {
                                                             {t('technology_page.innovation_nextgen.ip_strategy_desc')}
                                                         </p>
                                                     </div>
-                                                    <a href="/ONE-PAGER_AB_SUR.html" target="_blank" rel="noopener noreferrer" className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl shadow-lg transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] text-center block">
+                                                    <a href={i18n.language === 'es' ? '/ONE-PAGER_AB_SUR.html' : '/ONE-PAGER_AB_SUR_EN.html'} target="_blank" rel="noopener noreferrer" className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl shadow-lg transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] text-center block">
                                                         {t('technology_page.innovation_nextgen.download_btn')}
                                                     </a>
                                                 </div>
