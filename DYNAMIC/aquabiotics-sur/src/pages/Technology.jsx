@@ -248,7 +248,7 @@ export default function Technology() {
                                     <h2 className="text-2xl font-bold text-navy mb-12 text-center">{t('footer.links.quality')}</h2>
 
                                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                                        {(t('technology_page.quality_cards', { returnObjects: true }) || []).map((card, idx) => (
+                                        {(Array.isArray(t('technology_page.quality_cards', { returnObjects: true })) ? t('technology_page.quality_cards', { returnObjects: true }) : []).map((card, idx) => (
                                             <motion.div
                                                 key={idx}
                                                 initial={{ opacity: 0, y: 20 }}
@@ -319,7 +319,7 @@ export default function Technology() {
                                                 </p>
 
                                                 <ul className="space-y-6">
-                                                    {(t('technology_page.innovation_nextgen.items', { returnObjects: true }) || []).map((item, idx) => (
+                                                    {(Array.isArray(t('technology_page.innovation_nextgen.items', { returnObjects: true })) ? t('technology_page.innovation_nextgen.items', { returnObjects: true }) : []).map((item, idx) => (
                                                         <motion.li
                                                             key={idx}
                                                             initial={{ opacity: 0, x: -20 }}
@@ -345,7 +345,7 @@ export default function Technology() {
                                                             {t('technology_page.innovation_nextgen.ip_strategy_desc')}
                                                         </p>
                                                     </div>
-                                                    <a href={i18n.language === 'es' ? '/ONE-PAGER_AB_SUR.html' : '/ONE-PAGER_AB_SUR_EN.html'} target="_blank" rel="noopener noreferrer" className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl shadow-lg transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] text-center block">
+                                                    <a href={i18n?.language?.startsWith('es') ? '/ONE-PAGER_AB_SUR.html' : '/ONE-PAGER_AB_SUR_EN.html'} target="_blank" rel="noopener noreferrer" className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl shadow-lg transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] text-center block">
                                                         {t('technology_page.innovation_nextgen.download_btn')}
                                                     </a>
                                                 </div>
@@ -355,7 +355,7 @@ export default function Technology() {
 
                                     {/* Innovation Cards Grid */}
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-4 md:px-0">
-                                        {(t('technology_page.innovation_cards', { returnObjects: true }) || []).map((card, idx) => (
+                                        {(Array.isArray(t('technology_page.innovation_cards', { returnObjects: true })) ? t('technology_page.innovation_cards', { returnObjects: true }) : []).map((card, idx) => (
                                             <motion.div
                                                 key={idx}
                                                 initial={{ opacity: 0, y: 20 }}
