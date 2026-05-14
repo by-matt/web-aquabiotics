@@ -16,7 +16,7 @@ export default function Footer() {
                     {/* Brand Column */}
                     <div className="lg:col-span-2">
                         <Link to="/" className="inline-block mb-6">
-                            <img src={logo} alt="Aquabiotics Sur" className="h-24 w-auto opacity-90" />
+                            <img src={logo} alt="Aquabiotics Sur" className="h-16 md:h-20 w-auto object-contain opacity-90" />
                         </Link>
                         <p className="text-gray-300 text-sm md:text-base leading-relaxed max-w-sm">
                             {t('footer.tagline')}

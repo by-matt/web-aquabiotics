@@ -64,7 +64,7 @@ export default function Navbar() {
 
                         {/* Logo */}
                         <NavLink to="/" className="flex items-center flex-shrink-0" onClick={() => setIsMobileMenuOpen(false)}>
-                            <img src={logo} alt="Aquabiotics Sur" className="h-24 w-auto" />
+                            <img src={logo} alt="Aquabiotics Sur" className="h-12 md:h-16 lg:h-20 w-auto object-contain" />
                             <div className="ml-3 hidden sm:flex flex-col justify-center">
                                 <span className="font-bold tracking-tight text-white mb-0.5 text-[22px]">
                                     Aquabiotics Sur

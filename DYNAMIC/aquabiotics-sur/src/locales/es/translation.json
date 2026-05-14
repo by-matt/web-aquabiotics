@@ -23,7 +23,7 @@
         "esg": "ESG",
         "esg_label": "Alineados"
     },
-    "about_blurb": "Aquabiotics Sur es un proyecto de biotecnología marina enfocado en la recuperación y purificación de taurina natural a partir de los caldos residuales de cocción generados por la industria del mejillón en el sur de Chile. Mediante un enfoque de biorrefinería sostenible, transformamos una corriente de residuos líquidos industriales en un ingrediente funcional de alto valor, alineado con los principios de la economía circular y el impacto territorial.",
+    "about_blurb": "Aquabiotics Sur es un proyecto de biotecnología marina enfocado en la recuperación y purificación de taurina natural a partir de los caldos residuales de cocción generados por la industria del mejillón en el sur de Chile. Mediante un enfoque de biorrefinería sostenible, transforma una corriente de residuos líquidos industriales en un ingrediente funcional de alto valor, alineado con los principios de la economía circular y el impacto territorial.",
     "challenge": {
         "title": "El Desafío",
         "body": "El proceso de cocción del mejillón genera grandes volúmenes de efluentes líquidos con alta carga orgánica, actualmente gestionados como residuos. Estas corrientes residuales contienen valiosos metabolitos endógenos, como la taurina, que se pierden a pesar de su significativo valor industrial y funcional. Esto representa tanto un pasivo ambiental como una oportunidad económica perdida para el sector transformador de alimentos marinos."
@@ -31,7 +31,7 @@
     "solution": {
         "title": "Nuestra Solución",
         "intro": "Aquabiotics Sur aplica tecnologías de biorrefinería marina y separación selectiva para recuperar la taurina presente de forma natural en el caldo de cocción de mejillones.",
-        "process_title": "Nuestro proceso permite:",
+        "process_title": "El proceso permite:",
         "bullets": [
             "La valorización de un residuo industrial existente",
             "La producción de taurina con origen marino y trazabilidad",
@@ -41,7 +41,7 @@
     },
     "updates": {
         "title": "Últimas Novedades",
-        "subtitle": "Sigue nuestro viaje en la biotecnología marina y la economía circular mientras escalamos nuestro impacto.",
+        "subtitle": "Un recorrido por la biotecnología marina y la economía circular escalando el impacto.",
         "cta": "Ver todas las publicaciones en LinkedIn",
         "view_post": "Ver publicación completa"
     },
@@ -66,8 +66,8 @@
     },
     "about_page": {
         "hero_subtitle": "Arraigados en el Sur, innovando para el mundo.",
-        "who_we_are": "Quiénes Somos",
-        "our_journey": "Nuestra Trayectoria",
+        "who_we_are": "La Empresa",
+        "our_journey": "Trayectoria",
         "timeline": [
             {
                 "year": "2024",
@@ -93,7 +93,7 @@
         "values": [
             {
                 "title": "Circularidad desde el Diseño",
-                "desc": "Eliminamos los residuos y mantenemos los materiales en uso."
+                "desc": "Se eliminan los residuos y se mantienen los materiales en uso."
             },
             {
                 "title": "Rigor Científico",
@@ -104,13 +104,13 @@
                 "desc": "Empoderando a las comunidades locales en el sur de Chile."
             }
         ],
-        "origins_title": "Nuestros Orígenes",
-        "origins_p1": "Aquabiotics Sur nació en el corazón de la Región de Los Lagos, en el sur de Chile, un territorio conocido por sus fiordos prístinos y su próspera industria acuícola. Reconocimos una paradoja: mientras que la industria del mejillón es un motor económico importante, también genera volúmenes significativos de residuos líquidos que actualmente se descartan.",
-        "origins_p2": "No vimos esto como un desperdicio, sino como un depósito sin explotar de valiosas biomoléculas marinas. Nuestro equipo de biólogos e ingenieros se unió con una única misión: liderar la Economía Circular Azul a través de la biotecnología marina.",
+        "origins_title": "Orígenes",
+        "origins_p1": "Aquabiotics Sur nació en el corazón de la Región de Los Lagos, en el sur de Chile, un territorio conocido por sus fiordos prístinos y su próspera industria acuícola. Se reconoció una paradoja: mientras que la industria del mejillón es un motor económico importante, también genera volúmenes significativos de residuos líquidos que actualmente se descartan.",
+        "origins_p2": "Esto no se vio como un desperdicio, sino como un depósito sin explotar de valiosas biomoléculas marinas. El equipo de biólogos e ingenieros se unió con una única misión: liderar la Economía Circular Azul a través de la biotecnología marina.",
         "cards": [
             {
                 "title": "Misión",
-                "desc": "Liderar la Economía Circular Azul saneando nuestras costas, reemplazando los productos sintéticos con pureza sostenible y posicionando a la Patagonia como un centro global para la innovación biotecnológica."
+                "desc": "Liderar la Economía Circular Azul saneando las costas, reemplazando los productos sintéticos con pureza sostenible y posicionando a la Patagonia como un centro global para la innovación biotecnológica."
             },
             {
                 "title": "Visión",
@@ -121,7 +121,7 @@
                 "desc": "Operaciones estratégicas en la Región de Los Lagos, Chile, el centro de la industria del mejillón chileno."
             }
         ],
-        "team_title": "Quiénes Somos",
+        "team_title": "El Equipo",
         "team": [
             {
                 "name": "Byron Calderón",
@@ -149,13 +149,13 @@
                 ]
             }
         ],
-        "brand_quote_1": "\"No somos una empresa de tratamiento de residuos. Somos una empresa que encontró ",
+        "brand_quote_1": "\"No es una empresa de tratamiento de residuos. Es una empresa que encontró ",
         "brand_quote_2": "valor donde nadie miraba.\""
     },
     "sustainability_page": {
         "hero_subtitle": "Valorizando los efluentes de cocción del mejillón en metabolitos marinos de alto valor.",
         "impact_metrics": "Métricas de Impacto",
-        "circular_economy": "Nuestro Modelo Circular",
+        "circular_economy": "Modelo Circular",
         "circular_model_desc": "Aquabiotics Sur opera en la intersección de la industria marina y la biotecnología, creando un sistema de ciclo cerrado donde el residuo de un proceso se convierte en la materia prima de otro. Este enfoque no solo genera valor económico, sino que también reduce significativamente la huella ambiental de la industria del procesamiento de mejillones.",
         "comparison": {
             "title": "Análisis Comparativo de Alternativas",
@@ -296,7 +296,7 @@
                         "subtitle": "Lucha contra el cambio climático.",
                         "overlay_title": "Metas y Alineación",
                         "targets": [
-                            "Meta 13.2: Integrar medidas de bio-extracción bajas en carbono en nuestras estrategias industriales."
+                            "Meta 13.2: Integrar medidas de bio-extracción bajas en carbono en las estrategias industriales."
                         ]
                     },
                     {
@@ -441,25 +441,25 @@
     },
     "contact_page": {
         "hero_title": "Ponte en Contacto",
-        "hero_subtitle": "Colaboremos por un futuro más sostenible.",
-        "hero_sub": "Colaboremos por un futuro más sostenible.",
+        "hero_subtitle": "Colaborando por un futuro más sostenible.",
+        "hero_sub": "Colaborando por un futuro más sostenible.",
         "contact_info": "Información de Contacto",
-        "contact_desc": "Ya sea un socio potencial, inversor o cliente, nos encantaría escucharlo. Contáctenos para conversar sobre posibles colaboraciones.",
-        "email_us": "Escríbenos",
+        "contact_desc": "Se invita a socios potenciales, inversores o clientes a establecer comunicación para conversar sobre posibles colaboraciones.",
+        "email_us": "Enviar Correo",
         "location": "Ubicación",
         "location_desc": "Región de Los Lagos, Sur de Chile",
         "linkedin": "LinkedIn",
         "follow": "Sigue a Aquabiotics Sur",
         "form": {
             "name": "Nombre",
-            "name_ph": "Tu nombre",
+            "name_ph": "Nombre",
             "email": "Correo Electrónico",
-            "email_ph": "tu@email.com",
+            "email_ph": "correo@email.com",
             "message": "Mensaje",
-            "message_ph": "¿Cómo podemos ayudarte?",
+            "message_ph": "Motivo del mensaje",
             "send": "Enviar Mensaje",
             "sending": "Enviando...",
-            "success": "✅ ¡Mensaje enviado con éxito! Nos comunicaremos pronto.",
+            "success": "✅ ¡Mensaje enviado con éxito! Se responderá a la brevedad.",
             "error": "❌ Algo salió mal. Por favor, intenta de nuevo o escríbenos directamente."
         }
     },
@@ -586,18 +586,18 @@
                 "desc": "Integración en alimentos funcionales y nutracéuticos."
             }
         ],
-        "quality_desc": "Nuestro proceso asegura los más altos estándares de pureza y trazabilidad, alineados con las normativas internacionales de seguridad alimentaria. Al mantener una línea de biorrefinería controlada de principio a fin, garantizamos un ingrediente de primera calidad para las aplicaciones más exigentes.",
-        "innov_desc": "Optimizamos continuamente nuestros métodos de separación selectiva, combinando biotecnología con ingeniería de procesos avanzada. Esto nos permite escalar eficientemente mientras maximizamos las tasas de recuperación de metabolitos marinos endógenos que de otro modo se perderían.",
+        "quality_desc": "El proceso asegura los más altos estándares de pureza y trazabilidad, alineados con las normativas internacionales de seguridad alimentaria. Al mantener una línea de biorrefinería controlada de principio a fin, se garantiza un ingrediente de primera calidad para las aplicaciones más exigentes.",
+        "innov_desc": "Se optimizan continuamente los métodos de separación selectiva, combinando biotecnología con ingeniería de procesos avanzada. Esto permite escalar eficientemente mientras se maximizan las tasas de recuperación de metabolitos marinos endógenos que de otro modo se perderían.",
         "innovation_nextgen": {
             "title": "Tecnología Marina de Próxima Generación",
-            "subtitle": "Somos pioneros en el uso de suprareciclaje molecular dirigido combinado con ingeniería de bioprocesos avanzada para construir un modelo de biorrefinería circular real.",
+            "subtitle": "AquaBiotics Sur es pionera en el uso de suprareciclaje molecular dirigido combinado con ingeniería de bioprocesos avanzada para construir un modelo de biorrefinería circular real.",
             "items": [
                 "Optimización científica para la recuperación bioquímica.",
                 "Separación selectiva por membranas en puntos de corte de peso molecular.",
                 "Modelado predictivo impulsado por IA para la optimización de materias primas."
             ],
             "ip_strategy_title": "ONE-PAGER EJECUTIVO",
-            "ip_strategy_desc": "Descarga nuestro resumen ejecutivo para conocer en detalle la propuesta de valor, el modelo de negocio y nuestra tracción en el desarrollo de ingredientes marinos upcycled.",
+            "ip_strategy_desc": "Descarga el resumen ejecutivo para conocer en detalle la propuesta de valor, el modelo de negocio y la tracción en el desarrollo de ingredientes marinos upcycled.",
             "download_btn": "Descargar One-Pager Ejecutivo"
         },
         "innovation_cards": [
@@ -623,15 +623,15 @@
                 "items": [
                     {
                         "label": "TRL (Tecnología): 2",
-                        "desc": "Formulación del concepto tecnológico. Tienes identificada la fuente (agua de cocción de choritos) y el proceso teórico (biorrefinería), pero falta la evidencia experimental de que los compuestos de interés se pueden extraer con la pureza y eficiencia necesarias."
+                        "desc": "Formulación del concepto tecnológico. Se tiene identificada la fuente (agua de cocción de choritos) y el proceso teórico (biorrefinería), pero falta la evidencia experimental de que los compuestos de interés se pueden extraer con la pureza y eficiencia necesarias."
                     },
                     {
                         "label": "CRL (Mercado): 1 - 2",
-                        "desc": "Hipótesis de mercado. Has identificado una oportunidad en la economía circular y los nutracéuticos, pero aún no se ha validado con \"dolores\" reales de potenciales compradores o procesadoras de moluscos."
+                        "desc": "Hipótesis de mercado. Se ha identificado una oportunidad en la economía circular y los nutracéuticos, pero aún no se ha validado con \"dolores\" reales de potenciales compradores o procesadoras de moluscos."
                     },
                     {
                         "label": "BRL (Negocio): 2",
-                        "desc": "Plan de negocios inicial. Tienes una visión clara, un equipo potencial identificado y estás postulando a programas de aceleración, lo cual es el primer paso administrativo firme."
+                        "desc": "Plan de negocios inicial. Se cuenta con una visión clara, un equipo potencial identificado y el proyecto se encuentra postulando a programas de aceleración, lo cual es el primer paso administrativo firme."
                     }
                 ]
             }
@@ -643,7 +643,7 @@
             },
             {
                 "title": "Cumplimiento Industrial",
-                "desc": "Nuestras operaciones se adhieren a los estándares internacionales de Gestión de Calidad, incluyendo BPM y BPL, garantizando la seguridad para aplicaciones alimenticias."
+                "desc": "Las operaciones se adhieren a los estándares internacionales de Gestión de Calidad, incluyendo BPM y BPL, garantizando la seguridad para aplicaciones alimenticias."
             },
             {
                 "title": "Trazabilidad Total",
@@ -659,15 +659,15 @@
         "u1_title": "Integración de Prototipo de Biorrefinería: Fase de Escalamiento",
         "u1_cat": "Economía Circular",
         "u1_date": "14 de Febrero, 2026",
-        "u1_exc": "Hemos integrado con éxito nuestra tecnología propia de separación selectiva en la línea principal de proceso, mejorando las tasas de recuperación.",
+        "u1_exc": "Se ha integrado con éxito la tecnología propia de separación selectiva en la línea principal de proceso, mejorando las tasas de recuperación.",
         "u2_title": "Impacto Territorial: Alianza con Productores Locales de Mejillón",
         "u2_cat": "Sustentabilidad",
         "u2_date": "10 de Febrero, 2026",
-        "u2_exc": "Profundizando nuestro compromiso con el impacto territorial en el sur de Chile a través de nuevas asociaciones operativas.",
+        "u2_exc": "Profundizando el compromiso con el impacto territorial en el sur de Chile a través de nuevas asociaciones operativas.",
         "u3_title": "Economía Circular Azul: 0% Residuo, 100% Valor",
         "u3_cat": "Innovación",
         "u3_date": "05 de Febrero, 2026",
-        "u3_exc": "Explicando nuestra filosofía central: por qué la taurina natural a partir del caldo de cocción es la clave."
+        "u3_exc": "Explicando la filosofía central: por qué la taurina natural a partir del caldo de cocción es la clave."
     },
     "privacy_page": {
         "title": "Política de Privacidad",
@@ -675,11 +675,11 @@
         "sections": [
             {
                 "title": "1. Introducción",
-                "content": "En Aquabiotics Sur, estamos comprometidos a proteger su privacidad y garantizar la seguridad de su información técnica. Esta política describe cómo recopilamos y utilizamos los datos técnicos para mejorar nuestra plataforma de \"Economía Circular Azul\"."
+                "content": "Aquabiotics Sur está comprometida a proteger la privacidad y garantizar la seguridad de la información técnica. Esta política describe cómo se recopilan y utilizan los datos técnicos para mejorar la plataforma de \"Economía Circular Azul\"."
             },
             {
                 "title": "2. Datos que Recopilamos",
-                "content": "Utilizamos Google Analytics 4 (GA4) para entender cómo los usuarios interactúan con nuestro sitio web. La información recopilada incluye:",
+                "content": "Se utiliza Google Analytics 4 (GA4) para entender cómo los usuarios interactúan con nuestro sitio web. La información recopilada incluye:",
                 "bullets": [
                     "Identificadores técnicos (dirección IP, anonimizada).",
                     "Datos geográficos (País, Región y Municipio/Comuna).",
@@ -689,19 +689,19 @@
             },
             {
                 "title": "3. Propósito de la Recopilación",
-                "content": "Los datos se utilizan exclusivamente para análisis estadísticos e informes internos con el fin de optimizar nuestro contenido técnico, mejorar el rendimiento del sitio y comprender mejor el interés del mercado global en la biotecnología marina."
+                "content": "Los datos se utilizan exclusivamente para análisis estadísticos e informes internos con el fin de optimizar el contenido técnico, mejorar el rendimiento del sitio y comprender mejor el interés del mercado global en la biotecnología marina."
             },
             {
                 "title": "4. Cumplimiento Legal (Chile)",
-                "content": "Esta política está diseñada para cumplir con la Ley Chilena N° 19.628 sobre la Protección de la Vida Privada. No vendemos, alquilamos ni compartimos sus datos personales con terceros para fines de marketing."
+                "content": "Esta política está diseñada para cumplir con la Ley Chilena N° 19.628 sobre la Protección de la Vida Privada. No se venden, alquilan ni comparten datos personales con terceros para fines de marketing."
             },
             {
                 "title": "5. Cookies",
-                "content": "Nuestro sitio utiliza cookies estrictamente para la funcionalidad de Google Analytics. Puede optar por desactivar las cookies en la configuración de su navegador si desea excluirse de este seguimiento."
+                "content": "El sitio utiliza cookies estrictamente para la funcionalidad de Google Analytics. Puede optar por desactivar las cookies en la configuración de su navegador si desea excluirse de este seguimiento."
             },
             {
                 "title": "6. Contacto",
-                "content": "Si tiene alguna pregunta sobre esta política de privacidad, comuníquese con nosotros a través de nuestra Página de Contacto oficial."
+                "content": "Si existe alguna pregunta sobre esta política de privacidad, puede utilizar la Página de Contacto oficial."
             }
         ]
     },

@@ -134,7 +134,7 @@ export default function Market() {
 
                         <AnimatedSection direction="up" delay={0.2}>
                             <div className="overflow-x-auto rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/50 bg-white/70 backdrop-blur-xl">
-                                <table className="w-full text-left border-collapse">
+                                <table className="w-full text-left border-collapse min-w-[600px] md:min-w-full">
                                     <thead>
                                         <tr>
                                             <th className="p-6 border-b border-gray-100 font-bold text-navy w-1/3 text-lg">{t('market_page.comp_title')}</th>
@@ -205,7 +205,7 @@ export default function Market() {
                         </AnimatedSection>
 
                         <div className="space-y-4">
-                            <AnimatedSection direction="right" delay={0.2} className="h-[400px] w-full bg-white/80 backdrop-blur-xl p-6 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/50">
+                            <AnimatedSection direction="right" delay={0.2} className="h-[300px] md:h-[400px] lg:h-[450px] w-full bg-white/80 backdrop-blur-xl p-6 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/50">
                                 <ResponsiveContainer width="100%" height="100%">
                                     <LineChart data={data} margin={{ top: 20, right: 30, left: 10, bottom: 0 }}>
                                         <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#E5E7EB" />
