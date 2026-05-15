@@ -1,0 +1,1411 @@
+<!DOCTYPE html><html lang="es"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AquaBiotics Sur — Master Pitch Deck</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Raleway:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+  /* --- BRAND VARIABLES & SETUP --- */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --coral: #D9715A;
+    --coral-light: #F0A892;
+    --coral-dark: #A04030;
+    --teal: #3ABFB2;
+    --teal-light: #7ADBD3;
+    --teal-dark: #1E8C82;
+    --navy: #0A1628;
+    --navy-mid: #142236;
+    --navy-light: #1E3350;
+    --lavender: #7B7DC0;
+    --lavender-light: #A9AADC;
+    --steel: #6B8FAB;
+    --cream: #F7F3ED;
+    --warm-white: #FAFAF8;
+    --charcoal: #1E1E2A;
+    --muted: rgba(247,243,237,0.5);
+    --muted-strong: rgba(247,243,237,0.85);
+    --ff-display: 'Cormorant Garamond', Georgia, serif;
+    --ff-body: 'Raleway', sans-serif;
+    --ff-mono: 'Space Mono', monospace;
+  }
+
+  body {
+    background-color: #050a12;
+    color: var(--cream);
+    font-family: var(--ff-body);
+    font-weight: 300;
+    line-height: 1.6;
+    font-size: 16px;
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 1fr;
+    margin: 0;
+    min-height: 100vh;
+    padding: 30px 0;
+    place-items: center;
+  }
+
+  p { margin-bottom: 16px; }
+  p:last-child { margin-bottom: 0; }
+  ul { padding-left: 20px; margin-bottom: 16px; }
+  li { margin-bottom: 8px; color: var(--muted-strong); }
+
+  /* --- SLIDE CONTAINER --- */
+  .slide-container {
+    background: var(--navy);
+    border: 1px solid rgba(58,191,178,0.1);
+    border-radius: 4px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    height: 720px;
+    overflow: hidden;
+    padding: 50px 80px; 
+    position: relative;
+    width: 1280px;
+    align-items: flex-start;
+  }
+  
+  .slide-container::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top right, rgba(58,191,178,0.06), transparent 60%),
+                radial-gradient(circle at bottom left, rgba(217,113,90,0.04), transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  .slide-container > * { position: relative; z-index: 1; }
+
+  /* --- TYPOGRAPHY --- */
+  .label { font-family: var(--ff-mono); font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--teal); margin-bottom: 12px; display: block; }
+  .label.coral { color: var(--coral); }
+  .label.lavender { color: var(--lavender); }
+
+  h1, h2, h3 { font-family: var(--ff-display); color: var(--cream); font-weight: 300; line-height: 1.1; margin: 0; }
+  h1 { font-size: 80px; letter-spacing: -0.02em; }
+  .slide-title { font-size: 52px; margin-bottom: 24px; width: 100%; }
+  h3 { font-size: 32px; font-weight: 400; color: var(--teal-light); margin-bottom: 16px; }
+  h4 { font-family: var(--ff-body); font-size: 15px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 12px; color: var(--teal); }
+
+  .rule { width: 60px; height: 1px; background: var(--teal); margin-bottom: 24px; }
+  .rule.coral { background: var(--coral); }
+  .rule.lavender { background: var(--lavender); }
+
+  /* --- LAYOUT COMPONENTS --- */
+  .content-area { display: flex; flex-direction: column; flex-grow: 1; width: 100%; justify-content: center; }
+
+  .card { background: var(--navy-mid); border: 1px solid rgba(247,243,237,0.05); padding: 28px; border-radius: 4px; position: relative; }
+  .card.teal-accent { border-left: 3px solid var(--teal); padding-left: 26px; }
+  .card.coral-accent { border-left: 3px solid var(--coral); padding-left: 26px; }
+  .card.lavender-accent { border-left: 3px solid var(--lavender); padding-left: 26px; }
+
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; width: 100%; align-items: start; }
+  .grid-2.tiled > div { background: var(--navy-mid); border: 1px solid rgba(247,243,237,0.05); border-radius: 4px; padding: 32px; height: 100%; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; width: 100%; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; width: 100%; }
+  .grid-2x3 { display: grid; grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 20px; width: 100%; height: 100%; }
+  .grid-2x2 { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 20px; width: 100%; height: 100%; }
+
+  .two-column { display: flex; gap: 60px; width: 100%; align-items: center; }
+  .two-column > div { flex: 1; }
+
+  .image-wrapper { width: 100%; overflow: hidden; border: 1px solid rgba(58,191,178,0.2); border-radius: 4px; position: relative; }
+  .image-wrapper img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .two-column .image-wrapper { height: 420px; }
+
+  .image-tile { display: flex; flex-direction: column; background: var(--navy-mid); border: 1px solid rgba(247,243,237,0.05); border-radius: 4px; overflow: hidden; }
+  .image-tile .image-wrapper { height: 180px; border: none; border-bottom: 1px solid rgba(247,243,237,0.05); border-radius: 0; }
+  .image-tile .tile-text { padding: 24px; flex-grow: 1; }
+
+  .tiled-content { display: flex; gap: 24px; width: 100%; align-items: stretch; }
+  .tile { background: var(--navy-mid); border: 1px solid rgba(247,243,237,0.05); border-radius: 4px; display: flex; flex-direction: column; flex: 1; padding: 28px; text-align: left; }
+  .tile .icon { align-items: center; background: rgba(58,191,178,0.1); border-radius: 50%; color: var(--teal); display: flex; font-size: 24px; height: 56px; justify-content: center; margin-bottom: 20px; width: 56px; border: 1px solid rgba(58,191,178,0.2); }
+
+  .highlight-numbers-layout > div { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 32px; background: var(--navy-mid); border-radius: 4px; border: 1px solid rgba(247,243,237,0.05); }
+  .highlight-numbers-layout .number { font-family: var(--ff-display); font-size: 72px; font-weight: 300; line-height: 1; color: var(--coral); margin-bottom: 8px; }
+  .highlight-numbers-layout .number-label { font-family: var(--ff-mono); font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+
+  .tam-sam-som-container { display: flex; flex-direction: column; align-items: center; gap: 8px; width: 100%; margin-top: 10px;}
+  .tss-box { background: var(--navy-mid); border-radius: 8px; padding: 18px 32px; display: flex; justify-content: space-between; align-items: center; text-align: left; box-shadow: 0 5px 15px rgba(0,0,0,0.3); border-top: 2px solid transparent;}
+  .tss-tam { width: 100%; border-top-color: var(--steel); z-index: 1;}
+  .tss-sam { width: 85%; border-top-color: var(--teal); z-index: 2; margin-top: -5px;}
+  .tss-som { width: 70%; border-top-color: var(--coral); background: rgba(217,113,90,0.05); z-index: 3; margin-top: -5px;}
+  .tss-title { font-family: var(--ff-display); font-size: 32px; color: var(--cream); font-weight: 300; line-height: 1; margin: 0; }
+  .tss-val { font-family: var(--ff-mono); font-size: 26px; color: var(--teal-light); font-weight: 700; margin: 0; }
+
+  .canvas-layout { display: grid; grid-template-columns: repeat(5, 1fr); grid-template-rows: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 0.7fr); gap: 10px; width: 100%; height: 460px; }
+  .canvas-box { background: var(--navy-mid); border: 1px solid rgba(247,243,237,0.05); padding: 16px; border-radius: 4px; overflow: hidden; display: flex; flex-direction: column;}
+  .canvas-box h4 { font-size: 12px; color: var(--teal); margin-bottom: 8px; display: flex; align-items: center; gap: 6px; border-bottom: 1px solid rgba(58,191,178,0.2); padding-bottom: 6px;}
+  .canvas-box ul { list-style: none; padding: 0; margin: 0; }
+  .canvas-box li { font-size: 12px; color: var(--muted-strong); margin-bottom: 4px; padding-left: 10px; position: relative; line-height: 1.3; }
+  .canvas-box li::before { content: '•'; color: var(--coral); position: absolute; left: 0; top: 0; }
+  .kp { grid-column: 1; grid-row: 1 / 3; }
+  .ka { grid-column: 2; grid-row: 1; }
+  .kr { grid-column: 2; grid-row: 2; }
+  .vp { grid-column: 3; grid-row: 1 / 3; background: rgba(58,191,178,0.08); border-color: rgba(58,191,178,0.3); }
+  .vp h4 { color: var(--cream); border-color: rgba(255,255,255,0.2); }
+  .cr { grid-column: 4; grid-row: 1; }
+  .ch { grid-column: 4; grid-row: 2; }
+  .cs { grid-column: 5; grid-row: 1 / 3; }
+  .cs-cost { grid-column: 1 / 4; grid-row: 3; }
+  .rs-rev { grid-column: 4 / 6; grid-row: 3; }
+
+  .slide-container.bleed-image-layout { padding: 0; flex-direction: row; align-items: stretch; }
+  .bleed-content { flex: 1; padding: 50px 80px; display: flex; flex-direction: column; justify-content: center; position: relative; z-index: 2; }
+  .bleed-image { flex: 1; position: relative; overflow: hidden; border-left: 1px solid rgba(58,191,178,0.2); }
+  .bleed-image img { width: 100%; height: 100%; object-fit: cover; }
+  .photo-overlay { position: absolute; bottom: 20px; right: 20px; font-family: var(--ff-mono); font-size: 10px; letter-spacing: 0.1em; color: rgba(255,255,255,0.7); background: rgba(0,0,0,0.5); padding: 4px 10px; }
+
+  .section-title-layout { text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; width: 100%; }
+  .section-title-layout hr { background-color: var(--teal); border: none; height: 1px; margin: 30px auto; width: 80px; }
+
+  .doughnut-container { display: flex; align-items: center; justify-content: center; gap: 60px; width: 100%; }
+  .doughnut {
+    width: 300px; height: 300px; border-radius: 50%;
+    background: conic-gradient(var(--coral) 0% 1%, var(--navy-light) 1% 100%);
+    position: relative; display: flex; align-items: center; justify-content: center;
+    border: 1px solid rgba(247,243,237,0.05);
+  }
+  .doughnut::before { content: ''; width: 210px; height: 210px; border-radius: 50%; background: var(--navy-mid); position: absolute; border: 1px solid rgba(247,243,237,0.05); }
+  .doughnut-text { position: relative; z-index: 2; text-align: center; }
+  .doughnut-text h3 { font-family: var(--ff-display); font-size: 42px; font-weight: 300; color: var(--cream); margin: 0; }
+  .doughnut-text p { font-family: var(--ff-mono); font-size: 11px; letter-spacing: 0.1em; color: var(--muted); }
+  .legend { list-style: none; padding: 0; margin: 0; }
+  .legend li { display: flex; align-items: center; font-size: 16px; color: var(--muted-strong); margin-bottom: 12px; font-family: var(--ff-mono); }
+  .legend .box { width: 14px; height: 14px; margin-right: 14px; border-radius: 2px; }
+
+  .table-layout { width: 100%; border-collapse: collapse; background: var(--navy-mid); border: 1px solid rgba(247,243,237,0.08); border-radius: 4px; overflow: hidden; }
+  .table-layout th, .table-layout td { padding: 16px 20px; text-align: left; border-bottom: 1px solid rgba(247,243,237,0.05); }
+  .table-layout th { font-family: var(--ff-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); background: rgba(10,22,40,0.5); }
+  .table-layout tr:last-child td { border-bottom: none; }
+  .table-layout td { font-size: 15px; color: var(--muted-strong); }
+
+  .timeline-layout { align-items: stretch; display: flex; height: 100%; justify-content: space-between; position: relative; width: 100%; margin-top: 20px; }
+  .timeline-layout .timeline-line { background-color: rgba(58,191,178,0.2); height: 1px; left: 0; position: absolute; top: 50%; width: 100%; z-index: 0; }
+  .timeline-item { position: relative; width: 23%; display: flex; flex-direction: column; }
+  .timeline-item::after { background-color: var(--navy); border: 2px solid var(--teal); border-radius: 50%; content: ''; height: 12px; left: 50%; position: absolute; top: 50%; transform: translate(-50%, -50%); width: 12px; z-index: 1; }
+  .timeline-item .content-wrapper { position: absolute; width: 100%; background: var(--navy-mid); padding: 20px; border-radius: 4px; border: 1px solid rgba(247,243,237,0.05); }
+  .timeline-item:nth-child(odd) .content-wrapper { bottom: 50%; margin-bottom: 20px; }
+  .timeline-item:nth-child(even) .content-wrapper { margin-top: 20px; top: 50%; }
+  
+  .badge { display: inline-flex; align-items: center; gap: 8px; padding: 4px 12px; border-radius: 20px; font-family: var(--ff-mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; margin-right: 8px; }
+  .badge.teal { background: rgba(58,191,178,0.1); border: 1px solid rgba(58,191,178,0.3); color: var(--teal-light); }
+  .badge.coral { background: rgba(217,113,90,0.1); border: 1px solid rgba(217,113,90,0.3); color: var(--coral-light); }
+  .badge.lavender { background: rgba(123,125,192,0.1); border: 1px solid rgba(123,125,192,0.3); color: var(--lavender-light); }
+  
+  .progress-container { width: 100%; background: rgba(247,243,237,0.05); border-radius: 20px; height: 12px; position: relative; margin-top: 40px; margin-bottom: 60px;}
+  .progress-fill { background: var(--teal); height: 100%; border-radius: 20px; width: 35%; position: relative; }
+  .progress-fill::after { content: ''; position: absolute; right: -6px; top: -4px; width: 20px; height: 20px; border-radius: 50%; background: var(--cream); border: 4px solid var(--teal); box-shadow: 0 0 10px var(--teal);}
+  .progress-markers { display: flex; justify-content: space-between; width: 100%; position: absolute; top: -30px; font-family: var(--ff-mono); font-size: 12px; color: var(--muted); }
+  .progress-marker { display: flex; flex-direction: column; align-items: center; position: absolute; }
+  .progress-marker::after { content: ''; width: 2px; height: 10px; background: rgba(247,243,237,0.2); margin-top: 5px; }
+
+  .header-tag { position: absolute; top: 40px; right: 80px; text-align: right; z-index: 10; }
+  
+</style>
+<style>
+  :where(.slide-attributions) {
+    padding: 60px;
+  }
+  .attribution-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .attribution-list__item {
+    align-items: center;
+    border-bottom: 1px solid #757575;
+    display: grid;
+    gap: 25px;
+    grid-template-columns: 90px 1fr;
+    padding: 15px 0;
+    margin: 0 !important;
+  }
+  .attribution-list__item::before {
+    display: none;
+  }
+  .attribution-list__item::after {
+    display: none;
+  }
+  .attribution-list__item:last-child {
+    border-bottom: none;
+  }
+  .attribution-list__item .attribution__thumbnail {
+    height: 50px;
+    width: 90px;
+  }
+  .attribution__thumbnail .attribution__thumbnail__image {
+    border-radius: 8px;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+  .attribution__details {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .attribution__details .attribution__raw-url {
+    color: inherit;
+    font-size: 13px;
+    margin: 0;
+    word-break: break-all;
+  }
+  .attribution__details .attribution__title {
+    color: inherit;
+    font-size: 16px;
+    margin: 0;
+  }
+  .attribution__details .attribution__title > .attribution__link {
+    color: #4f46e5;
+    text-decoration: none;
+  }
+</style></head>
+<body>
+
+<!-- SLIDE 1: Title -->
+<div class="slide-container" id="slide1">
+  <div class="content-area" style="align-items: center; text-align: center;">
+    <span class="label">Pitch Deck · 2026</span>
+    <h1>Aqua<br><span style="color: var(--teal);">Biotics</span><br><span style="color: var(--coral); font-style: italic; font-size: 0.65em;">Sur</span></h1>
+    <p style="font-family: var(--ff-display); font-size: 28px; font-weight: 300; font-style: italic; color: var(--muted-strong); margin-top: 30px; max-width: 600px; line-height: 1.3;">
+      Del residuo más ignorado de Los Lagos,<br>al ingrediente más deseado del mundo.
+    </p>
+    <div style="margin-top: 40px; display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; max-width: 800px;">
+      <span class="badge teal"><i class="fa-solid fa-circle" style="font-size: 6px;"></i> Biorrefinería Dual</span>
+      <span class="badge coral"><i class="fa-solid fa-circle" style="font-size: 6px;"></i> DeepTech</span>
+      <span class="badge lavender"><i class="fa-solid fa-circle" style="font-size: 6px;"></i> Incubadora Volcanes GEN2</span>
+      <span class="badge" style="border-color: var(--steel); color: var(--steel);"><i class="fa-solid fa-circle" style="font-size: 6px;"></i> Ketrawa Lab</span>
+      <span class="badge" style="border-color: var(--cream); color: var(--cream);"><i class="fa-solid fa-circle" style="font-size: 6px;"></i> Centro Innovación UC</span>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 2: Storytelling (Bleed Right) -->
+<div class="slide-container bleed-image-layout" id="slide2">
+  <div class="bleed-content">
+    <span class="label">El Origen</span>
+    <h2 class="slide-title">Donde otros ven<br>un residuo...</h2>
+    <div class="rule"></div>
+    <p style="font-size: 20px; color: var(--cream);">Nosotros vemos el principio.</p>
+    <p style="color: var(--muted-strong);">En Los Lagos, el mar no es solo un paisaje. Es una industria viva. Chile es el 2° productor mundial de mejillón, generando como consecuencia inevitable millones de litros de caldo de cocción.</p>
+    <p style="color: var(--muted-strong);">Ese caldo fue tratado durante décadas como un pasivo. Un problema. Un costo. AquaBiotics Sur nació de una pregunta: <em>¿Y si ese residuo fuera la materia prima más valiosa que Chile tiene para ofrecer?</em></p>
+  </div>
+  <div class="bleed-image">
+    <img alt="Fiordos de la Patagonia" src="https://res.cloudinary.com/enchanting/q_70,f_auto,w_1024,h_683,c_fit/quark-web/2024/09/Scenic20flight20220over20Tasermiut20Fjord2C20201620-20Sam20Crimmin.jpg">
+    <div class="photo-overlay">TERRITORIO · AZUL FRÍO · LOS LAGOS</div>
+  </div>
+</div>
+
+<!-- SLIDE 3: Brand Archetypes -->
+<div class="slide-container" id="slide3">
+  <span class="label">Identidad Corporativa</span>
+  <h2 class="slide-title">Nuestro ADN Estratégico</h2>
+  <div class="rule"></div>
+  <div class="content-area">
+    <div class="tiled-content">
+      <div class="tile" style="border-top: 3px solid var(--teal);">
+        <h4 style="font-family: var(--ff-display); font-size: 28px; text-transform: none; color: var(--teal-light); margin-bottom: 8px;">El Sabio</h4>
+        <span style="font-family: var(--ff-mono); font-size: 10px; color: var(--teal); letter-spacing: 0.1em; margin-bottom: 16px;">CONOCIMIENTO · RIGOR</span>
+        <p style="font-size: 15px; color: var(--muted-strong);">Una empresa de conocimiento aplicado. Cada proceso y afirmación está respaldada por literatura científica, datos propios y validación analítica rigurosa (HPLC, GLP).</p>
+      </div>
+      <div class="tile" style="border-top: 3px solid var(--coral);">
+        <h4 style="font-family: var(--ff-display); font-size: 28px; text-transform: none; color: var(--coral-light); margin-bottom: 8px;">El Explorador</h4>
+        <span style="font-family: var(--ff-mono); font-size: 10px; color: var(--coral); letter-spacing: 0.1em; margin-bottom: 16px;">DESCUBRIMIENTO · TERRITORIO</span>
+        <p style="font-size: 15px; color: var(--muted-strong);">Nacemos del territorio (Chiloé, Los Lagos) y llevamos esa identidad como ventaja competitiva irreplicable. Mapeamos fronteras productivas.</p>
+      </div>
+      <div class="tile" style="border-top: 3px solid var(--lavender);">
+        <h4 style="font-family: var(--ff-display); font-size: 28px; text-transform: none; color: var(--lavender-light); margin-bottom: 8px;">El Creador</h4>
+        <span style="font-family: var(--ff-mono); font-size: 10px; color: var(--lavender); letter-spacing: 0.1em; margin-bottom: 16px;">TRANSFORMACIÓN · VALOR</span>
+        <p style="font-size: 15px; color: var(--muted-strong);">Diseñamos procesos donde no existían soluciones. Convertimos un pasivo ambiental crudo en un ingrediente premium para la salud global.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 4: The Problem -->
+<div class="slide-container" id="slide4">
+  <span class="label coral">01 — El Problema</span>
+  <h2 class="slide-title">El Pasivo Ambiental Crítico</h2>
+  <div class="rule coral"></div>
+  <div class="content-area">
+    <p style="font-size: 18px; max-width: 800px; margin-bottom: 30px;">La industria mitilicultora enfrenta un cuello de botella operacional y regulatorio. Las soluciones actuales (tratamiento físico-químico) destruyen componentes valiosos, representando un costo puro.</p>
+    <div class="grid-2 highlight-numbers-layout">
+      <div>
+        <div class="number">400<span style="font-size: 40px;">L</span></div>
+        <div class="number-label">Efluente por Tonelada</div>
+        <p style="margin-top: 16px; font-size: 15px; color: var(--muted-strong);">Agua de cocción con altísima carga orgánica (DBO5 hasta 860 mg/L) generando presión de eutrofización costera.</p>
+      </div>
+      <div>
+        <div class="number">$30<span style="font-size: 40px;">M+</span></div>
+        <div class="number-label">CLP en Riesgos de Multas</div>
+        <p style="margin-top: 16px; font-size: 15px; color: var(--muted-strong);">Fiscalización intensiva bajo el DS N°90 y Resolución 613 Exenta, forzando a la industria a costosos tratamientos.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 5: The Opportunity -->
+<div class="slide-container" id="slide5">
+  <span class="label teal">02 — La Oportunidad</span>
+  <h2 class="slide-title">Demanda Global Insatisfecha</h2>
+  <div class="rule"></div>
+  <div class="content-area">
+    <div class="card" style="padding: 40px;">
+      <div class="doughnut-container">
+        <div class="doughnut">
+          <div class="doughnut-text">
+            <h3>$1.4B</h3>
+            <p>MERCADO TAURINA (USD)</p>
+          </div>
+        </div>
+        <div>
+          <h3 style="color: var(--cream); margin-bottom: 20px;">La tendencia "Clean Label"</h3>
+          <ul class="legend">
+            <li><div class="box" style="background: var(--navy-light); border: 1px solid var(--steel);"></div> 99% Taurina Sintética (Asia / Petróleo)</li>
+            <li><div class="box" style="background: var(--coral);"></div> <strong style="color: var(--coral);">1% Taurina Natural / Marina (Oportunidad)</strong></li>
+          </ul>
+          <p style="font-size: 15px; color: var(--muted-strong); max-width: 450px; margin-top: 20px;">
+            El caldo de cocción descartado contiene el 30% de la proteína soluble y es rico en taurina. La industria de Pet Food premium exige ingredientes sostenibles, pero depende de Asia. AquaBiotics captura este <em>desperdicio de valor</em>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 6: TAM SAM SOM -->
+<div class="slide-container" id="slide6">
+  <div class="header-tag"><span class="badge teal">PRODUCT-MARKET FIT</span></div>
+  <span class="label teal">Mercado Potencial</span>
+  <h2 class="slide-title">Análisis TAM, SAM, SOM</h2>
+  <div class="rule"></div>
+  <div class="content-area">
+    <p style="font-size: 16px; color: var(--muted-strong); margin-bottom: 20px;">
+      Un nicho estratégico dentro de un mercado global billonario. Nuestro foco inicial captura la demanda urgente por trazabilidad marina.
+    </p>
+    <div class="tam-sam-som-container">
+      <div class="tss-box tss-tam">
+        <div>
+          <h3 class="tss-title">TAM</h3>
+          <p style="font-family: var(--ff-mono); font-size: 11px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase;">Total Addressable Market</p>
+          <p style="font-size: 14px; color: var(--muted-strong); max-width: 400px; margin-top: 8px;">Mercado global de Taurina + Postbióticos. Crecimiento impulsado por nutrición funcional global (CAGR 5.2% - 11.3%).</p>
+        </div>
+        <div class="tss-val">USD $1.4B+</div>
+      </div>
+      <div class="tss-box tss-sam">
+        <div>
+          <h3 class="tss-title">SAM</h3>
+          <p style="font-family: var(--ff-mono); font-size: 11px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase;">Serviceable Available Market</p>
+          <p style="font-size: 14px; color: var(--muted-strong); max-width: 400px; margin-top: 8px;">Demanda de ingredientes funcionales y Pet Food Premium "Clean Label" en las regiones de Latinoamérica y Norteamérica.</p>
+        </div>
+        <div class="tss-val" style="color: var(--teal);">USD $140M</div>
+      </div>
+      <div class="tss-box tss-som">
+        <div>
+          <h3 class="tss-title" style="color: var(--coral-light);">SOM</h3>
+          <p style="font-family: var(--ff-mono); font-size: 11px; color: var(--coral); letter-spacing: 0.1em; text-transform: uppercase;">Serviceable Obtainable Market</p>
+          <p style="font-size: 14px; color: var(--muted-strong); max-width: 300px; margin-top: 8px;">Mercado obtenible proyectado mediante expansión modular en ingredientes funcionales marinos y valorización RIL para nutracéutica y Pet Food premium en Latinoamérica.</p>
+        </div>
+        <div class="tss-val" style="color: var(--coral-light);">USD $20M - $40M</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 7: Section Title -->
+<div class="slide-container" id="slide7">
+  <div class="section-title-layout">
+    <span class="label">Solución Tecnológica</span>
+    <h2 style="font-size: 64px; margin-bottom: 20px;">Biorrefinería Dual en Cascada</h2>
+    <hr>
+    <p style="font-size: 22px; color: var(--muted-strong); max-width: 700px; text-align: center;">
+      Una arquitectura DeepTech modular que fracciona el residuo industrial líquido en origen.
+    </p>
+  </div>
+</div>
+
+<!-- SLIDE 8: The 4-Step Process -->
+<div class="slide-container" id="slide8">
+  <div class="header-tag"><span class="badge lavender">INNOVATION FIT</span></div>
+  <span class="label lavender">03 — La Solución</span>
+  <h2 class="slide-title">Proceso de Valorización</h2>
+  <div class="rule lavender"></div>
+  <div class="content-area">
+    <div class="tiled-content">
+      <div class="tile">
+        <div class="icon"><i class="fa-solid fa-filter"></i></div>
+        <h4>1. Pretratamiento / UF</h4>
+        <p style="font-size: 14px; color: var(--muted-strong);">Centrifugación y Ultrafiltración para remover sólidos, proteger membranas y extraer concentrado proteico masivo.</p>
+      </div>
+      <div class="tile">
+        <div class="icon" style="color: var(--coral); background: rgba(217,113,90,0.1); border-color: rgba(217,113,90,0.3);"><i class="fa-solid fa-droplet"></i></div>
+        <h4 style="color: var(--coral);">2. Nanofiltración</h4>
+        <p style="font-size: 14px; color: var(--muted-strong);">Fraccionamiento selectivo y diafiltración. Aísla moléculas de bajo peso como taurina, reduciendo DQO al 99%.</p>
+      </div>
+      <div class="tile">
+        <div class="icon" style="color: var(--lavender-light); background: rgba(123,125,192,0.1); border-color: rgba(123,125,192,0.3);"><i class="fa-solid fa-microscope"></i></div>
+        <h4 style="color: var(--lavender-light);">3. Fermentación</h4>
+        <p style="font-size: 14px; color: var(--muted-strong);">Biotransformación quimioheterótrofa del sustrato residual. Producción de biomasa de Parabióticos/Postbióticos.</p>
+      </div>
+      <div class="tile">
+        <div class="icon" style="color: var(--steel); background: rgba(107,143,171,0.1); border-color: rgba(107,143,171,0.3);"><i class="fa-solid fa-wind"></i></div>
+        <h4 style="color: var(--steel);">4. Spray Drying</h4>
+        <p style="font-size: 14px; color: var(--muted-strong);">Estabilización de concentrados líquidos en polvo fino, garantizando vida útil comercial y exportación.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 9: Tech Focus 1 (Membranes) -->
+<div class="slide-container" id="slide9">
+  <span class="label">Core Tecnológico</span>
+  <h2 class="slide-title">Fraccionamiento Físico sin Solventes</h2>
+  <div class="rule"></div>
+  <div class="content-area">
+    <div class="two-column">
+      <div>
+        <p style="font-size: 18px; margin-bottom: 24px;">La base de nuestra ventaja radica en la pureza del método de extracción.</p>
+        <div class="card teal-accent">
+          <h4 style="color: var(--teal);">Nanofiltración y Diafiltración</h4>
+          <p style="font-size: 15px; color: var(--muted-strong);">A diferencia de la síntesis química fósil, nuestro sistema utiliza separación física avanzada. Las membranas permiten concentrar selectivamente los aminoácidos funcionales mientras reducen la carga de sales.</p>
+          <p style="font-size: 15px; color: var(--muted-strong); margin-top: 10px;"><strong>Resultado:</strong> Un extracto 100% natural que mantiene intacta la integridad molecular de los bioactivos, listo para el grado nutracéutico.</p>
+        </div>
+      </div>
+      <div class="image-wrapper">
+        <img alt="Sistema de filtración industrial" src="https://www.labfreez.com/wp-content/uploads/2021/11/BIO-TFF05-tangential-flow-ultrafiltration-TFF-system-6.jpg">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 10: Product 1 (Taurina Azul) -->
+<div class="slide-container" id="slide10">
+  <span class="label coral">Producto Core</span>
+  <h2 class="slide-title">Taurina Azul (>95% Pureza)</h2>
+  <div class="rule coral"></div>
+  <div class="content-area">
+    <div class="two-column">
+      <div class="image-wrapper" style="border-color: rgba(217,113,90,0.3);">
+        <img alt="Taurina en polvo blanco puro" src="https://static.vecteezy.com/system/resources/previews/070/968/849/large_2x/high-quality-white-powder-supplement-scoop-with-black-background-photo.jpg">
+      </div>
+      <div>
+        <p style="font-family: var(--ff-display); font-size: 26px; font-style: italic; color: var(--coral-light); margin-bottom: 20px;">
+          "El aminoácido esencial de la nutrición premium, ahora de origen marino."
+        </p>
+        <ul>
+          <li><strong>Sello Clean Label:</strong> La alternativa trazable y sostenible a la taurina sintética china.</li>
+          <li><strong>Formato Estandarizado:</strong> Polvo estabilizado vía Spray Drying para fácil dosificación.</li>
+          <li><strong>Mercado B2B:</strong> Nutrición de mascotas de alta gama (esencial para salud visual y cardíaca de felinos).</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 11: Product 2 (Parabiotics) -->
+<div class="slide-container" id="slide11">
+  <span class="label lavender">Producto Complementario</span>
+  <h2 class="slide-title">Complejo Parabiótico Marino</h2>
+  <div class="rule lavender"></div>
+  <div class="content-area">
+    <div class="two-column">
+      <div>
+        <p style="font-family: var(--ff-display); font-size: 26px; font-style: italic; color: var(--lavender-light); margin-bottom: 20px;">
+          "Inmunidad acuícola y humana a través de fermentación de precisión."
+        </p>
+        <ul>
+          <li><strong>Estabilidad Térmica Superior:</strong> A diferencia de los probióticos vivos, los parabióticos resisten procesos industriales como la extrusión de pellets.</li>
+          <li><strong>Impacto en Salmonicultura:</strong> Estimula respuesta inmune innata del salmón frente a patógenos (SRS), bajando drásticamente uso de antibióticos.</li>
+          <li><strong>Economía Circular:</strong> Creado fermentando los nutrientes residuales post-extracción de taurina.</li>
+        </ul>
+      </div>
+      <div class="image-wrapper" style="border-color: rgba(123,125,192,0.3);">
+        <img alt="Salmón saludable" src="https://globalsalmoninitiative.org/files/images/_blogContent/School-of-salmon-swimming-freely-in-clear-clean-aqua-blue-ocean-water.jpg">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 12: ODS Impact -->
+<div class="slide-container" id="slide12">
+  <span class="label">Sostenibilidad y Propósito</span>
+  <h2 class="slide-title">Impacto en los ODS (ONU)</h2>
+  <div class="rule"></div>
+  <div class="content-area">
+    <p style="font-size: 16px; color: var(--muted-strong); margin-bottom: 20px;">Nuestro modelo de Residuo Cero (Upcycling) tributa directamente a la Agenda 2030, integrando el impacto como eje comercial.</p>
+    <div class="grid-2x2">
+      <!-- ODS 12 -->
+      <div class="card coral-accent" style="display: flex; gap: 20px; align-items: center; padding: 24px;">
+        <div style="width: 70px; height: 70px; background: #BF8B2E; color: white; display: flex; align-items: center; justify-content: center; font-size: 32px; font-weight: 700; border-radius: 8px; flex-shrink: 0;">12</div>
+        <div>
+          <h4 style="color: var(--cream); margin-bottom: 4px;">Producción y Consumo</h4>
+          <p style="font-size: 13px; color: var(--muted-strong); margin: 0;">Valorización directa del 100% de un pasivo industrial mitilicultor, creando economía circular.</p>
+        </div>
+      </div>
+      <!-- ODS 14 -->
+      <div class="card teal-accent" style="display: flex; gap: 20px; align-items: center; padding: 24px;">
+        <div style="width: 70px; height: 70px; background: #0A97D9; color: white; display: flex; align-items: center; justify-content: center; font-size: 32px; font-weight: 700; border-radius: 8px; flex-shrink: 0;">14</div>
+        <div>
+          <h4 style="color: var(--cream); margin-bottom: 4px;">Vida Submarina</h4>
+          <p style="font-size: 13px; color: var(--muted-strong); margin: 0;">Evita la descarga masiva de materia orgánica al océano, reduciendo eutrofización en fiordos.</p>
+        </div>
+      </div>
+      <!-- ODS 9 -->
+      <div class="card lavender-accent" style="display: flex; gap: 20px; align-items: center; padding: 24px;">
+        <div style="width: 70px; height: 70px; background: #FD6925; color: white; display: flex; align-items: center; justify-content: center; font-size: 32px; font-weight: 700; border-radius: 8px; flex-shrink: 0;">9</div>
+        <div>
+          <h4 style="color: var(--cream); margin-bottom: 4px;">Industria e Innovación</h4>
+          <p style="font-size: 13px; color: var(--muted-strong); margin: 0;">Desarrollo de infraestructura DeepTech (Biorrefinería modular) y fomento a la investigación.</p>
+        </div>
+      </div>
+      <!-- ODS 13 -->
+      <div class="card" style="border-left: 3px solid var(--steel); display: flex; gap: 20px; align-items: center; padding: 24px;">
+        <div style="width: 70px; height: 70px; background: #3F7E44; color: white; display: flex; align-items: center; justify-content: center; font-size: 32px; font-weight: 700; border-radius: 8px; flex-shrink: 0;">13</div>
+        <div>
+          <h4 style="color: var(--cream); margin-bottom: 4px;">Acción por el Clima</h4>
+          <p style="font-size: 13px; color: var(--muted-strong); margin: 0;">Huella de carbono negativa en comparación con la síntesis de taurina petroquímica.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 13: Validation Roadmap -->
+<div class="slide-container" id="slide13">
+  <span class="label">Hoja de Ruta Técnica</span>
+  <h2 class="slide-title">Programa FOOD-CHECK (CEAP-Tec)</h2>
+  <div class="rule"></div>
+  <div class="content-area" style="justify-content: flex-start; padding-top: 10px;">
+    <p style="font-size: 16px; color: var(--muted-strong); margin-bottom: 10px;">Transición crítica de Validación Conceptual (TRL 2-3) a Producto Mínimo Viable (TRL 5).</p>
+    
+    <div class="timeline-layout">
+      <div class="timeline-line"></div>
+      
+      <div class="timeline-item">
+        <div class="content-wrapper">
+          <h4 style="font-size: 13px; margin-bottom: 8px;">Mes 1-2: Pretratamiento</h4>
+          <span style="font-family: var(--ff-mono); font-size: 10px; color: var(--muted); margin-bottom: 10px; display: block;">LÍNEA BASE ANALÍTICA</span>
+          <p style="font-size: 13px; color: var(--muted-strong); margin: 0;">Centrifugación y cuantificación inicial de taurina vía HPLC con efluentes reales.</p>
+        </div>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="content-wrapper">
+          <h4 style="font-size: 13px; margin-bottom: 8px;">Mes 2-4: Fraccionamiento</h4>
+          <span style="font-family: var(--ff-mono); font-size: 10px; color: var(--muted); margin-bottom: 10px; display: block;">OPTIMIZACIÓN UF/NF</span>
+          <p style="font-size: 13px; color: var(--muted-strong); margin: 0;">Pruebas de filtración modular para validar el factor de concentración (5,2x).</p>
+        </div>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="content-wrapper">
+          <h4 style="font-size: 13px; margin-bottom: 8px;">Mes 4-5: Estabilización</h4>
+          <span style="font-family: var(--ff-mono); font-size: 10px; color: var(--muted); margin-bottom: 10px; display: block;">SPRAY DRYING</span>
+          <p style="font-size: 13px; color: var(--muted-strong); margin: 0;">Transformación de concentrados líquidos en polvo fino con vida útil comercial.</p>
+        </div>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="content-wrapper">
+          <h4 style="font-size: 13px; margin-bottom: 8px;">Mes 5-6: Validación PMV</h4>
+          <span style="font-family: var(--ff-mono); font-size: 10px; color: var(--muted); margin-bottom: 10px; display: block;">TRL 5 ALCANZADO</span>
+          <p style="font-size: 13px; color: var(--muted-strong); margin: 0;">Evaluación tecnofuncional, certificación HPLC de pureza (>95%) y fichas técnicas B2B.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 14: Current Status (Maturity Levels & Volcanes context) -->
+<div class="slide-container" id="slide14">
+  <span class="label">Contexto del Proyecto</span>
+  <h2 class="slide-title">Estado Actual y Respaldo</h2>
+  <div class="rule"></div>
+  <div class="content-area">
+    
+    <div style="background: rgba(58,191,178,0.05); border: 1px solid rgba(58,191,178,0.2); padding: 20px; border-radius: 4px; margin-bottom: 24px; display: flex; justify-content: space-around; align-items: center;">
+      <span style="font-family: var(--ff-display); font-size: 24px; color: var(--cream);">Incubadora Volcanes GEN2</span>
+      <span style="font-family: var(--ff-mono); font-size: 14px; color: var(--teal);">Ketrawa Lab</span>
+      <span style="font-family: var(--ff-mono); font-size: 14px; color: var(--teal);">Centro Innovación UC</span>
+      <span style="font-family: var(--ff-mono); font-size: 14px; color: var(--teal);">CORFO</span>
+    </div>
+
+    <div class="grid-3" style="align-items: stretch; height: 100%;">
+      <!-- TRL -->
+      <div class="card teal-accent" style="display: flex; flex-direction: column; padding: 24px;">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+          <h4 style="color: var(--teal); margin: 0; font-size: 16px;">Tecnología</h4>
+          <span class="badge teal" style="margin: 0; font-size: 12px;">TRL 2-3</span>
+        </div>
+        <p style="font-size: 13px; color: var(--muted-strong); line-height: 1.5; margin-bottom: 10px;">
+          <strong>Concepto Tecnológico:</strong> Fuente (agua de cocción) y proceso teórico identificados (literatura).
+        </p>
+        <div style="margin-top: auto; padding-top: 15px; border-top: 1px solid rgba(58,191,178,0.2);">
+          <p style="font-size: 12px; color: var(--muted-strong); line-height: 1.4; margin: 0;">
+            <i class="fa-solid fa-arrow-right" style="color: var(--teal); margin-right: 5px;"></i> <em>Brecha:</em> Validar que los compuestos se extraen con pureza necesaria mediante pruebas experimentales en CEAP.
+          </p>
+        </div>
+      </div>
+      <!-- CRL -->
+      <div class="card coral-accent" style="display: flex; flex-direction: column; padding: 24px;">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+          <h4 style="color: var(--coral); margin: 0; font-size: 16px;">Mercado</h4>
+          <span class="badge coral" style="margin: 0; font-size: 12px;">CRL 1 - 2</span>
+        </div>
+        <p style="font-size: 13px; color: var(--muted-strong); line-height: 1.5; margin-bottom: 10px;">
+          <strong>Hipótesis de Mercado:</strong> Oportunidad clara identificada en economía circular y nutracéutica.
+        </p>
+        <div style="margin-top: auto; padding-top: 15px; border-top: 1px solid rgba(217,113,90,0.2);">
+          <p style="font-size: 12px; color: var(--muted-strong); line-height: 1.4; margin: 0;">
+            <i class="fa-solid fa-arrow-right" style="color: var(--coral); margin-right: 5px;"></i> <em>Brecha:</em> Validar con los "dolores" reales de compradores B2B y procesadores mitilicultores locales.
+          </p>
+        </div>
+      </div>
+      <!-- BRL -->
+      <div class="card lavender-accent" style="display: flex; flex-direction: column; padding: 24px;">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+          <h4 style="color: var(--lavender-light); margin: 0; font-size: 16px;">Negocio</h4>
+          <span class="badge lavender" style="margin: 0; font-size: 12px;">BRL 2</span>
+        </div>
+        <p style="font-size: 13px; color: var(--muted-strong); line-height: 1.5; margin-bottom: 10px;">
+          <strong>Plan de Negocios Inicial:</strong> Visión estratégica y equipo potencial claramente identificados y alineados.
+        </p>
+        <div style="margin-top: auto; padding-top: 15px; border-top: 1px solid rgba(123,125,192,0.2);">
+          <p style="font-size: 12px; color: var(--muted-strong); line-height: 1.4; margin: 0;">
+            <i class="fa-solid fa-arrow-right" style="color: var(--lavender-light); margin-right: 5px;"></i> <em>Paso actual:</em> Aceleración en programas (Semilla Inicia, FOOD-CHECK, Volcanes) para levantamiento de capital pre-seed.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 15: Section Title -->
+<div class="slide-container" id="slide15">
+  <div class="section-title-layout">
+    <span class="label">04 — Estrategia Competitiva</span>
+    <h2 style="font-size: 64px; margin-bottom: 20px;">Análisis Estratégico y Negocio</h2>
+    <hr>
+    <p style="font-size: 22px; color: var(--muted-strong); max-width: 700px; text-align: center;">
+      El entorno, las capacidades y el posicionamiento que defienden la rentabilidad a largo plazo.
+    </p>
+  </div>
+</div>
+
+<!-- SLIDE 16: SWOT / FODA -->
+<div class="slide-container" id="slide16">
+  <span class="label">Diagnóstico</span>
+  <h2 class="slide-title">Análisis F.O.D.A.</h2>
+  <div class="rule"></div>
+  <div class="content-area">
+    <div class="grid-2x2">
+      <div class="card teal-accent" style="padding: 24px;">
+        <h4 style="color: var(--teal);"><i class="fa-solid fa-arrow-up" style="margin-right: 8px;"></i>Fortalezas</h4>
+        <ul style="font-size: 14px; margin-top: 10px;">
+          <li>Materia prima a costo cero/negativo.</li>
+          <li>Origen 100% natural y trazable (Clean Label).</li>
+          <li>Modelo Dual: Cobra por servicio (RIL) y producto.</li>
+          <li>Ubicación estratégica: Acceso al 90% de industria.</li>
+        </ul>
+      </div>
+      <div class="card lavender-accent" style="padding: 24px;">
+        <h4 style="color: var(--lavender-light);"><i class="fa-solid fa-globe" style="margin-right: 8px;"></i>Oportunidades</h4>
+        <ul style="font-size: 14px; margin-top: 10px;">
+          <li>Presión SMA (DS 90) fuerza a buscar soluciones RIL.</li>
+          <li>Mercado Postbióticos crece a CAGR 11.3%.</li>
+          <li>Regulación EU penaliza aditivos químicos (2024).</li>
+          <li>Sector Pet Food nacional valora $1.4B (Premiumización).</li>
+        </ul>
+      </div>
+      <div class="card coral-accent" style="padding: 24px;">
+        <h4 style="color: var(--coral);"><i class="fa-solid fa-arrow-down" style="margin-right: 8px;"></i>Debilidades</h4>
+        <ul style="font-size: 14px; margin-top: 10px;">
+          <li>Intensidad de CAPEX inicial (Sistemas de filtración).</li>
+          <li>Ruta regulatoria larga (Novel Food ISP/EFSA).</li>
+          <li>Dependencia volumétrica del proveedor (mitilicultoras).</li>
+        </ul>
+      </div>
+      <div class="card" style="border-left: 3px solid var(--steel); padding: 24px;">
+        <h4 style="color: var(--steel);"><i class="fa-solid fa-bolt" style="margin-right: 8px;"></i>Amenazas</h4>
+        <ul style="font-size: 14px; margin-top: 10px;">
+          <li>Commoditization y guerras de precio de taurina China.</li>
+          <li>Fluctuación productiva del mejillón (clima/semilla).</li>
+          <li>Startups locales desarrollando ingredientes upcycled alternativos.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 17: Porter's 5 Forces -->
+<div class="slide-container" id="slide17">
+  <span class="label">Entorno Competitivo</span>
+  <h2 class="slide-title">5 Fuerzas de Porter</h2>
+  <div class="rule"></div>
+  <div class="content-area">
+    <div class="grid-3">
+      <div class="card">
+        <span class="badge coral">BAJA-MEDIA</span>
+        <h4 style="color: var(--cream);">Nuevos Entrantes</h4>
+        <p style="font-size: 14px; color: var(--muted-strong);">Altas barreras de entrada técnicas (know-how de membranas) y logísticas (acceso asegurado a RILes locales).</p>
+      </div>
+      <div class="card">
+        <span class="badge teal">MUY BAJO</span>
+        <h4 style="color: var(--cream);">Poder de Proveedores</h4>
+        <p style="font-size: 14px; color: var(--muted-strong);">Plantas mitilicultoras pagan por disponer RILes. AquaBiotics alivia ese costo. Múltiples plantas reducen el lock-in.</p>
+      </div>
+      <div class="card">
+        <span class="badge lavender">BAJA</span>
+        <h4 style="color: var(--cream);">Sustitutos</h4>
+        <p style="font-size: 14px; color: var(--muted-strong);">La síntesis química no entra al nicho natural/orgánico. La taurina fermentativa es cara y aún inmadura.</p>
+      </div>
+    </div>
+    <div class="grid-2" style="margin-top: 20px;">
+      <div class="card">
+        <span class="badge" style="border-color: var(--steel); color: var(--steel);">MEDIA</span>
+        <h4 style="color: var(--cream);">Poder de Compradores</h4>
+        <p style="font-size: 14px; color: var(--muted-strong);">B2B grandes (formuladoras), pero la trazabilidad exclusiva que ofrecemos crea "switching costs" genuinos para sus etiquetas premium.</p>
+      </div>
+      <div class="card" style="border-color: rgba(58,191,178,0.3); background: rgba(58,191,178,0.05);">
+        <span class="badge teal">BAJA EN EL NICHO</span>
+        <h4 style="color: var(--teal);">Rivalidad Competitiva</h4>
+        <p style="font-size: 14px; color: var(--muted-strong);">No competimos con la taurina commodity asiática. Somos pioneros en "Upcycling líquido marino" en Chile.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 18: VRIO Analysis -->
+<div class="slide-container" id="slide18">
+  <span class="label">Recursos Estratégicos</span>
+  <h2 class="slide-title">Análisis V.R.I.O.</h2>
+  <div class="rule"></div>
+  <div class="content-area">
+    <table class="table-layout">
+      <thead>
+        <tr>
+          <th>Recurso / Capacidad</th>
+          <th style="text-align: center;">Valioso</th>
+          <th style="text-align: center;">Raro</th>
+          <th style="text-align: center;">Inimitable</th>
+          <th style="text-align: center;">Organizado</th>
+          <th>Implicancia</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Efluente Mitilicultor de Los Lagos</td>
+          <td style="text-align: center;"><i class="fa-solid fa-check" style="color: var(--teal);"></i></td>
+          <td style="text-align: center;"><i class="fa-solid fa-check" style="color: var(--teal);"></i></td>
+          <td style="text-align: center;"><i class="fa-solid fa-check" style="color: var(--teal);"></i></td>
+          <td style="text-align: center;"><i class="fa-solid fa-check" style="color: var(--teal);"></i></td>
+          <td style="color: var(--teal-light); font-weight: 600;">Ventaja Sostenida</td>
+        </tr>
+        <tr>
+          <td>Trazabilidad Geoespecífica (Lotes)</td>
+          <td style="text-align: center;"><i class="fa-solid fa-check" style="color: var(--teal);"></i></td>
+          <td style="text-align: center;"><i class="fa-solid fa-check" style="color: var(--teal);"></i></td>
+          <td style="text-align: center;"><i class="fa-solid fa-check" style="color: var(--teal);"></i></td>
+          <td style="text-align: center;"><i class="fa-solid fa-check" style="color: var(--teal);"></i></td>
+          <td style="color: var(--teal-light); font-weight: 600;">Ventaja Sostenida</td>
+        </tr>
+        <tr>
+          <td>Know-how Membranas Marinas (HPLC)</td>
+          <td style="text-align: center;"><i class="fa-solid fa-check" style="color: var(--teal);"></i></td>
+          <td style="text-align: center;"><i class="fa-solid fa-check" style="color: var(--teal);"></i></td>
+          <td style="text-align: center;"><i class="fa-solid fa-check" style="color: var(--teal);"></i></td>
+          <td style="text-align: center;"><i class="fa-solid fa-times" style="color: var(--coral);"></i></td>
+          <td style="color: var(--coral-light);">Ventaja Temporal</td>
+        </tr>
+        <tr>
+          <td>Relaciones B2B Industria Acuícola</td>
+          <td style="text-align: center;"><i class="fa-solid fa-check" style="color: var(--teal);"></i></td>
+          <td style="text-align: center;"><i class="fa-solid fa-check" style="color: var(--teal);"></i></td>
+          <td style="text-align: center;"><i class="fa-solid fa-times" style="color: var(--coral);"></i></td>
+          <td style="text-align: center;"><i class="fa-solid fa-times" style="color: var(--coral);"></i></td>
+          <td style="color: var(--muted-strong);">Paridad Competitiva</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- SLIDE 19: IP and Tech Transfer -->
+<div class="slide-container" id="slide19">
+  <span class="label">Propiedad Intelectual</span>
+  <h2 class="slide-title">IP y Modelos de Transferencia</h2>
+  <div class="rule"></div>
+  <div class="content-area">
+    <div class="grid-2">
+      <!-- IP Status -->
+      <div>
+        <h3 style="font-size: 26px; color: var(--cream); margin-bottom: 20px;">Estado y Estrategia de IP</h3>
+        <div class="card teal-accent" style="margin-bottom: 20px;">
+          <h4 style="color: var(--teal);">Actual: Secreto Industrial</h4>
+          <p style="font-size: 14px; color: var(--muted-strong);">Protección del <em>know-how</em> crítico asociado a los parámetros de fraccionamiento, puntos de corte de membranas y protocolos de estabilización adaptados a efluentes locales.</p>
+        </div>
+        <div class="card lavender-accent">
+          <h4 style="color: var(--lavender-light);">Futuro: Patentamiento & Marca</h4>
+          <p style="font-size: 14px; color: var(--muted-strong);">Evaluación de patente de proceso post-validación en CEAP. Registro de marca comercial <strong>"Taurina Azul®"</strong> como sello internacional de ingrediente premium sostenible.</p>
+        </div>
+      </div>
+      <!-- Transfer Models -->
+      <div>
+        <h3 style="font-size: 26px; color: var(--cream); margin-bottom: 20px;">Potenciales Modelos de Transferencia</h3>
+        <div class="card" style="border-left: 3px solid var(--steel); margin-bottom: 15px; padding: 20px;">
+          <h4 style="color: var(--cream); margin-bottom: 4px;">1. Licenciamiento Tecnológico</h4>
+          <p style="font-size: 14px; color: var(--muted-strong); margin: 0;">Licenciar el diseño del proceso de Biorrefinería a grandes corporaciones globales en otros hubs productores (ej. Galicia, España) cobrando royalties.</p>
+        </div>
+        <div class="card" style="border-left: 3px solid var(--coral); margin-bottom: 15px; padding: 20px;">
+          <h4 style="color: var(--cream); margin-bottom: 4px;">2. Venta / BOO (Build-Own-Operate)</h4>
+          <p style="font-size: 14px; color: var(--muted-strong); margin: 0;">Venta directa de tecnología a megaprocesadoras (St. Andrews) u operación bajo modelo BOO, garantizando monopolio de compra del extracto.</p>
+        </div>
+        <div class="card" style="border-left: 3px solid var(--teal-light); padding: 20px;">
+          <h4 style="color: var(--cream); margin-bottom: 4px;">3. Arriendo de Módulos (Leasing)</h4>
+          <p style="font-size: 14px; color: var(--muted-strong); margin: 0;">Modelo de hardware-as-a-service. AquaBiotics arrienda la infraestructura de membranas instalada in-situ para plantas medianas, cobrando un fee mensual y reteniendo el control del RIL.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 20: Dynamic Capabilities -->
+<div class="slide-container" id="slide20">
+  <span class="label">Adaptabilidad Organizacional</span>
+  <h2 class="slide-title">Capacidades Dinámicas (Teece)</h2>
+  <div class="rule"></div>
+  <div class="content-area">
+    <div class="tiled-content">
+      <div class="tile teal-accent">
+        <div class="icon"><i class="fa-solid fa-radar"></i></div>
+        <h4 style="color: var(--teal); font-size: 18px;">Sensing (Detección)</h4>
+        <p style="font-size: 15px; color: var(--muted-strong);">Monitoreo constante de fallos normativos (SMA DS 90), patentes biotecnológicas y tendencias ESG (WASEABI). Rastrear la oportunidad científica antes que el mercado.</p>
+      </div>
+      <div class="tile coral-accent">
+        <div class="icon" style="color: var(--coral); background: rgba(217,113,90,0.1); border-color: rgba(217,113,90,0.3);"><i class="fa-solid fa-bolt"></i></div>
+        <h4 style="color: var(--coral); font-size: 18px;">Seizing (Captura)</h4>
+        <p style="font-size: 15px; color: var(--muted-strong);">Agilidad en postulación a fondos (Semilla Inicia, FOOD-CHECK). Modelo Asset Light que elimina la fricción de inversión inicial permitiendo pruebas inmediatas.</p>
+      </div>
+      <div class="tile lavender-accent">
+        <div class="icon" style="color: var(--lavender-light); background: rgba(123,125,192,0.1); border-color: rgba(123,125,192,0.3);"><i class="fa-solid fa-cube"></i></div>
+        <h4 style="color: var(--lavender-light); font-size: 18px;">Transforming</h4>
+        <p style="font-size: 15px; color: var(--muted-strong);">Reconfiguración de recursos: de un lab universitario a un piloto modular en planta. Adaptación de la Ruta 1 (Taurina) a la Ruta 2 (Postbióticos) según mercado.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 21: Positioning (Bleed) -->
+<div class="slide-container bleed-image-layout" id="slide21">
+  <div class="bleed-content">
+    <span class="label">Posicionamiento</span>
+    <h2 class="slide-title">La única taurina con<br><em style="color: var(--teal);">dirección postal.</em></h2>
+    <div class="rule"></div>
+    <p style="font-size: 18px; color: var(--cream); margin-bottom: 24px;">No competimos en precio contra la síntesis química. Competimos en un territorio donde ellos no pueden entrar: el origen natural y la historia.</p>
+    <div style="background: rgba(10,22,40,0.8); border-left: 3px solid var(--teal); padding: 20px; margin-bottom: 16px;">
+      <p style="font-family: var(--ff-mono); font-size: 11px; color: var(--teal); letter-spacing: 0.1em; text-transform: uppercase;">A diferencia de...</p>
+      <p style="font-size: 15px; color: var(--muted-strong); margin: 0;">La taurina asiática derivada de la petroquímica y la taurina fermentativa inmadura.</p>
+    </div>
+    <div style="background: rgba(10,22,40,0.8); border-left: 3px solid var(--coral); padding: 20px;">
+      <p style="font-family: var(--ff-mono); font-size: 11px; color: var(--coral); letter-spacing: 0.1em; text-transform: uppercase;">AquaBiotics Sur es...</p>
+      <p style="font-size: 15px; color: var(--muted-strong); margin: 0;">El ingrediente premium, trazable a Los Lagos, que mejora el perfil ESG del formulador.</p>
+    </div>
+  </div>
+  <div class="bleed-image">
+    <img alt="Blueprint estratégico azul" src="https://media.istockphoto.com/id/1434769338/vector/target-goal-compass-success-digital-technology-business-strategy-achievement-compass-low.jpg?s=612x612&w=0&k=20&c=G_w52iPxiKfoYkfTh_zCGl98NSpk8__NcyHCgjgrYYs=">
+    <div class="photo-overlay">ESTRATEGIA · DIFERENCIACIÓN B2B</div>
+  </div>
+</div>
+
+<!-- SLIDE 22: Section Title -->
+<div class="slide-container" id="slide22">
+  <div class="section-title-layout">
+    <span class="label">05 — Go To Market</span>
+    <h2 style="font-size: 64px; margin-bottom: 20px;">Modelo Comercial y Financiero</h2>
+    <hr>
+    <p style="font-size: 22px; color: var(--muted-strong); max-width: 700px; text-align: center;">
+      Monetizando la economía circular mediante un enfoque B2B Asset Light.
+    </p>
+  </div>
+</div>
+
+<!-- SLIDE 23: Propuesta vs Promesa [NEW] -->
+<div class="slide-container" id="slide23">
+  <span class="label">Propuesta vs. Promesa de Marca</span>
+  <h2 class="slide-title">Lo que entregamos y lo que prometemos</h2>
+  <div class="rule"></div>
+  <div class="content-area">
+    <div class="grid-2">
+      <div>
+        <p style="color: var(--muted-strong); font-size: 18px; margin-bottom: 24px;">La <strong style="color: var(--cream); font-weight: 500;">propuesta de valor</strong> es funcional: habla del producto, el precio y la eficiencia tecnológica. La <strong style="color: var(--teal); font-weight: 500;">promesa de marca</strong> es emocional: habla de la transformación que el cliente experimenta al trabajar con nosotros.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 24px;">
+        <div class="card teal-accent">
+          <p style="font-family: var(--ff-mono); font-size: 10px; color: var(--teal); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px;">Propuesta de Valor (Racional)</p>
+          <p style="font-size: 15px; color: var(--muted-strong); margin: 0;">Taurina natural de origen marino, certificable, trazable y sostenible, producida a partir de efluentes mitilicultores de Los Lagos. Un ingrediente funcional premium que convierte el costo de cumplimiento ambiental de la industria en ingresos.</p>
+        </div>
+        <div class="card coral-accent">
+          <p style="font-family: var(--ff-mono); font-size: 10px; color: var(--coral); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px;">Promesa de Marca (Emocional)</p>
+          <p style="font-family: var(--ff-display); font-size: 24px; font-style: italic; color: var(--coral-light); line-height: 1.4; margin: 0;">
+            "Ser el proveedor que hace de la sostenibilidad una ventaja corporativa, no un sacrificio."
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 24: Customer Profile vs Value Map [NEW] -->
+<div class="slide-container" id="slide24">
+  <div class="header-tag"><span class="badge teal">PROBLEM-SOLUTION FIT</span></div>
+  <span class="label teal">Value Proposition Canvas</span>
+  <h2 class="slide-title">Customer Profile vs. Value Map</h2>
+  <div class="rule"></div>
+  <div class="content-area">
+    <div class="grid-2" style="align-items: stretch; height: 100%;">
+      <!-- Customer Profile (Right side of canvas usually, but placed here for flow) -->
+      <div class="card coral-accent" style="display: flex; flex-direction: column;">
+        <h3 style="color: var(--coral); font-size: 24px; margin-bottom: 20px;">Customer Profile (B2B Formulador)</h3>
+        <div style="flex-grow: 1;">
+          <h4 style="color: var(--cream);"><i class="fa-solid fa-briefcase"></i> Customer Jobs</h4>
+          <p style="font-size: 13px; color: var(--muted-strong); margin-bottom: 16px;">Formular suplementos premium efectivos. Cumplir con las crecientes normativas ESG. Buscar fuentes de materias primas estables para sus productos.</p>
+          <h4 style="color: var(--coral-light);"><i class="fa-solid fa-face-frown"></i> Pains (Dolores)</h4>
+          <p style="font-size: 13px; color: var(--muted-strong); margin-bottom: 16px;">Alta dependencia de taurina asiática petroquímica. Riesgos de imagen por "greenwashing". Volatilidad de precios en cadenas de suministro largas.</p>
+          <h4 style="color: var(--coral-light);"><i class="fa-solid fa-face-smile"></i> Gains (Beneficios Deseados)</h4>
+          <p style="font-size: 13px; color: var(--muted-strong);">Etiquetas 100% limpias. Construcción de historia de marca basada en la naturaleza. Certificaciones de sustentabilidad.</p>
+        </div>
+      </div>
+      <!-- Value Map -->
+      <div class="card teal-accent" style="display: flex; flex-direction: column;">
+        <h3 style="color: var(--teal); font-size: 24px; margin-bottom: 20px;">Value Map (AquaBiotics Sur)</h3>
+        <div style="flex-grow: 1;">
+          <h4 style="color: var(--cream);"><i class="fa-solid fa-box-open"></i> Productos y Servicios</h4>
+          <p style="font-size: 13px; color: var(--muted-strong); margin-bottom: 16px;">Taurina Azul (>95% pureza). Parabióticos marinos. Servicios de Biorrefinería para las plantas mitilicultoras.</p>
+          <h4 style="color: var(--teal-light);"><i class="fa-solid fa-pills"></i> Pain Relievers</h4>
+          <p style="font-size: 13px; color: var(--muted-strong); margin-bottom: 16px;">Trazabilidad total (origen y lote) que elimina el riesgo del proveedor oscuro. Cadena de suministro local y segura. Ingrediente de huella de carbono negativa real.</p>
+          <h4 style="color: var(--teal-light);"><i class="fa-solid fa-arrow-trend-up"></i> Gain Creators</h4>
+          <p style="font-size: 13px; color: var(--muted-strong);">Sello certificable "Clean Label". Integración del poderoso storytelling del Océano Patagónico y los fiordos en el producto final B2C del cliente.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 25: Value Proposition Dual -->
+<div class="slide-container" id="slide25">
+  <span class="label">Propuesta de Valor Dual</span>
+  <h2 class="slide-title">Resolviendo Dolores en Dos Frentes</h2>
+  <div class="rule"></div>
+  <div class="content-area">
+    <div class="grid-2">
+      <div class="card teal-accent" style="height: 100%;">
+        <h3 style="font-size: 24px; color: var(--teal); margin-bottom: 20px;">Proveedor de RIL (Upstream)</h3>
+        <div style="margin-bottom: 20px;">
+          <h4 style="color: var(--cream);">🎯 Qué Necesita:</h4>
+          <p style="font-size: 15px; color: var(--muted-strong);">Cumplir normativa DS N°90, evitar multas millonarias de la SMA, reducir OPEX de tratamiento físico-químico.</p>
+        </div>
+        <div>
+          <h4 style="color: var(--teal-light);">✨ AquaBiotics Entrega:</h4>
+          <p style="font-size: 15px; color: var(--muted-strong);">Gestión in situ. Transforma pasivo en ingreso. Sello circular.</p>
+        </div>
+      </div>
+      <div class="card coral-accent" style="height: 100%;">
+        <h3 style="font-size: 24px; color: var(--coral); margin-bottom: 20px;">Cliente B2B (Downstream)</h3>
+        <div style="margin-bottom: 20px;">
+          <h4 style="color: var(--cream);">🎯 Qué Necesita:</h4>
+          <p style="font-size: 15px; color: var(--muted-strong);">Volumen constante, seguridad sanitaria, ingrediente diferencial para justificar precio premium al consumidor final.</p>
+        </div>
+        <div>
+          <h4 style="color: var(--coral-light);">✨ AquaBiotics Entrega:</h4>
+          <p style="font-size: 15px; color: var(--muted-strong);">Ingredient Clean Label. Trazabilidad garantizada. Historia de origen (storytelling).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 26: Detailed Business Canvas -->
+<div class="slide-container" id="slide26">
+  <div class="header-tag"><span class="badge lavender">BUSINESS MODEL FIT</span></div>
+  <span class="label">Planificación Estratégica</span>
+  <h2 class="slide-title">Business Model Canvas</h2>
+  <div class="rule"></div>
+  <div class="content-area">
+    <div class="canvas-layout">
+      <!-- Key Partners -->
+      <div class="canvas-box kp">
+        <h4><i class="fa-solid fa-link"></i> Socios Clave</h4>
+        <ul>
+          <li>Plantas Procesadoras de Mejillón (St. Andrews, Camanchaca).</li>
+          <li>CEAP-Tec (Socio Tecnológico / Validaciones).</li>
+          <li>Laboratorios Universitarios Analíticos (ULagos, UACh).</li>
+          <li>Corfo / ProChile.</li>
+        </ul>
+      </div>
+      <!-- Key Activities -->
+      <div class="canvas-box ka">
+        <h4><i class="fa-solid fa-gears"></i> Actividades Clave</h4>
+        <ul>
+          <li>I+D Biotecnológico continuo.</li>
+          <li>Operación Biorrefinería In-Situ (Filtración).</li>
+          <li>Gestión regulatoria (ISP/EFSA).</li>
+          <li>Venta consultiva B2B Técnica.</li>
+        </ul>
+      </div>
+      <!-- Key Resources -->
+      <div class="canvas-box kr">
+        <h4><i class="fa-solid fa-microchip"></i> Recursos Clave</h4>
+        <ul>
+          <li>Materia Prima a costo $0 (Efluente RIL).</li>
+          <li>Membranas Especializadas.</li>
+          <li>Know-how (HPLC, Separación).</li>
+          <li>IP / Secreto Industrial.</li>
+        </ul>
+      </div>
+      <!-- Value Proposition -->
+      <div class="canvas-box vp">
+        <h4><i class="fa-solid fa-gem" style="color: var(--cream);"></i> Propuesta de Valor</h4>
+        <p style="font-size: 12px; color: var(--cream); font-weight: 500; margin-bottom: 10px;">Para Industria:</p>
+        <ul>
+          <li>Cumplimiento DS N°90 garantizado.</li>
+          <li>Cero multas por vertidos y reducción de OPEX ambiental.</li>
+        </ul>
+        <p style="font-size: 12px; color: var(--cream); font-weight: 500; margin-top: 10px; margin-bottom: 10px;">Para Cliente B2B:</p>
+        <ul>
+          <li>Taurina Natural 100% (Clean Label).</li>
+          <li>Trazabilidad Certificable vs Síntesis Petroquímica.</li>
+        </ul>
+      </div>
+      <!-- Customer Relationships -->
+      <div class="canvas-box cr">
+        <h4><i class="fa-solid fa-handshake"></i> Relación</h4>
+        <ul>
+          <li>Relaciones B2B a largo plazo (Contratos de Suministro).</li>
+          <li>Asesoría técnica y co-formulación (Soporte).</li>
+          <li>Certificados Analíticos por lote.</li>
+        </ul>
+      </div>
+      <!-- Channels -->
+      <div class="canvas-box ch">
+        <h4><i class="fa-solid fa-truck-fast"></i> Canales</h4>
+        <ul>
+          <li>Venta Directa Técnica.</li>
+          <li>Representantes / Distribuidores Internacionales.</li>
+          <li>Ferias especializadas (Vitafoods, ZUCHEX).</li>
+        </ul>
+      </div>
+      <!-- Customer Segments -->
+      <div class="canvas-box cs">
+        <h4><i class="fa-solid fa-users"></i> Segmentos</h4>
+        <p style="font-size: 12px; color: var(--teal); font-weight: 500; margin-bottom: 10px;">Upstream (Servicio):</p>
+        <ul>
+          <li>Plantas Mitilicultoras (Región Los Lagos).</li>
+        </ul>
+        <p style="font-size: 12px; color: var(--teal); font-weight: 500; margin-top: 10px; margin-bottom: 10px;">Downstream (Producto):</p>
+        <ul>
+          <li>Formuladores Pet Food Premium.</li>
+          <li>Industria Acuícola (Salmones).</li>
+          <li>Laboratorios Nutracéuticos y Suplementos.</li>
+        </ul>
+      </div>
+      <!-- Cost Structure -->
+      <div class="canvas-box cs-cost">
+        <h4 style="color: var(--coral-light);"><i class="fa-solid fa-chart-line"></i> Estructura de Costos</h4>
+        <div style="display: flex; gap: 20px;">
+          <ul style="flex: 1;">
+            <li><strong>CAPEX:</strong> Módulos UF/NF, Equipos Spray Drying, Sensores analíticos.</li>
+            <li><strong>OPEX:</strong> Consumo energético, mantenimiento membranas.</li>
+          </ul>
+          <ul style="flex: 1;">
+            <li><strong>I+D:</strong> Outsourcing laboratorio HPLC, certificaciones.</li>
+            <li><strong>Talento:</strong> Operadores técnicos, perfil comercial B2B.</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Revenue Streams -->
+      <div class="canvas-box rs-rev">
+        <h4 style="color: var(--teal-light);"><i class="fa-solid fa-sack-dollar"></i> Flujos de Ingresos</h4>
+        <ul>
+          <li><strong>Fee de Servicio:</strong> Cobro por tratamiento/remediación del efluente in-situ.</li>
+          <li><strong>Venta B2B:</strong> Comercialización a granel de Taurina Azul y Parabióticos (+20% Premium).</li>
+          <li><strong>Licenciamiento Futuro:</strong> Modelos IP, Royalties y Asesoría técnica.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 27: Business Model Revenue -->
+<div class="slide-container" id="slide27">
+  <span class="label">Modelo de Ingresos</span>
+  <h2 class="slide-title">B2B + Economía Circular (Asset Light)</h2>
+  <div class="rule"></div>
+  <div class="content-area">
+    <div class="two-column">
+      <div>
+        <p style="font-size: 18px; color: var(--cream); margin-bottom: 30px;">
+          Evitamos el alto costo inicial de plantas fijas mediante módulos instalados en el origen, cobrando en ambos extremos.
+        </p>
+        <div class="card teal-accent" style="margin-bottom: 20px; padding: 20px;">
+          <h4 style="color: var(--teal); font-size: 16px;">1. Servicio Ambiental (Flujo de Caja Inmediato)</h4>
+          <p style="font-size: 15px; color: var(--muted-strong); margin: 0;">Tarifa (fee) cobrada a plantas procesadoras por tratar, gestionar y remediación de sus efluentes normativos.</p>
+        </div>
+        <div class="card coral-accent" style="margin-bottom: 20px; padding: 20px;">
+          <h4 style="color: var(--coral); font-size: 16px;">2. Venta de Ingredientes (Escalamiento de Margen)</h4>
+          <p style="font-size: 15px; color: var(--muted-strong); margin: 0;">Comercialización internacional a granel de Taurina y Polvo Parabiótico a formuladores.</p>
+        </div>
+        <div class="card lavender-accent" style="padding: 20px;">
+          <h4 style="color: var(--lavender-light); font-size: 16px;">3. Consultoría en Formulación</h4>
+          <p style="font-size: 15px; color: var(--muted-strong); margin: 0;">Servicio técnico (co-desarrollo) para incorporar ingredientes en matrices alimentarias del cliente.</p>
+        </div>
+      </div>
+      <div class="image-wrapper" style="border-radius: 50%; width: 400px; height: 400px; margin: 0 auto; border: 4px solid var(--teal);">
+        <img alt="Filtración modular in situ" src="https://www.labfreez.com/wp-content/uploads/2021/11/BIO-TFF05-tangential-flow-ultrafiltration-TFF-system-6.jpg">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 28: Differentiation -->
+<div class="slide-container" id="slide28">
+  <span class="label">Diferenciación vs Sustitutos</span>
+  <h2 class="slide-title">Compite en lo que el precio no compra</h2>
+  <div class="rule"></div>
+  <div class="content-area">
+    <table class="table-layout">
+      <thead>
+        <tr>
+          <th>Atributo Crítico</th>
+          <th style="color: var(--muted);">Taurina Sintética Fósil</th>
+          <th style="color: var(--teal); font-weight: 700; background: rgba(58,191,178,0.1);">Taurina Azul (AquaBiotics)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Origen</td>
+          <td>Petroquímica (Asia)</td>
+          <td style="color: var(--teal-light); font-weight: 500;">Mejillón Mytilus (Chile)</td>
+        </tr>
+        <tr>
+          <td>Sello "Natural"</td>
+          <td style="color: var(--coral);">No certificable</td>
+          <td style="color: var(--cream);">Certificable Clean Label</td>
+        </tr>
+        <tr>
+          <td>Impacto Ambiental (ESG)</td>
+          <td style="color: var(--coral);">Alto (Huella de carbono pesada)</td>
+          <td style="color: var(--teal-light);">Negativo (Valoriza pasivos)</td>
+        </tr>
+        <tr>
+          <td>Historia Comercial B2C</td>
+          <td>Sin historia</td>
+          <td style="color: var(--cream);">Patagonia, Océano, Sostenible</td>
+        </tr>
+        <tr>
+          <td>Riesgo Cadena de Suministro</td>
+          <td>Alto (Dependencia global geopolítica)</td>
+          <td style="color: var(--teal-light);">Bajo (Materia prima hiper-local)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- SLIDE 29: Target Markets -->
+<div class="slide-container" id="slide29">
+  <span class="label">Mercados Objetivos</span>
+  <h2 class="slide-title">Segmentación B2B Estratégica</h2>
+  <div class="rule"></div>
+  <div class="content-area">
+    <div class="grid-3">
+      <div class="image-tile">
+        <div class="image-wrapper"><img alt="Pet Food Premium" src="https://cdn.shoplightspeed.com/shops/662699/files/60598748/1652x1652x2/american-natural-premium-anp-original-adult-dog-fo.jpg"></div>
+        <div class="tile-text">
+          <h4 style="color: var(--coral);">1. Pet Food Premium</h4>
+          <p style="font-size: 14px; color: var(--muted-strong);">Mercado nacional US$ 1.400M. Tendencia a la humanización. Taurina es esencial para dietas felinas. Sustitución de importaciones asiáticas.</p>
+        </div>
+      </div>
+      <div class="image-tile">
+        <div class="image-wrapper"><img alt="Acuicultura Salmón" src="https://elements-resized.envatousercontent.com/elements-video-cover-images/c80622ab-9260-4a2e-ab1a-3d99bc5a74ba/video_preview/video_preview_0000.jpg?w=500&cf_fit=cover&q=85&format=auto&s=46d8e6c886006a886db9f5ddac41d05311cf05eb8c18c091ca80652ca4faf8d6"></div>
+        <div class="tile-text">
+          <h4 style="color: var(--teal);">2. Inmunidad Salmonicultura</h4>
+          <p style="font-size: 14px; color: var(--muted-strong);">Mercado local gigante. Parabióticos termoestables (resisten extrusión) reducen el impacto del patógeno SRS y bajan la dependencia de antibióticos.</p>
+        </div>
+      </div>
+      <div class="image-tile">
+        <div class="image-wrapper"><img alt="Nutracéutica y Suplementos" src="https://png.pngtree.com/thumb_back/fw800/background/20251218/pngtree-gloved-hand-holding-glowing-blue-erlenmeyer-flask-image_20841156.webp"></div>
+        <div class="tile-text">
+          <h4 style="color: var(--lavender-light);">3. Nutracéuticos / Bienestar</h4>
+          <p style="font-size: 14px; color: var(--muted-strong);">Salud humana preventiva. El nicho de postbióticos proyecta un CAGR del 11.3%. Alta disposición a pagar por trazabilidad marina.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 30: Regulatory Pathway -->
+<div class="slide-container" id="slide30">
+  <span class="label">Gestión de Riesgos</span>
+  <h2 class="slide-title">Ruta Regulatoria (Bifásica)</h2>
+  <div class="rule"></div>
+  <div class="content-area">
+    <p style="font-size: 18px; color: var(--muted-strong); margin-bottom: 40px;">Un acercamiento escalonado reduce la fricción de entrada comercial.</p>
+    <div class="grid-3">
+      <div class="card teal-accent" style="height: auto;">
+        <span class="badge teal">Fase 1 · Ambiental</span>
+        <h4 style="color: var(--cream); font-size: 18px; margin-bottom: 12px;">Cumplimiento DS N°90</h4>
+        <p style="font-size: 14px; color: var(--muted-strong);">Permisos ambientales de validación en plantas origen. Reducción certificada de DBO5/DQO como respaldo para el cliente mitilicultor.</p>
+      </div>
+      <div class="card coral-accent" style="height: auto;">
+        <span class="badge coral">Fase 2 · Nacional</span>
+        <h4 style="color: var(--cream); font-size: 18px; margin-bottom: 12px;">SAG & ISP (Novel Food)</h4>
+        <p style="font-size: 14px; color: var(--muted-strong);">Registro SAG para nutrición animal (más rápido). Postulación paralela al Instituto de Salud Pública (Chile) para validación de ingrediente funcional humano.</p>
+      </div>
+      <div class="card lavender-accent" style="height: auto;">
+        <span class="badge lavender">Fase 3 · Internacional</span>
+        <h4 style="color: var(--cream); font-size: 18px; margin-bottom: 12px;">FDA (USA) & EFSA (EU)</h4>
+        <p style="font-size: 14px; color: var(--muted-strong);">Con validación técnica en Chile, se tramita certificación internacional. La normativa EFSA favorece fuertemente ingredientes de economía circular.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 31: Financial Economics -->
+<div class="slide-container" id="slide31">
+  <span class="label">Economía del Proyecto</span>
+  <h2 class="slide-title">Lógica Financiera y Escalamiento</h2>
+  <div class="rule"></div>
+  <div class="content-area">
+    <div class="grid-3 highlight-numbers-layout">
+      <div>
+        <div class="number">$0</div>
+        <div class="number-label">Costo de Materia Prima</div>
+        <p style="margin-top: 16px; font-size: 14px; color: var(--muted-strong);">Al resolver un pasivo ambiental, obtenemos el RIL a costo negativo o cero. Margen bruto estructuralmente superior a procesadores de commodities vírgenes.</p>
+      </div>
+      <div>
+        <div class="number" style="color: var(--teal-light);">+20%</div>
+        <div class="number-label">Premium Rate Estimado</div>
+        <p style="margin-top: 16px; font-size: 14px; color: var(--muted-strong);">El sello de trazabilidad, el relato de origen patagónico y el atributo "Clean Label" justifican sobreprecios frente a taurina asiática química.</p>
+      </div>
+      <div>
+        <div class="number" style="color: var(--lavender-light);">A-L</div>
+        <div class="number-label">Asset Light Model</div>
+        <p style="margin-top: 16px; font-size: 14px; color: var(--muted-strong);">Validación inicial vía CEAP/Labs externos y expansión modular in-situ diluye el riesgo del CAPEX tradicional de plantas centralizadas.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 32: The Team -->
+<div class="slide-container" id="slide32">
+  <div class="section-title-layout" style="align-items: flex-start; text-align: left;">
+    <span class="label">Capacidad de Ejecución</span>
+    <h2 class="slide-title">El Equipo</h2>
+    <div class="rule"></div>
+    <div class="grid-2" style="margin-top: 20px;">
+      <div class="card teal-accent">
+        <h3 style="font-size: 24px; color: var(--cream); margin-bottom: 4px;">Byron Calderón González</h3>
+        <span style="font-family: var(--ff-mono); font-size: 11px; color: var(--teal); letter-spacing: 0.1em; display: block; margin-bottom: 16px;">FUNDADOR / CEO LÍDER TÉCNICO</span>
+        <p style="font-size: 15px; color: var(--muted-strong);">Ingeniero en Biotecnología (Top 25%), especialización en I+D, Ciencia de Datos y Validación de Métodos (HPLC). Arquitecto principal de la biorrefinería. Lidera propiedad intelectual (IP) y normativas (GLP/GMP).</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 20px;">
+        <div class="card coral-accent" style="padding: 24px;">
+          <h4 style="color: var(--coral-light); margin-bottom: 4px; font-size: 16px;">Director de Operaciones (COO)</h4>
+          <p style="font-size: 14px; color: var(--muted-strong); margin: 0;">Ingeniero experto en proyectos industriales en la Región de Los Lagos. Enlace vital con plantas y logística de RILes in-situ.</p>
+        </div>
+        <div class="card lavender-accent" style="padding: 24px;">
+          <h4 style="color: var(--lavender-light); margin-bottom: 4px; font-size: 16px;">Estratega de Negocios (CBO)</h4>
+          <p style="font-size: 14px; color: var(--muted-strong); margin: 0;">Ing. Comercial. Escalado B2B, metodologías ágiles (Lean Startup) y gestión de fondos complejos (CORFO, FIA).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 33: Expansion (Bleed Right) -->
+<div class="slide-container bleed-image-layout" id="slide33">
+  <div class="bleed-content">
+    <span class="label">Visión Global</span>
+    <h2 class="slide-title">Expansión al<br>Mercado Europeo</h2>
+    <div class="rule"></div>
+    <div class="timeline-layout" style="flex-direction: column; height: auto; gap: 30px;">
+      <div style="border-left: 2px solid var(--teal); padding-left: 20px;">
+        <h4 style="color: var(--teal-light); margin-bottom: 4px;">1. Beachhead: Chile</h4>
+        <p style="font-size: 14px; color: var(--muted-strong); margin: 0;">Validación CEAP, foco en salmonicultura (postbióticos) y Pet Food nacional.</p>
+      </div>
+      <div style="border-left: 2px solid var(--coral); padding-left: 20px;">
+        <h4 style="color: var(--coral-light); margin-bottom: 4px;">2. Escala: Módulos Múltiples</h4>
+        <p style="font-size: 14px; color: var(--muted-strong); margin: 0;">Despliegue operativo Asset Light en múltiples plantas mitilicultoras chilenas.</p>
+      </div>
+      <div style="border-left: 2px solid var(--lavender); padding-left: 20px;">
+        <h4 style="color: var(--lavender-light); margin-bottom: 4px;">3. Salto Global: España (Galicia)</h4>
+        <p style="font-size: 14px; color: var(--cream); margin: 0;">Galicia es el 3° productor mundial. Es nuestro puerto de entrada tecnológico a la Unión Europea y sus regulaciones ESG premium.</p>
+      </div>
+    </div>
+  </div>
+  <div class="bleed-image">
+    <img alt="Acantilados costa Galicia España" src="https://theslowroad.org/wp-content/uploads/2025/07/galicia_coast-3.jpg">
+    <div class="photo-overlay">EXPANSIÓN · GALICIA, ESPAÑA</div>
+  </div>
+</div>
+
+<!-- SLIDE 34: Investment Readiness (New) -->
+<div class="slide-container" id="slide34">
+  <span class="label teal">Investment Readiness</span>
+  <h2 class="slide-title">Data Room & Estructura</h2>
+  <div class="rule"></div>
+  <div class="content-area">
+    <div class="grid-2x3" style="gap: 15px;">
+      <div class="card teal-accent" style="padding: 20px;">
+        <h4 style="color: var(--teal); font-size: 13px;"><i class="fa-solid fa-magnifying-glass" style="margin-right: 8px;"></i> Mini Due Diligence</h4>
+        <p style="font-size: 13px; color: var(--muted-strong); margin: 0;">Status legal saneado. Propiedad Intelectual documentada (Secreto Industrial). Cap table inicial limpia con Founder liderando 100% previo a la dilución Pre-Seed.</p>
+      </div>
+      <div class="card coral-accent" style="padding: 20px;">
+        <h4 style="color: var(--coral); font-size: 13px;"><i class="fa-solid fa-handshake" style="margin-right: 8px;"></i> Term Sheet Negotiation</h4>
+        <p style="font-size: 13px; color: var(--muted-strong); margin: 0;">Estructurando ronda Pre-Seed para co-financiar CAPEX de pilotaje y validación comercial B2B. Instrumentos SAFE / Notas convertibles evaluadas.</p>
+      </div>
+      <div class="card lavender-accent" style="padding: 20px;">
+        <h4 style="color: var(--lavender-light); font-size: 13px;"><i class="fa-solid fa-route" style="margin-right: 8px;"></i> Product Roadmap</h4>
+        <p style="font-size: 13px; color: var(--muted-strong); margin: 0;">Mapeo TRL 3 (Actual) → TRL 5 (Pilotaje CEAP) → TRL 9 (Despliegue Comercial/Módulos). Hitos de liberación de fondos vinculados a certificaciones analíticas (HPLC).</p>
+      </div>
+      <div class="card" style="border-left: 3px solid var(--steel); padding: 20px;">
+        <h4 style="color: var(--steel); font-size: 13px;"><i class="fa-solid fa-chart-pie" style="margin-right: 8px;"></i> Business Plan</h4>
+        <p style="font-size: 13px; color: var(--muted-strong); margin: 0;">Proyecciones financieras a 5 años. Unit Economics definidos por Kg de Taurina Azul y por Litro de RIL tratado. Análisis de sensibilidad de precio de materia prima.</p>
+      </div>
+      <div class="card teal-accent" style="border-left-color: var(--cream); padding: 20px;">
+        <h4 style="color: var(--cream); font-size: 13px;"><i class="fa-solid fa-lock" style="margin-right: 8px;"></i> Vesting Agreements</h4>
+        <p style="font-size: 13px; color: var(--muted-strong); margin: 0;">Estructura de Vesting estándar (4 años con 1 año de cliff) para el equipo fundador y futuros directivos (COO/CBO), asegurando retención y alineación a largo plazo.</p>
+      </div>
+      <div class="card coral-accent" style="border-left-color: var(--muted); padding: 20px;">
+        <h4 style="color: var(--muted); font-size: 13px;"><i class="fa-solid fa-file-signature" style="margin-right: 8px;"></i> N.D.A. Activos</h4>
+        <p style="font-size: 13px; color: var(--muted-strong); margin: 0;">Acuerdos de confidencialidad y "Non-Disclosure Agreements" firmados con perfiles clave (COO, CBO) y en proceso con laboratorios analíticos/CEAP-Tec.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 35: Closing -->
+<div class="slide-container" id="slide35" style="align-items: center; justify-content: center; text-align: center;">
+  <span class="label">AquaBiotics Sur</span>
+  <h2 class="slide-title" style="font-size: 72px; margin-bottom: 40px; color: var(--cream);">
+    Liderando la<br><span style="color: var(--teal);">Economía Azul</span>
+  </h2>
+  <div class="rule" style="margin: 0 auto 40px auto; width: 100px;"></div>
+  
+  <p style="font-family: var(--ff-display); font-size: 32px; font-style: italic; color: var(--muted-strong); line-height: 1.3; max-width: 800px; margin-bottom: 60px;">
+    "Ser el proveedor que hace de la sostenibilidad<br>una ventaja corporativa, no un sacrificio."
+  </p>
+  
+  <div style="background: rgba(58,191,178,0.05); border: 1px solid rgba(58,191,178,0.2); padding: 30px; border-radius: 4px;">
+    <p style="font-family: var(--ff-mono); font-size: 14px; color: var(--teal); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 8px;">Contacto e Inversión</p>
+    <p style="font-size: 18px; color: var(--cream); margin: 0;">byroncalde@gmail.com | aqua-biotics.com</p>
+  </div>
+</div>
+
+</body>
+</html>
