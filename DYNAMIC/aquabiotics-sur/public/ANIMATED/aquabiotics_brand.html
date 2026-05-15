@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AquaBiotics Sur — Sistema de Marca</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Raleway:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --coral: #D9715A;
+    --coral-light: #F0A892;
+    --coral-dark: #A04030;
+    --teal: #3ABFB2;
+    --teal-light: #7ADBD3;
+    --teal-dark: #1E8C82;
+    --navy: #0A1628;
+    --navy-mid: #142236;
+    --navy-light: #1E3350;
+    --lavender: #7B7DC0;
+    --lavender-light: #A9AADC;
+    --steel: #6B8FAB;
+    --cream: #F7F3ED;
+    --warm-white: #FAFAF8;
+    --charcoal: #1E1E2A;
+    --muted: rgba(247,243,237,0.5);
+    --muted-strong: rgba(247,243,237,0.75);
+    --ff-display: 'Cormorant Garamond', Georgia, serif;
+    --ff-body: 'Raleway', sans-serif;
+    --ff-mono: 'Space Mono', monospace;
+  }
+
+  body {
+    background: var(--navy);
+    color: var(--cream);
+    font-family: var(--ff-body);
+    font-weight: 300;
+    line-height: 1.7;
+    font-size: 16px;
+  }
+
+  /* LAYOUT */
+  .section { padding: 100px 0; }
+  .section.light { background: var(--cream); color: var(--charcoal); }
+  .section.mid { background: var(--navy-mid); }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+
+  /* TYPOGRAPHY */
+  .label {
+    font-family: var(--ff-mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 16px;
+    display: block;
+  }
+  .label.on-light { color: var(--teal-dark); }
+  .label.coral { color: var(--coral); }
+  .label.lavender { color: var(--lavender); }
+
+  h1.hero-title {
+    font-family: var(--ff-display);
+    font-size: clamp(64px, 8vw, 110px);
+    font-weight: 300;
+    line-height: 1.0;
+    letter-spacing: -0.02em;
+  }
+  h2.section-title {
+    font-family: var(--ff-display);
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 32px;
+  }
+  h3.sub-title {
+    font-family: var(--ff-display);
+    font-size: 28px;
+    font-weight: 400;
+    margin-bottom: 16px;
+  }
+  h4.card-title {
+    font-family: var(--ff-body);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  p { margin-bottom: 16px; }
+  p:last-child { margin-bottom: 0; }
+
+  /* DECORATIVE */
+  .rule {
+    width: 48px;
+    height: 1px;
+    background: var(--teal);
+    margin-bottom: 32px;
+  }
+  .rule.coral { background: var(--coral); }
+  .rule.lavender { background: var(--lavender); }
+  .rule.on-light { background: var(--teal-dark); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background: var(--navy);
+    padding: 80px 0;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
+  .wave-layer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60%;
+    opacity: 0.06;
+  }
+  .hero-content { position: relative; z-index: 2; }
+  .hero-tagline {
+    font-family: var(--ff-display);
+    font-size: 22px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--muted-strong);
+    margin-top: 32px;
+    max-width: 520px;
+  }
+  .hero-logo-placeholder {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    border: 1px solid rgba(58,191,178,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .logo-ring {
+    position: absolute;
+    inset: -20px;
+    border-radius: 50%;
+    border: 1px solid rgba(58,191,178,0.08);
+  }
+  .logo-ring-2 {
+    position: absolute;
+    inset: -40px;
+    border-radius: 50%;
+    border: 1px solid rgba(58,191,178,0.05);
+  }
+  .logo-circle-inner {
+    width: 220px;
+    height: 220px;
+    background: rgba(20,34,54,0.8);
+    border-radius: 50%;
+    border: 1px solid rgba(58,191,178,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .logo-coral-arc {
+    width: 80px;
+    height: 40px;
+    border-top: 4px solid var(--coral);
+    border-radius: 80px 80px 0 0;
+    margin-bottom: 4px;
+  }
+  .logo-frond {
+    width: 60px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -20px;
+  }
+  .logo-waves { display: flex; flex-direction: column; gap: 5px; width: 80px; margin-top: 4px; }
+  .logo-wave-line { height: 3px; border-radius: 2px; }
+
+  /* CARDS */
+  .card {
+    border: 1px solid rgba(247,243,237,0.1);
+    padding: 32px;
+    position: relative;
+  }
+  .card.teal-accent { border-left: 3px solid var(--teal); padding-left: 30px; }
+  .card.coral-accent { border-left: 3px solid var(--coral); padding-left: 30px; }
+  .card.lavender-accent { border-left: 3px solid var(--lavender); padding-left: 30px; }
+  .card.on-light {
+    background: white;
+    border: 1px solid rgba(10,22,40,0.1);
+  }
+  .card.on-light.teal-accent { border-left: 3px solid var(--teal-dark); }
+
+  /* ARCHETYPE */
+  .archetype-primary {
+    background: linear-gradient(135deg, rgba(58,191,178,0.08), rgba(217,113,90,0.05));
+    border: 1px solid rgba(58,191,178,0.2);
+    padding: 48px;
+    position: relative;
+  }
+  .archetype-tag {
+    display: inline-block;
+    font-family: var(--ff-mono);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border: 1px solid;
+    margin-bottom: 24px;
+  }
+  .archetype-tag.primary { color: var(--teal); border-color: var(--teal); }
+  .archetype-tag.secondary { color: var(--coral-light); border-color: var(--coral-light); opacity: 0.7; }
+
+  .archetype-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    font-size: 32px;
+  }
+  .archetype-icon.sage { background: rgba(58,191,178,0.12); }
+  .archetype-icon.explorer { background: rgba(217,113,90,0.12); }
+  .archetype-icon.creator { background: rgba(123,125,192,0.12); }
+
+  /* COLOR SWATCHES */
+  .swatch {
+    height: 120px;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 12px;
+  }
+  .swatch-label {
+    background: rgba(0,0,0,0.4);
+    color: white;
+    font-family: var(--ff-mono);
+    font-size: 10px;
+    padding: 4px 8px;
+    letter-spacing: 0.1em;
+    width: 100%;
+  }
+  .swatch.light .swatch-label { background: rgba(255,255,255,0.6); color: #1E1E2A; }
+
+  /* TYPOGRAPHY SPECIMENS */
+  .type-specimen {
+    border-bottom: 1px solid rgba(247,243,237,0.1);
+    padding: 32px 0;
+  }
+  .type-specimen:last-child { border-bottom: none; }
+  .type-meta {
+    font-family: var(--ff-mono);
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .specimen-display {
+    font-family: var(--ff-display);
+    font-size: 52px;
+    font-weight: 300;
+    line-height: 1.0;
+    color: var(--cream);
+  }
+  .specimen-body {
+    font-family: var(--ff-body);
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--muted-strong);
+  }
+  .specimen-mono {
+    font-family: var(--ff-mono);
+    font-size: 13px;
+    color: var(--teal);
+    letter-spacing: 0.05em;
+  }
+  .specimen-weights { display: flex; gap: 32px; flex-wrap: wrap; }
+  .weight-item { text-align: center; }
+  .weight-sample {
+    font-family: var(--ff-body);
+    font-size: 32px;
+    line-height: 1.2;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .weight-name {
+    font-family: var(--ff-mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  /* PROMISE CANVAS */
+  .canvas-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 1px;
+    background: rgba(247,243,237,0.1);
+  }
+  .canvas-cell {
+    background: var(--navy-mid);
+    padding: 32px;
+  }
+  .canvas-cell.accent { background: rgba(58,191,178,0.05); }
+  .canvas-cell.center {
+    grid-column: span 2;
+    background: rgba(217,113,90,0.08);
+    text-align: center;
+    padding: 40px;
+  }
+  .canvas-promise {
+    font-family: var(--ff-display);
+    font-size: 28px;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--coral-light);
+    line-height: 1.4;
+  }
+
+  /* EMOTIONS */
+  .emotion-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 40px;
+    font-family: var(--ff-body);
+    font-size: 14px;
+    font-weight: 400;
+    margin: 6px;
+  }
+  .emotion-pill.primary { background: rgba(58,191,178,0.12); border: 1px solid rgba(58,191,178,0.3); color: var(--teal-light); }
+  .emotion-pill.secondary { background: rgba(217,113,90,0.1); border: 1px solid rgba(217,113,90,0.25); color: var(--coral-light); }
+  .emotion-pill.tertiary { background: rgba(123,125,192,0.1); border: 1px solid rgba(123,125,192,0.25); color: var(--lavender-light); }
+  .emotion-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; flex-shrink: 0; }
+
+  /* ICON SYSTEM */
+  .icon-demo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 24px 16px;
+    border: 1px solid rgba(247,243,237,0.08);
+    text-align: center;
+  }
+  .icon-demo .icon-label {
+    font-family: var(--ff-mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* MORPHOLOGY */
+  .morph-demo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    border: 1px solid rgba(247,243,237,0.08);
+  }
+
+  /* TEXTURE */
+  .texture-block {
+    height: 160px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    padding: 16px;
+  }
+  .texture-name {
+    font-family: var(--ff-mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* PHOTO DIRECTION */
+  .photo-card {
+    aspect-ratio: 4/3;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+  }
+  .photo-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--ff-display);
+    font-size: 18px;
+    font-weight: 300;
+    font-style: italic;
+    text-align: center;
+    padding: 24px;
+    color: rgba(247,243,237,0.7);
+  }
+
+  /* BRAND VOICE */
+  .voice-example {
+    border-left: 2px solid var(--teal);
+    padding-left: 24px;
+    margin-bottom: 24px;
+    font-family: var(--ff-display);
+    font-size: 20px;
+    font-style: italic;
+    color: var(--muted-strong);
+  }
+  .voice-bad {
+    border-left: 2px solid rgba(217,113,90,0.3);
+    padding-left: 24px;
+    font-family: var(--ff-body);
+    font-size: 14px;
+    color: var(--muted);
+    text-decoration: line-through;
+    text-decoration-color: var(--coral);
+  }
+
+  /* NAV */
+  .page-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(10,22,40,0.95);
+    border-bottom: 1px solid rgba(247,243,237,0.06);
+    padding: 16px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-brand {
+    font-family: var(--ff-mono);
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--teal);
+  }
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+  .nav-links a {
+    font-family: var(--ff-mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--cream); }
+
+  /* DIVIDER */
+  .chapter-divider {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin: 0 0 64px;
+  }
+  .chapter-number {
+    font-family: var(--ff-mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--teal);
+    white-space: nowrap;
+  }
+  .chapter-line { flex: 1; height: 1px; background: rgba(247,243,237,0.1); }
+
+  /* QUOTE */
+  .brand-quote {
+    font-family: var(--ff-display);
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.3;
+    color: var(--cream);
+    margin: 0;
+    padding: 64px 0;
+    text-align: center;
+    border-top: 1px solid rgba(247,243,237,0.08);
+    border-bottom: 1px solid rgba(247,243,237,0.08);
+  }
+  .brand-quote span { color: var(--teal); }
+
+  /* LOGO ANATOMY */
+  .anatomy-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px;
+    background: rgba(247,243,237,0.03);
+    border: 1px solid rgba(247,243,237,0.08);
+  }
+  .anatomy-callout {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--ff-mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .callout-dot { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; }
+  .callout-line { width: 40px; height: 1px; background: rgba(247,243,237,0.2); }
+
+  @media (max-width: 768px) {
+    .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+    .container { padding: 0 24px; }
+    .page-nav { display: none; }
+    .canvas-grid { grid-template-columns: 1fr; }
+    .canvas-cell.center { grid-column: span 1; }
+    .anatomy-callout { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="page-nav">
+  <span class="nav-brand">AquaBiotics Sur — Sistema de Marca</span>
+  <ul class="nav-links">
+    <li><a href="#historia">Historia</a></li>
+    <li><a href="#arquetipos">Arquetipos</a></li>
+    <li><a href="#promesa">Promesa</a></li>
+    <li><a href="#identidad">Identidad</a></li>
+    <li><a href="#color">Color</a></li>
+    <li><a href="#tipografia">Tipografía</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" style="padding-top: 120px;">
+  <div class="hero-bg">
+    <svg class="wave-layer" viewBox="0 0 1440 400" preserveAspectRatio="none">
+      <path d="M0,200 C200,120 400,280 600,200 C800,120 1000,280 1200,200 C1300,160 1380,220 1440,200 L1440,400 L0,400 Z" fill="#3ABFB2" opacity="0.4"/>
+      <path d="M0,260 C240,180 480,320 720,260 C960,200 1200,320 1440,260 L1440,400 L0,400 Z" fill="#6B8FAB" opacity="0.4"/>
+      <path d="M0,310 C180,270 360,340 540,310 C720,280 900,340 1080,310 C1260,280 1380,330 1440,310 L1440,400 L0,400 Z" fill="#7B7DC0" opacity="0.3"/>
+    </svg>
+  </div>
+  <div class="container hero-content">
+    <div class="grid-2" style="align-items: center;">
+      <div>
+        <span class="label">Sistema de Identidad de Marca · 2025</span>
+        <h1 class="hero-title" style="color: var(--cream);">Aqua<br><span style="color: var(--teal);">Biotics</span><br><span style="color: var(--coral); font-style: italic; font-size: 0.65em;">Sur</span></h1>
+        <p class="hero-tagline">Del residuo al valor. Desde Los Lagos al mundo.</p>
+      </div>
+      <div style="display: flex; justify-content: center;">
+        <div class="hero-logo-placeholder">
+          <div class="logo-ring"></div>
+          <div class="logo-ring-2"></div>
+          <div class="logo-circle-inner">
+            <div class="logo-coral-arc"></div>
+            <svg width="56" height="28" viewBox="0 0 56 28" style="margin-top: -28px; margin-bottom: 4px;">
+              <path d="M4,24 C8,18 14,10 20,8 C26,6 32,10 38,14 C44,18 50,22 54,20" stroke="#3ABFB2" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <path d="M4,24 C10,16 18,8 26,6 C34,4 42,10 54,16" stroke="#3ABFB2" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.6"/>
+              <path d="M8,24 C16,14 28,6 40,8 C46,9 52,14 54,18" stroke="#3ABFB2" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.4"/>
+              <circle cx="54" cy="20" r="3" fill="#3ABFB2"/>
+              <circle cx="54" cy="16" r="2.5" fill="#3ABFB2" opacity="0.6"/>
+              <circle cx="54" cy="18" r="2" fill="#3ABFB2" opacity="0.4"/>
+            </svg>
+            <div class="logo-waves">
+              <div class="logo-wave-line" style="background: white; width: 80px;"></div>
+              <div class="logo-wave-line" style="background: white; opacity: 0.7; width: 72px;"></div>
+              <div class="logo-wave-line" style="background: var(--steel); width: 64px;"></div>
+              <div class="logo-wave-line" style="background: var(--lavender); width: 56px;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HISTORIA DE MARCA -->
+<section class="section" id="historia">
+  <div class="container">
+    <div class="chapter-divider">
+      <span class="chapter-number">01 — Historia de Marca</span>
+      <div class="chapter-line"></div>
+    </div>
+
+    <div class="grid-2" style="gap: 80px;">
+      <div>
+        <span class="label">El origen</span>
+        <h2 class="section-title">Donde otros ven un residuo,<br><em style="color: var(--teal);">nosotros vemos el principio.</em></h2>
+        <div class="rule"></div>
+        <p style="font-size: 17px; color: var(--muted-strong);">En Los Lagos, el mar no es solo un paisaje. Es una industria viva. Cada año, cientos de miles de toneladas de mejillón chileno (<em>Mytilus chilensis</em>) se procesan en plantas costeras que generan, como consecuencia inevitable, millones de litros de caldo de cocción.</p>
+        <p style="font-size: 17px; color: var(--muted-strong);">Ese caldo fue tratado durante décadas como un pasivo. Un problema. Un costo.</p>
+        <p style="font-size: 17px; color: var(--cream);">AquaBiotics Sur nació de una pregunta diferente: <em>¿Y si ese residuo fuera, en realidad, la materia prima más valiosa que Chile tiene para ofrecer al mundo?</em></p>
+      </div>
+      <div>
+        <span class="label">El viaje</span>
+        <div style="display: flex; flex-direction: column; gap: 24px; margin-top: 8px;">
+          <div class="card teal-accent">
+            <div class="type-meta" style="margin-bottom: 8px;">El descubrimiento</div>
+            <p>La ciencia reveló lo que el ojo no podía ver: ese caldo contiene taurina —el aminoácido libre más abundante del mejillón— en concentraciones que se transfieren masivamente al efluente durante la cocción.</p>
+          </div>
+          <div class="card coral-accent">
+            <div class="type-meta" style="margin-bottom: 8px;">La oportunidad</div>
+            <p>El mercado global de taurina supera los USD 1.400 millones anuales. Casi todo es sintético, derivado del petróleo. No existe aún una alternativa natural, trazable y certificable a escala industrial.</p>
+          </div>
+          <div class="card lavender-accent">
+            <div class="type-meta" style="margin-bottom: 8px;">La misión</div>
+            <p>Convertir el efluente mitilicultor de Los Lagos en la primera biorrefinería azul circular de Chile, produciendo ingredientes funcionales premium para el mundo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <blockquote class="brand-quote" style="margin-top: 80px;">
+      "No somos una empresa de tratamiento de residuos.<br>
+      Somos una empresa que encontró <span>valor donde nadie miraba.</span>"
+    </blockquote>
+  </div>
+</section>
+
+<!-- ARQUETIPOS -->
+<section class="section mid" id="arquetipos">
+  <div class="container">
+    <div class="chapter-divider">
+      <span class="chapter-number">02 — Arquetipos de Marca</span>
+      <div class="chapter-line"></div>
+    </div>
+
+    <span class="label">Arquetipo principal</span>
+    <div class="archetype-primary" style="margin-bottom: 48px;">
+      <div style="display: flex; gap: 48px; align-items: flex-start; flex-wrap: wrap;">
+        <div>
+          <div class="archetype-icon sage">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+              <circle cx="18" cy="10" r="5" stroke="#3ABFB2" stroke-width="1.5"/>
+              <path d="M8 30 C8 24 28 24 28 30" stroke="#3ABFB2" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M18 16 L18 22" stroke="#3ABFB2" stroke-width="1.5"/>
+              <path d="M13 18 L23 20" stroke="#3ABFB2" stroke-width="1" opacity="0.5"/>
+            </svg>
+          </div>
+          <div class="archetype-tag primary">Arquetipo Principal</div>
+        </div>
+        <div style="flex: 1; min-width: 280px;">
+          <h3 class="sub-title" style="font-size: 40px; margin-bottom: 8px; color: var(--teal-light);">El Sabio</h3>
+          <p style="font-family: var(--ff-mono); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--teal); margin-bottom: 24px;">The Sage · Conocimiento · Rigor · Claridad</p>
+          <div class="rule"></div>
+          <p style="font-size: 17px; color: var(--muted-strong);">AquaBiotics Sur es, ante todo, una empresa de conocimiento aplicado. La ciencia no es un medio —es el núcleo. Cada decisión, cada proceso, cada afirmación está respaldada por literatura científica verificada, datos propios y metodología rigurosa.</p>
+          <p style="color: var(--muted);">El Sabio no presume de complejidad: la transforma en claridad. Habla con autoridad sin arrogancia. Enseña sin condescender. Hace accesible lo que es genuinamente complejo.</p>
+
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 32px;">
+            <div>
+              <div class="type-meta">Valores</div>
+              <p style="font-size: 14px;">Verdad · Rigor · Integridad científica</p>
+            </div>
+            <div>
+              <div class="type-meta">Temores</div>
+              <p style="font-size: 14px;">La desinformación · El dato sin fuente</p>
+            </div>
+            <div>
+              <div class="type-meta">En la voz</div>
+              <p style="font-size: 14px;">Preciso, fundamentado, didáctico</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <span class="label">Arquetipos secundarios</span>
+    <div class="grid-2" style="gap: 32px;">
+      <div class="card" style="border-color: rgba(217,113,90,0.2);">
+        <div class="archetype-tag secondary" style="margin-bottom: 16px;">Arquetipo Secundario</div>
+        <div class="archetype-icon explorer" style="margin-bottom: 16px;">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+            <circle cx="18" cy="18" r="13" stroke="#D9715A" stroke-width="1.5"/>
+            <path d="M18 5 L18 9 M18 27 L18 31 M5 18 L9 18 M27 18 L31 18" stroke="#D9715A" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="18" cy="18" r="3" fill="#D9715A"/>
+            <path d="M14 14 L18 18 L22 12" stroke="#F0A892" stroke-width="1" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="sub-title" style="color: var(--coral-light);">El Explorador</h3>
+        <p style="font-family: var(--ff-mono); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--coral); margin-bottom: 20px;">The Explorer · Descubrimiento · Frontera · Identidad</p>
+        <div class="rule coral"></div>
+        <p style="color: var(--muted-strong);">El sur de Chile es la última frontera productiva del mundo. AquaBiotics nace del territorio —de Chiloé, de los fiordos, de la Patagonia— y lleva esa identidad como ventaja competitiva irreplicable. El Explorador no teme lo desconocido: lo mapea.</p>
+        <p style="color: var(--muted); font-size: 14px; margin-top: 16px;">Valores: Curiosidad · Coraje · Identidad de origen<br>Expresión: El relato de origen, la trazabilidad geográfica, la bioprospección</p>
+      </div>
+
+      <div class="card" style="border-color: rgba(123,125,192,0.2);">
+        <div class="archetype-tag" style="color: var(--lavender-light); border-color: var(--lavender); opacity: 0.8; margin-bottom: 16px;">Arquetipo Secundario</div>
+        <div class="archetype-icon creator" style="margin-bottom: 16px;">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+            <path d="M8 28 C8 20 14 14 18 10 C22 6 28 8 28 14 C28 20 22 22 18 26" stroke="#7B7DC0" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="18" cy="28" r="4" stroke="#7B7DC0" stroke-width="1.5"/>
+            <path d="M12 20 C16 16 20 14 24 16" stroke="#A9AADC" stroke-width="1" stroke-linecap="round" opacity="0.6"/>
+          </svg>
+        </div>
+        <h3 class="sub-title" style="color: var(--lavender-light);">El Creador</h3>
+        <p style="font-family: var(--ff-mono); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--lavender); margin-bottom: 20px;">The Creator · Transformación · Innovación · Valor</p>
+        <div class="rule lavender"></div>
+        <p style="color: var(--muted-strong);">Transformar residuo en valor no es solo eficiencia: es un acto creativo. AquaBiotics diseña procesos donde antes no existían soluciones. El Creador da forma a lo inexistente, convierte un pasivo en un producto, y un efluente en un ingrediente premium.</p>
+        <p style="color: var(--muted); font-size: 14px; margin-top: 16px;">Valores: Innovación · Circularidad · Diseño de procesos<br>Expresión: La biorrefinería, las rutas biotecnológicas, el portfolio de productos</p>
+      </div>
+    </div>
+
+    <div style="margin-top: 48px; padding: 32px; border: 1px solid rgba(247,243,237,0.08);">
+      <span class="label">Tensión arquetípica</span>
+      <p style="font-size: 16px; color: var(--muted-strong);">La convivencia de El Sabio (razón, precisión) con El Explorador (emoción, territorio) y El Creador (transformación, audacia) genera la tensión creativa que define a AquaBiotics Sur: una empresa que <em>piensa como científico, siente como patagónico y actúa como innovador.</em></p>
+    </div>
+  </div>
+</section>
+
+<!-- PROMESA DE MARCA -->
+<section class="section" id="promesa">
+  <div class="container">
+    <div class="chapter-divider">
+      <span class="chapter-number">03 — Promesa de Marca</span>
+      <div class="chapter-line"></div>
+    </div>
+
+    <div class="grid-2" style="gap: 80px; margin-bottom: 80px;">
+      <div>
+        <span class="label">Propuesta de Valor vs Promesa de Marca</span>
+        <h2 class="section-title">Lo que<br><em>entregamos</em> y<br>lo que <span style="color: var(--teal);">prometemos.</span></h2>
+        <div class="rule"></div>
+        <p style="color: var(--muted-strong);">La <strong style="color: var(--cream); font-weight: 500;">propuesta de valor</strong> es funcional: habla del producto, el precio, la eficiencia. La <strong style="color: var(--teal); font-weight: 500;">promesa de marca</strong> es emocional: habla de la transformación que el cliente experimenta al trabajar con nosotros.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 24px;">
+        <div class="card teal-accent">
+          <div class="type-meta" style="margin-bottom: 8px;">Propuesta de Valor (Racional)</div>
+          <p style="font-size: 15px; color: var(--muted-strong);">Taurina natural de origen marino, certificable, trazable y sostenible, producida a partir de efluentes de la mitilicultura de Los Lagos. Un ingrediente funcional premium que convierte el costo de cumplimiento ambiental de la industria en una fuente de ingresos.</p>
+        </div>
+        <div class="card coral-accent" style="border-left-color: var(--coral);">
+          <div class="type-meta" style="margin-bottom: 8px; color: var(--coral);">Promesa de Marca (Emocional)</div>
+          <p class="canvas-promise" style="font-size: 22px;">"Ser el proveedor que hace de la sostenibilidad una ventaja, no un sacrificio."</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- VALUE PROPOSITION CANVAS -->
+    <span class="label">Canvas de Propuesta de Valor</span>
+    <div class="canvas-grid" style="margin-bottom: 48px;">
+      <div class="canvas-cell">
+        <h4 class="card-title" style="color: var(--teal);">🎯 Qué necesita el cliente B2B</h4>
+        <p style="font-size: 14px; color: var(--muted-strong);">Ingredient supplier confiable · Certificaciones de inocuidad · Trazabilidad de origen · Volumen consistente · Precio competitivo vs. sintético · Diferenciación de producto</p>
+      </div>
+      <div class="canvas-cell accent">
+        <h4 class="card-title" style="color: var(--coral);">✨ Qué quiere el cliente B2B</h4>
+        <p style="font-size: 14px; color: var(--muted-strong);">Un ingrediente con historia · Sello "Natural" para etiqueta · Mejorar su perfil ESG · Ser el primero en ofrecer taurina marina · No depender de Asia · Un relato de economía circular</p>
+      </div>
+      <div class="canvas-cell">
+        <h4 class="card-title" style="color: var(--teal);">🏭 Qué necesita el proveedor de RIL</h4>
+        <p style="font-size: 14px; color: var(--muted-strong);">Cumplir DS N°90 · Reducir costos de tratamiento de RIL · Evitar multas SMA · Gestión integral del efluente · Certificación ambiental</p>
+      </div>
+      <div class="canvas-cell accent">
+        <h4 class="card-title" style="color: var(--coral);">✨ Qué quiere el proveedor de RIL</h4>
+        <p style="font-size: 14px; color: var(--muted-strong);">Transformar un pasivo en ingreso · Certificación de Economía Circular · Diferenciarse como empresa responsable · Reducir huella ambiental · Visibilidad internacional</p>
+      </div>
+      <div class="canvas-cell center">
+        <h4 class="card-title" style="color: var(--coral-light); text-align: center; margin-bottom: 16px;">La Promesa Unificada</h4>
+        <p class="canvas-promise">"AquaBiotics Sur transforma el residuo más difícil de la mitilicultura en el ingrediente más deseable del mercado de nutrición funcional."</p>
+      </div>
+    </div>
+
+    <!-- EMOCIONES -->
+    <span class="label">Emociones de Marca</span>
+    <h3 class="sub-title" style="margin-bottom: 32px;">Cómo debe sentirse <em style="color: var(--teal);">trabajar con nosotros</em></h3>
+    <div style="margin-bottom: 16px;">
+      <span style="font-family: var(--ff-mono); font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.12em;">Emociones primarias</span>
+    </div>
+    <div style="margin-bottom: 32px;">
+      <span class="emotion-pill primary"><span class="emotion-dot"></span>Confianza científica</span>
+      <span class="emotion-pill primary"><span class="emotion-dot"></span>Certeza de origen</span>
+      <span class="emotion-pill primary"><span class="emotion-dot"></span>Orgullo de ser primero</span>
+      <span class="emotion-pill primary"><span class="emotion-dot"></span>Claridad en lo complejo</span>
+    </div>
+    <div style="margin-bottom: 16px;">
+      <span style="font-family: var(--ff-mono); font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.12em;">Emociones secundarias</span>
+    </div>
+    <div style="margin-bottom: 32px;">
+      <span class="emotion-pill secondary"><span class="emotion-dot"></span>Asombro ante la innovación</span>
+      <span class="emotion-pill secondary"><span class="emotion-dot"></span>Alivio regulatorio</span>
+      <span class="emotion-pill secondary"><span class="emotion-dot"></span>Conexión con el territorio</span>
+      <span class="emotion-pill secondary"><span class="emotion-dot"></span>Propósito compartido</span>
+    </div>
+    <div style="margin-bottom: 16px;">
+      <span style="font-family: var(--ff-mono); font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.12em;">Emociones de diferenciación</span>
+    </div>
+    <div>
+      <span class="emotion-pill tertiary"><span class="emotion-dot"></span>Exclusividad de nicho</span>
+      <span class="emotion-pill tertiary"><span class="emotion-dot"></span>Liderazgo de categoría</span>
+      <span class="emotion-pill tertiary"><span class="emotion-dot"></span>Relevancia futura</span>
+    </div>
+  </div>
+</section>
+
+<!-- ELEMENTOS DE MARCA -->
+<section class="section light" id="identidad">
+  <div class="container">
+    <div class="chapter-divider">
+      <span class="chapter-number" style="color: var(--teal-dark);">04 — Elementos e Identidad de Marca</span>
+      <div class="chapter-line" style="background: rgba(10,22,40,0.15);"></div>
+    </div>
+
+    <span class="label on-light">Anatomía del Imagotipo</span>
+    <h2 class="section-title" style="color: var(--charcoal);">El imagotipo es la<br>síntesis visual de la<br><em style="color: var(--teal-dark);">misión completa.</em></h2>
+    <div class="rule on-light" style="margin-bottom: 48px;"></div>
+
+    <div class="grid-2" style="gap: 60px; align-items: center; margin-bottom: 80px;">
+      <div style="background: var(--navy); border-radius: 12px; padding: 48px; display: flex; align-items: center; justify-content: center; min-height: 360px;">
+        <!-- Logo recreation -->
+        <svg width="240" height="240" viewBox="0 0 240 240">
+          <!-- Border circle -->
+          <circle cx="120" cy="120" r="112" stroke="white" stroke-width="1.5" fill="none"/>
+          <!-- Inner circle fill -->
+          <circle cx="120" cy="120" r="108" fill="#0A1628"/>
+          <!-- Dots decoration -->
+          <circle cx="10" cy="130" r="2.5" fill="white" opacity="0.7"/>
+          <circle cx="15" cy="148" r="2.5" fill="white" opacity="0.7"/>
+          <circle cx="23" cy="164" r="2.5" fill="white" opacity="0.7"/>
+          <circle cx="230" cy="130" r="2.5" fill="white" opacity="0.7"/>
+          <circle cx="225" cy="148" r="2.5" fill="white" opacity="0.7"/>
+          <circle cx="217" cy="164" r="2.5" fill="white" opacity="0.7"/>
+          <!-- AQUABIOTICS text arc (simplified) -->
+          <text font-family="'Raleway', sans-serif" font-size="14" font-weight="400" fill="white" letter-spacing="8">
+            <textPath href="#topArc">AQUABIOTICS</textPath>
+          </text>
+          <defs>
+            <path id="topArc" d="M 34,120 A 86,86 0 0,1 206,120"/>
+          </defs>
+          <!-- SUR text -->
+          <text x="120" y="208" text-anchor="middle" font-family="'Raleway', sans-serif" font-size="18" font-weight="600" fill="white" letter-spacing="6">SUR</text>
+          <!-- Coral arc -->
+          <path d="M 76,110 A 44,44 0 0,1 164,110" stroke="#D9715A" stroke-width="6" fill="none" stroke-linecap="round"/>
+          <!-- Teal frond/kelp -->
+          <path d="M 88,108 C 92,96 100,86 108,82 C 116,78 124,82 130,88 C 136,94 140,100 144,104" stroke="#3ABFB2" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <path d="M 92,108 C 98,94 108,84 118,80 C 128,76 136,82 144,100" stroke="#3ABFB2" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.7"/>
+          <path d="M 96,108 C 104,92 116,82 128,80 C 140,78 148,90 152,104" stroke="#3ABFB2" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.5"/>
+          <circle cx="144" cy="104" r="3.5" fill="#3ABFB2"/>
+          <circle cx="144" cy="100" r="3" fill="#3ABFB2" opacity="0.7"/>
+          <circle cx="152" cy="104" r="2.5" fill="#3ABFB2" opacity="0.5"/>
+          <!-- Wave 1 (white) -->
+          <path d="M 72,130 C 86,124 100,136 114,130 C 128,124 152,136 168,130" stroke="white" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+          <!-- Wave 2 (white lighter) -->
+          <path d="M 68,142 C 84,136 100,148 116,142 C 132,136 156,148 172,142" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.7"/>
+          <!-- Wave 3 (steel blue) -->
+          <path d="M 72,154 C 88,148 104,160 120,154 C 136,148 160,160 168,154" stroke="#6B8FAB" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <!-- Wave 4 (lavender) -->
+          <path d="M 80,166 C 96,160 112,172 128,166 C 144,160 160,168 164,166" stroke="#7B7DC0" stroke-width="3" fill="none" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <div>
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+          <div class="card on-light teal-accent">
+            <h4 class="card-title" style="color: var(--teal-dark);">El Arco Coral · Horizonte</h4>
+            <p style="font-size: 14px; color: #4A4A5A;">Representa el horizonte del sur de Chile. El amanecer sobre los fiordos. La frontera entre lo conocido y lo descubierto. Color coral porque la taurina —el producto estrella— es cálida, viva, orgánica.</p>
+          </div>
+          <div class="card on-light teal-accent">
+            <h4 class="card-title" style="color: var(--teal-dark);">El Fronde Teal · Biotecnología Marina</h4>
+            <p style="font-size: 14px; color: #4A4A5A;">Las líneas fluidas que emergen del horizonte representan al mejillón chileno y a la fronda marina. También son flujos de datos, corrientes de proceso, el movimiento del conocimiento biotecnológico. El teal —ciencia, precisión, claridad.</p>
+          </div>
+          <div class="card on-light teal-accent">
+            <h4 class="card-title" style="color: var(--teal-dark);">Las Cuatro Olas · La Biorrefinería en Cascada</h4>
+            <p style="font-size: 14px; color: #4A4A5A;">Blanco, blanco suave, azul acero, lavanda: las cuatro olas son las cuatro etapas del proceso —filtración, separación, purificación, transformación. Son también el océano en capas de profundidad creciente.</p>
+          </div>
+          <div class="card on-light" style="border-left: 3px solid var(--charcoal); padding-left: 30px;">
+            <h4 class="card-title">El Círculo y los Puntos · Economía Circular</h4>
+            <p style="font-size: 14px; color: #4A4A5A;">El formato circular no es solo estética: es una declaración. Los puntos —que evocan perlas, gotas, burbujas— completan el círculo. Nada se desperdicia. Todo vuelve.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BRAND VOICE -->
+    <span class="label on-light">Voz de Marca</span>
+    <h3 class="sub-title" style="color: var(--charcoal); margin-bottom: 40px;">Cómo <em>habla</em> AquaBiotics Sur</h3>
+    <div class="grid-2" style="gap: 40px;">
+      <div>
+        <h4 class="card-title" style="color: var(--teal-dark); margin-bottom: 24px;">Hablamos así ✓</h4>
+        <div class="voice-example" style="border-left-color: var(--teal-dark); color: var(--charcoal);">
+          "El caldo de cocción del chorito contiene 2,4 g/L de taurina. Lo que hoy se descarta, mañana puede estar en el suplemento más exigente del mercado."
+        </div>
+        <div class="voice-example" style="border-left-color: var(--teal-dark); color: var(--charcoal);">
+          "No competimos con la taurina sintética en precio. Competimos en un territorio donde ella no puede entrar: el origen natural certificable."
+        </div>
+        <div class="voice-example" style="border-left-color: var(--teal-dark); color: var(--charcoal);">
+          "Los Lagos no es solo nuestra locación. Es nuestra ventaja competitiva irreplicable."
+        </div>
+      </div>
+      <div>
+        <h4 class="card-title" style="color: #A02020; margin-bottom: 24px;">No hablamos así ✗</h4>
+        <div class="voice-bad" style="border-left-color: #C08080; margin-bottom: 20px;">
+          "¡Somos la empresa más innovadora del sector acuícola chileno!"
+        </div>
+        <div class="voice-bad" style="border-left-color: #C08080; margin-bottom: 20px;">
+          "Utilizamos tecnología de punta para maximizar el valor agregado de los subproductos."
+        </div>
+        <div class="voice-bad" style="border-left-color: #C08080; margin-bottom: 20px;">
+          "Solución integral sostenible para la gestión de residuos industriales líquidos de la mitilicultura."
+        </div>
+        <p style="font-size: 13px; color: #6A6A7A; margin-top: 24px;">Evitamos el jargon corporativo vacío. Evitamos los superlativos sin respaldo. Evitamos el tecnicismo que aleja. Preferimos la precisión que conecta.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COLOR -->
+<section class="section" id="color">
+  <div class="container">
+    <div class="chapter-divider">
+      <span class="chapter-number">05 — Sistema de Color</span>
+      <div class="chapter-line"></div>
+    </div>
+
+    <span class="label">Paleta Principal</span>
+    <h2 class="section-title" style="margin-bottom: 48px;">Los colores del <em style="color: var(--teal);">mar profundo</em><br>y la <em style="color: var(--coral);">vida que emerge.</em></h2>
+
+    <div class="grid-2" style="gap: 8px; margin-bottom: 8px;">
+      <div class="swatch" style="background: var(--coral);">
+        <div class="swatch-label">
+          <strong>Coral Taurina</strong> · #D9715A<br>
+          Principal cálido · Taurina · Transformación · Origen
+        </div>
+      </div>
+      <div class="swatch" style="background: var(--teal);">
+        <div class="swatch-label">
+          <strong>Teal Mar</strong> · #3ABFB2<br>
+          Principal frío · Ciencia · Océano · Claridad
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-4" style="gap: 8px; margin-bottom: 48px;">
+      <div class="swatch" style="background: var(--navy); height: 100px;">
+        <div class="swatch-label"><strong>Navy Profundo</strong> · #0A1628<br>Base · Autoridad</div>
+      </div>
+      <div class="swatch" style="background: var(--navy-light); height: 100px;">
+        <div class="swatch-label"><strong>Navy Medio</strong> · #1E3350<br>Superficie · Estructura</div>
+      </div>
+      <div class="swatch" style="background: var(--lavender); height: 100px;">
+        <div class="swatch-label"><strong>Lavanda Biotech</strong> · #7B7DC0<br>Innovación · Proceso</div>
+      </div>
+      <div class="swatch" style="background: var(--steel); height: 100px;">
+        <div class="swatch-label"><strong>Azul Corriente</strong> · #6B8FAB<br>Flujo · Transición</div>
+      </div>
+    </div>
+
+    <div class="grid-4" style="gap: 8px; margin-bottom: 64px;">
+      <div class="swatch light" style="background: var(--cream); height: 80px;">
+        <div class="swatch-label"><strong>Crema</strong> · #F7F3ED</div>
+      </div>
+      <div class="swatch light" style="background: var(--warm-white); height: 80px;">
+        <div class="swatch-label"><strong>Blanco Cálido</strong> · #FAFAF8</div>
+      </div>
+      <div class="swatch" style="background: var(--coral-dark); height: 80px;">
+        <div class="swatch-label"><strong>Coral Oscuro</strong> · #A04030</div>
+      </div>
+      <div class="swatch" style="background: var(--teal-dark); height: 80px;">
+        <div class="swatch-label"><strong>Teal Oscuro</strong> · #1E8C82</div>
+      </div>
+    </div>
+
+    <!-- COLOR USAGE -->
+    <span class="label">Uso del Color</span>
+    <div class="grid-3" style="gap: 24px;">
+      <div class="card teal-accent">
+        <h4 class="card-title" style="color: var(--teal);">Coral · Protagonismo</h4>
+        <p style="font-size: 14px; color: var(--muted-strong);">Producto estrella (Taurina Azul), CTAs, highlights de datos, nombres de productos, elementos que requieren atención.</p>
+      </div>
+      <div class="card teal-accent">
+        <h4 class="card-title" style="color: var(--teal);">Teal · Inteligencia</h4>
+        <p style="font-size: 14px; color: var(--muted-strong);">Ciencia, proceso, datos técnicos, referencias bibliográficas, indicadores de calidad, claims verificados.</p>
+      </div>
+      <div class="card lavender-accent">
+        <h4 class="card-title" style="color: var(--lavender-light);">Lavanda · Innovación</h4>
+        <p style="font-size: 14px; color: var(--muted-strong);">Postbióticos, biotransformación, IA/ML, innovación en proceso, la segunda línea de producto.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIPOGRAFÍA -->
+<section class="section mid" id="tipografia">
+  <div class="container">
+    <div class="chapter-divider">
+      <span class="chapter-number">06 — Tipografía</span>
+      <div class="chapter-line"></div>
+    </div>
+
+    <span class="label">Sistema Tipográfico</span>
+    <h2 class="section-title" style="margin-bottom: 64px;">Dos voces.<br><em style="color: var(--teal);">Un sistema.</em></h2>
+
+    <div class="type-specimen">
+      <div class="type-meta">Display · Cormorant Garamond · El Sabio habla</div>
+      <div class="specimen-display">Taurina Azul<br><em>del fin del mundo</em></div>
+      <p style="color: var(--muted); font-size: 14px; margin-top: 16px;">Para titulares, citas, narrativa de marca, campañas. Transmite autoridad científica con elegancia orgánica. La itálica enfatiza el relato de origen y la voz poética.</p>
+    </div>
+
+    <div class="type-specimen">
+      <div class="type-meta">Body · Raleway · El Creador ejecuta</div>
+      <div class="specimen-body">
+        La nanofiltración con factor de concentración 5,2× permite aislar la taurina del efluente con una eficiencia de recuperación superior al 70%, manteniendo la integridad molecular del aminoácido.
+      </div>
+      <p style="color: var(--muted); font-size: 14px; margin-top: 16px;">Para textos técnicos, comunicaciones B2B, sitio web, materiales comerciales. Pesos 300–600. Legibilidad técnica con carácter propio.</p>
+    </div>
+
+    <div class="type-specimen">
+      <div class="type-meta">Monospace · Space Mono · El Explorador mide</div>
+      <div class="specimen-mono">
+        TAURINA: 32.7 mg/g · HPLC CERTIFICADO · LOS LAGOS, CHILE · 2025<br>
+        REF: [Bjerknes et al., 2024] · DOI: 10.3389/fnut.2024.1443229
+      </div>
+      <p style="color: var(--muted); font-size: 14px; margin-top: 16px;">Para datos analíticos, referencias científicas, labels técnicos, metadatos. Solo en monospace cuando hay valor en la precisión sistemática.</p>
+    </div>
+
+    <div class="type-specimen">
+      <div class="type-meta">Escala de pesos · Raleway</div>
+      <div class="specimen-weights">
+        <div class="weight-item">
+          <span class="weight-sample" style="font-weight: 300; color: var(--cream);">Aa</span>
+          <span class="weight-name">Light 300</span>
+        </div>
+        <div class="weight-item">
+          <span class="weight-sample" style="font-weight: 400; color: var(--cream);">Aa</span>
+          <span class="weight-name">Regular 400</span>
+        </div>
+        <div class="weight-item">
+          <span class="weight-sample" style="font-weight: 500; color: var(--cream);">Aa</span>
+          <span class="weight-name">Medium 500</span>
+        </div>
+        <div class="weight-item">
+          <span class="weight-sample" style="font-weight: 600; color: var(--cream);">Aa</span>
+          <span class="weight-name">SemiBold 600</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ICONOGRAFÍA, MORFOLOGÍA, TEXTURA -->
+<section class="section" id="iconografia">
+  <div class="container">
+    <div class="chapter-divider">
+      <span class="chapter-number">07 — Iconografía · Morfología · Textura</span>
+      <div class="chapter-line"></div>
+    </div>
+
+    <!-- ICONOGRAFÍA -->
+    <span class="label">Iconografía · Principios</span>
+    <h3 class="sub-title" style="margin-bottom: 32px;">El sistema de <em style="color: var(--teal);">íconos</em></h3>
+    <div class="grid-4" style="gap: 16px; margin-bottom: 64px;">
+      <div class="icon-demo">
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+          <path d="M8 36 C14 28 22 20 28 18 C34 16 40 20 44 26" stroke="#3ABFB2" stroke-width="2" stroke-linecap="round"/>
+          <path d="M8 36 C16 26 26 18 34 16" stroke="#3ABFB2" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+          <circle cx="44" cy="26" r="3" fill="#3ABFB2"/>
+        </svg>
+        <span class="icon-label">Fronda Marina</span>
+      </div>
+      <div class="icon-demo">
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+          <path d="M4 28 C12 22 20 32 28 26 C36 20 44 28 48 24" stroke="#6B8FAB" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <path d="M4 34 C12 28 20 38 28 32 C36 26 44 34 48 30" stroke="#6B8FAB" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.6"/>
+          <path d="M4 40 C12 34 20 44 28 38 C36 32 44 40 48 36" stroke="#7B7DC0" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.5"/>
+        </svg>
+        <span class="icon-label">Capas del Mar</span>
+      </div>
+      <div class="icon-demo">
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+          <circle cx="24" cy="24" r="18" stroke="#D9715A" stroke-width="1.5"/>
+          <path d="M24 6 L24 10 M24 38 L24 42 M6 24 L10 24 M38 24 L42 24" stroke="#D9715A" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M16 16 L24 24 L32 18" stroke="#D9715A" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="24" cy="24" r="3" fill="#D9715A" opacity="0.5"/>
+        </svg>
+        <span class="icon-label">Circularidad</span>
+      </div>
+      <div class="icon-demo">
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+          <rect x="8" y="20" width="12" height="20" rx="2" stroke="#3ABFB2" stroke-width="1.5"/>
+          <rect x="22" y="14" width="12" height="26" rx="2" stroke="#3ABFB2" stroke-width="1.5"/>
+          <rect x="36" y="8" width="8" height="32" rx="2" stroke="#3ABFB2" stroke-width="1.5"/>
+          <path d="M8 40 L44 40" stroke="#3ABFB2" stroke-width="1" opacity="0.3"/>
+        </svg>
+        <span class="icon-label">Datos Analíticos</span>
+      </div>
+    </div>
+
+    <div style="padding: 24px; border: 1px solid rgba(247,243,237,0.08); margin-bottom: 64px;">
+      <span class="label" style="margin-bottom: 12px;">Reglas de iconografía</span>
+      <div class="grid-3" style="gap: 24px;">
+        <div>
+          <h4 class="card-title" style="color: var(--teal);">Trazo, no relleno</h4>
+          <p style="font-size: 14px; color: var(--muted-strong);">Los íconos son de línea (stroke 1.5–2px), nunca sólidos. Excepto para puntos de acento (círculos de énfasis).</p>
+        </div>
+        <div>
+          <h4 class="card-title" style="color: var(--teal);">Orgánico, no geométrico</h4>
+          <p style="font-size: 14px; color: var(--muted-strong);">Las líneas tienen curvatura natural. Se evitan las formas puramente geométricas. Los extremos son redondeados (stroke-linecap: round).</p>
+        </div>
+        <div>
+          <h4 class="card-title" style="color: var(--teal);">Movimiento implícito</h4>
+          <p style="font-size: 14px; color: var(--muted-strong);">Los íconos sugieren flujo, corriente, transformación. Nada está estático. El proceso siempre está ocurriendo.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- MORFOLOGÍA -->
+    <span class="label">Morfología · Lenguaje de Formas</span>
+    <h3 class="sub-title" style="margin-bottom: 32px;">Las formas <em style="color: var(--teal);">no son decoración.</em><br>Son declaraciones.</h3>
+    <div class="grid-3" style="gap: 24px; margin-bottom: 64px;">
+      <div>
+        <div class="morph-demo">
+          <svg width="120" height="80" viewBox="0 0 120 80" fill="none">
+            <path d="M10 70 C30 30 90 30 110 70" stroke="#3ABFB2" stroke-width="2" fill="none"/>
+            <path d="M10 55 C30 25 90 25 110 55" stroke="#3ABFB2" stroke-width="1.5" fill="none" opacity="0.5"/>
+          </svg>
+        </div>
+        <h4 class="card-title" style="color: var(--teal); text-align: center; margin-top: 16px;">La Ola</h4>
+        <p style="font-size: 13px; color: var(--muted); text-align: center;">Movimiento, ritmo, proceso continuo. Forma primaria del sistema.</p>
+      </div>
+      <div>
+        <div class="morph-demo">
+          <svg width="120" height="80" viewBox="0 0 120 80" fill="none">
+            <circle cx="60" cy="40" r="30" stroke="#D9715A" stroke-width="2" fill="none"/>
+            <circle cx="60" cy="40" r="22" stroke="#D9715A" stroke-width="1" fill="none" opacity="0.4"/>
+            <circle cx="60" cy="40" r="14" stroke="#D9715A" stroke-width="1" fill="none" opacity="0.2"/>
+          </svg>
+        </div>
+        <h4 class="card-title" style="color: var(--coral); text-align: center; margin-top: 16px;">El Círculo</h4>
+        <p style="font-size: 13px; color: var(--muted); text-align: center;">Economía circular, completitud, el ciclo sin fin del proceso.</p>
+      </div>
+      <div>
+        <div class="morph-demo">
+          <svg width="120" height="80" viewBox="0 0 120 80" fill="none">
+            <path d="M20 65 C30 45 50 30 60 25 C70 20 90 25 100 40" stroke="#7B7DC0" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <circle cx="100" cy="40" r="4" fill="#7B7DC0"/>
+            <circle cx="60" cy="25" r="3" fill="#7B7DC0" opacity="0.5"/>
+          </svg>
+        </div>
+        <h4 class="card-title" style="color: var(--lavender-light); text-align: center; margin-top: 16px;">La Curva Emergente</h4>
+        <p style="font-size: 13px; color: var(--muted); text-align: center;">Ascenso, biotransformación, el valor que surge del residuo.</p>
+      </div>
+    </div>
+
+    <!-- TEXTURA -->
+    <span class="label">Textura · Atmósfera Visual</span>
+    <h3 class="sub-title" style="margin-bottom: 32px;">La textura <em style="color: var(--teal);">da profundidad</em></h3>
+    <div class="grid-3" style="gap: 16px; margin-bottom: 64px;">
+      <div class="texture-block" style="background: linear-gradient(160deg, #0A1628, #1E3350);">
+        <svg style="position: absolute; inset: 0; width: 100%; height: 100%;" preserveAspectRatio="none">
+          <filter id="noise">
+            <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+            <feColorMatrix type="saturate" values="0"/>
+            <feBlend in="SourceGraphic" mode="overlay"/>
+          </filter>
+          <rect width="100%" height="100%" filter="url(#noise)" opacity="0.03"/>
+          <path d="M0,80 C40,60 80,100 120,80 C160,60 200,90 240,70 L240,160 L0,160 Z" fill="#3ABFB2" opacity="0.04"/>
+          <path d="M0,100 C50,80 100,110 150,95 C200,80 240,105 280,90 L280,160 L0,160 Z" fill="#3ABFB2" opacity="0.03"/>
+        </svg>
+        <span class="texture-name">Océano Profundo · Fondo principal</span>
+      </div>
+      <div class="texture-block" style="background: #142236;">
+        <svg style="position: absolute; inset: 0; width: 100%; height: 100%;" preserveAspectRatio="none">
+          <line x1="0" y1="30" x2="300" y2="30" stroke="#3ABFB2" stroke-width="0.5" opacity="0.08"/>
+          <line x1="0" y1="60" x2="300" y2="60" stroke="#3ABFB2" stroke-width="0.5" opacity="0.08"/>
+          <line x1="0" y1="90" x2="300" y2="90" stroke="#3ABFB2" stroke-width="0.5" opacity="0.08"/>
+          <line x1="0" y1="120" x2="300" y2="120" stroke="#3ABFB2" stroke-width="0.5" opacity="0.08"/>
+          <line x1="50" y1="0" x2="50" y2="160" stroke="#3ABFB2" stroke-width="0.5" opacity="0.05"/>
+          <line x1="100" y1="0" x2="100" y2="160" stroke="#3ABFB2" stroke-width="0.5" opacity="0.05"/>
+          <line x1="150" y1="0" x2="150" y2="160" stroke="#3ABFB2" stroke-width="0.5" opacity="0.05"/>
+          <line x1="200" y1="0" x2="200" y2="160" stroke="#3ABFB2" stroke-width="0.5" opacity="0.05"/>
+          <line x1="250" y1="0" x2="250" y2="160" stroke="#3ABFB2" stroke-width="0.5" opacity="0.05"/>
+        </svg>
+        <span class="texture-name">Grilla Científica · Superficies técnicas</span>
+      </div>
+      <div class="texture-block" style="background: var(--cream);">
+        <svg style="position: absolute; inset: 0; width: 100%; height: 100%;" preserveAspectRatio="none">
+          <path d="M0,60 C40,45 80,70 120,55 C160,40 200,65 240,50" stroke="#3ABFB2" stroke-width="1" fill="none" opacity="0.2"/>
+          <path d="M0,80 C30,65 70,90 110,75 C150,60 190,80 240,68" stroke="#3ABFB2" stroke-width="1" fill="none" opacity="0.15"/>
+          <path d="M0,100 C50,85 90,108 130,95 C170,82 210,100 240,88" stroke="#6B8FAB" stroke-width="0.8" fill="none" opacity="0.15"/>
+        </svg>
+        <span class="texture-name" style="color: var(--charcoal);">Ondas en Crema · Fondo claro</span>
+      </div>
+    </div>
+
+    <!-- FOTOGRAFÍA -->
+    <span class="label">Dirección Fotográfica</span>
+    <h3 class="sub-title" style="margin-bottom: 32px;">Las imágenes <em style="color: var(--teal);">construyen el mundo</em><br>de la marca.</h3>
+    <div class="grid-3" style="gap: 16px; margin-bottom: 48px;">
+      <div class="photo-card" style="background: linear-gradient(135deg, #0A2040, #0D3060);">
+        <div class="photo-overlay">
+          Fiordos de Los Lagos<br><span style="font-size: 13px; font-style: normal; opacity: 0.6; font-family: var(--ff-mono); letter-spacing: 0.1em;">TERRITORIO · AZUL FRÍO · NEBLINA</span>
+        </div>
+      </div>
+      <div class="photo-card" style="background: linear-gradient(135deg, #1A3020, #0F4030);">
+        <div class="photo-overlay">
+          Laboratorio · Proceso<br><span style="font-size: 13px; font-style: normal; opacity: 0.6; font-family: var(--ff-mono); letter-spacing: 0.1em;">CIENCIA · PRECISIÓN · LUZ TEAL</span>
+        </div>
+      </div>
+      <div class="photo-card" style="background: linear-gradient(135deg, #402010, #603020);">
+        <div class="photo-overlay">
+          Mejillón · Ingrediente<br><span style="font-size: 13px; font-style: normal; opacity: 0.6; font-family: var(--ff-mono); letter-spacing: 0.1em;">PRODUCTO · CÁLIDO · MACRO</span>
+        </div>
+      </div>
+    </div>
+    <div class="grid-3" style="gap: 24px;">
+      <div class="card teal-accent">
+        <h4 class="card-title" style="color: var(--teal);">Territorio</h4>
+        <p style="font-size: 14px; color: var(--muted-strong);">Fiordos, costas, cielo patagónico. Tonos fríos dominantes, azul y verde. Horizonte presente. Escala monumental.</p>
+      </div>
+      <div class="card teal-accent">
+        <h4 class="card-title" style="color: var(--teal);">Proceso Científico</h4>
+        <p style="font-size: 14px; color: var(--muted-strong);">Laboratorio real, no estilizado. Manos en acción. Equipos analíticos. Luz teal y blanca. Enfoque nítido en el detalle del proceso.</p>
+      </div>
+      <div class="card coral-accent">
+        <h4 class="card-title" style="color: var(--coral);">Ingrediente · Producto</h4>
+        <p style="font-size: 14px; color: var(--muted-strong);">Macro del mejillón. Cristales de taurina. El polvo del parabiótico. Iluminación cálida. Texturas que invitan a confiar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IDENTIDAD APLICADA -->
+<section class="section light">
+  <div class="container">
+    <div class="chapter-divider">
+      <span class="chapter-number" style="color: var(--teal-dark);">08 — Identidad Aplicada · Principios de Uso</span>
+      <div class="chapter-line" style="background: rgba(10,22,40,0.15);"></div>
+    </div>
+
+    <span class="label on-light">Principios de Aplicación</span>
+    <h2 class="section-title" style="color: var(--charcoal); margin-bottom: 48px;">La marca funciona cuando<br>es <em style="color: var(--teal-dark);">coherente en cada punto</em><br>de contacto.</h2>
+
+    <div class="grid-3" style="gap: 24px; margin-bottom: 48px;">
+      <div class="card on-light teal-accent">
+        <h4 class="card-title" style="color: var(--teal-dark);">Espacio y Respiración</h4>
+        <p style="font-size: 14px; color: #4A4A5A;">La marca no grita. Usa el espacio negativo. Los márgenes generosos son una declaración de confianza. Las empresas inseguras llenan el espacio. AquaBiotics lo domina.</p>
+      </div>
+      <div class="card on-light teal-accent">
+        <h4 class="card-title" style="color: var(--teal-dark);">Datos como Diseño</h4>
+        <p style="font-size: 14px; color: #4A4A5A;">Los datos analíticos, las referencias científicas, los valores de concentración: son parte del lenguaje visual. En Space Mono, en teal, con dignidad. No se esconden: se exhiben.</p>
+      </div>
+      <div class="card on-light teal-accent">
+        <h4 class="card-title" style="color: var(--teal-dark);">Contraste Deliberado</h4>
+        <p style="font-size: 14px; color: #4A4A5A;">Navy oscuro + cream claro. Coral cálido + teal frío. La marca vive en tensión productiva. No hay paletas monocromáticas. Cada color justifica su presencia.</p>
+      </div>
+    </div>
+
+    <div style="background: var(--navy); color: var(--cream); padding: 48px; border-radius: 4px;">
+      <span class="label">Jerarquía de Aplicación</span>
+      <div class="grid-2" style="gap: 48px;">
+        <div>
+          <h4 style="font-family: var(--ff-mono); font-size: 11px; color: var(--teal); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 20px;">Uso Primario</h4>
+          <p style="color: var(--muted-strong); font-size: 15px;">Imagotipo completo (isotipo + logotipo) sobre fondo navy. Esta es la presentación canónica. Para documentos corporativos, presentaciones a inversores, materiales institucionales.</p>
+        </div>
+        <div>
+          <h4 style="font-family: var(--ff-mono); font-size: 11px; color: var(--coral); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 20px;">Uso Secundario</h4>
+          <p style="color: var(--muted-strong); font-size: 15px;">Solo logotipo (tipografía) sobre fondos claros para aplicaciones donde el imagotipo no cabe. Solo isotipo (símbolo circular) como favicon, marca de agua, aplicaciones de tamaño reducido.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background: var(--navy); border-top: 1px solid rgba(247,243,237,0.06); padding: 64px 0;">
+  <div class="container">
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: gap;">
+      <div>
+        <p style="font-family: var(--ff-display); font-size: 32px; font-weight: 300; color: var(--teal); margin-bottom: 8px;">AquaBiotics Sur</p>
+        <p style="font-family: var(--ff-mono); font-size: 11px; color: var(--muted); letter-spacing: 0.15em; text-transform: uppercase;">Sistema de Identidad de Marca · Versión 1.0 · 2025</p>
+      </div>
+      <div style="text-align: right;">
+        <p style="font-family: var(--ff-mono); font-size: 11px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 4px;">Región de Los Lagos · Chile</p>
+        <p style="font-family: var(--ff-mono); font-size: 11px; color: var(--teal); letter-spacing: 0.1em;">aqua-biotics.com</p>
+      </div>
+    </div>
+    <div style="margin-top: 48px; padding-top: 32px; border-top: 1px solid rgba(247,243,237,0.06);">
+      <p style="font-family: var(--ff-display); font-size: 18px; font-style: italic; color: var(--muted); text-align: center;">"Del residuo más ignorado de Los Lagos, al ingrediente más deseado del mundo."</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
