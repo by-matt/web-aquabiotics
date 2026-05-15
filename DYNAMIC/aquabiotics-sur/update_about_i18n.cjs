@@ -33,7 +33,7 @@ Object.assign(enJson.about_page, {
             name: "Byron Calderón",
             role: "CEO | Biotechnologist | Sustainable Bioprocess Development | Scientific Strategy",
             sub_role: "Scientific & Strategic Lead",
-            img: "byron.jpg",
+            img: "byron.png",
             linkedin: "https://www.linkedin.com/in/byron-calder%C3%B3n/",
             paragraphs: [
                 "Specialized in sustainable bioprocess design, industrial microbiology, and science-driven innovation. His work is grounded in the integration of molecular biology, biochemical engineering, and circular economy principles to transform environmental challenges into scalable, high-value biological solutions.",
@@ -83,7 +83,7 @@ Object.assign(esJson.about_page, {
             name: "Byron Calderón",
             role: "CEO | Biotecnólogo | Desarrollo de Bioprocesos Sostenibles | Estrategia Científica",
             sub_role: "Líder Científico y Estratégico",
-            img: "byron.jpg",
+            img: "byron.png",
             linkedin: "https://www.linkedin.com/in/byron-calder%C3%B3n/",
             paragraphs: [
                 "Especializado en el diseño de bioprocesos sostenibles, microbiología industrial e innovación basada en la ciencia. Su trabajo se fundamenta en la integración de la biología molecular, la ingeniería bioquímica y los principios de economía circular para transformar desafíos ambientales en soluciones biológicas escalables y de alto valor.",
