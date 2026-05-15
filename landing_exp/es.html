@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaBiotics Sur | Biorefinería Circular DeepTech | Taurina Azul</title>
+    <meta name="description" content="Arquitectura DeepTech sostenible para el upcycling de residuos industriales marinos en taurina orgánica de alta pureza. Liderando la economía azul circular en la Patagonia.">
+    <meta name="keywords" content="taurina azul, biorefinería marina, economía circular, biotecnología, patagonia, sostenibilidad, taurina orgánica, upcycling acuicultura">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aqua-biotics.com/landing_exp/es.html">
+    <meta property="og:title" content="AquaBiotics Sur | Biorefinería Circular DeepTech">
+    <meta property="og:description" content="Transformando residuos industriales en bioactivos de alto valor mediante biorefinería modular en cascada en la Patagonia.">
+    
+    <!-- Google Analytics (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-95YGFVTCSF"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-95YGFVTCSF');
+    </script>
+    
+    <meta property="og:image" content="https://aqua-biotics.com/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="AquaBiotics Sur | Innovación en Taurina Azul">
+    <meta property="twitter:description" content="Economía azul circular mediante innovación DeepTech en la Patagonia.">
+    
+    <link rel="canonical" href="https://aqua-biotics.com/landing_exp/es.html">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Raleway:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            DEFAULT: '#0A1628',
+                            mid: '#142236',
+                            light: '#1E3350'
+                        },
+                        teal: {
+                            DEFAULT: '#3ABFB2',
+                            light: '#7ADBD3',
+                            dark: '#1E8C82',
+                            glow: 'rgba(58, 191, 178, 0.4)'
+                        },
+                        coral: {
+                            DEFAULT: '#D9715A',
+                            light: '#F0A892',
+                            dark: '#A04030'
+                        },
+                        lavender: {
+                            DEFAULT: '#7B7DC0',
+                            light: '#A9AADC'
+                        },
+                        steel: '#6B8FAB',
+                        cream: '#F7F3ED',
+                        muted: 'rgba(247, 243, 237, 0.6)',
+                        'muted-strong': 'rgba(247, 243, 237, 0.75)'
+                    },
+                    fontFamily: {
+                        display: ['Cormorant Garamond', 'Georgia', 'serif'],
+                        body: ['Raleway', 'sans-serif'],
+                        mono: ['Space Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Brand System CSS -->
+    <style>
+        :root {
+            --coral: #D9715A;
+            --coral-light: #F0A892;
+            --coral-dark: #A04030;
+            --teal: #3ABFB2;
+            --teal-light: #7ADBD3;
+            --teal-dark: #1E8C82;
+            --navy: #0A1628;
+            --navy-mid: #142236;
+            --navy-light: #1E3350;
+            --lavender: #7B7DC0;
+            --lavender-light: #A9AADC;
+            --steel: #6B8FAB;
+            --cream: #F7F3ED;
+            --warm-white: #FAFAF8;
+            --charcoal: #1E1E2A;
+            --muted: rgba(247,243,237,0.5);
+            --muted-strong: rgba(247,243,237,0.75);
+            --ff-display: 'Cormorant Garamond', Georgia, serif;
+            --ff-body: 'Raleway', sans-serif;
+            --ff-mono: 'Space Mono', monospace;
+        }
+
+        #preloader {
+            position: fixed;
+            inset: 0;
+            background: var(--navy);
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .preloader-bar {
+            width: 200px;
+            height: 2px;
+            background: rgba(255,255,255,0.05);
+            position: relative;
+            margin-top: 20px;
+            overflow: hidden;
+        }
+        .preloader-progress {
+            position: absolute;
+            top: 0; left: 0;
+            height: 100%;
+            width: 0%;
+            background: var(--teal);
+            box-shadow: 0 0 15px var(--teal);
+        }
+
+        #mobile-menu {
+            position: fixed;
+            inset: 0;
+            background: rgba(10, 22, 40, 0.98);
+            backdrop-filter: blur(20px);
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        #mobile-menu.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .mobile-link {
+            font-family: var(--ff-display);
+            font-size: 2.5rem;
+            color: var(--cream);
+            margin: 1rem 0;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+        #mobile-menu.active .mobile-link {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .scroll-hint {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            opacity: 0.6;
+            z-index: 10;
+            margin: 20px 0;
+        }
+        .mouse-icon {
+            width: 22px;
+            height: 36px;
+            border: 2px solid var(--cream);
+            border-radius: 12px;
+            position: relative;
+        }
+        .mouse-wheel {
+            width: 2px;
+            height: 6px;
+            background: var(--teal);
+            position: absolute;
+            top: 6px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: scroll-wheel 2s infinite;
+        }
+        @keyframes scroll-wheel {
+            0% { opacity: 0; transform: translate(-50%, 0); }
+            30% { opacity: 1; }
+            100% { opacity: 0; transform: translate(-50%, 15px); }
+        }
+
+        .hamburger {
+            width: 30px;
+            height: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+            z-index: 101;
+        }
+        .hamburger span {
+            width: 100%;
+            height: 2px;
+            background: var(--teal);
+            transition: all 0.3s ease;
+        }
+        .hamburger.active span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+
+        html.lenis, html.lenis body { height: auto; }
+        .lenis.lenis-smooth { scroll-behavior: auto !important; }
+        .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+        .lenis.lenis-stopped { overflow: hidden; }
+        .lenis.lenis-smooth iframe { pointer-events: none; }
+
+        body {
+            background-color: var(--navy);
+            color: var(--cream);
+            font-family: var(--ff-body);
+            font-weight: 300;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        
+        .logo-grayscale {
+            filter: grayscale(100%);
+            opacity: 0.6;
+            transition: all 0.5s ease;
+        }
+        .logo-grayscale:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+
+        .glass-nav {
+            background: rgba(10, 22, 40, 0.85);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .glass-card {
+            background: rgba(20, 34, 54, 0.45);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid transparent;
+            background-clip: padding-box;
+            position: relative;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), background 0.6s ease;
+        }
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(247,243,237,0.07), rgba(247,243,237,0.07));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+            transition: background 0.8s ease;
+        }
+        .glass-card:hover {
+            background: rgba(20, 34, 54, 0.7);
+            transform: translateY(-4px);
+        }
+        .glass-card:hover::before {
+            background: linear-gradient(var(--border-angle, 135deg), var(--teal), var(--coral), var(--teal));
+            animation: borderTrace 3s linear infinite;
+        }
+        @keyframes borderTrace {
+            to { --border-angle: 495deg; }
+        }
+        @property --border-angle {
+            syntax: '<angle>';
+            initial-value: 135deg;
+            inherits: false;
+        }
+
+        .glow-overlay {
+            position: absolute;
+            border-radius: inherit;
+            top: 0; left: 0; width: 100%; height: 100%;
+            opacity: 0; transition: opacity 0.5s ease;
+            pointer-events: none;
+            background: radial-gradient(circle at 50% 0%, rgba(58, 191, 178, 0.12), transparent 65%);
+        }
+        .glass-card:hover .glow-overlay { opacity: 1; }
+
+        .brand-rule {
+            width: 48px;
+            height: 1px;
+            background: var(--teal);
+            margin-bottom: 28px;
+        }
+        .brand-rule.coral { background: var(--coral); }
+        .brand-rule.lavender { background: var(--lavender); }
+
+        .archetype-tag {
+            display: inline-block;
+            font-family: var(--ff-mono);
+            font-size: 10px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            padding: 5px 14px;
+            border: 1px solid;
+            border-radius: 2px;
+            margin-bottom: 20px;
+        }
+        .archetype-tag.sage   { color: var(--teal);         border-color: rgba(58,191,178,0.4); }
+        .archetype-tag.explorer { color: var(--coral-light); border-color: rgba(217,113,90,0.4); }
+        .archetype-tag.creator  { color: var(--lavender-light); border-color: rgba(123,125,192,0.4); }
+
+        .emotion-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 8px 18px;
+            border-radius: 40px;
+            font-family: var(--ff-body);
+            font-size: 13px;
+            font-weight: 400;
+            margin: 4px;
+        }
+        .emotion-pill.primary   { background: rgba(58,191,178,0.1);  border: 1px solid rgba(58,191,178,0.25);  color: var(--teal-light); }
+        .emotion-pill.secondary { background: rgba(217,113,90,0.08); border: 1px solid rgba(217,113,90,0.2);   color: var(--coral-light); }
+        .emotion-pill.tertiary  { background: rgba(123,125,192,0.08);border: 1px solid rgba(123,125,192,0.2);  color: var(--lavender-light); }
+        .emotion-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; flex-shrink: 0; }
+
+        .particles-bg { position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 0; pointer-events: none; opacity: 0.12; }
+
+        .gsap-reveal { opacity: 0; transform: translateY(40px); }
+        .decode-text { font-variant-numeric: tabular-nums; font-family: var(--ff-mono); }
+
+        #progress-line::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            transform: translate(-50%, 100%);
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--teal);
+            box-shadow: 0 0 16px 6px rgba(58,191,178,0.6), 0 0 40px 12px rgba(58,191,178,0.25);
+            filter: blur(1px);
+            pointer-events: none;
+        }
+
+        .comp-column { transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease; }
+        .comp-column.highlight {
+            background: linear-gradient(180deg, rgba(20, 34, 54, 0.85) 0%, rgba(10, 22, 40, 0.95) 100%);
+            border: 1px solid rgba(58, 191, 178, 0.45);
+            box-shadow: 0 0 40px rgba(58, 191, 178, 0.15);
+            transform: scale(1.03); z-index: 10;
+        }
+        .comp-column.highlight:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 60px rgba(58, 191, 178, 0.25);
+            border-color: rgba(58, 191, 178, 0.7);
+        }
+
+        .hero-line {
+            clip-path: inset(0 100% 0 0);
+            display: block;
+        }
+
+        .hero-line-wrap {
+            position: relative;
+            overflow: visible;
+        }
+        .hero-line-wrap .lumi-edge {
+            position: absolute;
+            top: 0; left: 0;
+            width: 3px; height: 100%;
+            background: linear-gradient(180deg, transparent, var(--teal), transparent);
+            box-shadow: 0 0 15px 4px rgba(58,191,178,0.5), 0 0 40px 8px rgba(58,191,178,0.2);
+            border-radius: 2px;
+            opacity: 0;
+            transform: translateX(-10px);
+            z-index: 20;
+        }
+
+        .hero-rule {
+            width: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--teal), var(--coral), transparent);
+            margin: 0 auto;
+            opacity: 0;
+        }
+
+        .hero-dot {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0;
+        }
+
+        .hero-sub { opacity: 0; transform: translateY(20px); }
+        .hero-pill-anim { opacity: 0; transform: scale(0.85) translateY(12px); }
+        .hero-cta-anim { opacity: 0; transform: translateY(18px); }
+
+        .azul-glow {
+            text-shadow: 0 0 0px transparent;
+            transition: text-shadow 2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .azul-glow.active {
+            text-shadow: 0 0 30px rgba(58,191,178,0.35), 0 0 60px rgba(58,191,178,0.15), 0 0 120px rgba(58,191,178,0.05);
+        }
+
+        .hero-ornament path {
+            stroke-dasharray: 300;
+            stroke-dashoffset: 300;
+        }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--navy); }
+        ::-webkit-scrollbar-thumb { background: var(--navy-light); border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--teal); }
+
+        /* ── COOKIE BANNER ── */
+        #cookie-banner {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            left: 30px;
+            max-width: 500px;
+            background: rgba(20, 34, 54, 0.9);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(58, 191, 178, 0.2);
+            border-radius: 20px;
+            padding: 24px;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            transform: translateY(150%);
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+        #cookie-banner.active { transform: translateY(0); }
+        @media (min-width: 768px) {
+            #cookie-banner { left: auto; }
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-teal selection:text-navy">
+
+    <!-- COOKIE BANNER -->
+    <div id="cookie-banner">
+        <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full bg-teal/10 border border-teal/20 flex items-center justify-center text-teal">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            </div>
+            <span class="font-mono text-[10px] text-teal tracking-[0.2em] uppercase font-bold">Política de Privacidad</span>
+        </div>
+        <p class="text-sm text-cream/80 leading-relaxed font-normal">
+            Utilizamos cookies para mejorar su experiencia y analizar nuestro tráfico. Al continuar navegando, usted acepta nuestro uso de cookies.
+        </p>
+        <div class="flex gap-4">
+            <button onclick="acceptCookies()" class="flex-1 bg-teal text-navy font-mono text-[11px] uppercase tracking-widest font-bold py-3 rounded-xl hover:shadow-[0_0_20px_rgba(58,191,178,0.4)] transition-all">Aceptar Todo</button>
+            <a href="../privacy.html" class="flex-1 border border-white/10 bg-white/5 text-cream text-center font-mono text-[11px] uppercase tracking-widest font-bold py-3 rounded-xl hover:bg-white/10 transition-all">Detalles</a>
+        </div>
+    </div>
+
+    <!-- PRELOADER -->
+    <div id="preloader">
+        <div class="font-mono text-teal text-xs tracking-[0.5em] uppercase mb-4" id="preloader-text">Inicializando Biotech 4.0...</div>
+        <div class="preloader-bar">
+            <div class="preloader-progress" id="preloader-progress"></div>
+        </div>
+    </div>
+
+    <!-- MOBILE MENU OVERLAY -->
+    <div id="mobile-menu">
+        <nav class="flex flex-col items-center">
+            <a href="#inicio" class="mobile-link" onclick="toggleMenu()">Inicio</a>
+            <a href="#mercado" class="mobile-link" onclick="toggleMenu()">Mercado</a>
+            <a href="#tecnologia" class="mobile-link" onclick="toggleMenu()">Tecnología</a>
+            <a href="#sostenibilidad" class="mobile-link" onclick="toggleMenu()">Sostenibilidad</a>
+            <a href="#nosotros" class="mobile-link" onclick="toggleMenu()">Nosotros</a>
+            <a href="#contacto" class="mobile-link" onclick="toggleMenu()">Contacto</a>
+            <div class="flex space-x-6 mt-12 font-mono text-sm uppercase tracking-widest border-t border-white/10 pt-8">
+                <a href="index.html" class="text-muted hover:text-white transition-colors">EN</a>
+                <a href="es.html" class="text-teal font-bold">ES</a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav id="navbar" class="fixed w-full top-0 z-50 py-5 transition-all duration-500">
+        <div class="container mx-auto px-8 lg:px-16 flex justify-between items-center">
+            <a href="#inicio" class="cursor-pointer nav-link flex items-center gap-4 group" data-target="#inicio">
+                <div class="relative w-14 h-14 md:w-16 md:h-16 flex-shrink-0">
+                    <div class="absolute inset-0 bg-teal/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <img src="../logo.png" alt="Logo AquaBiotics Sur" class="w-full h-full object-contain relative z-10 transform group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <div class="flex flex-col text-left whitespace-nowrap">
+                    <span class="font-body font-bold text-xl md:text-2xl text-cream leading-none tracking-tight group-hover:text-teal transition-colors">Aquabiotics Sur</span>
+                    <span class="font-mono text-[10px] md:text-[11px] text-cream/60 mt-1 tracking-[0.2em] uppercase">Naturaleza, replicada.</span>
+                </div>
+            </a>
+            <div class="hidden md:flex space-x-8 font-mono text-xs uppercase tracking-widest text-muted items-center font-medium">
+                <a href="#inicio" class="hover:text-teal transition-all hover:scale-105 nav-link" data-target="#inicio">Inicio</a>
+                <a href="#mercado" class="hover:text-teal transition-all hover:scale-105 nav-link" data-target="#mercado">Mercado</a>
+                <a href="#tecnologia" class="hover:text-teal transition-all hover:scale-105 nav-link" data-target="#tecnologia">Tecnología</a>
+                <a href="#sostenibilidad" class="hover:text-teal transition-all hover:scale-105 nav-link" data-target="#sostenibilidad">Sostenibilidad</a>
+                <a href="#nosotros" class="hover:text-teal transition-all hover:scale-105 nav-link" data-target="#nosotros">Nosotros</a>
+                <a href="#contacto" class="hover:text-teal transition-all hover:scale-105 nav-link" data-target="#contacto">Contacto</a>
+                <div class="flex space-x-3 border-l border-white/20 pl-6 ml-2 font-body text-sm tracking-normal uppercase">
+                    <a href="index.html" class="text-muted hover:text-white transition-colors">EN</a>
+                    <span class="text-white/30">|</span>
+                    <a href="es.html" class="text-teal font-bold transition-colors">ES</a>
+                </div>
+            </div>
+
+            <!-- Botón Hamburguesa -->
+            <div class="md:hidden hamburger" id="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- CAPA DE ORNAMENTOS DE MARCA PERSISTENTES -->
+    <div id="brand-ornament-layer" class="fixed inset-0 pointer-events-none z-[1]" style="will-change: opacity;">
+        <svg class="hero-ornament w-full h-full" viewBox="0 0 1200 800" fill="none" preserveAspectRatio="xMidYMid slice">
+            <path id="orn-arc" d="M380,380 A 220,220 0 0,1 820,380" stroke="#D9715A" stroke-width="4" stroke-linecap="round" opacity="0.45"/>
+            <path id="orn-frond-1" d="M490,378 C 510,340 550,310 590,300 C 630,290 670,310 700,340" stroke="#3ABFB2" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+            <path id="orn-frond-2" d="M510,382 C 540,345 580,320 620,312 C 660,304 700,325 720,350" stroke="#3ABFB2" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
+            <path id="orn-frond-3" d="M530,385 C 565,350 610,330 650,325 C 690,320 725,340 740,358" stroke="#3ABFB2" stroke-width="1" stroke-linecap="round" opacity="0.2"/>
+            <circle id="orn-dot-1" cx="700" cy="340" r="4.5" fill="#3ABFB2" opacity="0"/>
+            <circle id="orn-dot-2" cx="720" cy="350" r="3.5" fill="#3ABFB2" opacity="0"/>
+            <circle id="orn-dot-3" cx="740" cy="358" r="2.5" fill="#3ABFB2" opacity="0"/>
+            <path id="orn-wave-1" d="M420,430 C 460,418 500,442 540,430 C 580,418 640,442 700,430 C 740,422 770,438 790,430" stroke="#F7F3ED" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
+            <path id="orn-wave-2" d="M410,452 C 455,440 495,464 540,452 C 585,440 645,464 700,452 C 745,444 775,458 795,452" stroke="#F7F3ED" stroke-width="2" stroke-linecap="round" opacity="0.35"/>
+            <path id="orn-wave-3" d="M425,474 C 470,462 510,486 555,474 C 600,462 650,486 700,474 C 740,466 770,480 790,474" stroke="#6B8FAB" stroke-width="2.5" stroke-linecap="round" opacity="0.4"/>
+            <path id="orn-wave-4" d="M440,496 C 480,484 520,508 565,496 C 610,484 655,504 700,496 C 735,490 760,500 780,496" stroke="#7B7DC0" stroke-width="2.5" stroke-linecap="round" opacity="0.4"/>
+        </svg>
+        <div class="hero-dot w-2 h-2 bg-teal/60" id="dot-1" style="top:18%;left:12%;"></div>
+        <div class="hero-dot w-1.5 h-1.5 bg-coral/50" id="dot-2" style="top:25%;right:15%;"></div>
+        <div class="hero-dot w-1 h-1 bg-lavender/40" id="dot-3" style="top:72%;left:20%;"></div>
+        <div class="hero-dot w-2.5 h-2.5 bg-teal/30" id="dot-4" style="top:65%;right:10%;"></div>
+        <div class="hero-dot w-1.5 h-1.5 bg-coral/35" id="dot-5" style="bottom:20%;left:35%;"></div>
+        <div class="hero-dot w-1 h-1 bg-teal/50" id="dot-6" style="top:40%;right:25%;"></div>
+    </div>
+
+    <!-- 1. SECCIÓN HERO -->
+    <section id="inicio" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <svg class="particles-bg" viewBox="0 0 100 100" preserveAspectRatio="none" id="hero-bg">
+            <path id="wave-1" d="M0,50 Q25,40 50,50 T100,50 L100,100 L0,100 Z" fill="#3ABFB2" opacity="0.25" />
+            <path id="wave-2" d="M0,60 Q30,45 60,60 T100,60 L100,100 L0,100 Z" fill="#6B8FAB" opacity="0.2" />
+            <path id="wave-3" d="M0,70 Q40,55 70,70 T100,70 L100,100 L0,100 Z" fill="#7B7DC0" opacity="0.15" />
+        </svg>
+
+        <div class="container mx-auto px-8 lg:px-16 relative z-10 text-center pt-[130px]">
+            <div class="inline-block px-4 py-1.5 rounded-full bg-teal/10 border border-teal/20 backdrop-blur-md mt-[6px] mb-6 hero-pill-anim" id="hero-pill">
+                <span class="font-mono text-teal tracking-[0.2em] uppercase text-xs font-semibold">Biorefinería Circular · Patagonia</span>
+            </div>
+
+            <h1 class="font-display text-6xl md:text-8xl lg:text-[9.5rem] font-light leading-[0.9] tracking-tight mb-4" id="hero-h1">
+                <span class="hero-line-wrap block mb-1">
+                    <span class="hero-line" id="line-taurina">Taurina</span>
+                    <span class="lumi-edge" id="lumi-1"></span>
+                </span>
+                <span class="hero-line-wrap block">
+                    <span class="hero-line text-teal italic font-medium azul-glow" id="line-azul">Azul</span>
+                    <span class="lumi-edge" id="lumi-2"></span>
+                </span>
+            </h1>
+
+            <div class="hero-rule mx-auto mb-4" id="hero-rule" style="max-width:120px;"></div>
+
+            <p class="font-display text-xl md:text-2xl lg:text-3xl text-cream/90 italic max-w-3xl mx-auto mb-4 hero-sub" id="hero-tagline">
+                Del residuo al valor
+            </p>
+
+            <div id="scroll-hint" class="scroll-hint">
+                <div class="mouse-icon">
+                    <div class="mouse-wheel"></div>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+                <button class="nav-link hero-cta-anim px-10 py-4 rounded-xl bg-gradient-to-r from-teal to-steel text-navy font-mono text-xs uppercase tracking-widest font-bold hover:shadow-[0_0_30px_rgba(58,191,178,0.5)] transform hover:-translate-y-1 transition-all duration-300" id="hero-cta-1" data-target="#tecnologia">
+                    Explorar Tecnología
+                </button>
+                <button class="nav-link hero-cta-anim px-10 py-4 rounded-xl border border-white/20 bg-white/5 backdrop-blur-md text-cream font-mono text-xs uppercase tracking-widest font-semibold hover:bg-white/10 hover:border-teal transition-all duration-300" id="hero-cta-2" data-target="#contacto">
+                    Contáctanos
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 1.5 RESPALDO SOCIAL -->
+    <section id="respaldo" class="h-32 flex flex-col justify-center bg-navy-mid/30 backdrop-blur-sm border-y border-white/5 relative z-20 mt-8 md:mt-12">
+        <div class="container mx-auto px-8 lg:px-16 mb-1">
+            <div class="flex items-center gap-4 justify-center md:justify-start">
+                <span class="font-mono text-[10px] text-teal tracking-[0.4em] uppercase font-bold whitespace-nowrap opacity-80">Respaldados por y Potenciados en:</span>
+                <div class="h-px flex-grow bg-white/5 hidden md:block"></div>
+            </div>
+        </div>
+        
+        <div class="relative flex overflow-hidden group">
+            <div id="marquee-content" class="flex items-center gap-16 whitespace-nowrap">
+                <div class="relative group/logo flex items-center px-8 py-4">
+                    <div class="absolute inset-0 bg-teal/25 rounded-full blur-xl opacity-60 group-hover/logo:opacity-100 transition-opacity duration-700"></div>
+                    <div class="flex items-center justify-center cursor-default transition-all duration-500 opacity-90 hover:opacity-100 hover:drop-shadow-[0_0_25px_rgba(58,191,178,0.8)] relative z-10 min-w-[120px]">
+                        <img src="../ANIMATED/Logo+KËTRAWA-01.webp" class="h-16 w-auto object-contain" style="filter: brightness(0) invert(1);" alt="Ketrawa Lab">
+                    </div>
+                </div>
+                <span class="text-white/10 font-light text-xl">•</span>
+                <div class="relative group/logo flex items-center px-8 py-4">
+                    <div class="absolute inset-0 bg-teal/25 rounded-full blur-xl opacity-60 group-hover/logo:opacity-100 transition-opacity duration-700"></div>
+                    <div class="flex items-center justify-center cursor-default transition-all duration-500 opacity-90 hover:opacity-100 hover:drop-shadow-[0_0_25px_rgba(58,191,178,0.8)] relative z-10 min-w-[150px]">
+                        <img src="../ANIMATED/Logo_volcanes.webp" class="h-28 w-auto object-contain" style="filter: brightness(0) invert(1);" alt="Incubadora Volcanes">
+                    </div>
+                </div>
+                <span class="text-white/10 font-light text-xl">•</span>
+                <div class="relative group/logo flex items-center px-8 py-4">
+                    <div class="absolute inset-0 bg-teal/25 rounded-full blur-xl opacity-60 group-hover/logo:opacity-100 transition-opacity duration-700"></div>
+                    <div class="flex items-center justify-center cursor-default transition-all duration-500 opacity-90 hover:opacity-100 hover:drop-shadow-[0_0_25px_rgba(58,191,178,0.8)] relative z-10 min-w-[120px]">
+                        <img src="../ANIMATED/Logo+KËTRAWA-01.webp" class="h-16 w-auto object-contain" style="filter: brightness(0) invert(1);" alt="Ketrawa Lab">
+                    </div>
+                </div>
+                <span class="text-white/10 font-light text-xl">•</span>
+                <div class="relative group/logo flex items-center px-8 py-4">
+                    <div class="absolute inset-0 bg-teal/25 rounded-full blur-xl opacity-60 group-hover/logo:opacity-100 transition-opacity duration-700"></div>
+                    <div class="flex items-center justify-center cursor-default transition-all duration-500 opacity-90 hover:opacity-100 hover:drop-shadow-[0_0_25px_rgba(58,191,178,0.8)] relative z-10 min-w-[150px]">
+                        <img src="../ANIMATED/Logo_volcanes.webp" class="h-28 w-auto object-contain" style="filter: brightness(0) invert(1);" alt="Incubadora Volcanes">
+                    </div>
+                </div>
+                <span class="text-white/10 font-light text-xl">•</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. MERCADO -->
+    <section id="mercado" class="py-32 bg-navy/60 backdrop-blur-md relative border-t border-white/5">
+        <div class="container mx-auto px-8 lg:px-16">
+            <div class="flex flex-col lg:flex-row gap-20 items-start justify-between">
+                <div class="w-full lg:w-1/2">
+                    <div class="flex items-center gap-3 mb-4 gsap-reveal">
+                        <div class="h-px w-8 bg-coral"></div>
+                        <span class="font-mono text-coral tracking-[0.2em] uppercase text-[11px] font-bold">El Pasivo Ambiental</span>
+                    </div>
+                    <h2 class="font-display text-4xl md:text-5xl font-light mb-8 gsap-reveal leading-tight">El Desafío <span class="text-coral italic">Industrial</span></h2>
+                    <p class="text-muted text-lg leading-relaxed mb-12 gsap-reveal">
+                        La industria del mejillón enfrenta un cuello de botella. Millones de litros de agua de cocción se descartan, generando presión ecológica costera y un costo de tratamiento puro.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                        <div class="glass-card p-8 rounded-2xl text-center gsap-reveal group relative overflow-hidden">
+                            <div class="glow-overlay"></div>
+                            <div class="font-mono text-6xl text-coral font-bold mb-2 decode-text tracking-tight" data-target="400">000</div>
+                            <div class="font-mono text-[11px] text-muted uppercase tracking-widest font-semibold">Litros de Efluente / Ton</div>
+                        </div>
+                        <div class="glass-card p-8 rounded-2xl text-center gsap-reveal group relative overflow-hidden">
+                            <div class="glow-overlay"></div>
+                            <div class="font-mono text-6xl text-coral font-bold mb-2 tracking-tight"><span class="text-3xl">$</span><span class="decode-text" data-target="30">00</span><span class="text-3xl">M+</span></div>
+                            <div class="font-mono text-[11px] text-muted uppercase tracking-widest font-semibold">Riesgos de Multas CLP</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full lg:w-1/2">
+                    <div class="flex items-center gap-3 mb-4 gsap-reveal">
+                        <div class="h-px w-8 bg-teal"></div>
+                        <span class="font-mono text-teal tracking-[0.2em] uppercase text-[11px] font-bold">La Oportunidad</span>
+                    </div>
+                    <h2 class="font-display text-4xl md:text-5xl font-light mb-8 gsap-reveal leading-tight">TAM / SAM / <span class="text-teal italic">SOM</span></h2>
+                    <p class="text-muted text-lg leading-relaxed mb-12 gsap-reveal">
+                        El mundo depende de la síntesis petroquímica asiática para la taurina. El mercado actual exige "Etiqueta Limpia" e ingredientes de origen natural, abriendo un segmento inexplorado.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="glass-card p-6 text-center rounded-2xl gsap-reveal group relative overflow-hidden">
+                            <div class="glow-overlay"></div>
+                            <h4 class="font-mono text-teal text-sm font-bold mb-2">TAM</h4>
+                            <div class="font-display text-3xl mb-1 text-cream font-semibold">$<span class="decode-text" data-target="1.4">0.0</span>B</div>
+                            <p class="font-mono text-[10px] text-muted uppercase tracking-widest font-medium">Mercado Global</p>
+                        </div>
+                        <div class="glass-card p-6 text-center rounded-2xl gsap-reveal group relative overflow-hidden">
+                            <div class="glow-overlay"></div>
+                            <h4 class="font-mono text-lavender text-sm font-bold mb-2">SAM</h4>
+                            <div class="font-display text-3xl mb-1 text-cream font-semibold">$<span class="decode-text" data-target="140">000</span>M</div>
+                            <p class="font-mono text-[10px] text-muted uppercase tracking-widest font-medium">Segmento Natural</p>
+                        </div>
+                        <div class="glass-card p-6 text-center rounded-2xl gsap-reveal group relative overflow-hidden border-teal/40 bg-teal/[0.05]">
+                            <div class="glow-overlay"></div>
+                            <h4 class="font-mono text-coral text-sm font-bold mb-2">SOM</h4>
+                            <div class="font-display text-2xl mb-1 text-cream font-semibold">$<span class="decode-text" data-target="20">00</span>M - $<span class="decode-text" data-target="40">00</span>M</div>
+                            <p class="font-mono text-[10px] text-muted uppercase tracking-widest font-medium">Captura Inicial</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. TECNOLOGÍA -->
+    <section id="tecnologia" class="py-32 bg-navy-mid/60 backdrop-blur-md relative border-t border-white/5">
+        <div class="container mx-auto px-8 lg:px-16">
+            <div class="text-center mb-16">
+                <div class="flex items-center justify-center gap-3 mb-4 gsap-reveal">
+                    <div class="h-px w-8 bg-lavender"></div>
+                    <span class="font-mono text-lavender tracking-[0.2em] uppercase text-[11px] font-bold">Tecnología</span>
+                    <div class="h-px w-8 bg-lavender"></div>
+                </div>
+                <h2 class="font-display text-4xl md:text-5xl font-light mb-6 gsap-reveal leading-tight">Biorefinería en <span class="text-lavender italic">Doble Cascada</span></h2>
+                <p class="text-muted text-lg max-w-2xl mx-auto gsap-reveal">Una arquitectura modular DeepTech que fracciona los residuos líquidos industriales directamente en la fuente.</p>
+            </div>
+
+            <div class="max-w-2xl mx-auto relative">
+                <div class="absolute left-[23px] md:left-[27px] top-0 bottom-0 w-[3px] bg-white/10 rounded-full">
+                    <div class="absolute top-0 left-0 w-full bg-gradient-to-b from-teal via-lavender to-coral rounded-full" id="progress-line" style="height: 0%;"></div>
+                </div>
+
+                <div class="flex items-start gap-6 md:gap-8 mb-10 gsap-reveal relative">
+                    <div class="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-full bg-gradient-to-br from-teal to-teal/80 flex items-center justify-center text-navy font-mono font-bold text-lg md:text-xl shadow-[0_0_20px_rgba(58,191,178,0.3)] z-10 ring-4 ring-navy-mid">1</div>
+                    <div class="pt-1.5">
+                        <h3 class="font-display text-xl md:text-2xl text-cream font-semibold mb-2">Preacondicionamiento Avanzado</h3>
+                        <p class="text-muted text-sm md:text-base leading-relaxed font-light">Filtración multietapa y clarificación de la matriz del caldo.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-6 md:gap-8 mb-10 gsap-reveal relative">
+                    <div class="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-full bg-gradient-to-br from-coral to-coral/80 flex items-center justify-center text-white font-mono font-bold text-lg md:text-xl shadow-[0_0_20px_rgba(217,113,90,0.3)] z-10 ring-4 ring-navy-mid">2</div>
+                    <div class="pt-1.5">
+                        <h3 class="font-display text-xl md:text-2xl text-cream font-semibold mb-2">Concentración Selectiva</h3>
+                        <p class="text-muted text-sm md:text-base leading-relaxed font-light">Filtración por membranas para retener macromoléculas y concentrar metabolitos objetivo.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-6 md:gap-8 mb-10 gsap-reveal relative">
+                    <div class="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-full bg-gradient-to-br from-lavender to-lavender/80 flex items-center justify-center text-white font-mono font-bold text-lg md:text-xl shadow-[0_0_20px_rgba(123,125,192,0.3)] z-10 ring-4 ring-navy-mid">3</div>
+                    <div class="pt-1.5">
+                        <h3 class="font-display text-xl md:text-2xl text-cream font-semibold mb-2">Purificación Molecular Selectiva</h3>
+                        <p class="text-muted text-sm md:text-base leading-relaxed font-light">Pulido cromatográfico propio para aislar taurina con más del 99% de pureza.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-6 md:gap-8 mb-10 gsap-reveal relative">
+                    <div class="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-full bg-gradient-to-br from-coral to-steel flex items-center justify-center text-white font-mono font-bold text-lg md:text-xl shadow-[0_0_20px_rgba(107,143,171,0.3)] z-10 ring-4 ring-navy-mid">4</div>
+                    <div class="pt-1.5">
+                        <h3 class="font-display text-xl md:text-2xl text-cream font-semibold mb-2">Secado y Estabilización</h3>
+                        <p class="text-muted text-sm md:text-base leading-relaxed font-light">Formulación final en un ingrediente seco y estable.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-6 md:gap-8 gsap-reveal relative">
+                    <div class="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-full bg-gradient-to-br from-steel to-teal flex items-center justify-center text-white font-mono font-bold text-lg md:text-xl shadow-[0_0_20px_rgba(58,191,178,0.3)] z-10 ring-4 ring-navy-mid">5</div>
+                    <div class="pt-1.5">
+                        <h3 class="font-display text-xl md:text-2xl text-cream font-semibold mb-2">Mercado</h3>
+                        <p class="text-muted text-sm md:text-base leading-relaxed font-light">Integración en alimentos funcionales y nutracéuticos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-16 bg-navy-light/40 backdrop-blur-md border-t border-white/5 relative overflow-hidden">
+        <div class="container mx-auto px-8 lg:px-16 text-center relative z-10">
+            <div class="flex justify-center mb-6">
+                <img src="../logo.png" alt="Logo" class="h-16 w-auto opacity-80 hover:opacity-100 transition-opacity duration-500">
+            </div>
+            <h2 class="font-display text-4xl font-light text-teal mb-4 tracking-tight">AquaBiotics Sur</h2>
+            <p class="font-mono text-[11px] uppercase tracking-[0.3em] text-muted mb-8 font-bold">Los Lagos &middot; Patagonia Chilena</p>
+            <p class="font-mono text-[11px] text-muted/60 tracking-wider">&copy; 2026 Aquabiotics Sur. Economía azul circular mediante innovación sostenible.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    
+    <script>
+        const lenis = new Lenis({
+            duration: 1.4,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            direction: 'vertical',
+            smooth: true,
+        });
+        lenis.on('scroll', ScrollTrigger.update);
+        gsap.ticker.add((time) => { lenis.raf(time * 1000); });
+        gsap.ticker.lagSmoothing(0);
+        gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('glass-nav');
+                navbar.classList.replace('py-5', 'py-4');
+            } else {
+                navbar.classList.remove('glass-nav');
+                navbar.classList.replace('py-4', 'py-5');
+            }
+        });
+
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = link.getAttribute('data-target');
+                if (target) lenis.scrollTo(target, { offset: -80, duration: 1.5, ease: 'power3.inOut' });
+            });
+        });
+
+        document.querySelectorAll('.gsap-reveal').forEach((el) => {
+            gsap.to(el, {
+                scrollTrigger: { trigger: el, start: 'top 88%' },
+                y: 0, opacity: 1, duration: 1.4, ease: 'power3.out'
+            });
+        });
+
+        const heroTL = gsap.timeline({ delay: 0.4 });
+        heroTL.to('.hero-dot', { opacity: 1, duration: 2, stagger: 0.15, ease: 'power3.out' }, 0);
+        
+        heroTL.to('#orn-arc', { strokeDashoffset: 0, duration: 2.5, ease: 'power3.out' }, 0.2);
+        heroTL.to('#orn-frond-1', { strokeDashoffset: 0, duration: 2.0, ease: 'power3.out' }, 0.5);
+        heroTL.to('#orn-frond-2', { strokeDashoffset: 0, duration: 1.8, ease: 'power3.out' }, 0.8);
+        heroTL.to('#orn-frond-3', { strokeDashoffset: 0, duration: 1.5, ease: 'power3.out' }, 1.0);
+        heroTL.to('#orn-dot-1', { opacity: 0.7, duration: 0.5, ease: 'power3.out' }, 1.6);
+        heroTL.to('#orn-dot-2', { opacity: 0.5, duration: 0.5, ease: 'power3.out' }, 1.75);
+        heroTL.to('#orn-dot-3', { opacity: 0.4, duration: 0.5, ease: 'power3.out' }, 1.9);
+
+        heroTL.to('#hero-pill', { opacity: 1, scale: 1, y: 0, duration: 1.0, ease: 'power3.out' }, 0.8);
+        heroTL.to('#lumi-1', { opacity: 1, x: 0, duration: 0.3, ease: 'power3.out' }, 1.2);
+        heroTL.to('#line-taurina', { clipPath: 'inset(0 0% 0 0)', duration: 1.4, ease: 'power3.out' }, 1.25);
+        heroTL.to('#lumi-1', { left: '100%', duration: 1.4, ease: 'power3.out' }, 1.25);
+        heroTL.to('#lumi-1', { opacity: 0, duration: 0.4, ease: 'power2.out' }, 2.3);
+        heroTL.to('#lumi-2', { opacity: 1, x: 0, duration: 0.3, ease: 'power3.out' }, 1.9);
+        heroTL.to('#line-azul', { clipPath: 'inset(0 0% 0 0)', duration: 1.4, ease: 'power3.out' }, 1.95);
+        heroTL.to('#lumi-2', { left: '100%', duration: 1.4, ease: 'power3.out' }, 1.95);
+        heroTL.to('#lumi-2', { opacity: 0, duration: 0.4, ease: 'power2.out' }, 3.0);
+        heroTL.call(() => { document.getElementById('line-azul')?.classList.add('active'); }, null, 2.8);
+        heroTL.to('#hero-rule', { opacity: 1, width: 120, duration: 1.0, ease: 'power3.out' }, 2.8);
+        heroTL.to('#hero-tagline', { opacity: 1, y: 0, duration: 1.2, ease: 'power3.out' }, 3.0);
+        heroTL.to('#scroll-hint', { opacity: 1, y: 0, duration: 0.9, ease: 'power3.out' }, 3.5);
+        heroTL.to('#hero-cta-1', { opacity: 1, y: 0, duration: 0.9, ease: 'power3.out' }, 3.6);
+        heroTL.to('#hero-cta-2', { opacity: 1, y: 0, duration: 0.9, ease: 'power3.out' }, 3.75);
+
+        const HPLC_CHARS = '0123456789ABCDEFXxΔμσ·:'.split('');
+        function hplcDecode(el) {
+            const targetStr = el.getAttribute('data-target');
+            const targetVal = parseFloat(targetStr);
+            const isDecimal = targetStr.includes('.');
+            const finalText = isDecimal ? targetVal.toFixed(1) : String(Math.round(targetVal));
+            const len = finalText.length;
+            const scrambleDuration = 1000;
+            const scrambleInterval = 50;
+            const startTime = Date.now();
+            const scrambler = setInterval(() => {
+                const elapsed = Date.now() - startTime;
+                if (elapsed >= scrambleDuration) {
+                    clearInterval(scrambler);
+                    let obj = { val: 0 };
+                    gsap.to(obj, { val: targetVal, duration: 1.5, ease: 'power3.out', onUpdate: () => { el.innerText = isDecimal ? obj.val.toFixed(1) : Math.floor(obj.val); }, onComplete: () => { el.innerText = finalText; } });
+                    return;
+                }
+                const progress = elapsed / scrambleDuration;
+                let display = '';
+                for (let i = 0; i < len; i++) {
+                    const charProgress = progress - (i * 0.08);
+                    if (charProgress > 0.85) display += finalText[i];
+                    else display += HPLC_CHARS[Math.floor(Math.random() * HPLC_CHARS.length)];
+                }
+                el.innerText = display;
+            }, scrambleInterval);
+        }
+
+        document.querySelectorAll('.decode-text').forEach(el => {
+            ScrollTrigger.create({ trigger: el, start: 'top 82%', once: true, onEnter: () => hplcDecode(el) });
+        });
+
+        gsap.to('#progress-line', {
+            height: '100%',
+            ease: 'none',
+            scrollTrigger: { trigger: '#tecnologia', start: 'top 60%', end: 'bottom 40%', scrub: 1 }
+        });
+
+        const marquee = document.getElementById('marquee-content');
+        if (marquee) {
+            gsap.to(marquee, {
+                xPercent: -50,
+                repeat: -1,
+                duration: 30,
+                ease: "none"
+            }).play();
+        }
+
+        function toggleMenu() {
+            document.getElementById('mobile-menu').classList.toggle('active');
+            document.getElementById('hamburger').classList.toggle('active');
+            document.body.style.overflow = document.getElementById('mobile-menu').classList.contains('active') ? 'hidden' : 'auto';
+        }
+
+        window.addEventListener('load', () => {
+            const tl = gsap.timeline();
+            tl.to('#preloader-progress', { width: '100%', duration: 1, ease: 'power2.inOut' })
+              .to('#preloader', { opacity: 0, duration: 0.8, delay: 0.2, ease: 'power2.out', onComplete: () => {
+                  document.getElementById('preloader').style.display = 'none';
+              }});
+        });
+
+        const preText = document.getElementById('preloader-text');
+        const HPLC_CHARS_PRE = '0123456789ABCDEFXxΔμσ·:'.split('');
+        let iteration = 0;
+        const interval = setInterval(() => {
+            preText.innerText = preText.innerText.split('').map((char, index) => {
+                if(index < iteration) return "Inicializando Biotech 4.0...".split('')[index];
+                return HPLC_CHARS_PRE[Math.floor(Math.random() * HPLC_CHARS_PRE.length)];
+            }).join('');
+            if(iteration >= 30) clearInterval(interval);
+            iteration += 1/3;
+        }, 30);
+
+        function acceptCookies() {
+            localStorage.setItem('cookiesAccepted', 'true');
+            document.getElementById('cookie-banner').classList.remove('active');
+        }
+
+        window.addEventListener('load', () => {
+            if (!localStorage.getItem('cookiesAccepted')) {
+                setTimeout(() => {
+                    document.getElementById('cookie-banner').classList.add('active');
+                }, 2000);
+            }
+        });
+    </script>
+</body>
+</html>
