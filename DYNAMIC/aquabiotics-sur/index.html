@@ -1,35 +1,111 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/png" href="/favicon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aquabiotics Sur</title>
+  <title>AquaBiotics Sur | DeepTech Circular Biorefinery | Blue Taurine</title>
+  <meta name="description" content="Sustainable DeepTech architecture for upcycling industrial marine waste into high-purity organic taurine and bioactive compounds. Patagonia's leading circular blue economy.">
   
+  <!-- Fonts & Analytics -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Raleway:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <!-- Google tag (gtag.js) -->
+  
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-95YGFVTCSF"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
-    
-    // GDPR/LGPD Compliance: Default to denied
-    gtag('consent', 'default', {
-      'analytics_storage': 'denied',
-      'ad_storage': 'denied'
-    });
-
+    gtag('consent', 'default', { 'analytics_storage': 'denied', 'ad_storage': 'denied' });
     gtag('js', new Date());
     gtag('config', 'G-95YGFVTCSF');
   </script>
+
+  <!-- Tailwind CDN (Used for the landing layer) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { DEFAULT: '#0A1628', mid: '#142236', light: '#1E3350' },
+            teal: { DEFAULT: '#3ABFB2', light: '#7ADBD3', dark: '#1E8C82' },
+            coral: { DEFAULT: '#D9715A', light: '#F0A892' },
+            cream: '#F7F3ED'
+          },
+          fontFamily: {
+              display: ['Cormorant Garamond', 'serif'],
+              body: ['Raleway', 'sans-serif'],
+              mono: ['Space Mono', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Estilos base para la capa de la Landing */
+    #landing-root {
+      display: none; /* Se activa solo en la raíz */
+      background-color: #0A1628;
+      color: #F7F3ED;
+      min-height: 100vh;
+    }
+    body.is-landing #root { display: none; }
+    body.is-landing #landing-root { display: block; }
+
+    /* Estilos Premium de la Landing */
+    .glass-nav { background: rgba(10, 22, 40, 0.85); backdrop-filter: blur(20px); }
+    .hero-line { clip-path: inset(0 100% 0 0); }
+    .azul-glow.active { text-shadow: 0 0 30px rgba(58,191,178,0.35); }
+    
+    #cookie-banner {
+        position: fixed; bottom: 30px; right: 30px; left: 30px; max-width: 500px;
+        background: rgba(20, 34, 54, 0.9); backdrop-filter: blur(20px);
+        border: 1px solid rgba(58, 191, 178, 0.2); border-radius: 20px;
+        padding: 24px; z-index: 9999; transform: translateY(150%);
+        transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    #cookie-banner.active { transform: translateY(0); }
+    @media (min-width: 768px) { #cookie-banner { left: auto; } }
+  </style>
 </head>
 
 <body>
+  <!-- REACT APP ROOT -->
   <div id="root"></div>
+
+  <!-- PREMIUM LANDING LAYER -->
+  <div id="landing-root">
+      <!-- El contenido de la landing se inyectará aquí o se servirá desde landing_exp -->
+      <!-- Para máxima velocidad y evitar duplicación masiva en index.html, 
+           usaremos un pequeño script de detección -->
+  </div>
+
   <script type="module" src="/src/main.jsx"></script>
+
+  <script>
+    // CONTROL DE DESPLIEGUE: LANDING VS APP
+    function routeSync() {
+        const path = window.location.pathname;
+        const isHome = path === '/' || path === '/index.html' || path.includes('landing_exp');
+        
+        if (isHome) {
+            document.body.classList.add('is-landing');
+            // Si el usuario entra a la raíz, lo llevamos a la landing_exp que ya está lista en el servidor
+            if (path === '/' || path === '/index.html') {
+                window.location.replace('/landing_exp/');
+            }
+        } else {
+            document.body.classList.remove('is-landing');
+        }
+    }
+
+    // Ejecutar al cargar y al cambiar de ruta
+    routeSync();
+    window.addEventListener('popstate', routeSync);
+  </script>
 </body>
 
 </html>
