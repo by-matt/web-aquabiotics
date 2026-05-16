@@ -9,7 +9,7 @@
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://aqua-biotics.com/landing_exp">
+    <meta property="og:url" content="https://aqua-biotics.com/experimental">
     <meta property="og:title" content="AquaBiotics Sur | DeepTech Circular Biorefinery">
     <meta property="og:description" content="Transforming industrial waste into high-value bioactives through modular cascade biorefinery in Patagonia.">
     
@@ -29,7 +29,7 @@
     <meta property="twitter:title" content="AquaBiotics Sur | Blue Taurine Innovation">
     <meta property="twitter:description" content="Circular blue economy through DeepTech innovation in Patagonia.">
     
-    <link rel="canonical" href="https://aqua-biotics.com/landing_exp">
+    <link rel="canonical" href="https://aqua-biotics.com/experimental">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -373,7 +373,17 @@
             height: 55%; opacity: 0.07; pointer-events: none; z-index: 0;
         }
 
-        .particles-bg { position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 0; pointer-events: none; opacity: 0.12; }
+        /* NEW: Canvas for subtle background particles */
+        #particle-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            opacity: 0.15; /* Increased opacity for more presence */
+            pointer-events: none;
+        }
 
         /* La Curva Emergente — items emerge from depth */
         .gsap-reveal { opacity: 0; transform: translateY(40px); }
@@ -481,53 +491,9 @@
         ::-webkit-scrollbar-track { background: var(--navy); }
         ::-webkit-scrollbar-thumb { background: var(--navy-light); border-radius: 3px; }
         ::-webkit-scrollbar-thumb:hover { background: var(--teal); }
-        /* ── COOKIE BANNER ── */
-        #cookie-banner {
-            position: fixed;
-            bottom: 30px !important;
-            top: auto !important;
-            left: 50%;
-            transform: translate(-50%, 150%);
-            width: calc(100% - 40px);
-            max-width: 500px;
-            background: rgba(20, 34, 54, 0.9);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(58, 191, 178, 0.2);
-            border-radius: 20px;
-            padding: 24px;
-            z-index: 9999;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-        }
-        #cookie-banner.active { transform: translate(-50%, 0); }
-        @media (min-width: 768px) {
-            #cookie-banner { left: auto; right: 30px; transform: translateY(150%); }
-            #cookie-banner.active { transform: translateY(0); }
-        }
     </style>
 </head>
 <body class="antialiased selection:bg-teal selection:text-navy">
-
-    <!-- COOKIE BANNER -->
-    <div id="cookie-banner">
-        <div class="flex items-center gap-3">
-            <div class="w-8 h-8 rounded-full bg-teal/10 border border-teal/20 flex items-center justify-center text-teal">
-                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-            </div>
-            <span class="font-mono text-[10px] text-teal tracking-[0.2em] uppercase font-bold">Privacy Policy</span>
-        </div>
-        <p class="text-sm text-cream/80 leading-relaxed font-normal">
-            We use cookies to enhance your experience and analyze our traffic. By continuing to browse, you agree to our use of cookies.
-        </p>
-        <div class="flex gap-4">
-            <button onclick="acceptCookies()" class="flex-1 bg-teal text-navy font-mono text-[11px] uppercase tracking-widest font-bold py-3 rounded-xl hover:shadow-[0_0_20px_rgba(58,191,178,0.4)] transition-all">Accept All</button>
-            <a href="../privacy.html" class="flex-1 border border-white/10 bg-white/5 text-cream text-center font-mono text-[11px] uppercase tracking-widest font-bold py-3 rounded-xl hover:bg-white/10 transition-all">Details</a>
-        </div>
-    </div>
 
     <!-- PRELOADER -->
     <div id="preloader">
@@ -547,8 +513,8 @@
             <a href="#nosotros" class="mobile-link" onclick="toggleMenu()">About</a>
             <a href="#contacto" class="mobile-link" onclick="toggleMenu()">Contact</a>
             <div class="flex space-x-6 mt-12 font-mono text-sm uppercase tracking-widest border-t border-white/10 pt-8">
-                <a href="index.html" class="text-teal font-bold">EN</a>
-                <a href="es.html" class="text-muted">ES</a>
+                <a href="aquabiotics_landing_experimental.html" class="text-teal font-bold">EN</a>
+                <a href="aquabiotics_landing_experimental_es.html" class="text-muted">ES</a>
             </div>
         </nav>
     </div>
@@ -574,9 +540,9 @@
                 <a href="#nosotros" class="hover:text-teal transition-all hover:scale-105 nav-link" data-target="#nosotros">About</a>
                 <a href="#contacto" class="hover:text-teal transition-all hover:scale-105 nav-link" data-target="#contacto">Contact</a>
                 <div class="flex space-x-3 border-l border-white/20 pl-6 ml-2 font-body text-sm tracking-normal uppercase">
-                    <a href="index.html" class="text-teal font-bold transition-colors">EN</a>
+                    <a href="aquabiotics_landing_experimental.html" class="text-teal font-bold transition-colors">EN</a>
                     <span class="text-white/30">|</span>
-                    <a href="es.html" class="text-muted hover:text-white transition-colors">ES</a>
+                    <a href="aquabiotics_landing_experimental_es.html" class="text-muted hover:text-white transition-colors">ES</a>
                 </div>
             </div>
 
@@ -599,8 +565,8 @@
             <path id="orn-frond-2" d="M510,382 C 540,345 580,320 620,312 C 660,304 700,325 720,350" stroke="#3ABFB2" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
             <path id="orn-frond-3" d="M530,385 C 565,350 610,330 650,325 C 690,320 725,340 740,358" stroke="#3ABFB2" stroke-width="1" stroke-linecap="round" opacity="0.2"/>
             <circle id="orn-dot-1" cx="700" cy="340" r="4.5" fill="#3ABFB2" opacity="0"/>
-            <circle id="orn-dot-2" cx="720" cy="350" r="3.5" fill="#3ABFB2" opacity="0"/>
-            <circle id="orn-dot-3" cx="740" cy="358" r="2.5" fill="#3ABFB2" opacity="0"/>
+            <circle id="orn-dot-2" cx="720" cy="350" r="3.5" fill="#3ABFB2" opacity="0" />
+            <circle id="orn-dot-3" cx="740" cy="358" r="2.5" fill="#3ABFB2" opacity="0" />
             <!-- 3. WAVES -->
             <path id="orn-wave-1" d="M420,430 C 460,418 500,442 540,430 C 580,418 640,442 700,430 C 740,422 770,438 790,430" stroke="#F7F3ED" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
             <path id="orn-wave-2" d="M410,452 C 455,440 495,464 540,452 C 585,440 645,464 700,452 C 745,444 775,458 795,452" stroke="#F7F3ED" stroke-width="2" stroke-linecap="round" opacity="0.35"/>
@@ -619,12 +585,8 @@
 
     <!-- 1. HERO SECTION -->
     <section id="inicio" class="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <!-- Wave SVG background -->
-        <svg class="particles-bg" viewBox="0 0 100 100" preserveAspectRatio="none" id="hero-bg">
-            <path id="wave-1" d="M0,50 Q25,40 50,50 T100,50 L100,100 L0,100 Z" fill="#3ABFB2" opacity="0.25" />
-            <path id="wave-2" d="M0,60 Q30,45 60,60 T100,60 L100,100 L0,100 Z" fill="#6B8FAB" opacity="0.2" />
-            <path id="wave-3" d="M0,70 Q40,55 70,70 T100,70 L100,100 L0,100 Z" fill="#7B7DC0" opacity="0.15" />
-        </svg>
+        <!-- NEW: Particle Canvas -->
+        <canvas id="particle-canvas"></canvas>
 
         <div class="container mx-auto px-8 lg:px-16 relative z-10 text-center pt-[130px]">
             <!-- Pill -->
@@ -687,28 +649,28 @@
                 <div class="relative group/logo flex items-center px-8 py-4">
                     <div class="absolute inset-0 bg-teal/25 rounded-full blur-xl opacity-60 group-hover/logo:opacity-100 transition-opacity duration-700"></div>
                     <div class="flex items-center justify-center cursor-default transition-all duration-500 opacity-90 hover:opacity-100 hover:drop-shadow-[0_0_25px_rgba(58,191,178,0.8)] relative z-10 min-w-[120px]">
-                        <img src="../ANIMATED/Logo+KËTRAWA-01.webp" class="h-16 w-auto object-contain" style="filter: brightness(0) invert(1);" alt="Ketrawa Lab">
+                        <img src="Logo+KËTRAWA-01.webp" class="h-16 w-auto object-contain" style="filter: brightness(0) invert(1);" alt="Ketrawa Lab">
                     </div>
                 </div>
                 <span class="text-white/10 font-light text-xl">•</span>
                 <div class="relative group/logo flex items-center px-8 py-4">
                     <div class="absolute inset-0 bg-teal/25 rounded-full blur-xl opacity-60 group-hover/logo:opacity-100 transition-opacity duration-700"></div>
                     <div class="flex items-center justify-center cursor-default transition-all duration-500 opacity-90 hover:opacity-100 hover:drop-shadow-[0_0_25px_rgba(58,191,178,0.8)] relative z-10 min-w-[150px]">
-                        <img src="../ANIMATED/Logo_volcanes.webp" class="h-28 w-auto object-contain" style="filter: brightness(0) invert(1);" alt="Incubadora Volcanes">
+                        <img src="Logo_volcanes.webp" class="h-28 w-auto object-contain" style="filter: brightness(0) invert(1);" alt="Incubadora Volcanes">
                     </div>
                 </div>
                 <span class="text-white/10 font-light text-xl">•</span>
                 <div class="relative group/logo flex items-center px-8 py-4">
                     <div class="absolute inset-0 bg-teal/25 rounded-full blur-xl opacity-60 group-hover/logo:opacity-100 transition-opacity duration-700"></div>
                     <div class="flex items-center justify-center cursor-default transition-all duration-500 opacity-90 hover:opacity-100 hover:drop-shadow-[0_0_25px_rgba(58,191,178,0.8)] relative z-10 min-w-[120px]">
-                        <img src="../ANIMATED/Logo+KËTRAWA-01.webp" class="h-16 w-auto object-contain" style="filter: brightness(0) invert(1);" alt="Ketrawa Lab">
+                        <img src="Logo+KËTRAWA-01.webp" class="h-16 w-auto object-contain" style="filter: brightness(0) invert(1);" alt="Ketrawa Lab">
                     </div>
                 </div>
                 <span class="text-white/10 font-light text-xl">•</span>
                 <div class="relative group/logo flex items-center px-8 py-4">
                     <div class="absolute inset-0 bg-teal/25 rounded-full blur-xl opacity-60 group-hover/logo:opacity-100 transition-opacity duration-700"></div>
                     <div class="flex items-center justify-center cursor-default transition-all duration-500 opacity-90 hover:opacity-100 hover:drop-shadow-[0_0_25px_rgba(58,191,178,0.8)] relative z-10 min-w-[150px]">
-                        <img src="../ANIMATED/Logo_volcanes.webp" class="h-28 w-auto object-contain" style="filter: brightness(0) invert(1);" alt="Incubadora Volcanes">
+                        <img src="Logo_volcanes.webp" class="h-28 w-auto object-contain" style="filter: brightness(0) invert(1);" alt="Incubadora Volcanes">
                     </div>
                 </div>
                 <span class="text-white/10 font-light text-xl">•</span>
@@ -717,28 +679,28 @@
                 <div class="relative group/logo flex items-center px-8 py-4">
                     <div class="absolute inset-0 bg-teal/25 rounded-full blur-xl opacity-60 group-hover/logo:opacity-100 transition-opacity duration-700"></div>
                     <div class="flex items-center justify-center cursor-default transition-all duration-500 opacity-90 hover:opacity-100 hover:drop-shadow-[0_0_25px_rgba(58,191,178,0.8)] relative z-10 min-w-[120px]">
-                        <img src="../ANIMATED/Logo+KËTRAWA-01.webp" class="h-16 w-auto object-contain" style="filter: brightness(0) invert(1);" alt="Ketrawa Lab">
+                        <img src="Logo+KËTRAWA-01.webp" class="h-16 w-auto object-contain" style="filter: brightness(0) invert(1);" alt="Ketrawa Lab">
                     </div>
                 </div>
                 <span class="text-white/10 font-light text-xl">•</span>
                 <div class="relative group/logo flex items-center px-8 py-4">
                     <div class="absolute inset-0 bg-teal/25 rounded-full blur-xl opacity-60 group-hover/logo:opacity-100 transition-opacity duration-700"></div>
                     <div class="flex items-center justify-center cursor-default transition-all duration-500 opacity-90 hover:opacity-100 hover:drop-shadow-[0_0_25px_rgba(58,191,178,0.8)] relative z-10 min-w-[150px]">
-                        <img src="../ANIMATED/Logo_volcanes.webp" class="h-28 w-auto object-contain" style="filter: brightness(0) invert(1);" alt="Incubadora Volcanes">
+                        <img src="Logo_volcanes.webp" class="h-28 w-auto object-contain" style="filter: brightness(0) invert(1);" alt="Incubadora Volcanes">
                     </div>
                 </div>
                 <span class="text-white/10 font-light text-xl">•</span>
                 <div class="relative group/logo flex items-center px-8 py-4">
                     <div class="absolute inset-0 bg-teal/25 rounded-full blur-xl opacity-60 group-hover/logo:opacity-100 transition-opacity duration-700"></div>
                     <div class="flex items-center justify-center cursor-default transition-all duration-500 opacity-90 hover:opacity-100 hover:drop-shadow-[0_0_25px_rgba(58,191,178,0.8)] relative z-10 min-w-[120px]">
-                        <img src="../ANIMATED/Logo+KËTRAWA-01.webp" class="h-16 w-auto object-contain" style="filter: brightness(0) invert(1);" alt="Ketrawa Lab">
+                        <img src="Logo+KËTRAWA-01.webp" class="h-16 w-auto object-contain" style="filter: brightness(0) invert(1);" alt="Ketrawa Lab">
                     </div>
                 </div>
                 <span class="text-white/10 font-light text-xl">•</span>
                 <div class="relative group/logo flex items-center px-8 py-4">
                     <div class="absolute inset-0 bg-teal/25 rounded-full blur-xl opacity-60 group-hover/logo:opacity-100 transition-opacity duration-700"></div>
                     <div class="flex items-center justify-center cursor-default transition-all duration-500 opacity-90 hover:opacity-100 hover:drop-shadow-[0_0_25px_rgba(58,191,178,0.8)] relative z-10 min-w-[150px]">
-                        <img src="../ANIMATED/Logo_volcanes.webp" class="h-28 w-auto object-contain" style="filter: brightness(0) invert(1);" alt="Incubadora Volcanes">
+                        <img src="Logo_volcanes.webp" class="h-28 w-auto object-contain" style="filter: brightness(0) invert(1);" alt="Incubadora Volcanes">
                     </div>
                 </div>
                 <span class="text-white/10 font-light text-xl">•</span>
@@ -1105,7 +1067,7 @@
                         <h4 class="font-body font-bold text-base text-cream mb-2 px-1 leading-tight">Clean Water</h4>
                         <p class="text-xs leading-tight text-muted font-medium">Sustainable Water Management</p>
                     </div>
-                    <div class="absolute inset-0 p-5 flex flex-col items-start justify-start text-left text-white opacity-0 scale-105 group-hover:opacity-100 group-hover:scale-100 transition-all duration-500 z-10 shadow-2xl overflow-hidden rounded-2xl border border-white/20" style="background-color: #26BDE2;">
+                    <div class="absolute inset-0 p-5 flex flex-col items-start justify-start text-left text-white opacity: 0; scale-105 group-hover:opacity-100 group-hover:scale-100 transition-all duration-500 z-10 shadow-2xl overflow-hidden rounded-2xl border border-white/20" style="background-color: #26BDE2;">
                         <div class="absolute top-0 right-0 p-3 opacity-15"><span class="text-7xl font-display font-black">6</span></div>
                         <h5 class="font-body font-bold text-xs mb-2 border-b border-white/30 pb-2 w-full relative z-10 tracking-wide uppercase">Targets &amp; Alignment</h5>
                         <div class="space-y-2 relative z-10 text-left w-full">
@@ -1121,8 +1083,8 @@
                         <h4 class="font-body font-bold text-base text-cream mb-2 px-1 leading-tight">Innovation</h4>
                         <p class="text-xs leading-tight text-muted font-medium">Fostering Resilient Ecosystems</p>
                     </div>
-                    <div class="absolute inset-0 p-5 flex flex-col items-start justify-start text-left text-white opacity-0 scale-105 group-hover:opacity-100 group-hover:scale-100 transition-all duration-500 z-10 shadow-2xl overflow-hidden rounded-2xl border border-white/20" style="background-color: #FD6925;">
-                        <div class="absolute top-0 right-0 p-3 opacity-15"><span class="text-7xl font-display font-black">9</span></div>
+                    <div class="absolute inset-0 p-5 flex flex-col items-start justify-start text-left text-white opacity: 0; scale-105 group-hover:opacity-100 group-hover:scale-100 transition-all duration-500 z-10 shadow-2xl overflow-hidden rounded-2xl border border-white/20" style="background-color: #FD6925;">
+                        <div class="absolute top-0 right-0 p-3 opacity: 0.15;"><span class="text-7xl font-display font-black">9</span></div>
                         <h5 class="font-body font-bold text-xs mb-2 border-b border-white/30 pb-2 w-full relative z-10 tracking-wide uppercase">Targets &amp; Alignment</h5>
                         <div class="space-y-2 relative z-10 text-left w-full">
                             <p class="text-[10px] leading-snug font-medium text-white/95">&bull; Target 9.4: Retrofit industries with clean technologies and increased resource-use efficiency.</p>
@@ -1138,8 +1100,8 @@
                         <h4 class="font-body font-bold text-base text-cream mb-2 px-1 leading-tight">Climate Action</h4>
                         <p class="text-xs leading-tight text-muted font-medium">Combating Climate Change</p>
                     </div>
-                    <div class="absolute inset-0 p-5 flex flex-col items-start justify-start text-left text-white opacity-0 scale-105 group-hover:opacity-100 group-hover:scale-100 transition-all duration-500 z-10 shadow-2xl overflow-hidden rounded-2xl border border-white/20" style="background-color: #3F7E44;">
-                        <div class="absolute top-0 right-0 p-3 opacity-15"><span class="text-7xl font-display font-black">13</span></div>
+                    <div class="absolute inset-0 p-5 flex flex-col items-start justify-start text-left text-white opacity: 0; scale-105 group-hover:opacity-100 group-hover:scale-100 transition-all duration-500 z-10 shadow-2xl overflow-hidden rounded-2xl border border-white/20" style="background-color: #3F7E44;">
+                        <div class="absolute top-0 right-0 p-3 opacity: 0.15;"><span class="text-7xl font-display font-black">13</span></div>
                         <h5 class="font-body font-bold text-xs mb-2 border-b border-white/30 pb-2 w-full relative z-10 tracking-wide uppercase">Targets &amp; Alignment</h5>
                         <div class="space-y-2 relative z-10 text-left w-full">
                             <p class="text-[10px] leading-snug font-medium text-white/95">&bull; Target 13.2: Integrate low-carbon bio-extraction measures into operational strategies.</p>
@@ -1154,8 +1116,8 @@
                         <h4 class="font-body font-bold text-base text-cream mb-2 px-1 leading-tight">Decent Work</h4>
                         <p class="text-xs leading-tight text-muted font-medium">Sustainable Growth</p>
                     </div>
-                    <div class="absolute inset-0 p-5 flex flex-col items-start justify-start text-left text-white opacity-0 scale-105 group-hover:opacity-100 group-hover:scale-100 transition-all duration-500 z-10 shadow-2xl overflow-hidden rounded-2xl border border-white/20" style="background-color: #A21942;">
-                        <div class="absolute top-0 right-0 p-3 opacity-15"><span class="text-7xl font-display font-black">8</span></div>
+                    <div class="absolute inset-0 p-5 flex flex-col items-start justify-start text-left text-white opacity: 0; scale-105 group-hover:opacity-100 group-hover:scale-100 transition-all duration-500 z-10 shadow-2xl overflow-hidden rounded-2xl border border-white/20" style="background-color: #A21942;">
+                        <div class="absolute top-0 right-0 p-3 opacity: 0.15;"><span class="text-7xl font-display font-black">8</span></div>
                         <h5 class="font-body font-bold text-xs mb-2 border-b border-white/30 pb-2 w-full relative z-10 tracking-wide uppercase">Targets &amp; Alignment</h5>
                         <div class="space-y-2 relative z-10 text-left w-full">
                             <p class="text-[10px] leading-snug font-medium text-white/95">&bull; Target 8.2: Higher economic productivity through technological upgrading.</p>
@@ -1643,32 +1605,129 @@
 
         // ── 4. Morphing SVG — Corrientes Patagónicas (La Ola) ──
         // Infinite organic wave breathing using GSAP attr animation
-        function morphWave(id, pathA, pathB, dur) {
-            const el = document.getElementById(id);
-            if (!el) return;
-            gsap.to(el, {
-                attr: { d: pathB },
-                duration: dur,
-                ease: 'sine.inOut',
-                repeat: -1,
-                yoyo: true
-            });
-        }
-        morphWave('wave-1',
-            'M0,50 Q25,40 50,50 T100,50 L100,100 L0,100 Z',
-            'M0,48 Q20,55 45,44 T100,52 L100,100 L0,100 Z', 8);
-        morphWave('wave-2',
-            'M0,60 Q30,45 60,60 T100,60 L100,100 L0,100 Z',
-            'M0,62 Q35,50 55,65 T100,58 L100,100 L0,100 Z', 10);
-        morphWave('wave-3',
-            'M0,70 Q40,55 70,70 T100,70 L100,100 L0,100 Z',
-            'M0,68 Q45,60 65,72 T100,68 L100,100 L0,100 Z', 12);
+        // Removed, as particle canvas will take over background dynamism
 
         // Parallax depth on scroll
         gsap.to('#hero-bg', {
             yPercent: 25, ease: 'none',
             scrollTrigger: { trigger: '#inicio', start: 'top top', end: 'bottom top', scrub: true }
         });
+
+        // ── NEW: Particle Canvas Animation ──
+        const canvas = document.getElementById('particle-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        const numParticles = 80; // More particles for a richer background
+        const particleColors = [
+            'rgba(58,191,178,0.6)', // Teal
+            'rgba(107,143,171,0.5)', // Steel
+            'rgba(123,125,192,0.4)', // Lavender
+            'rgba(217,113,90,0.4)' // Coral, subtly added
+        ];
+        let mouse = { x: null, y: null, radius: 100 }; // Interactive mouse radius
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        // Event listener for mouse movement
+        window.addEventListener('mousemove', (event) => {
+            mouse.x = event.x;
+            mouse.y = event.y;
+        });
+
+        // Event listener for mouse leaving window
+        window.addEventListener('mouseout', () => {
+            mouse.x = null;
+            mouse.y = null;
+        });
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 1.5 + 0.5;
+                this.baseSpeedX = Math.random() * 0.2 - 0.1;
+                this.baseSpeedY = Math.random() * 0.2 - 0.1;
+                this.speedX = this.baseSpeedX;
+                this.speedY = this.baseSpeedY;
+                this.color = particleColors[Math.floor(Math.random() * particleColors.length)];
+                this.opacity = Math.random() * 0.6 + 0.2;
+            }
+            update() {
+                // Apply base movement
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                // Interaction with mouse
+                if (mouse.x && mouse.y) {
+                    const dx = mouse.x - this.x;
+                    const dy = mouse.y - this.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < mouse.radius) {
+                        const angle = Math.atan2(dy, dx);
+                        const force = mouse.radius / distance; // Inverse force, stronger closer
+                        this.x -= Math.cos(angle) * force * 0.5; // Push away slightly
+                        this.y -= Math.sin(angle) * force * 0.5;
+
+                        // Also make particles near mouse slightly larger/brighter
+                        this.currentSize = this.size + (1 - distance / mouse.radius) * 1.5; // Max 1.5x larger
+                        this.currentOpacity = this.opacity + (1 - distance / mouse.radius) * 0.4; // Max 0.4x brighter
+                    } else {
+                        this.currentSize = this.size;
+                        this.currentOpacity = this.opacity;
+                    }
+                } else {
+                    this.currentSize = this.size;
+                    this.currentOpacity = this.opacity;
+                }
+
+                // Reset particle if it goes off-screen or fades out
+                if (this.x > canvas.width + 10 || this.x < -10 || this.y > canvas.height + 10 || this.y < -10 || this.currentSize <= 0.1) {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.size = Math.random() * 1.5 + 0.5;
+                    this.baseSpeedX = Math.random() * 0.2 - 0.1;
+                    this.baseSpeedY = Math.random() * 0.2 - 0.1;
+                    this.speedX = this.baseSpeedX;
+                    this.speedY = this.baseSpeedY;
+                    this.opacity = Math.random() * 0.6 + 0.2;
+                }
+            }
+            draw() {
+                ctx.fillStyle = this.color;
+                ctx.globalAlpha = this.currentOpacity; // Use currentOpacity for interaction
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.currentSize, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            particles = [];
+            for (let i = 0; i < numParticles; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function animateParticles() {
+            requestAnimationFrame(animateParticles);
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+            }
+        }
+
+        window.addEventListener('load', () => {
+            resizeCanvas();
+            initParticles();
+            animateParticles();
+        });
+        window.addEventListener('resize', resizeCanvas);
+
 
         // ── 5. HPLC Decode Effect — Decodificación de Laboratorio (El Sabio) ──
         // Simulates HPLC chromatograph data readout: hex/char scramble → final value
@@ -1789,20 +1848,6 @@
             if(iteration >= 30) clearInterval(interval);
             iteration += 1/3;
         }, 30);
-
-        // Cookie Banner Logic
-        function acceptCookies() {
-            localStorage.setItem('cookiesAccepted', 'true');
-            document.getElementById('cookie-banner').classList.remove('active');
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            if (!localStorage.getItem('cookiesAccepted')) {
-                setTimeout(() => {
-                    document.getElementById('cookie-banner').classList.add('active');
-                }, 2000);
-            }
-        });
 
     </script>
 </body>

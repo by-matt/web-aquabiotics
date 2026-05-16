@@ -3,25 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AquaBiotics Sur | DeepTech Circular Biorefinery | Blue Taurine</title>
+    <title>AquaBiotics Sur | Blue Taurine - Landing (v2)</title>
     <meta name="description" content="Sustainable DeepTech architecture for upcycling industrial marine waste into high-purity organic taurine and bioactive compounds. Patagonia's leading circular blue economy.">
     <meta name="keywords" content="blue taurine, marine biorefinery, circular economy, biotech, patagonia, sustainability, organic taurine, aquaculture upcycling">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://aqua-biotics.com/landing_exp">
-    <meta property="og:title" content="AquaBiotics Sur | DeepTech Circular Biorefinery">
-    <meta property="og:description" content="Transforming industrial waste into high-value bioactives through modular cascade biorefinery in Patagonia.">
-    
-    <!-- Google Analytics (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-95YGFVTCSF"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-95YGFVTCSF');
-    </script>
-    
+    <meta property="og:url" content="https://aqua-biotics.com/land_exp_v2">
+    <meta property="og:title" content="AquaBiotics Sur | Blue Taurine Innovation">
+    <meta property="og:description" content="Circular blue economy through DeepTech innovation in Patagonia.">
     <meta property="og:image" content="https://aqua-biotics.com/og-image.jpg">
 
     <!-- Twitter -->
@@ -29,7 +19,7 @@
     <meta property="twitter:title" content="AquaBiotics Sur | Blue Taurine Innovation">
     <meta property="twitter:description" content="Circular blue economy through DeepTech innovation in Patagonia.">
     
-    <link rel="canonical" href="https://aqua-biotics.com/landing_exp">
+    <link rel="canonical" href="https://aqua-biotics.com/land_exp_v2">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -103,143 +93,6 @@
             --ff-mono: 'Space Mono', monospace;
         }
 
-        /* ── PRELOADER ── */
-        #preloader {
-            position: fixed;
-            inset: 0;
-            background: var(--navy);
-            z-index: 9999;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        .preloader-bar {
-            width: 200px;
-            height: 2px;
-            background: rgba(255,255,255,0.05);
-            position: relative;
-            margin-top: 20px;
-            overflow: hidden;
-        }
-        .preloader-progress {
-            position: absolute;
-            top: 0; left: 0;
-            height: 100%;
-            width: 0%;
-            background: var(--teal);
-            box-shadow: 0 0 15px var(--teal);
-        }
-
-        /* ── MOBILE MENU ── */
-        #mobile-menu {
-            position: fixed;
-            inset: 0;
-            background: rgba(10, 22, 40, 0.98);
-            backdrop-filter: blur(20px);
-            z-index: 100;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            pointer-events: none;
-            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        #mobile-menu.active {
-            opacity: 1;
-            pointer-events: auto;
-        }
-        .mobile-link {
-            font-family: var(--ff-display);
-            font-size: 2.5rem;
-            color: var(--cream);
-            margin: 1rem 0;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.5s ease;
-        }
-        #mobile-menu.active .mobile-link {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* ── SCROLL INDICATOR ── */
-        .scroll-hint {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-            opacity: 0.6;
-            z-index: 10;
-            margin: 20px 0;
-        }
-        .mouse-icon {
-            width: 22px;
-            height: 36px;
-            border: 2px solid var(--cream);
-            border-radius: 12px;
-            position: relative;
-        }
-        .mouse-wheel {
-            width: 2px;
-            height: 6px;
-            background: var(--teal);
-            position: absolute;
-            top: 6px;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: scroll-wheel 2s infinite;
-        }
-        @keyframes scroll-wheel {
-            0% { opacity: 0; transform: translate(-50%, 0); }
-            30% { opacity: 1; }
-            100% { opacity: 0; transform: translate(-50%, 15px); }
-        }
-
-        .hamburger {
-            width: 30px;
-            height: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            cursor: pointer;
-            z-index: 101;
-        }
-        .hamburger span {
-            width: 100%;
-            height: 2px;
-            background: var(--teal);
-            transition: all 0.3s ease;
-        }
-        .hamburger.active span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
-        .hamburger.active span:nth-child(2) { opacity: 0; }
-        .hamburger.active span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
-
-        /* Existing variables... */
-        :root {
-            --coral: #D9715A;
-            --coral-light: #F0A892;
-            --coral-dark: #A04030;
-            --teal: #3ABFB2;
-            --teal-light: #7ADBD3;
-            --teal-dark: #1E8C82;
-            --navy: #0A1628;
-            --navy-mid: #142236;
-            --navy-light: #1E3350;
-            --lavender: #7B7DC0;
-            --lavender-light: #A9AADC;
-            --steel: #6B8FAB;
-            --cream: #F7F3ED;
-            --warm-white: #FAFAF8;
-            --charcoal: #1E1E2A;
-            --muted: rgba(247,243,237,0.5);
-            --muted-strong: rgba(247,243,237,0.75);
-            --ff-display: 'Cormorant Garamond', Georgia, serif;
-            --ff-body: 'Raleway', sans-serif;
-            --ff-mono: 'Space Mono', monospace;
-        }
-
         html.lenis, html.lenis body { height: auto; }
         .lenis.lenis-smooth { scroll-behavior: auto !important; }
         .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
@@ -255,24 +108,55 @@
             overflow-x: hidden;
         }
         
-        .logo-grayscale {
-            filter: grayscale(100%);
-            opacity: 0.6;
-            transition: all 0.5s ease;
-        }
-        .logo-grayscale:hover {
-            filter: grayscale(0%);
-            opacity: 1;
-        }
-
-        /* ── Glassmorphism over brand navy ── */
-        .glass-nav {
-            background: rgba(10, 22, 40, 0.85);
-            backdrop-filter: blur(20px) saturate(180%);
-            -webkit-backdrop-filter: blur(20px) saturate(180%);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        /* NEW: Hero Background Canvas */
+        #hero-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
         }
 
+        /* NEW: Hero Content Wrapper for perspective */
+        .hero-content-wrapper {
+            perspective: 1000px;
+        }
+
+        /* NEW: 3D Animated Logo */
+        .animated-logo-container {
+            width: 250px;
+            height: 250px;
+            position: relative;
+            transform-style: preserve-3d;
+        }
+        .logo-sphere {
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            background: radial-gradient(circle at 50% 50%, rgba(58, 191, 178, 0.4) 0%, rgba(58, 191, 178, 0.1) 40%, transparent 70%);
+            opacity: 0.8;
+            transform: rotateX(75deg) rotateZ(0deg) scale(0.8);
+            box-shadow: 0 0 60px rgba(58, 191, 178, 0.6);
+        }
+        .logo-pulse-ring {
+            position: absolute;
+            inset: -20px;
+            border-radius: 50%;
+            border: 2px solid rgba(58, 191, 178, 0.3);
+            transform: scale(0.9);
+        }
+        .logo-frond-3d {
+            position: absolute;
+            top: 50%; left: 50%;
+            width: 100px; height: 100px;
+            background: linear-gradient(135deg, var(--teal-light), var(--teal-dark));
+            border-radius: 50%;
+            transform: translate(-50%, -50%) rotateY(0deg) rotateX(0deg) translateZ(50px);
+            opacity: 0;
+        }
+
+        /* Glassmorphism card effects */
         .glass-card {
             background: rgba(20, 34, 54, 0.45);
             backdrop-filter: blur(12px);
@@ -282,7 +166,6 @@
             position: relative;
             transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), background 0.6s ease;
         }
-        /* Border Tracing — animated gradient border on hover (El Creador) */
         .glass-card::before {
             content: '';
             position: absolute;
@@ -313,7 +196,6 @@
             inherits: false;
         }
 
-        /* ── Brand Glow Overlay ── */
         .glow-overlay {
             position: absolute;
             border-radius: inherit;
@@ -324,231 +206,103 @@
         }
         .glass-card:hover .glow-overlay { opacity: 1; }
 
-        /* ── Brand Decorative Rule (from brand .rule class) ── */
-        .brand-rule {
-            width: 48px;
-            height: 1px;
-            background: var(--teal);
-            margin-bottom: 28px;
-        }
-        .brand-rule.coral { background: var(--coral); }
-        .brand-rule.lavender { background: var(--lavender); }
-
-        /* ── Brand Archetype Tag pill ── */
-        .archetype-tag {
-            display: inline-block;
-            font-family: var(--ff-mono);
-            font-size: 10px;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            padding: 5px 14px;
-            border: 1px solid;
-            border-radius: 2px;
-            margin-bottom: 20px;
-        }
-        .archetype-tag.sage   { color: var(--teal);         border-color: rgba(58,191,178,0.4); }
-        .archetype-tag.explorer { color: var(--coral-light); border-color: rgba(217,113,90,0.4); }
-        .archetype-tag.creator  { color: var(--lavender-light); border-color: rgba(123,125,192,0.4); }
-
-        /* ── Brand Emotion Pill ── */
-        .emotion-pill {
-            display: inline-flex;
-            align-items: center;
-            gap: 7px;
-            padding: 8px 18px;
-            border-radius: 40px;
-            font-family: var(--ff-body);
-            font-size: 13px;
-            font-weight: 400;
-            margin: 4px;
-        }
-        .emotion-pill.primary   { background: rgba(58,191,178,0.1);  border: 1px solid rgba(58,191,178,0.25);  color: var(--teal-light); }
-        .emotion-pill.secondary { background: rgba(217,113,90,0.08); border: 1px solid rgba(217,113,90,0.2);   color: var(--coral-light); }
-        .emotion-pill.tertiary  { background: rgba(123,125,192,0.08);border: 1px solid rgba(123,125,192,0.2);  color: var(--lavender-light); }
-        .emotion-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; flex-shrink: 0; }
-
-        /* ── Bio-wave SVG backgrounds ── */
-        .bio-wave-layer {
-            position: absolute; bottom: 0; left: 0; right: 0;
-            height: 55%; opacity: 0.07; pointer-events: none; z-index: 0;
-        }
-
-        .particles-bg { position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 0; pointer-events: none; opacity: 0.12; }
-
-        /* La Curva Emergente — items emerge from depth */
         .gsap-reveal { opacity: 0; transform: translateY(40px); }
         .decode-text { font-variant-numeric: tabular-nums; font-family: var(--ff-mono); }
 
-        /* Progress Line Glow Tip (capillary fluid fill) */
-        #progress-line::after {
-            content: '';
-            position: absolute;
-            bottom: -2px; /* tip follows the height */
-            left: 50%;
-            transform: translate(-50%, 100%);
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: var(--teal);
-            box-shadow: 0 0 16px 6px rgba(58,191,178,0.6), 0 0 40px 12px rgba(58,191,178,0.25);
-            filter: blur(1px);
-            pointer-events: none;
-        }
-
-        .process-card {
-            opacity: 0; transform: translateY(30px) scale(0.95);
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-        }
-
-        /* ── Competitive Column (brand highlight = teal border) ── */
-        .comp-column { transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease; }
-        .comp-column.highlight {
-            background: linear-gradient(180deg, rgba(20, 34, 54, 0.85) 0%, rgba(10, 22, 40, 0.95) 100%);
-            border: 1px solid rgba(58, 191, 178, 0.45);
-            box-shadow: 0 0 40px rgba(58, 191, 178, 0.15);
-            transform: scale(1.03); z-index: 10;
-        }
-        .comp-column.highlight:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 60px rgba(58, 191, 178, 0.25);
-            border-color: rgba(58, 191, 178, 0.7);
-        }
-
-        /* ══ HERO CINEMATIC SYSTEM (Pro Max) ══ */
-
-        /* Clip-path line reveal — text is masked and slides open */
-        .hero-line {
-            clip-path: inset(0 100% 0 0);
+        /* New custom animations */
+        .hero-title-reveal span {
             display: block;
+            overflow: hidden;
+        }
+        .hero-title-reveal span span {
+            display: block;
+            transform: translateY(100%);
         }
 
-        /* Luminous leading edge — teal glow bar that precedes reveal */
-        .hero-line-wrap {
+        .button-pulse {
+            animation: pulse-glow 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+        }
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 0px var(--teal-glow, rgba(58, 191, 178, 0.4)); }
+            50% { box-shadow: 0 0 25px var(--teal-glow, rgba(58, 191, 178, 0.8)); }
+        }
+
+        .icon-fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        /* Marquee styles for logos */
+        .marquee-container {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            box-sizing: border-box;
             position: relative;
-            overflow: visible;
-        }
-        .hero-line-wrap .lumi-edge {
-            position: absolute;
-            top: 0; left: 0;
-            width: 3px; height: 100%;
-            background: linear-gradient(180deg, transparent, var(--teal), transparent);
-            box-shadow: 0 0 15px 4px rgba(58,191,178,0.5), 0 0 40px 8px rgba(58,191,178,0.2);
-            border-radius: 2px;
-            opacity: 0;
-            transform: translateX(-10px);
-            z-index: 20;
+            mask-image: linear-gradient(to right, transparent, white 20%, white 80%, transparent);
         }
 
-        /* Self-drawing rule — the brand's horizontal teal line */
-        .hero-rule {
-            width: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--teal), var(--coral), transparent);
-            margin: 0 auto;
-            opacity: 0;
+        .marquee-content {
+            display: inline-block;
+            animation: marquee-scroll 30s linear infinite;
+            padding-left: 100%; /* Start off-screen */
         }
 
-        /* Floating brand dots (circular economy particles) */
-        .hero-dot {
-            position: absolute;
-            border-radius: 50%;
-            pointer-events: none;
-            opacity: 0;
+        .marquee-content:hover {
+            animation-play-state: paused;
         }
 
-        /* Supporting text hidden states */
-        .hero-sub { opacity: 0; transform: translateY(20px); }
-        .hero-pill-anim { opacity: 0; transform: scale(0.85) translateY(12px); }
-        .hero-cta-anim { opacity: 0; transform: translateY(18px); }
-
-        /* Azul teal text glow */
-        .azul-glow {
-            text-shadow: 0 0 0px transparent;
-            transition: text-shadow 2s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .azul-glow.active {
-            text-shadow: 0 0 30px rgba(58,191,178,0.35), 0 0 60px rgba(58,191,178,0.15), 0 0 120px rgba(58,191,178,0.05);
+        @keyframes marquee-scroll {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
         }
 
-        /* Brand SVG ornaments — draw-on effect */
-        .hero-ornament path {
-            stroke-dasharray: 300;
-            stroke-dashoffset: 300;
+        .marquee-item {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 2rem;
         }
 
-        /* ── Custom Scrollbar (brand teal) ── */
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: var(--navy); }
-        ::-webkit-scrollbar-thumb { background: var(--navy-light); border-radius: 3px; }
-        ::-webkit-scrollbar-thumb:hover { background: var(--teal); }
-        /* ── COOKIE BANNER ── */
-        #cookie-banner {
-            position: fixed;
-            bottom: 30px !important;
-            top: auto !important;
-            left: 50%;
-            transform: translate(-50%, 150%);
-            width: calc(100% - 40px);
-            max-width: 500px;
-            background: rgba(20, 34, 54, 0.9);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(58, 191, 178, 0.2);
-            border-radius: 20px;
-            padding: 24px;
-            z-index: 9999;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        .marquee-logo {
+            filter: brightness(0) invert(1) opacity(0.7);
+            transition: filter 0.3s ease-in-out;
         }
-        #cookie-banner.active { transform: translate(-50%, 0); }
-        @media (min-width: 768px) {
-            #cookie-banner { left: auto; right: 30px; transform: translateY(150%); }
-            #cookie-banner.active { transform: translateY(0); }
+
+        .marquee-item:hover .marquee-logo {
+            filter: brightness(0) invert(1) opacity(1) drop-shadow(0 0 15px rgba(58,191,178,0.6));
         }
+
+        .marquee-separator {
+            color: rgba(247,243,237,0.1);
+            font-size: 1.5rem;
+            padding: 0 1rem;
+        }
+
     </style>
 </head>
 <body class="antialiased selection:bg-teal selection:text-navy">
 
-    <!-- COOKIE BANNER -->
-    <div id="cookie-banner">
-        <div class="flex items-center gap-3">
-            <div class="w-8 h-8 rounded-full bg-teal/10 border border-teal/20 flex items-center justify-center text-teal">
-                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-            </div>
-            <span class="font-mono text-[10px] text-teal tracking-[0.2em] uppercase font-bold">Privacy Policy</span>
-        </div>
-        <p class="text-sm text-cream/80 leading-relaxed font-normal">
-            We use cookies to enhance your experience and analyze our traffic. By continuing to browse, you agree to our use of cookies.
-        </p>
-        <div class="flex gap-4">
-            <button onclick="acceptCookies()" class="flex-1 bg-teal text-navy font-mono text-[11px] uppercase tracking-widest font-bold py-3 rounded-xl hover:shadow-[0_0_20px_rgba(58,191,178,0.4)] transition-all">Accept All</button>
-            <a href="../privacy.html" class="flex-1 border border-white/10 bg-white/5 text-cream text-center font-mono text-[11px] uppercase tracking-widest font-bold py-3 rounded-xl hover:bg-white/10 transition-all">Details</a>
-        </div>
-    </div>
-
     <!-- PRELOADER -->
-    <div id="preloader">
-        <div class="font-mono text-teal text-xs tracking-[0.5em] uppercase mb-4" id="preloader-text">Initializing Biotech 4.0...</div>
-        <div class="preloader-bar">
-            <div class="preloader-progress" id="preloader-progress"></div>
+    <div id="preloader" class="fixed inset-0 bg-navy z-[9999] flex flex-col items-center justify-center">
+        <div class="font-mono text-teal text-xs tracking-[0.5em] uppercase mb-4" id="preloader-text">Initializing DeepTech...</div>
+        <div class="preloader-bar w-52 h-1 bg-white/5 relative overflow-hidden">
+            <div class="preloader-progress absolute inset-y-0 left-0 bg-teal shadow-[0_0_15px_var(--teal)]" id="preloader-progress"></div>
         </div>
     </div>
 
     <!-- MOBILE MENU OVERLAY -->
-    <div id="mobile-menu">
+    <div id="mobile-menu" class="fixed inset-0 bg-[rgba(10,22,40,0.98)] backdrop-blur-md z-[100] flex flex-col items-center justify-center opacity-0 pointer-events-none transition-all duration-500 ease-in-out">
         <nav class="flex flex-col items-center">
-            <a href="#inicio" class="mobile-link" onclick="toggleMenu()">Home</a>
-            <a href="#mercado" class="mobile-link" onclick="toggleMenu()">Market</a>
-            <a href="#tecnologia" class="mobile-link" onclick="toggleMenu()">Technology</a>
-            <a href="#sostenibilidad" class="mobile-link" onclick="toggleMenu()">Sustainability</a>
-            <a href="#nosotros" class="mobile-link" onclick="toggleMenu()">About</a>
-            <a href="#contacto" class="mobile-link" onclick="toggleMenu()">Contact</a>
+            <a href="#inicio" class="mobile-link font-display text-4xl text-cream my-4 opacity-0 -translate-y-5 transition-all duration-500 ease-in-out" onclick="toggleMenu()">Home</a>
+            <a href="#mercado" class="mobile-link font-display text-4xl text-cream my-4 opacity-0 -translate-y-5 transition-all duration-500 ease-in-out" onclick="toggleMenu()">Market</a>
+            <a href="#tecnologia" class="mobile-link font-display text-4xl text-cream my-4 opacity-0 -translate-y-5 transition-all duration-500 ease-in-out" onclick="toggleMenu()">Technology</a>
+            <a href="#sostenibilidad" class="mobile-link font-display text-4xl text-cream my-4 opacity-0 -translate-y-5 transition-all duration-500 ease-in-out" onclick="toggleMenu()">Sustainability</a>
+            <a href="#nosotros" class="mobile-link font-display text-4xl text-cream my-4 opacity-0 -translate-y-5 transition-all duration-500 ease-in-out" onclick="toggleMenu()">About</a>
+            <a href="#contacto" class="mobile-link font-display text-4xl text-cream my-4 opacity-0 -translate-y-5 transition-all duration-500 ease-in-out" onclick="toggleMenu()">Contact</a>
             <div class="flex space-x-6 mt-12 font-mono text-sm uppercase tracking-widest border-t border-white/10 pt-8">
-                <a href="index.html" class="text-teal font-bold">EN</a>
-                <a href="es.html" class="text-muted">ES</a>
+                <a href="LAND_EXP_V2.html" class="text-teal font-bold">EN</a>
+                <a href="aquabiotics_landing_experimental_es.html" class="text-muted">ES</a>
             </div>
         </nav>
     </div>
@@ -562,7 +316,7 @@
                     <img src="../logo.png" alt="AquaBiotics Sur Logo" class="w-full h-full object-contain relative z-10 transform group-hover:scale-105 transition-transform duration-300">
                 </div>
                 <div class="flex flex-col text-left whitespace-nowrap">
-                    <span class="font-body font-bold text-xl md:text-2xl text-cream leading-none tracking-tight group-hover:text-teal transition-colors">Aquabiotics Sur</span>
+                    <span class="font-display font-bold text-xl md:text-2xl text-cream leading-none tracking-tight group-hover:text-teal transition-colors">AquaBiotics Sur</span>
                     <span class="font-mono text-[10px] md:text-[11px] text-cream/60 mt-1 tracking-[0.2em] uppercase">Nature, replicated.</span>
                 </div>
             </a>
@@ -574,14 +328,14 @@
                 <a href="#nosotros" class="hover:text-teal transition-all hover:scale-105 nav-link" data-target="#nosotros">About</a>
                 <a href="#contacto" class="hover:text-teal transition-all hover:scale-105 nav-link" data-target="#contacto">Contact</a>
                 <div class="flex space-x-3 border-l border-white/20 pl-6 ml-2 font-body text-sm tracking-normal uppercase">
-                    <a href="index.html" class="text-teal font-bold transition-colors">EN</a>
+                    <a href="LAND_EXP_V2.html" class="text-teal font-bold transition-colors">EN</a>
                     <span class="text-white/30">|</span>
-                    <a href="es.html" class="text-muted hover:text-white transition-colors">ES</a>
+                    <a href="aquabiotics_landing_experimental_es.html" class="text-muted hover:text-white transition-colors">ES</a>
                 </div>
             </div>
 
             <!-- Hamburger Button -->
-            <div class="md:hidden hamburger" id="hamburger" onclick="toggleMenu()">
+            <div class="md:hidden hamburger z-[101]" id="hamburger" onclick="toggleMenu()">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -589,159 +343,92 @@
         </div>
     </nav>
 
-    <!-- PERSISTENT BRAND ORNAMENT LAYER (fixed, fades on scroll) -->
-    <div id="brand-ornament-layer" class="fixed inset-0 pointer-events-none z-[1]" style="will-change: opacity;">
-        <svg class="hero-ornament w-full h-full" viewBox="0 0 1200 800" fill="none" preserveAspectRatio="xMidYMid slice">
-            <!-- 1. CORAL ARC -->
-            <path id="orn-arc" d="M380,380 A 220,220 0 0,1 820,380" stroke="#D9715A" stroke-width="4" stroke-linecap="round" opacity="0.45"/>
-            <!-- 2. TEAL FRONDS -->
-            <path id="orn-frond-1" d="M490,378 C 510,340 550,310 590,300 C 630,290 670,310 700,340" stroke="#3ABFB2" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
-            <path id="orn-frond-2" d="M510,382 C 540,345 580,320 620,312 C 660,304 700,325 720,350" stroke="#3ABFB2" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
-            <path id="orn-frond-3" d="M530,385 C 565,350 610,330 650,325 C 690,320 725,340 740,358" stroke="#3ABFB2" stroke-width="1" stroke-linecap="round" opacity="0.2"/>
-            <circle id="orn-dot-1" cx="700" cy="340" r="4.5" fill="#3ABFB2" opacity="0"/>
-            <circle id="orn-dot-2" cx="720" cy="350" r="3.5" fill="#3ABFB2" opacity="0"/>
-            <circle id="orn-dot-3" cx="740" cy="358" r="2.5" fill="#3ABFB2" opacity="0"/>
-            <!-- 3. WAVES -->
-            <path id="orn-wave-1" d="M420,430 C 460,418 500,442 540,430 C 580,418 640,442 700,430 C 740,422 770,438 790,430" stroke="#F7F3ED" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
-            <path id="orn-wave-2" d="M410,452 C 455,440 495,464 540,452 C 585,440 645,464 700,452 C 745,444 775,458 795,452" stroke="#F7F3ED" stroke-width="2" stroke-linecap="round" opacity="0.35"/>
-            <path id="orn-wave-3" d="M425,474 C 470,462 510,486 555,474 C 600,462 650,486 700,474 C 740,466 770,480 790,474" stroke="#6B8FAB" stroke-width="2.5" stroke-linecap="round" opacity="0.4"/>
-            <!-- 4. LAVENDER WAVE -->
-            <path id="orn-wave-4" d="M440,496 C 480,484 520,508 565,496 C 610,484 655,504 700,496 C 735,490 760,500 780,496" stroke="#7B7DC0" stroke-width="2.5" stroke-linecap="round" opacity="0.4"/>
-        </svg>
-        <!-- Floating brand dots -->
-        <div class="hero-dot w-2 h-2 bg-teal/60" id="dot-1" style="top:18%;left:12%;"></div>
-        <div class="hero-dot w-1.5 h-1.5 bg-coral/50" id="dot-2" style="top:25%;right:15%;"></div>
-        <div class="hero-dot w-1 h-1 bg-lavender/40" id="dot-3" style="top:72%;left:20%;"></div>
-        <div class="hero-dot w-2.5 h-2.5 bg-teal/30" id="dot-4" style="top:65%;right:10%;"></div>
-        <div class="hero-dot w-1.5 h-1.5 bg-coral/35" id="dot-5" style="bottom:20%;left:35%;"></div>
-        <div class="hero-dot w-1 h-1 bg-teal/50" id="dot-6" style="top:40%;right:25%;"></div>
-    </div>
-
     <!-- 1. HERO SECTION -->
-    <section id="inicio" class="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <!-- Wave SVG background -->
-        <svg class="particles-bg" viewBox="0 0 100 100" preserveAspectRatio="none" id="hero-bg">
-            <path id="wave-1" d="M0,50 Q25,40 50,50 T100,50 L100,100 L0,100 Z" fill="#3ABFB2" opacity="0.25" />
-            <path id="wave-2" d="M0,60 Q30,45 60,60 T100,60 L100,100 L0,100 Z" fill="#6B8FAB" opacity="0.2" />
-            <path id="wave-3" d="M0,70 Q40,55 70,70 T100,70 L100,100 L0,100 Z" fill="#7B7DC0" opacity="0.15" />
-        </svg>
+    <section id="inicio" class="relative min-h-screen flex items-center justify-center overflow-hidden bg-navy">
+        <!-- Hero Background Canvas for dynamic animations -->
+        <canvas id="hero-canvas"></canvas>
 
-        <div class="container mx-auto px-8 lg:px-16 relative z-10 text-center pt-[130px]">
-            <!-- Pill -->
-            <div class="inline-block px-4 py-1.5 rounded-full bg-teal/10 border border-teal/20 backdrop-blur-md mt-[6px] mb-6 hero-pill-anim" id="hero-pill">
-                <span class="font-mono text-teal tracking-[0.2em] uppercase text-xs font-semibold">Circular Biorefinery · Patagonia</span>
-            </div>
+        <div class="container mx-auto px-8 lg:px-16 relative z-10 text-center flex flex-col lg:flex-row items-center justify-between gap-12 hero-content-wrapper">
+            
+            <!-- Left Content: Text and CTAs -->
+            <div class="lg:w-1/2 text-left">
+                <div class="inline-block px-4 py-1.5 rounded-full bg-teal/10 border border-teal/20 backdrop-blur-md mb-6 gsap-reveal">
+                    <span class="font-mono text-teal tracking-[0.2em] uppercase text-xs font-semibold">Circular Biorefinery · Patagonia</span>
+                </div>
 
-            <!-- H1: Taurina Azul — clip-path reveal with luminous edge -->
-            <h1 class="font-display text-6xl md:text-8xl lg:text-[9.5rem] font-light leading-[0.9] tracking-tight mb-4" id="hero-h1">
-                <span class="hero-line-wrap block mb-1">
-                    <span class="hero-line" id="line-taurina">Blue</span>
-                    <span class="lumi-edge" id="lumi-1"></span>
-                </span>
-                <span class="hero-line-wrap block">
-                    <span class="hero-line text-teal italic font-medium azul-glow" id="line-azul">Taurine</span>
-                    <span class="lumi-edge" id="lumi-2"></span>
-                </span>
-            </h1>
+                <h1 class="font-display text-6xl md:text-7xl lg:text-8xl font-light leading-tight tracking-tight mb-6 hero-title-reveal">
+                    <span><span class="block">Blue</span></span>
+                    <span><span class="block text-teal italic font-medium">Taurine</span></span>
+                </h1>
 
-            <!-- Self-drawing decorative rule -->
-            <div class="hero-rule mx-auto mb-4" id="hero-rule" style="max-width:120px;"></div>
+                <div class="w-24 h-1 bg-gradient-to-r from-teal to-coral mb-8 gsap-reveal"></div>
 
-            <!-- Tagline -->
-            <p class="font-display text-xl md:text-2xl lg:text-3xl text-cream/90 italic max-w-3xl mx-auto mb-4 hero-sub" id="hero-tagline">
-                From residue to value
-            </p>
+                <p class="font-display text-xl md:text-2xl text-cream/90 italic max-w-lg mb-10 gsap-reveal">
+                    From industrial residue to high-value bioactives. Pioneering Patagonia's circular blue economy.
+                </p>
 
-            <!-- Scroll Indicator (Repositioned) -->
-            <div id="scroll-hint" class="scroll-hint">
-                <div class="mouse-icon">
-                    <div class="mouse-wheel"></div>
+                <div class="flex flex-col sm:flex-row items-start gap-6 gsap-reveal">
+                    <a href="#tecnologia" class="button-pulse nav-link px-10 py-4 rounded-xl bg-gradient-to-r from-teal to-steel text-navy font-mono text-xs uppercase tracking-widest font-bold hover:shadow-[0_0_30px_rgba(58,191,178,0.5)] transform hover:-translate-y-1 transition-all duration-300" data-target="#tecnologia">
+                        Explore Technology
+                    </a>
+                    <a href="#contacto" class="nav-link px-10 py-4 rounded-xl border border-white/20 bg-white/5 backdrop-blur-md text-cream font-mono text-xs uppercase tracking-widest font-semibold hover:bg-white/10 hover:border-teal transition-all duration-300" data-target="#contacto">
+                        Contact Us
+                    </a>
                 </div>
             </div>
 
-            <!-- CTAs -->
-            <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
-                <button class="nav-link hero-cta-anim px-10 py-4 rounded-xl bg-gradient-to-r from-teal to-steel text-navy font-mono text-xs uppercase tracking-widest font-bold hover:shadow-[0_0_30px_rgba(58,191,178,0.5)] transform hover:-translate-y-1 transition-all duration-300" id="hero-cta-1" data-target="#tecnologia">
-                    Explore Technology
-                </button>
-                <button class="nav-link hero-cta-anim px-10 py-4 rounded-xl border border-white/20 bg-white/5 backdrop-blur-md text-cream font-mono text-xs uppercase tracking-widest font-semibold hover:bg-white/10 hover:border-teal transition-all duration-300" id="hero-cta-2" data-target="#contacto">
-                    Contact Us
-                </button>
+            <!-- Right Content: Animated Brand Visual -->
+            <div class="lg:w-1/2 flex justify-center items-center relative h-[400px] w-full mt-16 lg:mt-0">
+                <div class="animated-logo-container">
+                    <div class="logo-sphere"></div>
+                    <div class="logo-pulse-ring"></div>
+                    <!-- Add more 3D elements here based on brand guide -->
+                    <div class="logo-frond-3d"></div>
+                    <!-- Example: Central AquaBiotics element, possibly a refined version of original logo components -->
+                    <img src="../logo.png" alt="AquaBiotics Logo 3D" class="absolute inset-0 w-full h-full object-contain p-10 opacity-90" style="transform: translateZ(20px);"/>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div id="scroll-hint" class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-0 gsap-reveal">
+            <span class="font-mono text-cream/70 text-[10px] uppercase tracking-widest">Scroll</span>
+            <div class="mouse-icon w-5 h-8 border-2 border-cream rounded-full relative">
+                <div class="mouse-wheel w-0.5 h-1.5 bg-teal absolute top-1/4 left-1/2 -translate-x-1/2 rounded-full animate-bounce"></div>
             </div>
         </div>
     </section>
 
-    <!-- 1.5 SOCIAL PROOF / INSTITUTIONAL SUPPORT (PRO MAX MARQUEE) -->
-    <section id="respaldo" class="h-32 flex flex-col justify-center bg-navy-mid/30 backdrop-blur-sm border-y border-white/5 relative z-20 mt-8 md:mt-12">
-        <div class="container mx-auto px-8 lg:px-16 mb-1">
-            <div class="flex items-center gap-4 justify-center md:justify-start">
+    <!-- 1.5 SOCIAL PROOF / INSTITUTIONAL SUPPORT (MARQUEE) -->
+    <section id="respaldo" class="py-12 bg-navy-mid/30 backdrop-blur-sm border-y border-white/5 relative z-20">
+        <div class="container mx-auto px-8 lg:px-16">
+            <div class="flex items-center gap-4 justify-center md:justify-start mb-6">
                 <span class="font-mono text-[10px] text-teal tracking-[0.4em] uppercase font-bold whitespace-nowrap opacity-80">Backed by & Powered at:</span>
                 <div class="h-px flex-grow bg-white/5 hidden md:block"></div>
             </div>
         </div>
         
         <!-- Marquee Container -->
-        <div class="relative flex overflow-hidden group">
-            <div id="marquee-content" class="flex items-center gap-16 whitespace-nowrap">
-                <!-- Set 1 (Repeated to fill width) -->
-                <div class="relative group/logo flex items-center px-8 py-4">
-                    <div class="absolute inset-0 bg-teal/25 rounded-full blur-xl opacity-60 group-hover/logo:opacity-100 transition-opacity duration-700"></div>
-                    <div class="flex items-center justify-center cursor-default transition-all duration-500 opacity-90 hover:opacity-100 hover:drop-shadow-[0_0_25px_rgba(58,191,178,0.8)] relative z-10 min-w-[120px]">
-                        <img src="../ANIMATED/Logo+KËTRAWA-01.webp" class="h-16 w-auto object-contain" style="filter: brightness(0) invert(1);" alt="Ketrawa Lab">
-                    </div>
+        <div class="marquee-container">
+            <div id="marquee-content" class="marquee-content">
+                <!-- Logos will be duplicated via JS for seamless loop -->
+                <div class="marquee-item">
+                    <img src="Logo+KËTRAWA-01.webp" class="h-12 w-auto object-contain marquee-logo" alt="Ketrawa Lab">
+                    <span class="marquee-separator">•</span>
                 </div>
-                <span class="text-white/10 font-light text-xl">•</span>
-                <div class="relative group/logo flex items-center px-8 py-4">
-                    <div class="absolute inset-0 bg-teal/25 rounded-full blur-xl opacity-60 group-hover/logo:opacity-100 transition-opacity duration-700"></div>
-                    <div class="flex items-center justify-center cursor-default transition-all duration-500 opacity-90 hover:opacity-100 hover:drop-shadow-[0_0_25px_rgba(58,191,178,0.8)] relative z-10 min-w-[150px]">
-                        <img src="../ANIMATED/Logo_volcanes.webp" class="h-28 w-auto object-contain" style="filter: brightness(0) invert(1);" alt="Incubadora Volcanes">
-                    </div>
+                <div class="marquee-item">
+                    <img src="Logo_volcanes.webp" class="h-20 w-auto object-contain marquee-logo" alt="Incubadora Volcanes">
+                    <span class="marquee-separator">•</span>
                 </div>
-                <span class="text-white/10 font-light text-xl">•</span>
-                <div class="relative group/logo flex items-center px-8 py-4">
-                    <div class="absolute inset-0 bg-teal/25 rounded-full blur-xl opacity-60 group-hover/logo:opacity-100 transition-opacity duration-700"></div>
-                    <div class="flex items-center justify-center cursor-default transition-all duration-500 opacity-90 hover:opacity-100 hover:drop-shadow-[0_0_25px_rgba(58,191,178,0.8)] relative z-10 min-w-[120px]">
-                        <img src="../ANIMATED/Logo+KËTRAWA-01.webp" class="h-16 w-auto object-contain" style="filter: brightness(0) invert(1);" alt="Ketrawa Lab">
-                    </div>
+                <div class="marquee-item">
+                    <img src="Logo+KËTRAWA-01.webp" class="h-12 w-auto object-contain marquee-logo" alt="Ketrawa Lab">
+                    <span class="marquee-separator">•</span>
                 </div>
-                <span class="text-white/10 font-light text-xl">•</span>
-                <div class="relative group/logo flex items-center px-8 py-4">
-                    <div class="absolute inset-0 bg-teal/25 rounded-full blur-xl opacity-60 group-hover/logo:opacity-100 transition-opacity duration-700"></div>
-                    <div class="flex items-center justify-center cursor-default transition-all duration-500 opacity-90 hover:opacity-100 hover:drop-shadow-[0_0_25px_rgba(58,191,178,0.8)] relative z-10 min-w-[150px]">
-                        <img src="../ANIMATED/Logo_volcanes.webp" class="h-28 w-auto object-contain" style="filter: brightness(0) invert(1);" alt="Incubadora Volcanes">
-                    </div>
+                <div class="marquee-item">
+                    <img src="Logo_volcanes.webp" class="h-20 w-auto object-contain marquee-logo" alt="Incubadora Volcanes">
+                    <span class="marquee-separator">•</span>
                 </div>
-                <span class="text-white/10 font-light text-xl">•</span>
-
-                <!-- Set 2 (Identical mirror for seamless loop) -->
-                <div class="relative group/logo flex items-center px-8 py-4">
-                    <div class="absolute inset-0 bg-teal/25 rounded-full blur-xl opacity-60 group-hover/logo:opacity-100 transition-opacity duration-700"></div>
-                    <div class="flex items-center justify-center cursor-default transition-all duration-500 opacity-90 hover:opacity-100 hover:drop-shadow-[0_0_25px_rgba(58,191,178,0.8)] relative z-10 min-w-[120px]">
-                        <img src="../ANIMATED/Logo+KËTRAWA-01.webp" class="h-16 w-auto object-contain" style="filter: brightness(0) invert(1);" alt="Ketrawa Lab">
-                    </div>
-                </div>
-                <span class="text-white/10 font-light text-xl">•</span>
-                <div class="relative group/logo flex items-center px-8 py-4">
-                    <div class="absolute inset-0 bg-teal/25 rounded-full blur-xl opacity-60 group-hover/logo:opacity-100 transition-opacity duration-700"></div>
-                    <div class="flex items-center justify-center cursor-default transition-all duration-500 opacity-90 hover:opacity-100 hover:drop-shadow-[0_0_25px_rgba(58,191,178,0.8)] relative z-10 min-w-[150px]">
-                        <img src="../ANIMATED/Logo_volcanes.webp" class="h-28 w-auto object-contain" style="filter: brightness(0) invert(1);" alt="Incubadora Volcanes">
-                    </div>
-                </div>
-                <span class="text-white/10 font-light text-xl">•</span>
-                <div class="relative group/logo flex items-center px-8 py-4">
-                    <div class="absolute inset-0 bg-teal/25 rounded-full blur-xl opacity-60 group-hover/logo:opacity-100 transition-opacity duration-700"></div>
-                    <div class="flex items-center justify-center cursor-default transition-all duration-500 opacity-90 hover:opacity-100 hover:drop-shadow-[0_0_25px_rgba(58,191,178,0.8)] relative z-10 min-w-[120px]">
-                        <img src="../ANIMATED/Logo+KËTRAWA-01.webp" class="h-16 w-auto object-contain" style="filter: brightness(0) invert(1);" alt="Ketrawa Lab">
-                    </div>
-                </div>
-                <span class="text-white/10 font-light text-xl">•</span>
-                <div class="relative group/logo flex items-center px-8 py-4">
-                    <div class="absolute inset-0 bg-teal/25 rounded-full blur-xl opacity-60 group-hover/logo:opacity-100 transition-opacity duration-700"></div>
-                    <div class="flex items-center justify-center cursor-default transition-all duration-500 opacity-90 hover:opacity-100 hover:drop-shadow-[0_0_25px_rgba(58,191,178,0.8)] relative z-10 min-w-[150px]">
-                        <img src="../ANIMATED/Logo_volcanes.webp" class="h-28 w-auto object-contain" style="filter: brightness(0) invert(1);" alt="Incubadora Volcanes">
-                    </div>
-                </div>
-                <span class="text-white/10 font-light text-xl">•</span>
             </div>
         </div>
     </section>
@@ -887,7 +574,7 @@
                 <div class="glass-card p-8 rounded-2xl gsap-reveal text-left group relative overflow-hidden">
                     <div class="glow-overlay"></div>
                     <h4 class="font-mono text-xl text-teal font-bold mb-4 flex items-center gap-3">
-                        <span class="w-2 h-2 rounded-full bg-teal animate-pulse"></span>
+                        <span class="w-2 h-2 rounded-full bg-teal animate-pulse icon-fade-in"></span>
                         TRL: 3 (Technological Validation)
                     </h4>
                     <p class="text-sm text-muted leading-relaxed font-normal">Scientific basis proven in literature (taurine is present in the effluent). The current milestone is experimental validation and molecular fractionation at laboratory scale to ensure industrial purity standards.</p>
@@ -895,7 +582,7 @@
                 <div class="glass-card p-8 rounded-2xl gsap-reveal text-left group relative overflow-hidden">
                     <div class="glow-overlay"></div>
                     <h4 class="font-mono text-xl text-coral font-bold mb-4 flex items-center gap-3">
-                        <span class="w-2 h-2 rounded-full bg-coral animate-pulse"></span>
+                        <span class="w-2 h-2 rounded-full bg-coral animate-pulse icon-fade-in" style="transition-delay: 0.1s;"></span>
                         CRL: 2 (Market Validation)
                     </h4>
                     <p class="text-sm text-muted leading-relaxed font-normal">Active prospecting of "Early Adopters." Engaging with pet food and nutraceutical leaders seeking to secure future supply of Clean Label ingredients from sustainable sources.</p>
@@ -903,7 +590,7 @@
                 <div class="glass-card p-8 rounded-2xl gsap-reveal text-left group relative overflow-hidden">
                     <div class="glow-overlay"></div>
                     <h4 class="font-mono text-xl text-lavender font-bold mb-4 flex items-center gap-3">
-                        <span class="w-2 h-2 rounded-full bg-lavender animate-pulse"></span>
+                        <span class="w-2 h-2 rounded-full bg-lavender animate-pulse icon-fade-in" style="transition-delay: 0.2s;"></span>
                         BRL: 2 (Scaling Model)
                     </h4>
                     <p class="text-sm text-muted leading-relaxed font-normal">Roadmap for Pre-Seed capital raising. The focus is to finance the engineering and commissioning of the first modular pilot plant in the Los Lagos Region.</p>
@@ -1067,7 +754,7 @@
                 <!-- ODS 12 -->
                 <div class="relative group h-[230px] rounded-2xl gsap-reveal perspective-1000">
                     <div class="absolute inset-0 glass-card p-6 flex flex-col items-center justify-center text-center transition-all duration-500 group-hover:opacity-0 group-hover:scale-95 z-20 rounded-2xl border-[#BF8B2E]/30">
-                        <div class="w-14 h-14 text-white flex items-center justify-center font-bold text-2xl mb-4 rounded-xl shadow-lg" style="background-color: #BF8B2E;">12</div>
+                        <div class="w-14 h-14 text-white flex items-center justify-center font-bold text-2xl mb-4 rounded-xl shadow-lg icon-fade-in" style="background-color: #BF8B2E;">12</div>
                         <h4 class="font-body font-bold text-base text-cream mb-2 px-1 leading-tight">Responsible Production</h4>
                         <p class="text-xs leading-tight text-muted font-medium">Circular Model</p>
                     </div>
@@ -1084,7 +771,7 @@
                 <!-- ODS 14 -->
                 <div class="relative group h-[230px] rounded-2xl gsap-reveal perspective-1000" style="transition-delay: 0.1s">
                     <div class="absolute inset-0 glass-card p-6 flex flex-col items-center justify-center text-center transition-all duration-500 group-hover:opacity-0 group-hover:scale-95 z-20 rounded-2xl border-[#0A97D9]/30">
-                        <div class="w-14 h-14 text-white flex items-center justify-center font-bold text-2xl mb-4 rounded-xl shadow-lg" style="background-color: #0A97D9;">14</div>
+                        <div class="w-14 h-14 text-white flex items-center justify-center font-bold text-2xl mb-4 rounded-xl shadow-lg icon-fade-in" style="background-color: #0A97D9;">14</div>
                         <h4 class="font-body font-bold text-base text-cream mb-2 px-1 leading-tight">Life Below Water</h4>
                         <p class="text-xs leading-tight text-muted font-medium">Ocean Conservation</p>
                     </div>
@@ -1101,7 +788,7 @@
                 <!-- ODS 6 -->
                 <div class="relative group h-[230px] rounded-2xl gsap-reveal perspective-1000" style="transition-delay: 0.2s">
                     <div class="absolute inset-0 glass-card p-6 flex flex-col items-center justify-center text-center transition-all duration-500 group-hover:opacity-0 group-hover:scale-95 z-20 rounded-2xl border-[#26BDE2]/30">
-                        <div class="w-14 h-14 text-white flex items-center justify-center font-bold text-2xl mb-4 rounded-xl shadow-lg" style="background-color: #26BDE2;">6</div>
+                        <div class="w-14 h-14 text-white flex items-center justify-center font-bold text-2xl mb-4 rounded-xl shadow-lg icon-fade-in" style="background-color: #26BDE2;">6</div>
                         <h4 class="font-body font-bold text-base text-cream mb-2 px-1 leading-tight">Clean Water</h4>
                         <p class="text-xs leading-tight text-muted font-medium">Sustainable Water Management</p>
                     </div>
@@ -1117,7 +804,7 @@
                 <!-- ODS 9 -->
                 <div class="relative group h-[230px] rounded-2xl gsap-reveal perspective-1000" style="transition-delay: 0.3s">
                     <div class="absolute inset-0 glass-card p-6 flex flex-col items-center justify-center text-center transition-all duration-500 group-hover:opacity-0 group-hover:scale-95 z-20 rounded-2xl border-[#FD6925]/30">
-                        <div class="w-14 h-14 text-white flex items-center justify-center font-bold text-2xl mb-4 rounded-xl shadow-lg" style="background-color: #FD6925;">9</div>
+                        <div class="w-14 h-14 text-white flex items-center justify-center font-bold text-2xl mb-4 rounded-xl shadow-lg icon-fade-in" style="background-color: #FD6925;">9</div>
                         <h4 class="font-body font-bold text-base text-cream mb-2 px-1 leading-tight">Innovation</h4>
                         <p class="text-xs leading-tight text-muted font-medium">Fostering Resilient Ecosystems</p>
                     </div>
@@ -1134,7 +821,7 @@
                 <!-- ODS 13 -->
                 <div class="relative group h-[230px] rounded-2xl gsap-reveal perspective-1000" style="transition-delay: 0.4s">
                     <div class="absolute inset-0 glass-card p-6 flex flex-col items-center justify-center text-center transition-all duration-500 group-hover:opacity-0 group-hover:scale-95 z-20 rounded-2xl border-[#3F7E44]/30">
-                        <div class="w-14 h-14 text-white flex items-center justify-center font-bold text-2xl mb-4 rounded-xl shadow-lg" style="background-color: #3F7E44;">13</div>
+                        <div class="w-14 h-14 text-white flex items-center justify-center font-bold text-2xl mb-4 rounded-xl shadow-lg icon-fade-in" style="background-color: #3F7E44;">13</div>
                         <h4 class="font-body font-bold text-base text-cream mb-2 px-1 leading-tight">Climate Action</h4>
                         <p class="text-xs leading-tight text-muted font-medium">Combating Climate Change</p>
                     </div>
@@ -1150,7 +837,7 @@
                 <!-- ODS 8 -->
                 <div class="relative group h-[230px] rounded-2xl gsap-reveal perspective-1000" style="transition-delay: 0.5s">
                     <div class="absolute inset-0 glass-card p-6 flex flex-col items-center justify-center text-center transition-all duration-500 group-hover:opacity-0 group-hover:scale-95 z-20 rounded-2xl border-[#A21942]/30">
-                        <div class="w-14 h-14 text-white flex items-center justify-center font-bold text-2xl mb-4 rounded-xl shadow-lg" style="background-color: #A21942;">8</div>
+                        <div class="w-14 h-14 text-white flex items-center justify-center font-bold text-2xl mb-4 rounded-xl shadow-lg icon-fade-in" style="background-color: #A21942;">8</div>
                         <h4 class="font-body font-bold text-base text-cream mb-2 px-1 leading-tight">Decent Work</h4>
                         <p class="text-xs leading-tight text-muted font-medium">Sustainable Growth</p>
                     </div>
@@ -1403,9 +1090,11 @@
     
     <script>
         /* ══════════════════════════════════════════════════════════════
-           SISTEMA DE ANIMACIÓN ORGÁNICO-ANALÍTICO
+           SISTEMA DE ANIMACIÓN ORGÁNICO-ANALÍTICO (v2)
            AquaBiotics Sur · Brand Manual Compliance
            ══════════════════════════════════════════════════════════ */
+
+        gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
         // ── 1. Lenis Smooth Scroll ──
         const lenis = new Lenis({
@@ -1419,7 +1108,6 @@
         lenis.on('scroll', ScrollTrigger.update);
         gsap.ticker.add((time) => { lenis.raf(time * 1000); });
         gsap.ticker.lagSmoothing(0);
-        gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
         // ── 2. Navbar Scroll Effect & Smooth Anchors ──
         const navbar = document.getElementById('navbar');
@@ -1441,237 +1129,177 @@
             });
         });
 
-        // ── 3. Física de Fluidos — La Curva Emergente (El Océano) ──
-        document.querySelectorAll('.gsap-reveal').forEach((el) => {
-            gsap.to(el, {
-                scrollTrigger: { trigger: el, start: 'top 88%' },
-                y: 0, opacity: 1, duration: 1.4, ease: 'power3.out'
-            });
-        });
+        // ── Mobile Menu Toggle ──
+        function toggleMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const hamburger = document.getElementById('hamburger');
+            mobileMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : 'auto';
 
-        // ── 3a. Ornament layer scroll fade (full → subtle) ──
-        gsap.to('#brand-ornament-layer', {
-            opacity: 0.12,
-            ease: 'none',
-            scrollTrigger: {
-                trigger: '#inicio',
-                start: 'top top',
-                end: 'bottom top',
-                scrub: true
+            // Animate mobile links
+            gsap.timeline()
+                .to('.mobile-link', { opacity: mobileMenu.classList.contains('active') ? 1 : 0, y: mobileMenu.classList.contains('active') ? 0 : 20, stagger: 0.1, duration: 0.3, ease: 'power2.out' });
+        }
+
+        // ══ HERO SECTION ANIMATIONS ══
+        const heroTL = gsap.timeline({
+            delay: 0.8, // Reduced delay for faster initial load feeling
+            onComplete: () => {
+                // Activate perpetual animations after main hero sequence
+                gsap.to('.logo-pulse-ring', { scale: 1.1, opacity: 0.6, repeat: -1, yoyo: true, duration: 2, ease: 'sine.inOut' });
+                gsap.to('.logo-sphere', { transform: 'rotateX(75deg) rotateZ(360deg) scale(0.8)', duration: 15, repeat: -1, ease: 'none' });
+                // Add more perpetual animations for other 3D elements here
             }
         });
 
-        // ══ 3b. HERO CINEMATIC ORCHESTRATION — Taurina Azul ══
-        // Professional sequenced timeline: SVG draw → dots → pill → H1 clip-path reveal with
-        // luminous edge → rule draw → tagline → h2 → desc → CTAs
+        // Hero text reveal
+        heroTL.from(".hero-title-reveal span span", { yPercent: 100, stagger: 0.1, duration: 1, ease: "power3.out" }, "start")
+              .from(".hero-title-reveal", { opacity: 0, duration: 0.1 }, "start") // Ensure visibility
+              .from(".hero-pill-anim", { opacity: 0, y: 20, duration: 0.8, ease: "power3.out" }, "start+=0.3")
+              .from(".hero-rule", { width: 0, opacity: 0, duration: 0.8, ease: "power3.out" }, "start+=0.6")
+              .from(".hero-tagline", { opacity: 0, y: 20, duration: 0.8, ease: "power3.out" }, "start+=0.8")
+              .from(".hero-cta-anim", { opacity: 0, y: 20, stagger: 0.15, duration: 0.8, ease: "power3.out" }, "start+=1.0")
+              .from("#scroll-hint", { opacity: 0, y: 20, duration: 0.8, ease: "power3.out" }, "start+=1.2");
 
-        const heroTL = gsap.timeline({ delay: 0.4 });
+        // ── NEW: Hero Background Canvas Animation ──
+        const heroCanvas = document.getElementById('hero-canvas');
+        const heroCtx = heroCanvas.getContext('2d');
+        let heroParticles = [];
+        const heroNumParticles = 100; // Even more particles for v2
+        const heroParticleColors = [
+            'rgba(58,191,178,0.6)', // Teal
+            'rgba(107,143,171,0.5)', // Steel
+            'rgba(123,125,192,0.4)', // Lavender
+            'rgba(217,113,90,0.4)' // Coral
+        ];
+        let heroMouse = { x: null, y: null, radius: 150 }; // Larger interactive radius
 
-        // Phase 0: Float in brand dots
-        heroTL.to('.hero-dot', {
-            opacity: 1, duration: 2, stagger: 0.15, ease: 'power3.out'
-        }, 0);
-
-        // Continuous slow drift for dots (fire-and-forget)
-        document.querySelectorAll('.hero-dot').forEach((dot, i) => {
-            gsap.to(dot, {
-                y: `${(i % 2 === 0 ? '-' : '')}=${15 + i * 4}`,
-                x: `${(i % 3 === 0 ? '' : '-')}=${8 + i * 3}`,
-                duration: 5 + i * 1.5,
-                repeat: -1, yoyo: true,
-                ease: 'sine.inOut',
-                delay: i * 0.3
-            });
-        });
-
-        // Phase 1: Draw brand SVG ornaments — ALL 4 LOGO ELEMENTS
-        // Each element draws once and STAYS permanently visible
-
-        // 1a. Coral Arc (El Horizonte)
-        heroTL.to('#orn-arc', {
-            strokeDashoffset: 0, duration: 2.5, ease: 'power3.out'
-        }, 0.2);
-
-        // 1b. Teal Fronds (Biotecnología Marina) — staggered emergence
-        heroTL.to('#orn-frond-1', {
-            strokeDashoffset: 0, duration: 2.0, ease: 'power3.out'
-        }, 0.5);
-        heroTL.to('#orn-frond-2', {
-            strokeDashoffset: 0, duration: 1.8, ease: 'power3.out'
-        }, 0.8);
-        heroTL.to('#orn-frond-3', {
-            strokeDashoffset: 0, duration: 1.5, ease: 'power3.out'
-        }, 1.0);
-        // Frond dot accents pop in
-        heroTL.to('#orn-dot-1', {
-            opacity: 0.7, duration: 0.5, ease: 'power3.out'
-        }, 1.6);
-        heroTL.to('#orn-dot-2', {
-            opacity: 0.5, duration: 0.5, ease: 'power3.out'
-        }, 1.75);
-        heroTL.to('#orn-dot-3', {
-            opacity: 0.4, duration: 0.5, ease: 'power3.out'
-        }, 1.9);
-
-        // 1c. Waves (Biorrefinería en Cascada) — white → white → steel → lavender
-        heroTL.to('#orn-wave-1', {
-            strokeDashoffset: 0, duration: 1.8, ease: 'power3.out'
-        }, 1.2);
-        heroTL.to('#orn-wave-2', {
-            strokeDashoffset: 0, duration: 1.6, ease: 'power3.out'
-        }, 1.5);
-        heroTL.to('#orn-wave-3', {
-            strokeDashoffset: 0, duration: 1.6, ease: 'power3.out'
-        }, 1.8);
-
-        // 1d. Lavender Wave (Innovación / Postbióticos)
-        heroTL.to('#orn-wave-4', {
-            strokeDashoffset: 0, duration: 1.6, ease: 'power3.out'
-        }, 2.1);
-
-        // Phase 1e: PERPETUAL BREATHING — fire-and-forget infinite loops
-        // After draw-in, all ornaments breathe and sway continuously
-        
-        // Coral arc breathes (gentle vertical oscillation)
-        gsap.to('#orn-arc', {
-            attr: { d: 'M380,376 A 224,224 0 0,1 820,376' },
-            duration: 6, repeat: -1, yoyo: true, ease: 'sine.inOut', delay: 3
-        });
-
-        // Teal fronds sway (organic lateral drift)
-        gsap.to('#orn-frond-1', {
-            attr: { d: 'M488,375 C 508,338 548,305 592,296 C 634,288 674,308 704,338' },
-            duration: 7, repeat: -1, yoyo: true, ease: 'sine.inOut', delay: 3.2
-        });
-        gsap.to('#orn-frond-2', {
-            attr: { d: 'M512,380 C 542,342 582,316 624,310 C 664,302 704,322 724,348' },
-            duration: 8, repeat: -1, yoyo: true, ease: 'sine.inOut', delay: 3.5
-        });
-        gsap.to('#orn-frond-3', {
-            attr: { d: 'M532,383 C 567,347 614,327 654,323 C 694,318 728,338 744,356' },
-            duration: 9, repeat: -1, yoyo: true, ease: 'sine.inOut', delay: 3.8
-        });
-
-        // Frond dots pulse gently
-        gsap.to('#orn-dot-1', {
-            attr: { r: 5.5, cy: 337 }, opacity: 0.8,
-            duration: 4, repeat: -1, yoyo: true, ease: 'sine.inOut', delay: 4
-        });
-        gsap.to('#orn-dot-2', {
-            attr: { r: 4.5, cy: 347 }, opacity: 0.6,
-            duration: 5, repeat: -1, yoyo: true, ease: 'sine.inOut', delay: 4.3
-        });
-        gsap.to('#orn-dot-3', {
-            attr: { r: 3.5, cy: 355 }, opacity: 0.5,
-            duration: 5.5, repeat: -1, yoyo: true, ease: 'sine.inOut', delay: 4.5
-        });
-
-        // Waves undulate continuously (subtle horizontal drift)
-        gsap.to('#orn-wave-1', {
-            attr: { d: 'M418,432 C 458,420 502,440 542,428 C 582,416 642,440 702,432 C 738,424 768,440 788,432' },
-            duration: 5, repeat: -1, yoyo: true, ease: 'sine.inOut', delay: 3
-        });
-        gsap.to('#orn-wave-2', {
-            attr: { d: 'M408,454 C 453,442 497,462 542,450 C 587,438 647,462 702,454 C 743,446 773,460 793,454' },
-            duration: 6, repeat: -1, yoyo: true, ease: 'sine.inOut', delay: 3.3
-        });
-        gsap.to('#orn-wave-3', {
-            attr: { d: 'M423,476 C 468,464 512,484 557,472 C 602,460 652,484 702,476 C 738,468 768,482 788,476' },
-            duration: 7, repeat: -1, yoyo: true, ease: 'sine.inOut', delay: 3.6
-        });
-        gsap.to('#orn-wave-4', {
-            attr: { d: 'M438,498 C 478,486 522,506 567,494 C 612,482 657,502 702,498 C 733,492 758,502 778,498' },
-            duration: 8, repeat: -1, yoyo: true, ease: 'sine.inOut', delay: 3.9
-        });
-
-        // Phase 2: Pill badge
-        heroTL.to('#hero-pill', {
-            opacity: 1, scale: 1, y: 0, duration: 1.0, ease: 'power3.out'
-        }, 0.8);
-
-        // Phase 3: "Taurina" — luminous edge sweep + clip-path reveal
-        heroTL.to('#lumi-1', {
-            opacity: 1, x: 0, duration: 0.3, ease: 'power3.out'
-        }, 1.2);
-        heroTL.to('#line-taurina', {
-            clipPath: 'inset(0 0% 0 0)', duration: 1.4, ease: 'power3.out'
-        }, 1.25);
-        heroTL.to('#lumi-1', {
-            left: '100%', duration: 1.4, ease: 'power3.out'
-        }, 1.25);
-        heroTL.to('#lumi-1', {
-            opacity: 0, duration: 0.4, ease: 'power2.out'
-        }, 2.3);
-
-        // Phase 4: "Azul" — same reveal with slight delay + teal glow activation
-        heroTL.to('#lumi-2', {
-            opacity: 1, x: 0, duration: 0.3, ease: 'power3.out'
-        }, 1.9);
-        heroTL.to('#line-azul', {
-            clipPath: 'inset(0 0% 0 0)', duration: 1.4, ease: 'power3.out'
-        }, 1.95);
-        heroTL.to('#lumi-2', {
-            left: '100%', duration: 1.4, ease: 'power3.out'
-        }, 1.95);
-        heroTL.to('#lumi-2', {
-            opacity: 0, duration: 0.4, ease: 'power2.out'
-        }, 3.0);
-        heroTL.call(() => {
-            document.getElementById('line-azul')?.classList.add('active');
-        }, null, 2.8);
-
-        // Phase 5: Self-drawing decorative rule (brand .rule)
-        heroTL.to('#hero-rule', {
-            opacity: 1, width: 120, duration: 1.0, ease: 'power3.out'
-        }, 2.8);
-
-        // Phase 6: Supporting text cascade
-        heroTL.to('#hero-tagline', {
-            opacity: 1, y: 0, duration: 1.2, ease: 'power3.out'
-        }, 3.0);
-
-        // Phase 7: CTAs & Scroll Hint
-        heroTL.to('#scroll-hint', {
-            opacity: 1, y: 0, duration: 0.9, ease: 'power3.out'
-        }, 3.5);
-        heroTL.to('#hero-cta-1', {
-            opacity: 1, y: 0, duration: 0.9, ease: 'power3.out'
-        }, 3.6);
-        heroTL.to('#hero-cta-2', {
-            opacity: 1, y: 0, duration: 0.9, ease: 'power3.out'
-        }, 3.75);
-
-        // ── 4. Morphing SVG — Corrientes Patagónicas (La Ola) ──
-        // Infinite organic wave breathing using GSAP attr animation
-        function morphWave(id, pathA, pathB, dur) {
-            const el = document.getElementById(id);
-            if (!el) return;
-            gsap.to(el, {
-                attr: { d: pathB },
-                duration: dur,
-                ease: 'sine.inOut',
-                repeat: -1,
-                yoyo: true
-            });
+        function resizeHeroCanvas() {
+            heroCanvas.width = window.innerWidth;
+            heroCanvas.height = window.innerHeight;
         }
-        morphWave('wave-1',
-            'M0,50 Q25,40 50,50 T100,50 L100,100 L0,100 Z',
-            'M0,48 Q20,55 45,44 T100,52 L100,100 L0,100 Z', 8);
-        morphWave('wave-2',
-            'M0,60 Q30,45 60,60 T100,60 L100,100 L0,100 Z',
-            'M0,62 Q35,50 55,65 T100,58 L100,100 L0,100 Z', 10);
-        morphWave('wave-3',
-            'M0,70 Q40,55 70,70 T100,70 L100,100 L0,100 Z',
-            'M0,68 Q45,60 65,72 T100,68 L100,100 L0,100 Z', 12);
 
-        // Parallax depth on scroll
-        gsap.to('#hero-bg', {
-            yPercent: 25, ease: 'none',
-            scrollTrigger: { trigger: '#inicio', start: 'top top', end: 'bottom top', scrub: true }
+        window.addEventListener('mousemove', (event) => {
+            heroMouse.x = event.x;
+            heroMouse.y = event.y;
         });
+
+        window.addEventListener('mouseout', () => {
+            heroMouse.x = null;
+            heroMouse.y = null;
+        });
+
+        class HeroParticle {
+            constructor() {
+                this.x = Math.random() * heroCanvas.width;
+                this.y = Math.random() * heroCanvas.height;
+                this.size = Math.random() * 2 + 0.8; // Slightly larger particles
+                this.baseSpeedX = Math.random() * 0.3 - 0.15;
+                this.baseSpeedY = Math.random() * 0.3 - 0.15;
+                this.speedX = this.baseSpeedX;
+                this.speedY = this.baseSpeedY;
+                this.color = heroParticleColors[Math.floor(Math.random() * heroParticleColors.length)];
+                this.opacity = Math.random() * 0.7 + 0.3; // Slightly more opaque
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                // Interaction with mouse
+                if (heroMouse.x && heroMouse.y) {
+                    const dx = heroMouse.x - this.x;
+                    const dy = heroMouse.y - this.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < heroMouse.radius) {
+                        const angle = Math.atan2(dy, dx);
+                        const force = heroMouse.radius / distance; 
+                        this.x -= Math.cos(angle) * force * 0.8; 
+                        this.y -= Math.sin(angle) * force * 0.8;
+                        this.currentSize = this.size + (1 - distance / heroMouse.radius) * 2; 
+                        this.currentOpacity = this.opacity + (1 - distance / heroMouse.radius) * 0.5; 
+                    } else {
+                        this.currentSize = this.size;
+                        this.currentOpacity = this.opacity;
+                    }
+                } else {
+                    this.currentSize = this.size;
+                    this.currentOpacity = this.opacity;
+                }
+
+                // Reset particle if it goes off-screen or fades out
+                if (this.x > heroCanvas.width + 10 || this.x < -10 || this.y > heroCanvas.height + 10 || this.y < -10 || this.currentSize <= 0.1) {
+                    this.x = Math.random() * heroCanvas.width;
+                    this.y = Math.random() * heroCanvas.height;
+                    this.size = Math.random() * 2 + 0.8;
+                    this.baseSpeedX = Math.random() * 0.3 - 0.15;
+                    this.baseSpeedY = Math.random() * 0.3 - 0.15;
+                    this.speedX = this.baseSpeedX;
+                    this.speedY = this.baseSpeedY;
+                    this.opacity = Math.random() * 0.7 + 0.3;
+                }
+            }
+            draw() {
+                heroCtx.fillStyle = this.color;
+                heroCtx.globalAlpha = this.currentOpacity; 
+                heroCtx.beginPath();
+                heroCtx.arc(this.x, this.y, this.currentSize, 0, Math.PI * 2);
+                heroCtx.fill();
+            }
+        }
+
+        function initHeroParticles() {
+            heroParticles = [];
+            for (let i = 0; i < heroNumParticles; i++) {
+                heroParticles.push(new HeroParticle());
+            }
+        }
+
+        function animateHeroParticles() {
+            requestAnimationFrame(animateHeroParticles);
+            heroCtx.clearRect(0, 0, heroCanvas.width, heroCanvas.height);
+            for (let i = 0; i < heroParticles.length; i++) {
+                heroParticles[i].update();
+                heroParticles[i].draw();
+            }
+        }
+
+        window.addEventListener('load', () => {
+            resizeHeroCanvas();
+            initHeroParticles();
+            animateHeroParticles();
+        });
+        window.addEventListener('resize', resizeHeroCanvas);
+
+        // GSAP reveals for sections (generic)
+        document.querySelectorAll('.gsap-reveal').forEach((el) => {
+            gsap.fromTo(el, 
+                { opacity: 0, y: 50 }, 
+                { opacity: 1, y: 0, duration: 1.2, ease: 'power3.out', 
+                  scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none reverse' }
+                }
+            );
+        });
+
+        // Animated icons in metrics section
+        document.querySelectorAll('.icon-fade-in').forEach((icon) => {
+            gsap.fromTo(icon, 
+                { opacity: 0, translateY: 20 }, 
+                { opacity: 1, translateY: 0, duration: 0.8, ease: 'power2.out', 
+                  scrollTrigger: { trigger: icon, start: 'top 90%', toggleActions: 'play none none reverse' }
+                }
+            );
+        });
+
+        // Marquee Infinite Loop Logic
+        const marqueeContent = document.getElementById('marquee-content');
+        if (marqueeContent) {
+            // Duplicate content for seamless loop
+            marqueeContent.innerHTML += marqueeContent.innerHTML; 
+        }
 
         // ── 5. HPLC Decode Effect — Decodificación de Laboratorio (El Sabio) ──
-        // Simulates HPLC chromatograph data readout: hex/char scramble → final value
         const HPLC_CHARS = '0123456789ABCDEFXxΔμσ·:'.split('');
 
         function hplcDecode(el) {
@@ -1681,7 +1309,6 @@
             const finalText = isDecimal ? targetVal.toFixed(1) : String(Math.round(targetVal));
             const len = finalText.length;
 
-            // Phase 1: Rapid character scramble (1s) — simulates HPLC signal noise
             const scrambleDuration = 1000;
             const scrambleInterval = 50;
             const startTime = Date.now();
@@ -1690,7 +1317,6 @@
                 const elapsed = Date.now() - startTime;
                 if (elapsed >= scrambleDuration) {
                     clearInterval(scrambler);
-                    // Phase 2: Smooth numeric count to final value (1.5s)
                     let obj = { val: 0 };
                     gsap.to(obj, {
                         val: targetVal, duration: 1.5, ease: 'power3.out',
@@ -1701,13 +1327,12 @@
                     });
                     return;
                 }
-                // Generate scrambled text with increasing lock-in from left to right
                 const progress = elapsed / scrambleDuration;
                 let display = '';
                 for (let i = 0; i < len; i++) {
                     const charProgress = progress - (i * 0.08);
                     if (charProgress > 0.85) {
-                        display += finalText[i]; // Lock in final character
+                        display += finalText[i]; 
                     } else {
                         display += HPLC_CHARS[Math.floor(Math.random() * HPLC_CHARS.length)];
                     }
@@ -1729,24 +1354,13 @@
             ease: 'none',
             scrollTrigger: {
                 trigger: '#tecnologia',
-                start: 'top 60%',
-                end: 'bottom 40%',
-                scrub: 1
+                start: 'top center',
+                end: 'bottom center',
+                scrub: true
             }
         });
 
-        // Marquee Infinite Loop Logic
-        const marquee = document.getElementById('marquee-content');
-        if (marquee) {
-            gsap.to(marquee, {
-                xPercent: -50,
-                repeat: -1,
-                duration: 30,
-                ease: "none"
-            }).play();
-        }
-
-        // Storytelling Topography Animation
+        // Storytelling Topography Animation (adjusted trigger)
         const topoPaths = document.querySelectorAll('.topo-lines path');
         topoPaths.forEach(path => {
             const length = path.getTotalLength();
@@ -1762,47 +1376,29 @@
                 }
             });
         });
-        // ── 7. PRELOADER & MOBILE MENU ──
-        function toggleMenu() {
-            document.getElementById('mobile-menu').classList.toggle('active');
-            document.getElementById('hamburger').classList.toggle('active');
-            document.body.style.overflow = document.getElementById('mobile-menu').classList.contains('active') ? 'hidden' : 'auto';
-        }
-
+        
+        // ── Preloader Animation ──
         window.addEventListener('load', () => {
-            const tl = gsap.timeline();
-            tl.to('#preloader-progress', { width: '100%', duration: 1, ease: 'power2.inOut' })
-              .to('#preloader', { opacity: 0, duration: 0.8, delay: 0.2, ease: 'power2.out', onComplete: () => {
-                  document.getElementById('preloader').style.display = 'none';
-              }});
+            const preloaderTL = gsap.timeline();
+            preloaderTL.to('#preloader-progress', { width: '100%', duration: 1, ease: 'power2.inOut' })
+                       .to('#preloader', { opacity: 0, duration: 0.8, delay: 0.2, ease: 'power2.out', onComplete: () => {
+                           document.getElementById('preloader').style.display = 'none';
+                       }});
         });
 
-        // Preloader Scramble Effect
+        // Preloader Scramble Effect (adjusted)
         const preText = document.getElementById('preloader-text');
         const HPLC_CHARS_PRE = '0123456789ABCDEFXxΔμσ·:'.split('');
-        let iteration = 0;
-        const interval = setInterval(() => {
+        let preIteration = 0;
+        const preInterval = setInterval(() => {
+            if (!preText) return;
             preText.innerText = preText.innerText.split('').map((char, index) => {
-                if(index < iteration) return "Initializing Biotech 4.0...".split('')[index];
+                if(index < preIteration) return "Initializing DeepTech...".split('')[index];
                 return HPLC_CHARS_PRE[Math.floor(Math.random() * HPLC_CHARS_PRE.length)];
             }).join('');
-            if(iteration >= 30) clearInterval(interval);
-            iteration += 1/3;
+            if(preIteration >= "Initializing DeepTech...".length) clearInterval(preInterval);
+            preIteration += 0.5; // Faster scramble
         }, 30);
-
-        // Cookie Banner Logic
-        function acceptCookies() {
-            localStorage.setItem('cookiesAccepted', 'true');
-            document.getElementById('cookie-banner').classList.remove('active');
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            if (!localStorage.getItem('cookiesAccepted')) {
-                setTimeout(() => {
-                    document.getElementById('cookie-banner').classList.add('active');
-                }, 2000);
-            }
-        });
 
     </script>
 </body>
