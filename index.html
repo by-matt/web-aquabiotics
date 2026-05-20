@@ -3134,12 +3134,11 @@
         // Initialize states on load
         init3DmolViewer();
         
-        // Detect language from URL parameter, then browser language, fallback to English
+        // Detect language from URL parameter, fallback to English by default
         const urlParams = new URLSearchParams(window.location.search);
         let startLang = urlParams.get('lang');
-        if (!startLang || (startLang !== 'es' && startLang !== 'en')) {
-            const browserLang = (navigator.language || navigator.userLanguage || 'en').substring(0, 2);
-            startLang = browserLang === 'es' ? 'es' : 'en';
+        if (startLang !== 'es' && startLang !== 'en') {
+            startLang = 'en';
         }
         changeLang(startLang);
         
