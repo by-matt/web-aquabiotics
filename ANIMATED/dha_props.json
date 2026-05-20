@@ -1,0 +1,17 @@
+{
+  "PropertyTable": {
+    "Properties": [
+      {
+        "CID": 445580,
+        "MolecularFormula": "C22H32O2",
+        "MolecularWeight": "328.5",
+        "XLogP": 6.2,
+        "ExactMass": "328.240230259",
+        "TPSA": 37.3,
+        "HBondDonorCount": 1,
+        "HBondAcceptorCount": 2,
+        "RotatableBondCount": 14
+      }
+    ]
+  }
+}

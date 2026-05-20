@@ -1,0 +1,48 @@
+﻿{
+  "meta": {
+    "count": 679,
+    "db_response_time_ms": 81,
+    "page": 1,
+    "per_page": 5,
+    "groups_count": null,
+    "cost_usd": 0.001
+  },
+  "results": [
+    {
+      "id": "https://openalex.org/W2164618978",
+      "doi": "https://doi.org/10.1186/1754-6834-5-13",
+      "display_name": "Value-added uses for crude glycerol--a byproduct of biodiesel production",
+      "publication_year": 2012,
+      "cited_by_count": 1020
+    },
+    {
+      "id": "https://openalex.org/W2092921932",
+      "doi": "https://doi.org/10.3390/en5051532",
+      "display_name": "High Lipid Induction in Microalgae for Biodiesel Production",
+      "publication_year": 2012,
+      "cited_by_count": 864
+    },
+    {
+      "id": "https://openalex.org/W2991088874",
+      "doi": "https://doi.org/10.1016/j.oneear.2019.10.018",
+      "display_name": "The Future of Aquatic Protein: Implications for Protein Sources in Aquaculture Diets",
+      "publication_year": 2019,
+      "cited_by_count": 801
+    },
+    {
+      "id": "https://openalex.org/W2945424875",
+      "doi": "https://doi.org/10.3390/md17050304",
+      "display_name": "Microalgae for High-Value Products Towards Human Health and Nutrition",
+      "publication_year": 2019,
+      "cited_by_count": 682
+    },
+    {
+      "id": "https://openalex.org/W2808137540",
+      "doi": "https://doi.org/10.3389/fnut.2018.00058",
+      "display_name": "Trends in Microalgae Incorporation Into Innovative Food Products With Potential Health Benefits",
+      "publication_year": 2018,
+      "cited_by_count": 613
+    }
+  ],
+  "group_by": []
+}

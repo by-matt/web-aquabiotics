@@ -1,0 +1,48 @@
+﻿{
+  "meta": {
+    "count": 493,
+    "db_response_time_ms": 137,
+    "page": 1,
+    "per_page": 5,
+    "groups_count": null,
+    "cost_usd": 0.001
+  },
+  "results": [
+    {
+      "id": "https://openalex.org/W2557056564",
+      "doi": "https://doi.org/10.1007/s10811-016-0974-5",
+      "display_name": "Algae as nutritional and functional food sources: revisiting our understanding",
+      "publication_year": 2016,
+      "cited_by_count": 1513
+    },
+    {
+      "id": "https://openalex.org/W2195785268",
+      "doi": "https://doi.org/10.3390/ijms161226183",
+      "display_name": "Heavy Metals and Human Health: Mechanistic Insight into Toxicity and Counter Defense System of Antioxidants",
+      "publication_year": 2015,
+      "cited_by_count": 1196
+    },
+    {
+      "id": "https://openalex.org/W2889449548",
+      "doi": "https://doi.org/10.3389/fmicb.2018.02161",
+      "display_name": "Addressing Global Ruminant Agricultural Challenges Through Understanding the Rumen Microbiome: Past, Present, and Future",
+      "publication_year": 2018,
+      "cited_by_count": 521
+    },
+    {
+      "id": "https://openalex.org/W4211013230",
+      "doi": "https://doi.org/10.1039/c3np70117d",
+      "display_name": "Marine natural products",
+      "publication_year": 2014,
+      "cited_by_count": 475
+    },
+    {
+      "id": "https://openalex.org/W4211082868",
+      "doi": "https://doi.org/10.1039/c6np00124f",
+      "display_name": "Marine natural products",
+      "publication_year": 2017,
+      "cited_by_count": 462
+    }
+  ],
+  "group_by": []
+}
