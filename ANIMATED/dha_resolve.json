@@ -1,0 +1,21 @@
+{
+  "identifiers": {
+    "IdentifierList": {
+      "CID": [
+        445580
+      ]
+    }
+  },
+  "properties": {
+    "PropertyTable": {
+      "Properties": [
+        {
+          "CID": 445580,
+          "SMILES": "CC/C=C\\C/C=C\\C/C=C\\C/C=C\\C/C=C\\C/C=C\\CCC(=O)O",
+          "ConnectivitySMILES": "CCC=CCC=CCC=CCC=CCC=CCC=CCCC(=O)O",
+          "InChIKey": "MBMBGCFOFBJSGT-KUBAVDMBSA-N"
+        }
+      ]
+    }
+  }
+}

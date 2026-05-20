@@ -1,0 +1,785 @@
+<!doctype html>
+<html lang="en" class="h-full">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-95YGFVTCSF"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-95YGFVTCSF');
+    </script>
+    <title>Sustainability - Aquabiotics Sur</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <script src="/_sdk/element_sdk.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        * {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #0c4a6e 0%, #064e3b 100%);
+        }
+
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .section-title {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 12px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #0ea5e9, #10b981);
+        }
+
+        /* SDG Interactive Cards */
+        .sdg-card {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            min-height: 230px;
+        }
+
+        .sdg-overlay {
+            position: absolute;
+            inset: 0;
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(100%);
+            transition: all 0.4s ease-in-out;
+            color: white;
+            z-index: 10;
+            backdrop-filter: blur(4px);
+        }
+
+        .sdg-card:hover .sdg-overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .sdg-card:hover .sdg-content {
+            opacity: 0;
+            transform: scale(0.9);
+        }
+
+        .sdg-content {
+            transition: all 0.4s ease;
+            padding: 0.5rem;
+        }
+
+        .sdg-overlay p {
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        .sdg-overlay h5 {
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 0.75rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            padding-bottom: 0.25rem;
+            width: 100%;
+        }
+
+        /* Scroll Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+    <style>
+        @view-transition {
+            navigation: auto;
+        }
+    </style>
+    <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+<style>html { scroll-behavior: smooth; scroll-padding-top: 100px; }</style>`n</head>
+
+<body class="h-full flex flex-col">
+    <!-- Main App Wrapper -->
+    <div id="app-wrapper" class="w-full h-full overflow-auto flex-grow">
+        <!-- Navigation Bar -->
+        <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300" role="navigation"
+            aria-label="Main Navigation">
+            <div class="max-w-7xl mx-auto px-6 py-4">
+                <div class="flex justify-between items-center">
+                    <div class="flex items-center space-x-3">
+                        <!-- Company Logo -->
+                        <img src="logo.png" alt="Aquabiotics Sur logo" class="h-12 w-auto">
+                        <a href="index.html" class="hover:opacity-80 transition-opacity">
+                            <div>
+                                <div id="company-name" class="font-bold text-xl tracking-tight">
+                                    Aquabiotics Sur
+                                </div>
+                                <div id="tagline" class="text-xs opacity-80">
+                                    Nature, Replicated.
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div id="nav-menu" class="hidden md:flex space-x-8"><a href="index.html"
+                            class="nav-link hover:opacity-70 transition-opacity font-medium">Home</a> <a
+                            href="technology.html"
+                            class="nav-link hover:opacity-70 transition-opacity font-medium">Technology</a> <a
+                            href="market.html" class="nav-link hover:opacity-70 transition-opacity font-medium">Home</a>
+                        <a href="technology.html"
+                            class="nav-link hover:opacity-70 transition-opacity font-medium">Technology</a>
+                        <a href="market.html"
+                            class="nav-link hover:opacity-70 transition-opacity font-medium">Market</a>
+                        <a href="sustainability.html" class="active-nav-link text-blue-600 font-bold">Sustainability</a>
+                        <a href="about.html" class="nav-link hover:opacity-70 transition-opacity font-medium">About</a>
+                        <a href="contact.html"
+                            class="nav-link hover:opacity-70 transition-opacity font-medium">Contact</a>
+                        <!-- Language Switcher -->
+                        <div class="flex items-center space-x-2 border-l pl-8 ml-4 border-gray-200">
+                            <span class="text-xs font-bold text-blue-600">EN</span>
+                            <span class="text-gray-300">|</span>
+                            <a href="es/sustainability.html"
+                                class="text-xs font-bold text-gray-400 hover:text-blue-600 transition-colors">ES</a>
+                        </div>
+                    </div>
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg" aria-label="Open mobile menu">
+                        </svg></button>
+                </div>
+                <div id="mobile-menu" class="hidden md:hidden mt-4 space-y-3 pb-4"><a href="index.html"
+                        class="block nav-link hover:opacity-70 transition-opacity font-medium">Home</a> <a
+                        href="technology.html"
+                        class="block nav-link hover:opacity-70 transition-opacity font-medium">Technology</a> <a
+                        href="market.html"
+                        class="block nav-link hover:opacity-70 transition-opacity font-medium">Home</a>
+                    <a href="technology.html"
+                        class="block nav-link hover:opacity-70 transition-opacity font-medium">Technology</a>
+                    <a href="market.html"
+                        class="block nav-link hover:opacity-70 transition-opacity font-medium">Market</a>
+                    <a href="sustainability.html"
+                        class="active-nav-link block text-blue-600 font-bold">Sustainability</a>
+                    <a href="about.html"
+                        class="block nav-link hover:opacity-70 transition-opacity font-medium">About</a>
+                    <a href="contact.html"
+                        class="block nav-link hover:opacity-70 transition-opacity font-medium">Contact</a>
+                    <!-- Mobile Language Switcher -->
+                    <div class="pt-4 border-t flex space-x-4">
+                        <span class="text-sm font-bold text-blue-600">English</span>
+                        <a href="es/sustainability.html" class="text-sm font-bold text-gray-400">Español</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- Page Header -->
+        <!-- Sustainability Page Header -->
+    </div>
+    </header><!-- Sustainability Content -->
+    <section class="py-20 px-6">
+        <!-- Sustainability Content Section -->
+        <div class="max-w-7xl mx-auto">
+            <div class="max-w-4xl mx-auto mb-16 text-center reveal">
+                <h2 class="text-3xl font-bold mb-6 text-gray-800">Our Circular Model</h2>
+                <p class="text-lg text-gray-600 leading-relaxed">Aquabiotics Sur operates at the intersection of the
+                    marine industry and biotechnology, creating a closed-loop system where waste from one process
+                    becomes the raw material for another. This approach not only generates economic value but also
+                    significantly reduces the environmental footprint of the mussel processing industry.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 reveal">
+                <div class="p-8 rounded-xl bg-white shadow-lg border-t-4 border-green-500 card-hover">
+                    <h3 class="text-2xl font-bold mb-6 text-gray-800 flex items-center">
+                        <svg class="w-8 h-8 mr-3 text-green-500" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                        </svg> Environmental Impact
+                    </h3>
+                    <ul class="space-y-4 text-lg text-gray-600">
+                        <li class="flex items-start"><span class="mr-3 mt-1 text-green-500">•</span>
+                            <span><strong>Waste Reduction:</strong> Directly repurposes <strong>120-160 million
+                                    liters</strong> of organic-rich
+                                liquid waste annually, preventing discharge into delicate marine ecosystems.</span>
+                        </li>
+                        <li class="flex items-start"><span class="mr-3 mt-1 text-green-500">•</span>
+                            <span><strong>Pollution Prevention:</strong> Lowers the biological oxygen demand (BOD)
+                                and chemical oxygen demand (COD) of effluents.</span>
+                        </li>
+                        <li class="flex items-start"><span class="mr-3 mt-1 text-green-500">•</span>
+                            <span><strong>Resource Efficiency:</strong> Maximizes the utility of harvested marine
+                                resources without needing additional extraction.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="p-8 rounded-xl bg-white shadow-lg border-t-4 border-blue-500 card-hover">
+                    <h3 class="text-2xl font-bold mb-6 text-gray-800 flex items-center">
+                        <svg class="w-8 h-8 mr-3 text-blue-500" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                        </svg> Social &amp; Economic Value
+                    </h3>
+                    <ul class="space-y-4 text-lg text-gray-600">
+                        <li class="flex items-start"><span class="mr-3 mt-1 text-blue-500">•</span>
+                            <span><strong>Territorial Development:</strong> Adds value to the local economy in
+                                southern Chile (Los Lagos Region).</span>
+                        </li>
+                        <li class="flex items-start"><span class="mr-3 mt-1 text-blue-500">•</span>
+                            <span><strong>Innovation Ecosystem:</strong> Fosters collaboration between
+                                artisanal/industrial fisheries and the high-tech biotech sector.</span>
+                        </li>
+                        <li class="flex items-start"><span class="mr-3 mt-1 text-blue-500">•</span>
+                            <span><strong>New Revenue Streams:</strong> Turns a cost center (waste disposal) into a
+                                profit center for the industry.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-20">
+                <h2 class="text-3xl font-bold mb-12 text-center text-gray-800 section-title reveal">UN Sustainable
+                    Development Goals (SDGs)</h2>
+
+                <!-- Group 1: Environmental & Circular -->
+                <div class="mb-12 reveal">
+                    <h3 class="text-xl font-bold mb-6 text-emerald-700 border-l-4 border-emerald-500 pl-4">Core
+                        Environmental & Circular Impact</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
+                        <!-- SDG 12 -->
+                        <div
+                            class="sdg-card p-4 rounded-xl bg-white border border-gray-100 shadow-sm flex flex-col items-center text-center group">
+                            <div class="sdg-content flex flex-col items-center">
+                                <div
+                                    class="w-12 h-12 bg-[#BF8B2E] text-white rounded-lg flex items-center justify-center font-bold text-xl mb-3 shadow-sm">
+                                    12</div>
+                                <h4 class="font-bold text-sm text-gray-800 mb-1">Responsible Production</h4>
+                                <p class="text-[11px] leading-tight text-gray-500 mb-2">Sustainable consumption
+                                    patterns.</p>
+                            </div>
+                            <div class="sdg-overlay bg-[#BF8B2E]">
+                                <h5>Targets & Alignment</h5>
+                                <p class="mb-2"><strong>Target 12.5:</strong> Substantially reduce waste generation
+                                    through upcycling industrial effluents.</p>
+                                <p><strong>Target 12.4:</strong> Environmentally sound management of wastes
+                                    throughout their life cycle.</p>
+                            </div>
+                        </div>
+                        <!-- SDG 14 -->
+                        <div
+                            class="sdg-card p-4 rounded-xl bg-white border border-gray-100 shadow-sm flex flex-col items-center text-center group">
+                            <div class="sdg-content flex flex-col items-center">
+                                <div
+                                    class="w-12 h-12 bg-[#0A97D9] text-white rounded-lg flex items-center justify-center font-bold text-xl mb-3 shadow-sm">
+                                    14</div>
+                                <h4 class="font-bold text-sm text-gray-800 mb-1">Life Below Water</h4>
+                                <p class="text-[11px] leading-tight text-gray-500 mb-2">Ocean conservation and use.
+                                </p>
+                            </div>
+                            <div class="sdg-overlay bg-[#0A97D9]">
+                                <h5>Targets & Alignment</h5>
+                                <p class="mb-2"><strong>Target 14.1:</strong> Prevent and significantly reduce
+                                    marine nutrient pollution from land-based activities.</p>
+                                <p><strong>Target 14.2:</strong> Sustainably manage and protect marine and coastal
+                                    ecosystems.</p>
+                            </div>
+                        </div>
+                        <!-- SDG 6 -->
+                        <div
+                            class="sdg-card p-4 rounded-xl bg-white border border-gray-100 shadow-sm flex flex-col items-center text-center group">
+                            <div class="sdg-content flex flex-col items-center">
+                                <div
+                                    class="w-12 h-12 bg-[#26BDE2] text-white rounded-lg flex items-center justify-center font-bold text-xl mb-3 shadow-sm">
+                                    6</div>
+                                <h4 class="font-bold text-sm text-gray-800 mb-1">Clean Water</h4>
+                                <p class="text-[11px] leading-tight text-gray-500 mb-2">Sustainable water
+                                    management.
+                                </p>
+                            </div>
+                            <div class="sdg-overlay bg-[#26BDE2]">
+                                <h5>Targets & Alignment</h5>
+                                <p><strong>Target 6.3:</strong> Improve water quality by reducing pollution and
+                                    halving untreated wastewater.</p>
+                            </div>
+                        </div>
+                        <!-- SDG 9 -->
+                        <div
+                            class="sdg-card p-4 rounded-xl bg-white border border-gray-100 shadow-sm flex flex-col items-center text-center group">
+                            <div class="sdg-content flex flex-col items-center">
+                                <div
+                                    class="w-12 h-12 bg-[#FD6925] text-white rounded-lg flex items-center justify-center font-bold text-xl mb-3 shadow-sm">
+                                    9</div>
+                                <h4 class="font-bold text-sm text-gray-800 mb-1">Innovation</h4>
+                                <p class="text-[11px] leading-tight text-gray-500 mb-2">Fostering resilient
+                                    ecosystems.</p>
+                            </div>
+                            <div class="sdg-overlay bg-[#FD6925]">
+                                <h5>Targets & Alignment</h5>
+                                <p class="mb-2"><strong>Target 9.4:</strong> Retrofit industries with clean
+                                    technologies and increased resource-use efficiency.</p>
+                                <p><strong>Target 9.5:</strong> Enhance scientific research and upgrade industrial
+                                    technological capabilities.</p>
+                            </div>
+                        </div>
+                        <!-- SDG 13 -->
+                        <div
+                            class="sdg-card p-4 rounded-xl bg-white border border-gray-100 shadow-sm flex flex-col items-center text-center group">
+                            <div class="sdg-content flex flex-col items-center">
+                                <div
+                                    class="w-12 h-12 bg-[#3F7E44] text-white rounded-lg flex items-center justify-center font-bold text-xl mb-3 shadow-sm">
+                                    13</div>
+                                <h4 class="font-bold text-sm text-gray-800 mb-1">Climate Action</h4>
+                                <p class="text-[11px] leading-tight text-gray-500 mb-2">Combating climate change.
+                                </p>
+                            </div>
+                            <div class="sdg-overlay bg-[#3F7E44]">
+                                <h5>Targets & Alignment</h5>
+                                <p><strong>Target 13.2:</strong> Integrate low-carbon bio-extraction measures into
+                                    operational strategies.</p>
+                            </div>
+                        </div>
+                        <!-- SDG 15 -->
+                        <div
+                            class="sdg-card p-4 rounded-xl bg-white border border-gray-100 shadow-sm flex flex-col items-center text-center group">
+                            <div class="sdg-content flex flex-col items-center">
+                                <div
+                                    class="w-12 h-12 bg-[#56C02B] text-white rounded-lg flex items-center justify-center font-bold text-xl mb-3 shadow-sm">
+                                    15</div>
+                                <h4 class="font-bold text-sm text-gray-800 mb-1">Life on Land</h4>
+                                <p class="text-[11px] leading-tight text-gray-500 mb-2">Restoring ecosystems.</p>
+                            </div>
+                            <div class="sdg-overlay bg-[#56C02B]">
+                                <h5>Targets & Alignment</h5>
+                                <p><strong>Target 15.5:</strong> Reduce habitat degradation by optimizing marine
+                                    resources.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Group 2: Socio-Economic & Territorial -->
+                <div class="mb-12 reveal">
+                    <h3 class="text-xl font-bold mb-6 text-sky-700 border-l-4 border-sky-500 pl-4">
+                        Socio-Economic & Territorial Impact</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+                        <!-- SDG 8 -->
+                        <div
+                            class="sdg-card p-4 rounded-xl bg-white border border-gray-100 shadow-sm flex flex-col items-center text-center group">
+                            <div class="sdg-content flex flex-col items-center">
+                                <div
+                                    class="w-12 h-12 bg-[#A21942] text-white rounded-lg flex items-center justify-center font-bold text-xl mb-3 shadow-sm">
+                                    8</div>
+                                <h4 class="font-bold text-sm text-gray-800 mb-1">Decent Work</h4>
+                                <p class="text-[11px] leading-tight text-gray-500 mb-2">Sustainable economic growth.
+                                </p>
+                            </div>
+                            <div class="sdg-overlay bg-[#A21942]">
+                                <h5>Targets & Alignment</h5>
+                                <p class="mb-2"><strong>Target 8.2:</strong> Higher economic productivity through
+                                    technological upgrading and value addition.</p>
+                                <p><strong>Target 8.4:</strong> Improve global resource efficiency, decoupling
+                                    growth from degradation.</p>
+                            </div>
+                        </div>
+                        <!-- SDG 1 -->
+                        <div
+                            class="sdg-card p-4 rounded-xl bg-white border border-gray-100 shadow-sm flex flex-col items-center text-center group">
+                            <div class="sdg-content flex flex-col items-center">
+                                <div
+                                    class="w-12 h-12 bg-[#E5243B] text-white rounded-lg flex items-center justify-center font-bold text-xl mb-3 shadow-sm">
+                                    1</div>
+                                <h4 class="font-bold text-sm text-gray-800 mb-1">No Poverty</h4>
+                                <p class="text-[11px] leading-tight text-gray-500 mb-2">Ending poverty everywhere.
+                                </p>
+                            </div>
+                            <div class="sdg-overlay bg-[#E5243B]">
+                                <h5>Targets & Alignment</h5>
+                                <p><strong>Target 1.4:</strong> Ensure access to appropriate new technologies for
+                                    regional value generation in Southern Chile.</p>
+                            </div>
+                        </div>
+                        <!-- SDG 10 -->
+                        <div
+                            class="sdg-card p-4 rounded-xl bg-white border border-gray-100 shadow-sm flex flex-col items-center text-center group">
+                            <div class="sdg-content flex flex-col items-center">
+                                <div
+                                    class="w-12 h-12 bg-[#DD1367] text-white rounded-lg flex items-center justify-center font-bold text-xl mb-3 shadow-sm">
+                                    10</div>
+                                <h4 class="font-bold text-sm text-gray-800 mb-1">Reduced Inequalities</h4>
+                                <p class="text-[11px] leading-tight text-gray-500 mb-2">Equality within countries.
+                                </p>
+                            </div>
+                            <div class="sdg-overlay bg-[#DD1367]">
+                                <h5>Targets & Alignment</h5>
+                                <p><strong>Target 10.2:</strong> Empower socio-economic inclusion through the
+                                    decentralization of high-tech biotechnology.</p>
+                            </div>
+                        </div>
+                        <!-- SDG 11 -->
+                        <div
+                            class="sdg-card p-4 rounded-xl bg-white border border-gray-100 shadow-sm flex flex-col items-center text-center group">
+                            <div class="sdg-content flex flex-col items-center">
+                                <div
+                                    class="w-12 h-12 bg-[#FD9D24] text-white rounded-lg flex items-center justify-center font-bold text-xl mb-3 shadow-sm">
+                                    11</div>
+                                <h4 class="font-bold text-sm text-gray-800 mb-1">Sustainable Cities</h4>
+                                <p class="text-[11px] leading-tight text-gray-500 mb-2">Resilient settlements.</p>
+                            </div>
+                            <div class="sdg-overlay bg-[#FD9D24]">
+                                <h5>Targets & Alignment</h5>
+                                <p><strong>Target 11.6:</strong> Reduce urban environmental impact by
+                                    improvingindustrial-urban coexistence and waste control.</p>
+                            </div>
+                        </div>
+                        <!-- SDG 17 -->
+                        <div
+                            class="sdg-card p-4 rounded-xl bg-white border border-gray-100 shadow-sm flex flex-col items-center text-center group">
+                            <div class="sdg-content flex flex-col items-center">
+                                <div
+                                    class="w-12 h-12 bg-[#19486A] text-white rounded-lg flex items-center justify-center font-bold text-xl mb-3 shadow-sm">
+                                    17</div>
+                                <h4 class="font-bold text-sm text-gray-800 mb-1">Partnerships</h4>
+                                <p class="text-[11px] leading-tight text-gray-500 mb-2">Global cooperation.</p>
+                            </div>
+                            <div class="sdg-overlay bg-[#19486A]">
+                                <h5>Targets & Alignment</h5>
+                                <p class="mb-2"><strong>Target 17.6:</strong> Enhance regional science, technology,
+                                    and innovation cooperation.</p>
+                                <p><strong>Target 17.7:</strong> Promote the development and transfer of
+                                    environmentally sound technologies.</p>
+                            </div>
+                        </div>
+                        <!-- SDG 16 -->
+                        <div
+                            class="sdg-card p-4 rounded-xl bg-white border border-gray-100 shadow-sm flex flex-col items-center text-center group">
+                            <div class="sdg-content flex flex-col items-center">
+                                <div
+                                    class="w-12 h-12 bg-[#00689D] text-white rounded-lg flex items-center justify-center font-bold text-xl mb-3 shadow-sm">
+                                    16</div>
+                                <h4 class="font-bold text-sm text-gray-800 mb-1">Strong Institutions</h4>
+                                <p class="text-[11px] leading-tight text-gray-500 mb-2">Peaceful societies.</p>
+                            </div>
+                            <div class="sdg-overlay bg-[#00689D]">
+                                <h5>Targets & Alignment</h5>
+                                <p><strong>Target 16.6:</strong> Develop transparent industrial reporting systems
+                                    and environmental compliance standards.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Group 3: Health, Wellbeing & Knowledge -->
+                <div class="mb-12 reveal">
+                    <h3 class="text-xl font-bold mb-6 text-purple-700 border-l-4 border-purple-500 pl-4">Health,
+                        Wellbeing & Knowledge</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <!-- SDG 2 -->
+                        <div
+                            class="sdg-card p-4 rounded-xl bg-white border border-gray-100 shadow-sm flex flex-col items-center text-center group">
+                            <div class="sdg-content flex flex-col items-center">
+                                <div
+                                    class="w-12 h-12 bg-[#DDA63A] text-white rounded-lg flex items-center justify-center font-bold text-xl mb-3 shadow-sm">
+                                    2</div>
+                                <h4 class="font-bold text-sm text-gray-800 mb-1">Zero Hunger</h4>
+                                <p class="text-[11px] leading-tight text-gray-500 mb-2">Sustainable food production.
+                                </p>
+                            </div>
+                            <div class="sdg-overlay bg-[#DDA63A]">
+                                <h5>Targets & Alignment</h5>
+                                <p><strong>Target 2.4:</strong> Ensure sustainable food production by enriching
+                                    chains with high-quality natural nutrients.</p>
+                            </div>
+                        </div>
+                        <!-- SDG 3 -->
+                        <div
+                            class="sdg-card p-4 rounded-xl bg-white border border-gray-100 shadow-sm flex flex-col items-center text-center group">
+                            <div class="sdg-content flex flex-col items-center">
+                                <div
+                                    class="w-12 h-12 bg-[#4C9F38] text-white rounded-lg flex items-center justify-center font-bold text-xl mb-3 shadow-sm">
+                                    3</div>
+                                <h4 class="font-bold text-sm text-gray-800 mb-1">Health & Wellbeing</h4>
+                                <p class="text-[11px] leading-tight text-gray-500 mb-2">Promoting healthy lives.</p>
+                            </div>
+                            <div class="sdg-overlay bg-[#4C9F38]">
+                                <h5>Targets & Alignment</h5>
+                                <p><strong>Target 3.4:</strong> Reduce premature mortality through the provision of
+                                    natural metabolites like Taurine.</p>
+                            </div>
+                        </div>
+                        <!-- SDG 4 -->
+                        <div
+                            class="sdg-card p-4 rounded-xl bg-white border border-gray-100 shadow-sm flex flex-col items-center text-center group">
+                            <div class="sdg-content flex flex-col items-center">
+                                <div
+                                    class="w-12 h-12 bg-[#C5192D] text-white rounded-lg flex items-center justify-center font-bold text-xl mb-3 shadow-sm">
+                                    4</div>
+                                <h4 class="font-bold text-sm text-gray-800 mb-1">Quality Education</h4>
+                                <p class="text-[11px] leading-tight text-gray-500 mb-2">Inclusive lifelong learning.
+                                </p>
+                            </div>
+                            <div class="sdg-overlay bg-[#C5192D]">
+                                <h5>Targets & Alignment</h5>
+                                <p><strong>Target 4.4:</strong> Increase the number of people with relevant
+                                    technical skills for the Blue Biotechnology Economy.</p>
+                            </div>
+                        </div>
+                        <!-- SDG 5 -->
+                        <div
+                            class="sdg-card p-4 rounded-xl bg-white border border-gray-100 shadow-sm flex flex-col items-center text-center group">
+                            <div class="sdg-content flex flex-col items-center">
+                                <div
+                                    class="w-12 h-12 bg-[#FF3A21] text-white rounded-lg flex items-center justify-center font-bold text-xl mb-3 shadow-sm">
+                                    5</div>
+                                <h4 class="font-bold text-sm text-gray-800 mb-1">Gender Equality</h4>
+                                <p class="text-[11px] leading-tight text-gray-500 mb-2">Empowering females.</p>
+                            </div>
+                            <div class="sdg-overlay bg-[#FF3A21]">
+                                <h5>Targets & Alignment</h5>
+                                <p><strong>Target 5.5:</strong> Ensure women’s leadership and participation in
+                                    industrial STEM and modern biotechnology.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!-- Footer -->
+    <footer class="py-12 px-6 border-t mt-auto">
+        <!-- Footer -->
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <img src="logo.png" alt="Aquabiotics Sur logo" class="h-10 w-auto">
+                        <span class="font-bold text-gray-800">Aquabiotics Sur</span>
+                    </div>
+                    <p class="text-sm text-gray-500">Blue circular biorefinery for organic, traceable, and
+                        sustainable taurine bioprocessing.</p>
+                    <div class="mt-4 flex space-x-4">
+                        <a href="https://cl.linkedin.com/company/aquabiotics-sur?trk=public_post_feed-actor-name"
+                            target="_blank" rel="noopener noreferrer"
+                            class="text-gray-500 hover:text-[#0077B5] transition-colors">
+                            <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 text-gray-800">Technology</h4>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="technology.html#biorefinery-top" class="hover:text-blue-600 transition-colors">Biorefinery
+                                Process</a></li>
+                        <li><a href="technology.html" class="hover:text-blue-600 transition-colors">Quality
+                                Standards</a></li>
+                        <li><a href="technology.html#innovation-section" class="hover:text-blue-600 transition-colors">Innovation</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 text-gray-800">Company</h4>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="about.html" class="hover:text-blue-600 transition-colors">About Us</a></li>
+                        <li><a href="sustainability.html"
+                                class="text-blue-600 border-b border-blue-600 transition-colors">Sustainability</a>
+                        </li>
+                        <li><a href="contact.html" class="hover:text-blue-600 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 text-gray-800">Market</h4>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="market.html" class="hover:text-blue-600 transition-colors">Natural vs
+                                Synthetic</a>
+                        </li>
+                        <li><a href="market.html#value-prop" class="hover:text-blue-600 transition-colors">Value Proposition</a></li>
+                        <li><a href="market.html#industries" class="hover:text-blue-600 transition-colors">Target
+                                Industries</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t text-center text-sm text-gray-400">
+                <p>© 2026 Aquabiotics Sur. Blue circular economy through sustainable innovation.</p>
+                <div class="mt-2 text-[10px] opacity-60">
+                    <a href="privacy.html" class="hover:text-blue-600 transition-colors">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    </div>
+    <script>
+        const defaultConfig = {
+            background_color: "#0c4a6e",
+            surface_color: "#ffffff",
+            text_color: "#1e293b",
+            primary_action_color: "#0ea5e9", // Lighter blue for better contrast
+            secondary_action_color: "#10b981",
+            font_family: "Inter",
+            font_size: 16,
+            company_name: "Aquabiotics Sur",
+            tagline: "Nature, Replicated."
+        };
+
+        async function onConfigChange(config) {
+            const backgroundColor = config.background_color || defaultConfig.background_color;
+            const surfaceColor = config.surface_color || defaultConfig.surface_color;
+            const textColor = config.text_color || defaultConfig.text_color;
+            const primaryActionColor = config.primary_action_color || defaultConfig.primary_action_color;
+            const secondaryActionColor = config.secondary_action_color || defaultConfig.secondary_action_color;
+            const fontFamily = config.font_family || defaultConfig.font_family;
+            const fontSize = config.font_size || defaultConfig.font_size;
+
+            // Apply colors
+            document.documentElement.style.setProperty('--bg-color', backgroundColor);
+            document.documentElement.style.setProperty('--surface-color', surfaceColor);
+            document.documentElement.style.setProperty('--text-color', textColor);
+            document.documentElement.style.setProperty('--primary-color', primaryActionColor);
+            document.documentElement.style.setProperty('--secondary-color', secondaryActionColor);
+
+            // Text colors - apply globally
+            document.body.style.color = textColor;
+            // Only apply to elements that don't have explicit color overrides (like our active link with text-blue-600)
+            document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, span, div, li, a, label').forEach(el => {
+                // Skip gradient backgrounds, active/colored links, and elements inside specific colored containers
+                if (!el.closest('.gradient-bg') &&
+                    !el.classList.contains('text-blue-600') &&
+                    !el.classList.contains('text-green-500') &&
+                    !el.classList.contains('text-white')) {
+                    el.style.color = textColor;
+                }
+            });
+
+            // Navbar
+            const navbar = document.getElementById('navbar');
+            navbar.style.backgroundColor = surfaceColor;
+            navbar.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.1)';
+
+            // Navbar links - exclude active link from color override if possible, or re-apply
+            document.querySelectorAll('.nav-link').forEach(link => {
+                if (!link.classList.contains('active-nav-link')) {
+                    link.style.color = textColor;
+                }
+            });
+            document.getElementById('mobile-menu-btn').style.color = textColor;
+
+            // Hero/Header section text (white on gradient)
+            document.querySelector('.gradient-bg').style.color = '#ffffff';
+            document.querySelectorAll('.gradient-bg h1, .gradient-bg p, .gradient-bg div').forEach(el => {
+                el.style.color = '#ffffff';
+            });
+
+            // Process numbers, ESG badges, etc.
+            document.querySelectorAll('.process-arrow > div:first-child, .process-step-4, [class*="w-10 h-10 rounded-full"]').forEach(el => {
+                el.style.backgroundColor = `${primaryActionColor}20`;
+                el.style.color = primaryActionColor;
+            });
+
+            // Apply font
+            const fontStack = `${fontFamily}, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif`;
+            document.body.style.fontFamily = fontStack;
+            document.querySelectorAll('*').forEach(el => {
+                el.style.fontFamily = fontStack;
+            });
+
+            // Apply font sizes
+            document.documentElement.style.fontSize = `${fontSize}px`;
+            // Re-apply detailed sizing for consistency
+            document.querySelector('h1').style.fontSize = `${fontSize * 3}px`;
+            document.querySelectorAll('h2').forEach(el => el.style.fontSize = `${fontSize * 2.5}px`);
+            document.querySelectorAll('h3').forEach(el => el.style.fontSize = `${fontSize * 1.75}px`);
+            // ... and so on.
+
+            // Dynamic text content if needed (company name etc) across all pages
+            const companyNameEl = document.getElementById('company-name');
+            if (companyNameEl) companyNameEl.textContent = config.company_name || defaultConfig.company_name;
+            const taglineEl = document.getElementById('tagline');
+            if (taglineEl) taglineEl.textContent = config.tagline || defaultConfig.tagline;
+
+        }
+
+        // Initialize SDK
+        if (window.elementSdk) {
+            window.elementSdk.init({
+                defaultConfig,
+                onConfigChange
+            });
+        }
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.1)';
+            } else {
+                navbar.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.1)';
+            }
+        });
+
+        // Initial render
+        onConfigChange(defaultConfig);
+
+        // Scroll Animation Observer
+        function setupScrollAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: "0px 0px -50px 0px"
+            });
+
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        }
+
+        // Initialize animations after load
+        document.addEventListener('DOMContentLoaded', setupScrollAnimations);
+        if (document.readyState === 'complete' || document.readyState === 'interactive') {
+            setupScrollAnimations();
+        }
+    </script>
+</body>
+
+</html>
+

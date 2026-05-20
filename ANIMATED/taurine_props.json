@@ -1,0 +1,17 @@
+{
+  "PropertyTable": {
+    "Properties": [
+      {
+        "CID": 1123,
+        "MolecularFormula": "C2H7NO3S",
+        "MolecularWeight": "125.15",
+        "XLogP": -4.1,
+        "ExactMass": "125.01466426",
+        "TPSA": 88.8,
+        "HBondDonorCount": 2,
+        "HBondAcceptorCount": 4,
+        "RotatableBondCount": 2
+      }
+    ]
+  }
+}

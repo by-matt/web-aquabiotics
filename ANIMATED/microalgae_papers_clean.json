@@ -1,0 +1,48 @@
+﻿{
+  "meta": {
+    "count": 3811,
+    "db_response_time_ms": 115,
+    "page": 1,
+    "per_page": 5,
+    "groups_count": null,
+    "cost_usd": 0.001
+  },
+  "results": [
+    {
+      "id": "https://openalex.org/W1565527343",
+      "doi": "https://doi.org/10.3390/md12010128",
+      "display_name": "Astaxanthin: Sources, Extraction, Stability, Biological Activities and Its Commercial Applications\u2014A Review",
+      "publication_year": 2014,
+      "cited_by_count": 1912
+    },
+    {
+      "id": "https://openalex.org/W2162307791",
+      "doi": "https://doi.org/10.1007/s11104-013-1956-x",
+      "display_name": "Advances in plant growth-promoting bacterial inoculant technology: formulations and practical perspectives (1998\u20132013)",
+      "publication_year": 2013,
+      "cited_by_count": 1311
+    },
+    {
+      "id": "https://openalex.org/W230916790",
+      "doi": "https://doi.org/10.1016/0014-5793(88)80268-0",
+      "display_name": "Micro\u2010algal biotechnology",
+      "publication_year": 1988,
+      "cited_by_count": 1294
+    },
+    {
+      "id": "https://openalex.org/W2148227357",
+      "doi": "https://doi.org/10.1007/s10295-008-0495-6",
+      "display_name": "Microalgae as a raw material for biofuels production",
+      "publication_year": 2008,
+      "cited_by_count": 1273
+    },
+    {
+      "id": "https://openalex.org/W2164618978",
+      "doi": "https://doi.org/10.1186/1754-6834-5-13",
+      "display_name": "Value-added uses for crude glycerol--a byproduct of biodiesel production",
+      "publication_year": 2012,
+      "cited_by_count": 1020
+    }
+  ],
+  "group_by": []
+}
