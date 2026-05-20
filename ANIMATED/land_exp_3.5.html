@@ -2803,6 +2803,15 @@
             const data = moleculeData[molId];
             if (!data) return;
 
+            // Track molecule selection event in Google Analytics
+            if (typeof gtag === 'function') {
+                gtag('event', 'select_molecule', {
+                    'event_category': 'engagement',
+                    'event_label': molId,
+                    'molecule_name': data.name.en
+                });
+            }
+
             // Show loader and hide error panel
             const loader = document.getElementById('mol3d-loader');
             if (loader) {
@@ -3053,6 +3062,16 @@
                 })
                 .then(response => {
                     if (response.ok) {
+                        // Track form submission conversion in Google Analytics
+                        if (typeof gtag === 'function') {
+                            const allianceType = contactForm.querySelector('select[name="alliance_type"]')?.value || 'Unknown';
+                            gtag('event', 'submit_alliance_form', {
+                                'event_category': 'conversion',
+                                'event_label': allianceType,
+                                'language': currentLang
+                            });
+                        }
+
                         if (fields && success) {
                             fields.style.opacity = '0';
                             setTimeout(() => {
@@ -3098,6 +3117,19 @@
                 }, 500);
             }
         }
+
+        // Track PDF/One-Pager downloads in Google Analytics
+        document.querySelectorAll('#onepager-link, #onepager-link-contact').forEach(link => {
+            link.addEventListener('click', function() {
+                if (typeof gtag === 'function') {
+                    gtag('event', 'download_onepager', {
+                        'event_category': 'engagement',
+                        'event_label': currentLang === 'es' ? 'Spanish One-Pager' : 'English One-Pager',
+                        'language': currentLang
+                    });
+                }
+            });
+        });
 
         // Initialize states on load
         init3DmolViewer();
