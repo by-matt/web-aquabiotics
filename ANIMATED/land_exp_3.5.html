@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="../favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AquaBiotics Sur | DeepTech Circular Biorefinery | Blue Taurine</title>
     <meta name="description" content="Sustainable DeepTech architecture for upcycling industrial marine waste into high-purity organic taurine and bioactive compounds. Patagonia's leading circular blue economy.">
@@ -127,6 +128,7 @@
             z-index: 0;
             pointer-events: none;
             opacity: 0.12;
+            will-change: transform;
         }
 
         /* ── Preloader ── */
@@ -436,6 +438,7 @@
             z-index: 0;
             opacity: 0.08; /* Subtle opacity */
             pointer-events: none;
+            will-change: transform;
         }
     </style>
 </head>
@@ -2117,6 +2120,10 @@
         gsap.ticker.add((time) => { lenis.raf(time * 1000); });
         gsap.ticker.lagSmoothing(0);
         gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+        window.addEventListener('load', () => {
+            ScrollTrigger.refresh();
+        });
 
         // ── 3. Navbar Scroll Effect & Smooth Anchors ──
         const navbar = document.getElementById('navbar');
