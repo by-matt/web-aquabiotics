@@ -1237,12 +1237,10 @@
 <p class="text-muted text-base gsap-reveal max-w-xl" data-translate="tech-desc">Our proprietary separation technology recovers biomolecules without chemicals, yielding clean-label, marine-origin ingredients.</p>
 </div>
 <!-- Grid: Left (Interactivity nodes) / Right (Details content card) -->
-<div class="max-w-2xl mx-auto relative pl-8 md:pl-0">
+<div class="max-w-2xl mx-auto relative pl-8 md:pl-0" id="timeline-container">
 <!-- Vertical line (background track) -->
-<div class="absolute top-0 bottom-0 left-8 md:left-0 w-12 md:w-14 flex justify-center">
-<div class="w-[2px] bg-white/10 rounded-full h-full relative">
-<div class="absolute top-0 left-0 w-full bg-gradient-to-b from-teal via-lavender to-coral rounded-full" id="progress-line" style="height: 0%;"></div>
-</div>
+<div class="absolute left-[23px] md:left-[27px] top-0 bottom-0 w-[3px] bg-white/10 rounded-full">
+    <div class="absolute top-0 left-0 w-full bg-gradient-to-b from-teal via-lavender to-coral rounded-full" id="progress-line" style="height: 0%;"></div>
 </div>
 <!-- Step 1: Pre-conditioning -->
 <div class="flex items-start gap-6 md:gap-8 mb-12 gsap-reveal relative">
@@ -2958,10 +2956,10 @@
             height: '100%',
             ease: 'none',
             scrollTrigger: {
-                trigger: '#tecnologia',
+                trigger: '#timeline-container',
                 start: 'top 60%',
-                end: 'bottom 40%',
-                scrub: 1
+                end: 'bottom 60%',
+                scrub: 0.5
             }
         });
 
