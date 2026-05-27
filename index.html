@@ -1725,7 +1725,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 </div>
 <div class="lg:w-1/3 w-full">
-<a class="glass-card p-12 rounded-3xl flex flex-col items-center justify-center text-center group cursor-pointer border-teal/40 hover:border-teal transition-all block relative overflow-hidden shadow-[0_0_30px_rgba(58,191,178,0.1)]" href="./ANIMATED/ONE-PAGER_AB_SUR_EN.html" id="onepager-link" target="_blank">
+<a class="glass-card p-12 rounded-3xl flex flex-col items-center justify-center text-center group cursor-pointer border-teal/40 hover:border-teal transition-all block relative overflow-hidden shadow-[0_0_30px_rgba(58,191,178,0.1)]" href="./ONE-PAGER_AB_SUR_EN.html" id="onepager-link" target="_blank">
 <div class="absolute inset-0 bg-radial-gradient from-teal/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 <div class="w-20 h-20 rounded-2xl bg-teal/10 border border-teal/30 flex items-center justify-center text-teal mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg">
 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg>
@@ -2120,7 +2120,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 </div>
 <!-- Executive One-Pager Button -->
-<a class="w-full flex items-center justify-center gap-3 px-6 py-4 rounded-xl border border-teal/20 hover:border-teal bg-teal/5 hover:bg-teal/10 text-teal font-mono text-[10px] tracking-widest uppercase font-bold transition-all duration-300" href="./ANIMATED/ONE-PAGER_AB_SUR_EN.html" id="onepager-link-contact" target="_blank">
+<a class="w-full flex items-center justify-center gap-3 px-6 py-4 rounded-xl border border-teal/20 hover:border-teal bg-teal/5 hover:bg-teal/10 text-teal font-mono text-[10px] tracking-widest uppercase font-bold transition-all duration-300" href="./ONE-PAGER_AB_SUR_EN.html" id="onepager-link-contact" target="_blank">
 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
 <span data-translate="con-onepager-btn">Download Executive One-Pager (EN)</span>
 </a>
@@ -2195,7 +2195,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <p class="font-mono text-[9px] text-white/30 tracking-wider">
                  © 2026 Aquabiotics Sur. <span data-translate="foot-copy">Blue bioeconomy through sustainable biotech innovation.</span>
                  ·
-                <a class="hover:text-teal transition-colors underline" data-translate="foot-privacy" href="./ANIMATED/privacy.html" id="privacy-link" target="_blank">Privacy Policy</a>
+                <a class="hover:text-teal transition-colors underline" data-translate="foot-privacy" href="./privacy.html" id="privacy-link" target="_blank">Privacy Policy</a>
 </p>
 </div>
 </footer>
@@ -3573,12 +3573,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             // Create 3Dmol viewer inside the container
             try {
+                if (typeof $ === 'undefined') {
+                    throw new Error("jQuery ($) is not loaded or not defined.");
+                }
+                if (typeof $3Dmol === 'undefined') {
+                    throw new Error("3Dmol ($3Dmol) library is not loaded or not defined.");
+                }
                 viewer = $3Dmol.createViewer($(container), {
                     defaultcolors: $3Dmol.elementColors.rasmol,
                     backgroundColor: 'rgba(20, 34, 54, 0)'
                 });
             } catch (e) {
                 console.error("Failed to initialize 3Dmol viewer:", e);
+                const detailsEl = document.getElementById('mol3d-error-details');
+                if (detailsEl) {
+                    detailsEl.innerText = `Initialization Error: ${e.message || e}`;
+                }
+                const errorPanel = document.getElementById('mol3d-error');
+                if (errorPanel) {
+                    errorPanel.style.opacity = '1';
+                    errorPanel.style.pointerEvents = 'auto';
+                }
             }
         }
 
@@ -3937,9 +3952,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         });
 
         // Initialize states on load
-        init3DmolViewer();
-        changeLang('en');
-        loadSelectedMolecule();
+        window.addEventListener('load', () => {
+            init3DmolViewer();
+            changeLang('en');
+            loadSelectedMolecule();
+        });
     </script>
 </body>
 </html>
