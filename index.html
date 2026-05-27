@@ -3647,9 +3647,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
             try {
                 let text = '';
-                if (typeof EMBEDDED_MOLECULES !== 'undefined' && EMBEDDED_MOLECULES[molId]) {
-                    console.log(`Loading ${molId} from embedded local data.`);
-                    text = EMBEDDED_MOLECULES[molId];
+                const embedKey = molId === 'taur' ? 'taurine' : molId;
+                if (typeof EMBEDDED_MOLECULES !== 'undefined' && EMBEDDED_MOLECULES[embedKey]) {
+                    console.log(`Loading ${molId} from embedded local data using key ${embedKey}.`);
+                    text = EMBEDDED_MOLECULES[embedKey];
                 } else {
                     console.warn(`Molecule ${molId} not found in embedded data. Fetching from web...`);
                     try {
