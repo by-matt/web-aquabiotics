@@ -3691,7 +3691,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     }
                     viewer.render();
                 } else if (!viewer) {
-                    throw new Error("3Dmol viewer is not initialized.");
+                    if (typeof $ === 'undefined') {
+                        throw new Error("jQuery ($) is not loaded or not defined.");
+                    } else if (typeof $3Dmol === 'undefined') {
+                        throw new Error("3Dmol ($3Dmol) library is not loaded or not defined.");
+                    } else {
+                        throw new Error("Viewer initialization failed. Check browser console or ensure WebGL is supported.");
+                    }
                 }
 
                 // Fetch OpenAlex literature
