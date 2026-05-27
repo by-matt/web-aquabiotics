@@ -38,14 +38,21 @@
   "knowsAbout": ["Marine Biotechnology", "Circular Bioeconomy", "Blue Taurine", "DeepTech", "Biorefinery", "Upcycling"]
 }
 </script>
-<!-- Google Analytics (gtag.js) -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-95YGFVTCSF"></script>
+<!-- Google Analytics GA4 — G-95YGFVTCSF (local embed, sin GTM) -->
 <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-95YGFVTCSF');
-    </script>
+    /* 1. Inicializar dataLayer ANTES de cargar el script externo */
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    /* 2. Configuración GA4 — Measurement ID hardcoded localmente */
+    gtag('config', 'G-95YGFVTCSF', {
+        'page_title': document.title,
+        'page_location': window.location.href,
+        'send_page_view': true
+    });
+</script>
+<!-- 3. Cargar librería gtag.js de forma asíncrona (no bloquea render) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-95YGFVTCSF"></script>
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -120,7 +127,7 @@
             --ff-mono: 'Space Mono', monospace;
         }
 
-        /* ── Lenis Smooth Scroll Setup ── */
+        /* â”€â”€ Lenis Smooth Scroll Setup â”€â”€ */
         html.lenis, html.lenis body { height: auto; }
         .lenis.lenis-smooth { scroll-behavior: auto !important; }
         .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
@@ -150,7 +157,7 @@
             will-change: transform;
         }
 
-        /* ── Preloader ── */
+        /* â”€â”€ Preloader â”€â”€ */
         #preloader {
             position: fixed;
             inset: 0;
@@ -179,7 +186,7 @@
             box-shadow: 0 0 20px var(--teal);
         }
 
-        /* ── Glassmorphism ── */
+        /* â”€â”€ Glassmorphism â”€â”€ */
         .glass-nav {
             background: rgba(10, 22, 40, 0.85);
             backdrop-filter: blur(25px) saturate(180%);
@@ -232,7 +239,7 @@
             opacity: 1;
         }
 
-        /* ── Typography & Links ── */
+        /* â”€â”€ Typography & Links â”€â”€ */
         h1, h2, h3, h4, h5 {
             color: var(--cream);
             letter-spacing: -0.02em;
@@ -319,7 +326,7 @@
 
 
 
-        /* ── HPLC count scrambled elements ── */
+        /* â”€â”€ HPLC count scrambled elements â”€â”€ */
         .decode-text {
             font-variant-numeric: tabular-nums;
             font-family: var(--ff-mono);
@@ -330,7 +337,7 @@
             transform: translateY(35px);
         }
 
-        /* ── Process Flow Timeline ── */
+        /* â”€â”€ Process Flow Timeline â”€â”€ */
         #progress-line::after {
             content: '';
             position: absolute;
@@ -346,7 +353,7 @@
             pointer-events: none;
         }
 
-        /* ── Maturity Gauges ── */
+        /* â”€â”€ Maturity Gauges â”€â”€ */
         .gauge-outer {
             position: relative;
             width: 90px;
@@ -370,7 +377,7 @@
             transition: stroke-dashoffset 1.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        /* ── Language Switch Indicator ── */
+        /* â”€â”€ Language Switch Indicator â”€â”€ */
         .lang-switch-btn {
             transition: all 0.3s ease;
         }
@@ -379,21 +386,21 @@
             font-weight: 700;
         }
 
-        /* ── Table Custom Styles ── */
+        /* â”€â”€ Table Custom Styles â”€â”€ */
         .table-row-highlight {
             background: rgba(58, 191, 178, 0.04);
             border-left: 2px solid var(--teal);
         }
 
-        /* â•â• HERO CINEMATIC SYSTEM (Pro Max) â•â• */
+        /* Ã¢â€¢ÂÃ¢â€¢Â HERO CINEMATIC SYSTEM (Pro Max) Ã¢â€¢ÂÃ¢â€¢Â */
 
-        /* Clip-path line reveal — text is masked and slides open */
+        /* Clip-path line reveal â€” text is masked and slides open */
         .hero-line {
             clip-path: inset(0 100% 0 0);
             display: block;
         }
 
-        /* Luminous leading edge — teal glow bar that precedes reveal */
+        /* Luminous leading edge â€” teal glow bar that precedes reveal */
         .hero-line-wrap {
             position: relative;
             overflow: visible;
@@ -427,7 +434,7 @@
             opacity: 1;
         }
 
-        /* ── Typography & Links ── */
+        /* â”€â”€ Typography & Links â”€â”€ */
         h1, h2, h3, h4, h5 {
             color: var(--cream);
             letter-spacing: -0.02em;
@@ -514,7 +521,7 @@
 
 
 
-        /* ── HPLC count scrambled elements ── */
+        /* â”€â”€ HPLC count scrambled elements â”€â”€ */
         .decode-text {
             font-variant-numeric: tabular-nums;
             font-family: var(--ff-mono);
@@ -525,7 +532,7 @@
             transform: translateY(35px);
         }
 
-        /* ── Process Flow Timeline ── */
+        /* â”€â”€ Process Flow Timeline â”€â”€ */
         #progress-line::after {
             content: '';
             position: absolute;
@@ -541,7 +548,7 @@
             pointer-events: none;
         }
 
-        /* ── Maturity Gauges ── */
+        /* â”€â”€ Maturity Gauges â”€â”€ */
         .gauge-outer {
             position: relative;
             width: 90px;
@@ -565,7 +572,7 @@
             transition: stroke-dashoffset 1.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        /* ── Language Switch Indicator ── */
+        /* â”€â”€ Language Switch Indicator â”€â”€ */
         .lang-switch-btn {
             transition: all 0.3s ease;
         }
@@ -574,21 +581,21 @@
             font-weight: 700;
         }
 
-        /* ── Table Custom Styles ── */
+        /* â”€â”€ Table Custom Styles â”€â”€ */
         .table-row-highlight {
             background: rgba(58, 191, 178, 0.04);
             border-left: 2px solid var(--teal);
         }
 
-        /* â• â•  HERO CINEMATIC SYSTEM (Pro Max) â• â•  */
+        /* Ã¢â€¢ Ã¢â€¢  HERO CINEMATIC SYSTEM (Pro Max) Ã¢â€¢ Ã¢â€¢  */
 
-        /* Clip-path line reveal — text is masked and slides open */
+        /* Clip-path line reveal â€” text is masked and slides open */
         .hero-line {
             clip-path: inset(0 100% 0 0);
             display: block;
         }
 
-        /* Luminous leading edge — teal glow bar that precedes reveal */
+        /* Luminous leading edge â€” teal glow bar that precedes reveal */
         .hero-line-wrap {
             position: relative;
             overflow: visible;
@@ -633,7 +640,7 @@
             text-shadow: 0 0 30px rgba(58,191,178,0.35), 0 0 60px rgba(58,191,178,0.15), 0 0 120px rgba(58,191,178,0.05);
         }
 
-        /* Brand SVG ornaments — draw-on effect */
+        /* Brand SVG ornaments â€” draw-on effect */
         .hero-ornament path {
             stroke-dasharray: 1000;
             stroke-dashoffset: 1000;
@@ -652,7 +659,7 @@
             will-change: transform;
         }
 
-        /* ── SCROLL INDICATOR ── */
+        /* â”€â”€ SCROLL INDICATOR â”€â”€ */
         .scroll-hint {
             display: flex;
             flex-direction: column;
@@ -691,7 +698,7 @@
     </style>
 </head>
 <body>
-<!-- ── PRELOADER ── -->
+<!-- â”€â”€ PRELOADER â”€â”€ -->
 <div id="preloader">
 <div class="flex flex-col items-center">
 <h3 class="font-display text-2xl font-light tracking-[0.2em] mb-1" id="preloader-title">AQUABIOTICS SUR</h3>
@@ -701,12 +708,12 @@
 </div>
 </div>
 </div>
-<!-- ── NAVBAR ── -->
+<!-- â”€â”€ NAVBAR â”€â”€ -->
 <header class="fixed top-0 left-0 right-0 py-5 transition-all duration-500 z-50" id="navbar">
 <div class="container mx-auto px-8 lg:px-16 flex items-center justify-between">
 <!-- Brand Logo -->
 <a class="flex items-center gap-3 group shrink-0" href="#inicio">
-<img alt="AquaBiotics Sur Logo" class="h-10 w-auto transition-transform duration-500 group-hover:scale-105" src="../logo.png"/>
+<img alt="AquaBiotics Sur Logo" class="h-10 w-auto transition-transform duration-500 group-hover:scale-105" src="./logo.png"/>
 <div class="flex flex-col">
 <span class="font-display text-xl font-bold tracking-wider leading-none text-cream group-hover:text-teal transition-colors whitespace-nowrap">AquaBiotics Sur</span>
 <span class="font-mono text-[9px] text-muted tracking-widest uppercase leading-none mt-1 whitespace-nowrap" data-translate="nav-sub">NATURE, REPLICATED.</span>
@@ -744,7 +751,7 @@
 </div>
 </div>
 </header>
-<!-- ── MOBILE MENU ── -->
+<!-- â”€â”€ MOBILE MENU â”€â”€ -->
 <div id="mobile-menu">
 <a class="mobile-link" data-translate="nav-home" href="#inicio" onclick="toggleMenu()">Home</a>
 <a class="mobile-link" data-translate="nav-history" href="#historia" onclick="toggleMenu()">History</a>
@@ -783,7 +790,7 @@
 <div class="hero-dot w-1.5 h-1.5 bg-coral/35" id="dot-5" style="bottom:20%;left:35%;"></div>
 <div class="hero-dot w-1 h-1 bg-teal/50" id="dot-6" style="top:40%;right:25%;"></div>
 </div>
-<!-- ── 1. HERO SECTION ── -->
+<!-- â”€â”€ 1. HERO SECTION â”€â”€ -->
 <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 z-10" id="inicio">
 <!-- Wave SVG background -->
 <svg class="particles-bg" id="hero-bg" preserveaspectratio="none" viewbox="0 0 100 100">
@@ -800,7 +807,7 @@
 <div class="inline-block px-4 py-1.5 rounded-full bg-teal/10 border border-teal/20 backdrop-blur-md mb-6 hero-pill-anim" id="hero-pill">
 <span class="font-mono text-teal tracking-[0.2em] uppercase text-xs font-semibold" data-translate="hero-badge">Patagonian DeepTech Innovation</span>
 </div>
-<!-- H1: Extracto Azul — clip-path reveal with luminous edge -->
+<!-- H1: Extracto Azul â€” clip-path reveal with luminous edge -->
 <h1 class="font-display text-6xl md:text-8xl lg:text-[8rem] font-light leading-[0.9] tracking-tight mb-4" id="hero-h1">
 <span class="hero-line-wrap block mb-1">
 <span class="hero-line" data-translate="hero-title-1" id="line-target">Blue</span>
@@ -839,11 +846,11 @@
 </div>
 </section>
 
-<!-- Incubación institucional — único nodo de validación (Programa Volcanes) -->
+<!-- IncubaciÃ³n institucional â€” Ãºnico nodo de validaciÃ³n (Programa Volcanes) -->
 <section class="py-20 md:py-28 bg-navy-mid/30 relative border-y border-white/5 overflow-hidden" id="ecosistema">
 <div class="container mx-auto px-8 lg:px-16">
 <div class="text-center mb-14 max-w-3xl mx-auto">
-<div class="font-mono text-xs tracking-[0.2em] uppercase text-teal mb-4 gsap-reveal" data-translate="backed-label">Ecosystem — DeepTech Acceleration</div>
+<div class="font-mono text-xs tracking-[0.2em] uppercase text-teal mb-4 gsap-reveal" data-translate="backed-label">Ecosystem â€” DeepTech Acceleration</div>
 <div class="brand-rule mx-auto gsap-reveal"></div>
 <h2 class="font-display text-3xl md:text-4xl font-light mb-5 gsap-reveal leading-tight" data-translate="backed-title">Incubated within the Blue Innovation Ecosystem</h2>
 <p class="font-body text-muted text-base leading-relaxed gsap-reveal" data-translate="backed-subtitle">Supported by an acceleration framework engineered to de-risk bioprocess scale-up in Patagonia.</p>
@@ -854,22 +861,22 @@
 <div class="relative z-10 flex flex-col items-center text-center">
 <div class="relative group/logo flex items-center justify-center w-full mb-8 md:mb-10 px-6 py-4">
 <div class="absolute inset-0 bg-teal/25 rounded-full blur-xl opacity-60 group-hover/logo:opacity-100 transition-opacity duration-700"></div>
-<img src="Logo_volcanes.webp" class="h-16 md:h-24 w-auto object-contain relative z-10 opacity-90 group-hover/logo:opacity-100 transition-all duration-500 hover:drop-shadow-[0_0_25px_rgba(58,191,178,0.8)]" style="filter: brightness(0) invert(1);" alt="Programa Volcanes">
+<img src="../Logo_volcanes.webp" class="h-16 md:h-24 w-auto object-contain relative z-10 opacity-90 group-hover/logo:opacity-100 transition-all duration-500 hover:drop-shadow-[0_0_25px_rgba(58,191,178,0.8)]" style="filter: brightness(0) invert(1);" alt="Programa Volcanes">
 </div>
-<p class="font-body text-muted text-sm md:text-base leading-relaxed text-left md:text-center" data-translate="backed-volcanes-desc">AquaBiotics Sur is accelerated under the Volcanes Program, an initiative managed by Këtrawa Lab in conjunction with the UC Innovation Center, and funded by CORFO through its &quot;Potencia&quot; program. Within this incubation framework, we are actively structuring the strategic outreach to secure our first Letters of Intent (LOIs) for process stream supply with regional processing plants.</p>
+<p class="font-body text-muted text-sm md:text-base leading-relaxed text-left md:text-center" data-translate="backed-volcanes-desc">AquaBiotics Sur is accelerated under the Volcanes Program, an initiative managed by KÃ«trawa Lab in conjunction with the UC Innovation Center, and funded by CORFO through its &quot;Potencia&quot; program. Within this incubation framework, we are actively structuring the strategic outreach to secure our first Letters of Intent (LOIs) for process stream supply with regional processing plants.</p>
 </div>
 </div>
 </div>
 </div>
 </section>
 
-<!-- SECCIÓN 1 — Historia de Marca -->
-<!-- TODO: aplicar misma animación de entrada que secciones adyacentes -->
+<!-- SECCIÃ“N 1 â€” Historia de Marca -->
+<!-- TODO: aplicar misma animaciÃ³n de entrada que secciones adyacentes -->
 <section class="py-32 bg-navy-mid/60 backdrop-blur-md relative border-t border-white/5" id="historia">
 <div class="container mx-auto px-8 lg:px-16">
 <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-stretch mb-16">
 <div class="w-full lg:w-6/12 flex flex-col">
-<div class="font-mono text-xs tracking-[0.2em] uppercase text-teal mb-4 gsap-reveal" data-translate="hist-label">01 — Why We Exist</div>
+<div class="font-mono text-xs tracking-[0.2em] uppercase text-teal mb-4 gsap-reveal" data-translate="hist-label">01 â€” Why We Exist</div>
 <div class="brand-rule gsap-reveal"></div>
 <h2 class="font-display text-4xl md:text-5xl font-light mb-8 gsap-reveal leading-tight" data-translate="hist-title">
                         Where others see byproduct,<br/>
@@ -940,21 +947,21 @@
 <div class="glow-overlay"></div>
 <div class="font-mono text-xs tracking-[0.15em] uppercase text-teal/80 mb-2" data-translate="hist-card1-lbl">2009</div>
 <h4 class="font-display text-2xl font-light text-cream mb-4" data-translate="hist-card1-title">Dragnes et al. confirm</h4>
-<p class="font-body text-muted-strong text-sm leading-relaxed" data-translate="hist-card1-text">Target compound transfers massively to cooking water during thermal processing of mussels. The process stream is not a liability — it is a repository.</p><p class="font-mono text-[10px] text-teal/70 mt-3 border-t border-white/5 pt-2" data-translate="hist-card1-tech">Pérdidas documentadas: hasta 100% de compuesto en el caudal</p>
+<p class="font-body text-muted-strong text-sm leading-relaxed" data-translate="hist-card1-text">Target compound transfers massively to cooking water during thermal processing of mussels. The process stream is not a liability â€” it is a repository.</p><p class="font-mono text-[10px] text-teal/70 mt-3 border-t border-white/5 pt-2" data-translate="hist-card1-tech">PÃ©rdidas documentadas: hasta 100% de compuesto en el caudal</p>
 </div>
 <!-- Card 2 -->
 <div class="border-r border-b border-white/5 p-8 relative overflow-hidden flex flex-col justify-between min-h-[280px] transition-colors duration-500 hover:bg-white/[0.02] gsap-reveal">
 <div class="glow-overlay"></div>
-<div class="font-mono text-xs tracking-[0.15em] uppercase text-coral/80 mb-2" data-translate="hist-card2-lbl">2015–2019</div>
+<div class="font-mono text-xs tracking-[0.15em] uppercase text-coral/80 mb-2" data-translate="hist-card2-lbl">2015â€“2019</div>
 <h4 class="font-display text-2xl font-light text-cream mb-4" data-translate="hist-card2-title">FONDEF UTFSM validates process</h4>
-<p class="font-body text-muted-strong text-sm leading-relaxed" data-translate="hist-card2-text">The first Chilean public project demonstrates that the MF→UF→NF route recovers compound from canning process water. The science was already funded by the State.</p><p class="font-mono text-[10px] text-coral/70 mt-3 border-t border-white/5 pt-2" data-translate="hist-card2-tech">Retención NF: ~65%  · Secuencia MF→UF→NF validada</p>
+<p class="font-body text-muted-strong text-sm leading-relaxed" data-translate="hist-card2-text">The first Chilean public project demonstrates that the MFâ†’UFâ†’NF route recovers compound from canning process water. The science was already funded by the State.</p><p class="font-mono text-[10px] text-coral/70 mt-3 border-t border-white/5 pt-2" data-translate="hist-card2-tech">RetenciÃ³n NF: ~65%  Â· Secuencia MFâ†’UFâ†’NF validada</p>
 </div>
 <!-- Card 3 -->
 <div class="border-r border-b border-white/5 p-8 relative overflow-hidden flex flex-col justify-between min-h-[280px] transition-colors duration-500 hover:bg-white/[0.02] gsap-reveal">
 <div class="glow-overlay"></div>
 <div class="font-mono text-xs tracking-[0.15em] uppercase text-teal/80 mb-2" data-translate="hist-card3-lbl">2024</div>
 <h4 class="font-display text-2xl font-light text-cream mb-4" data-translate="hist-card3-title">WASEABI scales in Europa</h4>
-<p class="font-body text-muted-strong text-sm leading-relaxed" data-translate="hist-card3-text">At pilot scale in Galicia, nanofiltration achieves a concentration factor of 5.2× from mussel cooking water. Industrial technology exists.</p><p class="font-mono text-[10px] text-teal/70 mt-3 border-t border-white/5 pt-2" data-translate="hist-card3-tech">Factor concentración: 5.2×  · Eliminación DQO: 98.2%</p>
+<p class="font-body text-muted-strong text-sm leading-relaxed" data-translate="hist-card3-text">At pilot scale in Galicia, nanofiltration achieves a concentration factor of 5.2Ã— from mussel cooking water. Industrial technology exists.</p><p class="font-mono text-[10px] text-teal/70 mt-3 border-t border-white/5 pt-2" data-translate="hist-card3-tech">Factor concentraciÃ³n: 5.2Ã—  Â· EliminaciÃ³n DQO: 98.2%</p>
 </div>
 <!-- Card 4 -->
 <div class="border-r border-b border-white/5 p-8 relative overflow-hidden flex flex-col justify-between min-h-[280px] transition-colors duration-500 hover:bg-white/[0.02] gsap-reveal">
@@ -967,13 +974,13 @@
 </div>
 </section>
 
-<!-- ── 3. CHALLENGE & OPPORTUNITY SECTION ── -->
+<!-- â”€â”€ 3. CHALLENGE & OPPORTUNITY SECTION â”€â”€ -->
 <section class="py-32 bg-navy-mid/30 relative overflow-hidden border-b border-white/5" id="mercado">
 <div class="container mx-auto px-8 lg:px-16">
-<!-- Subsección A — "Por qué ahora" (Convergencia Estratégica) -->
+<!-- SubsecciÃ³n A â€” "Por quÃ© ahora" (Convergencia EstratÃ©gica) -->
 <div class="text-center mb-20 max-w-2xl mx-auto">
 <div class="inline-block px-4 py-1.5 rounded-full bg-coral/10 border border-coral/20 backdrop-blur-md mb-4 gsap-reveal">
-<span class="font-mono text-coral tracking-[0.2em] uppercase text-[10px] font-bold" data-translate="now-label">02 — Strategic Convergence</span>
+<span class="font-mono text-coral tracking-[0.2em] uppercase text-[10px] font-bold" data-translate="now-label">02 â€” Strategic Convergence</span>
 </div>
 <h2 class="font-display text-4xl md:text-5xl font-light mb-6 gsap-reveal leading-tight" data-translate="now-title">
                     Four forces that align <span class="text-coral italic font-medium">exactly now.</span>
@@ -987,7 +994,7 @@
 <div class="w-8 h-[2px] bg-coral mb-6"></div>
 <h4 class="font-display text-2xl font-light text-cream mb-4" data-translate="now-card1-title">Regulation</h4>
 <p class="font-body text-sm text-muted-strong leading-relaxed" data-translate="now-card1-text">
-                            Chilean regulations DS N °90 and Resolution 613 Exenta force mussel plants to manage process waters at rising costs. Every liter discharged has a regulatory price.
+                            Chilean regulations DS N Â°90 and Resolution 613 Exenta force mussel plants to manage process waters at rising costs. Every liter discharged has a regulatory price.
                         </p>
 </div>
 </div><div class="border-r border-b border-white/5 p-8 relative overflow-hidden flex-1 flex flex-col justify-between min-h-[280px] transition-colors duration-500 hover:bg-white/[0.02] gsap-reveal">
@@ -1019,7 +1026,7 @@
 </div>
 </div></div>
 <hr class="border-white/10 my-20"/>
-<!-- Subsección B — Mercado, Tamaños (TAM/SAM/SOM) y Comparación -->
+<!-- SubsecciÃ³n B â€” Mercado, TamaÃ±os (TAM/SAM/SOM) y ComparaciÃ³n -->
 <div class="text-center mb-16 mt-16">
 <div class="inline-block px-4 py-1.5 rounded-full bg-teal/10 border border-teal/20 backdrop-blur-md mb-4 gsap-reveal">
 <span class="font-mono text-teal tracking-[0.2em] uppercase text-[10px] font-bold" data-translate="comp-badge">Competitor Vector</span>
@@ -1146,7 +1153,7 @@
 </div>
 </div></div>
 <hr class="border-white/10 my-20"/>
-<!-- Subsección C — "Para quién" (Propuesta de Valor y Aplicaciones) -->
+<!-- SubsecciÃ³n C â€” "Para quiÃ©n" (Propuesta de Valor y Aplicaciones) -->
 <div class="text-center mb-16 mt-16" id="propuesta">
 <div class="font-mono text-xs tracking-[0.2em] uppercase text-teal mb-4 gsap-reveal" data-translate="prop-label">Who We Work For</div>
 <div class="brand-rule mx-auto gsap-reveal"></div>
@@ -1167,15 +1174,15 @@
                         </p>
 <ul class="space-y-4 font-body text-sm text-muted-strong">
 <li class="flex items-start gap-3">
-<span class="text-teal text-lg leading-none">•</span>
+<span class="text-teal text-lg leading-none">â€¢</span>
 <span data-translate="prop-col1-b1">Elimination of byproduct management costs</span>
 </li>
 <li class="flex items-start gap-3">
-<span class="text-teal text-lg leading-none">•</span>
+<span class="text-teal text-lg leading-none">â€¢</span>
 <span data-translate="prop-col1-b2">Potential participation in the commercial upside</span>
 </li>
 <li class="flex items-start gap-3">
-<span class="text-teal text-lg leading-none">•</span>
+<span class="text-teal text-lg leading-none">â€¢</span>
 <span data-translate="prop-col1-b3">Certifiable sustainable seal for your sustainability report</span>
 </li>
 </ul>
@@ -1187,19 +1194,19 @@
 </div>
 <h3 class="font-display text-3xl text-cream mb-6" data-translate="prop-col2-title">The ingredient your market seeks</h3>
 <p class="font-body text-base text-muted-strong leading-relaxed mb-8" data-translate="prop-col2-p">
-                            Synthetic compound cannot be certified as organic. AquaBiotics Sur provides marine-origin, batch-traceable organic compound certified from Chiloé—the sole attribute that unlocks the premium segment that your competitors cannot reach.
+                            Synthetic compound cannot be certified as organic. AquaBiotics Sur provides marine-origin, batch-traceable organic compound certified from ChiloÃ©â€”the sole attribute that unlocks the premium segment that your competitors cannot reach.
                         </p>
 <ul class="space-y-4 font-body text-sm text-muted-strong">
 <li class="flex items-start gap-3">
-<span class="text-coral text-lg leading-none">•</span>
+<span class="text-coral text-lg leading-none">â€¢</span>
 <span data-translate="prop-col2-b1">Certifiable and traceable marine origin</span>
 </li>
 <li class="flex items-start gap-3">
-<span class="text-coral text-lg leading-none">•</span>
+<span class="text-coral text-lg leading-none">â€¢</span>
 <span data-translate="prop-col2-b2">Justified margin differential for labeling</span>
 </li>
 <li class="flex items-start gap-3">
-<span class="text-coral text-lg leading-none">•</span>
+<span class="text-coral text-lg leading-none">â€¢</span>
 <span data-translate="prop-col2-b3">Direct contribution to the ESG profile of the final product</span>
 </li>
 </ul>
@@ -1226,12 +1233,12 @@
 </div></div>
 </div>
 </section>
-<!-- ── 4. PROCESS TIMELINE (BIORREFINERÍA EN CASCADA) ── -->
+<!-- â”€â”€ 4. PROCESS TIMELINE (BIORREFINERÃA EN CASCADA) â”€â”€ -->
 <section class="py-32 bg-navy relative overflow-hidden border-b border-white/5" id="tecnologia">
 <div class="container mx-auto px-8 lg:px-16">
 <div class="max-w-3xl mb-24">
 <div class="inline-block px-4 py-1.5 rounded-full bg-teal/10 border border-teal/20 backdrop-blur-md mb-4 gsap-reveal">
-<span class="font-mono text-teal tracking-[0.2em] uppercase text-[10px] font-bold" data-translate="tech-badge">03 — Proprietary Bioprocess</span>
+<span class="font-mono text-teal tracking-[0.2em] uppercase text-[10px] font-bold" data-translate="tech-badge">03 â€” Proprietary Bioprocess</span>
 </div>
 <h2 class="font-display text-4xl md:text-6xl font-light mb-6 gsap-reveal leading-tight" data-translate="tech-title">Cascadic Modular <span class="text-teal italic">Biorefinery</span></h2>
 <p class="text-muted text-base gsap-reveal max-w-xl" data-translate="tech-desc">Our proprietary separation technology recovers biomolecules without chemicals, yielding clean-label, marine-origin ingredients.</p>
@@ -1288,7 +1295,7 @@
 <span class="font-mono text-teal tracking-[0.25em] uppercase text-[10px] font-bold" data-translate="mol-badge">Bioinformatics &amp; Digital Value</span>
 </div>
 <h2 class="font-display text-4xl md:text-5xl font-light mb-6 gsap-reveal leading-tight" data-translate="mol-title">Bioinformatics &amp; Advanced <span class="text-teal italic">Process Intelligence</span></h2>
-<p class="text-muted text-base max-w-2xl mx-auto gsap-reveal" data-translate="mol-subtitle">Structural exploration of marine metabolites and predictive AI engines for autonomous biorefinery control—presented as two complementary technical modules.</p>
+<p class="text-muted text-base max-w-2xl mx-auto gsap-reveal" data-translate="mol-subtitle">Structural exploration of marine metabolites and predictive AI engines for autonomous biorefinery controlâ€”presented as two complementary technical modules.</p>
 </div>
 <section class="mb-24" id="mol-section-structure" aria-labelledby="mol-structure-heading">
 <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10 gsap-reveal">
@@ -1347,7 +1354,7 @@
 </div>
 <!-- Reset & Actions footer -->
 <div class="flex items-center justify-between mt-4 relative z-10 text-[10px] font-mono text-muted">
-<span data-translate="mol-interact">• Left-click to rotate | Right-click to drag | Scroll to zoom</span>
+<span data-translate="mol-interact">â€¢ Left-click to rotate | Right-click to drag | Scroll to zoom</span>
 <div class="flex gap-2">
 <button class="px-3 py-1 rounded-md border border-teal/30 text-teal hover:border-teal hover:bg-teal/5 transition-all" id="btn-toggle-spin" onclick="toggleSpin()">Auto-Spin: ON</button>
 <button class="px-3 py-1 rounded-md border border-white/10 hover:border-teal/30 hover:text-teal hover:bg-teal/5 transition-all" onclick="resetCamera()">Reset Cam</button>
@@ -1362,7 +1369,7 @@
 <div class="relative z-10 w-full">
 <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-6">
 <h3 class="font-display text-3xl font-semibold text-cream" id="panel-mol-name">Target Compound</h3>
-<span class="font-mono text-sm text-teal" id="panel-mol-formula">C₂H₇NO₃S</span>
+<span class="font-mono text-sm text-teal" id="panel-mol-formula">Câ‚‚Hâ‚‡NOâ‚ƒS</span>
 </div>
 <div class="space-y-4 font-mono text-xs" id="specs-list">
 <!-- Generated by JS dynamically -->
@@ -1422,7 +1429,7 @@
 <div class="glass-card p-8 rounded-3xl border-white/5 hover:border-coral/10 relative overflow-hidden gsap-reveal">
 <div class="glow-overlay"></div>
 <div class="relative z-10">
-<span class="font-mono text-[9px] uppercase tracking-widest text-coral mb-3 block" data-translate="ai-card2-stack">PPO + LSTM  · OPC-UA</span>
+<span class="font-mono text-[9px] uppercase tracking-widest text-coral mb-3 block" data-translate="ai-card2-stack">PPO + LSTM  Â· OPC-UA</span>
 <h4 class="font-display text-xl text-cream font-semibold mb-3" data-translate="ai-card2-title">Reinforcement Learning Membrane Control (PPO + LSTM)</h4>
 <p class="text-muted text-sm leading-relaxed" data-translate="ai-card2-desc">Proximal Policy Optimization with LSTM predictors connected via OPC-UA to Siemens S7-1500 PLCs, increasing net permeate flux by 15% and forecasting membrane fouling 4 hours ahead.</p>
 </div>
@@ -1594,7 +1601,7 @@
 </div>
 <div>
 <h4 class="font-mono text-xs text-teal mb-1 uppercase tracking-widest font-bold" data-translate="spec-quality">Quality Standards</h4>
-<p class="text-cream font-display text-2xl md:text-3xl font-semibold" data-translate="spec-quality-desc">&gt;95% HPLC Purity  · Clean Label  · Upcycled</p>
+<p class="text-cream font-display text-2xl md:text-3xl font-semibold" data-translate="spec-quality-desc">&gt;95% HPLC Purity  Â· Clean Label  Â· Upcycled</p>
 </div>
 </div>
 </div>
@@ -1613,12 +1620,12 @@
 </section>
 
 
-<!-- SECCIÓN 2 — Respaldo Científico -->
-<!-- TODO: aplicar misma animación de entrada que secciones adyacentes -->
+<!-- SECCIÃ“N 2 â€” Respaldo CientÃ­fico -->
+<!-- TODO: aplicar misma animaciÃ³n de entrada que secciones adyacentes -->
 <section class="py-32 bg-navy/60 backdrop-blur-md relative border-t border-white/5" id="ciencia">
 <div class="container mx-auto px-8 lg:px-16">
 <div class="text-center mb-16">
-<div class="font-mono text-xs tracking-[0.2em] uppercase text-teal mb-4 gsap-reveal" data-translate="sci-label">04 — Verified Scientific Support</div>
+<div class="font-mono text-xs tracking-[0.2em] uppercase text-teal mb-4 gsap-reveal" data-translate="sci-label">04 â€” Verified Scientific Support</div>
 <div class="brand-rule mx-auto gsap-reveal"></div>
 <h2 class="font-display text-4xl md:text-5xl font-light mb-4 gsap-reveal leading-tight" data-translate="sci-title">
                     Proven technical viability.
@@ -1634,7 +1641,7 @@
 <span class="font-mono text-teal text-lg font-bold flex-shrink-0">[1]</span>
 <div>
 <h4 class="font-body font-medium text-cream text-base md:text-lg" data-translate="sci-ref1-title">"Chile: second largest mussel producer globally"</h4>
-<p class="text-muted text-sm mt-1" data-translate="sci-ref1-info">AMIChile / Diario Chiloé (2024)</p>
+<p class="text-muted text-sm mt-1" data-translate="sci-ref1-info">AMIChile / Diario ChiloÃ© (2024)</p>
 </div>
 </div>
 <div class="font-mono text-xs text-teal/70 break-all md:text-right mt-2 md:mt-0">
@@ -1646,12 +1653,12 @@
 <div class="flex items-start gap-4">
 <span class="font-mono text-teal text-lg font-bold flex-shrink-0">[2]</span>
 <div>
-<h4 class="font-body font-medium text-cream text-base md:text-lg" data-translate="sci-ref2-title">"Target compound transfer to cooking water — losses up to 100%"</h4>
+<h4 class="font-body font-medium text-cream text-base md:text-lg" data-translate="sci-ref2-title">"Target compound transfer to cooking water â€” losses up to 100%"</h4>
 <p class="text-muted text-sm mt-1" data-translate="sci-ref2-info">Dragnes et al. (2009). Int. Journal of Food Sciences and Nutrition, 60(2), 143-152.</p>
 </div>
 </div>
 <div class="font-mono text-xs text-teal/70 break-all md:text-right mt-2 md:mt-0">
-                        DOI: 10.1080/09637480701621654  · PubMed: 18608559
+                        DOI: 10.1080/09637480701621654  Â· PubMed: 18608559
                     </div>
 </div>
 <!-- Item 3 -->
@@ -1659,8 +1666,8 @@
 <div class="flex items-start gap-4">
 <span class="font-mono text-teal text-lg font-bold flex-shrink-0">[3]</span>
 <div>
-<h4 class="font-body font-medium text-cream text-base md:text-lg" data-translate="sci-ref3-title">"300–400 L broth/ton mussel  · 5.2× concentration factor validated"</h4>
-<p class="text-muted text-sm mt-1" data-translate="sci-ref3-info">Pérez-Santaescolástica et al. (2024). Future Foods.</p>
+<h4 class="font-body font-medium text-cream text-base md:text-lg" data-translate="sci-ref3-title">"300â€“400 L broth/ton mussel  Â· 5.2Ã— concentration factor validated"</h4>
+<p class="text-muted text-sm mt-1" data-translate="sci-ref3-info">PÃ©rez-SantaescolÃ¡stica et al. (2024). Future Foods.</p>
 </div>
 </div>
 <div class="font-mono text-xs text-teal/70 break-all md:text-right mt-2 md:mt-0">
@@ -1677,7 +1684,7 @@
 </div>
 </div>
 <div class="font-mono text-xs text-teal/70 break-all md:text-right mt-2 md:mt-0">
-                        DOI: 10.3389/fnut.2024.1443229  · PMC: pmc.ncbi.nlm.nih.gov/articles/PMC11563823
+                        DOI: 10.3389/fnut.2024.1443229  Â· PMC: pmc.ncbi.nlm.nih.gov/articles/PMC11563823
                     </div>
 </div>
 <!-- Item 5 -->
@@ -1686,7 +1693,7 @@
 <span class="font-mono text-teal text-lg font-bold flex-shrink-0">[5]</span>
 <div>
 <h4 class="font-body font-medium text-cream text-base md:text-lg" data-translate="sci-ref5-title">"Global market USD 1,150M (2024), CAGR 5.2%"</h4>
-<p class="text-muted text-sm mt-1" data-translate="sci-ref5-info">Verified Market Reports (2024). Market — Global Industry Analysis.</p>
+<p class="text-muted text-sm mt-1" data-translate="sci-ref5-info">Verified Market Reports (2024). Market â€” Global Industry Analysis.</p>
 </div>
 </div>
 <div class="font-mono text-xs text-teal/70 break-all md:text-right mt-2 md:mt-0">
@@ -1694,22 +1701,22 @@
                     </div>
 </div>
 </div>
-<div class="text-center mt-12 font-mono text-xs text-muted gsap-reveal" data-translate="sci-footer">Full technical document available upon request  · byroncalderon@aqua-biotics.com</div>
+<div class="text-center mt-12 font-mono text-xs text-muted gsap-reveal" data-translate="sci-footer">Full technical document available upon request  Â· byroncalderon@aqua-biotics.com</div>
 </div>
 </section>
-<!-- ── 5. MATURITY LEVELS (TRL / CRL / BRL) ── -->
-<!-- ── 6. COMPARISON ADVANTAGE (ORGANIC VS SYNTHETIC) ── -->
-<!-- SECCIÓN 3 — Por Qué Ahora -->
-<!-- TODO: aplicar misma animación de entrada que secciones adyacentes -->
-<!-- SECCIÓN 4 — Propuesta de Valor Dual (proveedores + compradores) -->
-<!-- TODO: aplicar misma animación de entrada que secciones adyacentes -->
-<!-- ── 6.6 TARGET INDUSTRIES ── -->
-<!-- ── 6.7 UN SDGs ── -->
+<!-- â”€â”€ 5. MATURITY LEVELS (TRL / CRL / BRL) â”€â”€ -->
+<!-- â”€â”€ 6. COMPARISON ADVANTAGE (ORGANIC VS SYNTHETIC) â”€â”€ -->
+<!-- SECCIÃ“N 3 â€” Por QuÃ© Ahora -->
+<!-- TODO: aplicar misma animaciÃ³n de entrada que secciones adyacentes -->
+<!-- SECCIÃ“N 4 â€” Propuesta de Valor Dual (proveedores + compradores) -->
+<!-- TODO: aplicar misma animaciÃ³n de entrada que secciones adyacentes -->
+<!-- â”€â”€ 6.6 TARGET INDUSTRIES â”€â”€ -->
+<!-- â”€â”€ 6.7 UN SDGs â”€â”€ -->
 <section class="py-32 bg-navy-mid/30 border-b border-white/5 relative z-10" id="ods">
 <div class="container mx-auto px-8 lg:px-16">
 <div class="text-center mb-20">
 <div class="inline-block px-4 py-1.5 rounded-full bg-lavender/10 border border-lavender/20 backdrop-blur-md mb-4 gsap-reveal">
-<span class="font-mono text-lavender tracking-[0.2em] uppercase text-[10px] font-bold" data-translate="ods-badge">05 — Strategic Alignment</span>
+<span class="font-mono text-lavender tracking-[0.2em] uppercase text-[10px] font-bold" data-translate="ods-badge">05 â€” Strategic Alignment</span>
 </div>
 <h3 class="font-display text-4xl md:text-5xl font-light mb-4 gsap-reveal" data-translate="ods-title">UN Sustainable Development Goals (SDGs)</h3>
 <p class="text-muted text-base max-w-2xl mx-auto gsap-reveal" data-translate="ods-subtitle">Operating at the intersection of the marine industry and biotechnology.</p>
@@ -1727,11 +1734,11 @@
 <h5 class="font-body font-bold text-xs mb-2 border-b border-white/30 pb-2 w-full relative z-10 tracking-wide uppercase" data-translate="ods-header-targets">Targets &amp; Alignment</h5>
 <div class="space-y-2 relative z-10 text-left w-full text-[11px] leading-snug font-medium text-white/95">
 <div class="mb-2">
-<p data-translate="ods-12-t1" class="font-semibold text-white/100">• Target 12.5: Substantially reduce waste generation through upcycling industrial streams.</p>
+<p data-translate="ods-12-t1" class="font-semibold text-white/100">â€¢ Target 12.5: Substantially reduce waste generation through upcycling industrial streams.</p>
 <p data-translate="ods-12-i1" class="text-[9.5px] text-white/75 mt-0.5 pl-2 border-l border-white/30 ml-1 leading-tight"><span class="text-teal font-semibold">AquaBiotics:</span> We transform thousands of tons of mussel cooking effluents, turning waste into high-value bioactives.</p>
 </div>
 <div>
-<p data-translate="ods-12-t2" class="font-semibold text-white/100">• Target 12.4: Environmentally sound management of wastes throughout their life cycle.</p>
+<p data-translate="ods-12-t2" class="font-semibold text-white/100">â€¢ Target 12.4: Environmentally sound management of wastes throughout their life cycle.</p>
 <p data-translate="ods-12-i2" class="text-[9.5px] text-white/75 mt-0.5 pl-2 border-l border-white/30 ml-1 leading-tight"><span class="text-teal font-semibold">AquaBiotics:</span> Our chemical-free extraction cleanly treats effluents before returning them to the ecosystem.</p>
 </div>
 </div>
@@ -1749,11 +1756,11 @@
 <h5 class="font-body font-bold text-xs mb-2 border-b border-white/30 pb-2 w-full relative z-10 tracking-wide uppercase" data-translate="ods-header-targets">Targets &amp; Alignment</h5>
 <div class="space-y-2 relative z-10 text-left w-full text-[11px] leading-snug font-medium text-white/95">
 <div class="mb-2">
-<p data-translate="ods-14-t1" class="font-semibold text-white/100">• Target 14.1: Prevent and significantly reduce marine nutrient pollution from land-based activities.</p>
+<p data-translate="ods-14-t1" class="font-semibold text-white/100">â€¢ Target 14.1: Prevent and significantly reduce marine nutrient pollution from land-based activities.</p>
 <p data-translate="ods-14-i1" class="text-[9.5px] text-white/75 mt-0.5 pl-2 border-l border-white/30 ml-1 leading-tight"><span class="text-teal font-semibold">AquaBiotics:</span> By removing up to 98% of the organic load, we directly prevent coastal eutrophication.</p>
 </div>
 <div>
-<p data-translate="ods-14-t2" class="font-semibold text-white/100">• Target 14.2: Sustainably manage and protect marine and coastal ecosystems.</p>
+<p data-translate="ods-14-t2" class="font-semibold text-white/100">â€¢ Target 14.2: Sustainably manage and protect marine and coastal ecosystems.</p>
 <p data-translate="ods-14-i2" class="text-[9.5px] text-white/75 mt-0.5 pl-2 border-l border-white/30 ml-1 leading-tight"><span class="text-teal font-semibold">AquaBiotics:</span> We protect Patagonia's fragile marine biodiversity against harmful industrial dumping.</p>
 </div>
 </div>
@@ -1771,7 +1778,7 @@
 <h5 class="font-body font-bold text-xs mb-2 border-b border-white/30 pb-2 w-full relative z-10 tracking-wide uppercase" data-translate="ods-header-targets">Targets &amp; Alignment</h5>
 <div class="space-y-2 relative z-10 text-left w-full text-[11px] leading-snug font-medium text-white/95">
 <div>
-<p data-translate="ods-6-t1" class="font-semibold text-white/100">• Target 6.3: Improve water quality by reducing pollution and halving untreated process water.</p>
+<p data-translate="ods-6-t1" class="font-semibold text-white/100">â€¢ Target 6.3: Improve water quality by reducing pollution and halving untreated process water.</p>
 <p data-translate="ods-6-i1" class="text-[9.5px] text-white/75 mt-0.5 pl-2 border-l border-white/30 ml-1 leading-tight"><span class="text-teal font-semibold">AquaBiotics:</span> Our biorefinery purifies industrial water streams, drastically reducing untreated discharges.</p>
 </div>
 </div>
@@ -1789,11 +1796,11 @@
 <h5 class="font-body font-bold text-xs mb-2 border-b border-white/30 pb-2 w-full relative z-10 tracking-wide uppercase" data-translate="ods-header-targets">Targets &amp; Alignment</h5>
 <div class="space-y-2 relative z-10 text-left w-full text-[11px] leading-snug font-medium text-white/95">
 <div class="mb-2">
-<p data-translate="ods-9-t1" class="font-semibold text-white/100">• Target 9.4: Retrofit industries with clean technologies and increased resource-use efficiency.</p>
+<p data-translate="ods-9-t1" class="font-semibold text-white/100">â€¢ Target 9.4: Retrofit industries with clean technologies and increased resource-use efficiency.</p>
 <p data-translate="ods-9-i1" class="text-[9.5px] text-white/75 mt-0.5 pl-2 border-l border-white/30 ml-1 leading-tight"><span class="text-teal font-semibold">AquaBiotics:</span> We provide the local industry with scalable, green technology to modernize their operations.</p>
 </div>
 <div>
-<p data-translate="ods-9-t2" class="font-semibold text-white/100">• Target 9.5: Enhance scientific research and upgrade technological capabilities.</p>
+<p data-translate="ods-9-t2" class="font-semibold text-white/100">â€¢ Target 9.5: Enhance scientific research and upgrade technological capabilities.</p>
 <p data-translate="ods-9-i2" class="text-[9.5px] text-white/75 mt-0.5 pl-2 border-l border-white/30 ml-1 leading-tight"><span class="text-teal font-semibold">AquaBiotics:</span> Our AI-driven bioinformatics and molecular separation bring DeepTech to the region.</p>
 </div>
 </div>
@@ -1811,7 +1818,7 @@
 <h5 class="font-body font-bold text-xs mb-2 border-b border-white/30 pb-2 w-full relative z-10 tracking-wide uppercase" data-translate="ods-header-targets">Targets &amp; Alignment</h5>
 <div class="space-y-2 relative z-10 text-left w-full text-[11px] leading-snug font-medium text-white/95">
 <div>
-<p data-translate="ods-13-t1" class="font-semibold text-white/100">• Target 13.2: Integrate low-carbon bio-extraction measures into operational strategies.</p>
+<p data-translate="ods-13-t1" class="font-semibold text-white/100">â€¢ Target 13.2: Integrate low-carbon bio-extraction measures into operational strategies.</p>
 <p data-translate="ods-13-i1" class="text-[9.5px] text-white/75 mt-0.5 pl-2 border-l border-white/30 ml-1 leading-tight"><span class="text-teal font-semibold">AquaBiotics:</span> Our energy-efficient extraction processes have a much lower carbon footprint than synthetic alternatives.</p>
 </div>
 </div>
@@ -1829,11 +1836,11 @@
 <h5 class="font-body font-bold text-xs mb-2 border-b border-white/30 pb-2 w-full relative z-10 tracking-wide uppercase" data-translate="ods-header-targets">Targets &amp; Alignment</h5>
 <div class="space-y-2 relative z-10 text-left w-full text-[11px] leading-snug font-medium text-white/95">
 <div class="mb-2">
-<p data-translate="ods-8-t1" class="font-semibold text-white/100">• Target 8.2: Higher economic productivity through technological upgrading.</p>
+<p data-translate="ods-8-t1" class="font-semibold text-white/100">â€¢ Target 8.2: Higher economic productivity through technological upgrading.</p>
 <p data-translate="ods-8-i1" class="text-[9.5px] text-white/75 mt-0.5 pl-2 border-l border-white/30 ml-1 leading-tight"><span class="text-teal font-semibold">AquaBiotics:</span> We create high-value IP and tech-driven jobs in a traditionally extraction-based economy.</p>
 </div>
 <div>
-<p data-translate="ods-8-t2" class="font-semibold text-white/100">• Target 8.4: Improve resource efficiency, decoupling growth from degradation.</p>
+<p data-translate="ods-8-t2" class="font-semibold text-white/100">â€¢ Target 8.4: Improve resource efficiency, decoupling growth from degradation.</p>
 <p data-translate="ods-8-i2" class="text-[9.5px] text-white/75 mt-0.5 pl-2 border-l border-white/30 ml-1 leading-tight"><span class="text-teal font-semibold">AquaBiotics:</span> We enable economic growth through circular upcycling without environmental deterioration.</p>
 </div>
 </div>
@@ -1842,8 +1849,8 @@
 </div>
 </div>
 </section>
-<!-- ── 6.8 DEEPTECH MOLECULAR DASHBOARD ── -->
-<!-- ── 7. NOSOTROS (ORIGINS & MISSION) ── -->
+<!-- â”€â”€ 6.8 DEEPTECH MOLECULAR DASHBOARD â”€â”€ -->
+<!-- â”€â”€ 7. NOSOTROS (ORIGINS & MISSION) â”€â”€ -->
 <section class="py-32 bg-navy-mid/30 relative overflow-hidden border-b border-white/5" id="nosotros">
 <!-- Bathymetric contour line SVG background -->
 <div class="absolute inset-0 z-0 opacity-15 pointer-events-none">
@@ -1862,7 +1869,7 @@
 <!-- Part 1: Story telling / The Los Lagos Paradox -->
 <div class="text-center mb-24 max-w-3xl mx-auto">
 <div class="inline-block px-4 py-1.5 rounded-full bg-coral/10 border border-coral/20 backdrop-blur-md mb-4 gsap-reveal">
-<span class="font-mono text-coral tracking-[0.2em] uppercase text-[10px] font-bold" data-translate="team-badge">06 — Origins</span>
+<span class="font-mono text-coral tracking-[0.2em] uppercase text-[10px] font-bold" data-translate="team-badge">06 â€” Origins</span>
 </div>
 <h2 class="font-display text-4xl md:text-5xl font-light mb-6 gsap-reveal leading-tight" data-translate="team-title">The Los Lagos <span class="text-teal italic">Paradox</span></h2>
 <div class="space-y-6 text-muted text-base gsap-reveal leading-relaxed text-center font-light">
@@ -1889,7 +1896,7 @@
 <div class="border-r border-b border-white/5 p-10 flex flex-col justify-start relative overflow-hidden group hover:bg-white/[0.02] transition-colors duration-500 gsap-reveal">
 <div class="glow-overlay"></div>
 <h3 class="font-display text-3xl mb-4 text-cream font-semibold italic" data-translate="team-location-title">Location</h3>
-<p class="text-muted text-sm leading-relaxed font-normal" data-translate="team-location-desc">Strategic operations in Los Lagos Region, Chile—the hub of the Chilean mussel industry.</p>
+<p class="text-muted text-sm leading-relaxed font-normal" data-translate="team-location-desc">Strategic operations in Los Lagos Region, Chileâ€”the hub of the Chilean mussel industry.</p>
 </div>
 </div>
 <!-- Geolocalization text ("The only team with a mailing address") -->
@@ -1920,7 +1927,7 @@
 <div class="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" style="box-shadow: 0 0 45px 10px rgba(58,191,178,0.12);"></div>
 <!-- Photo container -->
 <div class="w-full h-full rounded-full overflow-hidden border border-teal/20 shadow-[0_0_30px_rgba(58,191,178,0.06)] group-hover:shadow-[0_0_40px_rgba(58,191,178,0.15)] transition-all duration-700">
-<img alt="Byron Calderón" class="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" src="../byron.png"/>
+<img alt="Byron CalderÃ³n" class="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" src="./byron.png"/>
 </div>
 <!-- Mini orbiting dots -->
 <div class="absolute bottom-2 right-2 w-3 h-3 rounded-full bg-teal/60 shadow-[0_0_8px_rgba(58,191,178,0.8)]"></div>
@@ -1933,7 +1940,7 @@
 <div class="h-px w-8 bg-lavender"></div>
 <span class="font-mono text-lavender tracking-[0.2em] uppercase text-[10px] font-bold" data-translate="ceo-label">Biotech Pioneer</span>
 </div>
-<h3 class="font-display text-4xl font-normal mb-2 gsap-reveal">Byron Calderón</h3>
+<h3 class="font-display text-4xl font-normal mb-2 gsap-reveal">Byron CalderÃ³n</h3>
 <p class="font-mono text-xs text-teal uppercase tracking-wider mb-8 gsap-reveal font-bold" data-translate="ceo-role">CEO | Biotechnologist | Process Engineering</p>
 <div class="text-muted-strong text-base leading-relaxed space-y-6 mb-8 gsap-reveal">
 <p data-translate="ceo-desc1">Specialized in molecular biotechnology and sustainable chemical engineering. His work focuses on building circular extraction systems that process industrial streams into bio-products.</p>
@@ -1946,14 +1953,14 @@
 </div>
 </div>
 </section>
-<!-- ── 8. CONTACT & ALLIANCE PILOT ── -->
+<!-- â”€â”€ 8. CONTACT & ALLIANCE PILOT â”€â”€ -->
 <section class="py-32 bg-navy relative border-b border-white/5 z-10" id="contacto">
 <div class="container mx-auto px-8 lg:px-16 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
 <!-- Strategic pitch/info column -->
 <div class="lg:col-span-6 flex flex-col items-start">
 <div class="flex items-center gap-3 mb-4 gsap-reveal">
 <div class="h-px w-8 bg-teal"></div>
-<span class="font-mono text-teal tracking-[0.2em] uppercase text-[10px] font-bold" data-translate="con-badge">07 — Strategic Pilot</span>
+<span class="font-mono text-teal tracking-[0.2em] uppercase text-[10px] font-bold" data-translate="con-badge">07 â€” Strategic Pilot</span>
 </div>
 <h2 class="font-display text-4xl md:text-5xl font-light mb-8 gsap-reveal leading-tight" data-translate="con-title">Accelerating our <span class="text-teal italic">upcycling scale.</span></h2>
 <p class="text-muted-strong text-base mb-12 gsap-reveal max-w-md" data-translate="con-desc">
@@ -2050,15 +2057,15 @@
 </div>
 </div>
 </section>
-<!-- ── FOOTER ── -->
+<!-- â”€â”€ FOOTER â”€â”€ -->
 <footer class="py-16 bg-navy relative border-t border-white/5 overflow-hidden">
 <div class="absolute inset-0 bg-radial-gradient from-teal/3 via-transparent to-transparent pointer-events-none"></div>
 <div class="container mx-auto px-8 lg:px-16 text-center relative z-10">
 <div class="flex justify-center mb-6">
-<img alt="AquaBiotics Sur Logo" class="h-12 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300" src="../logo.png"/>
+<img alt="AquaBiotics Sur Logo" class="h-12 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300" src="./logo.png"/>
 </div>
 <div class="font-display text-3xl font-light text-cream mb-2 tracking-tight">AquaBiotics Sur</div>
-<p class="font-mono text-[10px] uppercase tracking-[0.3em] text-muted mb-8 font-bold" data-translate="foot-region">Los Lagos  · Chilean Patagonia</p>
+<p class="font-mono text-[10px] uppercase tracking-[0.3em] text-muted mb-8 font-bold" data-translate="foot-region">Los Lagos  Â· Chilean Patagonia</p>
 <p class="font-display text-xl italic text-muted-strong mb-10 max-w-xl mx-auto font-light" data-translate="foot-quote">"Engineering bioactives to make industrial environmental compliance a business advantage."</p>
 <!-- Social Link -->
 <div class="flex justify-center mb-10">
@@ -2067,24 +2074,24 @@
 </a>
 </div>
 <p class="font-mono text-[9px] text-white/30 tracking-wider">
-                 © 2026 Aquabiotics Sur. <span data-translate="foot-copy">Blue bioeconomy through sustainable biotech innovation.</span>
-                 ·
+                 Â© 2026 Aquabiotics Sur. <span data-translate="foot-copy">Blue bioeconomy through sustainable biotech innovation.</span>
+                 Â·
                 <a class="hover:text-teal transition-colors underline" data-translate="foot-privacy" href="../privacy.html" id="privacy-link" target="_blank">Privacy Policy</a>
 </p>
 </div>
 </footer>
-<!-- ── SCRIPTS ── -->
+<!-- â”€â”€ SCRIPTS â”€â”€ -->
 <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
 <script>
-        /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-           SISTEMA DE INTERACCIÓN CIENTÍFICA v3.5
-           AquaBiotics Sur  · Brand Platform Alignment
-           â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+        /* Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â
+           SISTEMA DE INTERACCIÃ“N CIENTÃFICA v3.5
+           AquaBiotics Sur  Â· Brand Platform Alignment
+           Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â */
 
-        // ── 1. Multilenguaje Localized Dictionary ──
+        // â”€â”€ 1. Multilenguaje Localized Dictionary â”€â”€
         const translations = {
             en: {
                 "nav-home": "Home",
@@ -2106,7 +2113,7 @@
                 "hero-cta-providers": "For Key Alliances",
                 "hero-cta-secondary": "Get in Touch",
                 "hero-scroll": "Scroll to Explore",
-                "hist-label": "01 — Why We Exist",
+                "hist-label": "01 â€” Why We Exist",
                 "hist-title": "Where others see byproduct,<br>we see the <span class='text-teal italic font-medium'>beginning.</span>",
                 "hist-p1": "In Los Lagos, the sea is not just a landscape. It is a living industry. Each year, hundreds of thousands of tons of Chilean mussel are processed in coastal plants that generate, as an inevitable consequence, millions of liters of cooking broth.",
                 "hist-p2": "That broth was treated for decades as a liability. A problem. A rising regulatory cost.",
@@ -2121,22 +2128,22 @@
                 "hist-card1-title": "Dragnes et al. confirm",
                 "hist-card1-text": "Target compound transfers massively to cooking water during processing of mussels. The byproduct is a rich repository.",
                 "hist-card1-tech": "Documented losses: up to 100% target compound in stream",
-                "hist-card2-lbl": "2015–2019",
+                "hist-card2-lbl": "2015â€“2019",
                 "hist-card2-title": "FONDEF UTFSM validates process",
-                "hist-card2-text": "The first public project demonstrates that the MF→UF→NF route recovers target metabolite from canning byproduct. The process was funded by the State.",
-                "hist-card2-tech": "NF retention: ~65%  · MF→UF→NF sequence validated",
+                "hist-card2-text": "The first public project demonstrates that the MFâ†’UFâ†’NF route recovers target metabolite from canning byproduct. The process was funded by the State.",
+                "hist-card2-tech": "NF retention: ~65%  Â· MFâ†’UFâ†’NF sequence validated",
                 "hist-card3-lbl": "2024",
                 "hist-card3-title": "WASEABI scales in Europe",
                 "hist-card3-text": "At pilot scale in Galicia, nanofiltration concentrates target metabolite from mussel cooking water. The industrial separation process exists.",
-                "hist-card3-tech": "Concentration factor: 5.2×  · COD removal: 98.2%",
+                "hist-card3-tech": "Concentration factor: 5.2Ã—  Â· COD removal: 98.2%",
                 "hist-card4-lbl": "2025",
                 "hist-card4-title": "AquaBiotics Sur",
                 "hist-card4-text": "Applying closed-loop separation to the specific byproduct of Mytilus chilensis in Los Lagos, for the B2B high-value markets.",
-                "backed-label": "Ecosystem — DeepTech Acceleration",
+                "backed-label": "Ecosystem â€” DeepTech Acceleration",
                 "backed-title": "Incubated within the Blue Innovation Ecosystem",
                 "backed-subtitle": "Supported by an acceleration framework engineered to de-risk bioprocess scale-up in Patagonia.",
                 "backed-volcanes-name": "Volcanes Program",
-                "backed-volcanes-desc": "AquaBiotics Sur is accelerated under the Volcanes Program, an initiative managed by Këtrawa Lab in conjunction with the UC Innovation Center, and funded by CORFO through its 'Potencia' program. Within this incubation framework, we are actively structuring the strategic outreach to secure our first Letters of Intent (LOIs) for process stream supply with regional processing plants.",
+                "backed-volcanes-desc": "AquaBiotics Sur is accelerated under the Volcanes Program, an initiative managed by KÃ«trawa Lab in conjunction with the UC Innovation Center, and funded by CORFO through its 'Potencia' program. Within this incubation framework, we are actively structuring the strategic outreach to secure our first Letters of Intent (LOIs) for process stream supply with regional processing plants.",
                 "comp-badge": "Competitor Vector",
                 "comp-title": "The High-Value Purity <span class='text-teal italic'>Advantage</span>",
                 "comp-subtitle": "Comparing petrochemical synthetic alternatives against AquaBiotics Sur closed-loop organic extract.",
@@ -2165,7 +2172,7 @@
                 "comp-ab-footprint": "Ultra-Low (Captures existing flow)",
                 "comp-ab-trace": "100% Traceable (Local Mussel Processors)",
                 "comp-ab-impact": "Positive (Fjord sanitation / Eutrophication control)",
-                "tech-badge": "03 — Proprietary Bioprocess",
+                "tech-badge": "03 â€” Proprietary Bioprocess",
                 "tech-title": "Cascadic Modular <span class='text-teal italic'>Biorefinery</span>",
                 "tech-desc": "Our proprietary separation technology recovers biomolecules without chemicals, yielding clean-label, marine-origin ingredients.",
                 "step1-label": "Step 1",
@@ -2193,24 +2200,24 @@
                 "brl-title": "Business Readiness",
                 "brl-desc": "Initial financial modeling designed. Strategic roadmap established. Applying for seed grants and local incubation programs.",
                 "gauge-goal": "Target: TRL 5 (Pilot validation)",
-                "sci-label": "04 — Verified Scientific Support",
+                "sci-label": "04 â€” Verified Scientific Support",
                 "sci-title": "Proven technical viability.",
                 "sci-subtitle": "Every statement on this site has a verified source. These are the references that sustain the technical viability of AquaBiotics Sur.",
                 "sci-ref1-title": "\"Chile: second largest mussel producer globally\"",
-                "sci-ref1-info": "AMIChile / Diario Chiloé (2024)",
-                "sci-ref2-title": "\"Target compound transfer to cooking water — losses up to 100%\"",
+                "sci-ref1-info": "AMIChile / Diario ChiloÃ© (2024)",
+                "sci-ref2-title": "\"Target compound transfer to cooking water â€” losses up to 100%\"",
                 "sci-ref2-info": "Dragnes et al. (2009). Int. Journal of Food Sciences and Nutrition, 60(2), 143-152.",
-                "sci-ref3-title": "\"300–400 L broth/ton mussel  · 5.2× concentration factor validated\"",
-                "sci-ref3-info": "Pérez-Santaescolástica et al. (2024). Future Foods.",
+                "sci-ref3-title": "\"300â€“400 L broth/ton mussel  Â· 5.2Ã— concentration factor validated\"",
+                "sci-ref3-info": "PÃ©rez-SantaescolÃ¡stica et al. (2024). Future Foods.",
                 "sci-ref4-title": "\"Target compound: most abundant free amino acid in mussels (32.7 mg/g dry weight)\"",
                 "sci-ref4-info": "Bjerknes et al. (2024). Frontiers in Nutrition, 11:1443229.",
                 "sci-ref5-title": "\"Global market USD 1,150M (2024), CAGR 5.2%\"",
                 "sci-ref5-info": "Verified Market Reports (2024). Market Analysis.",
                 "sci-footer": "Full technical document available upon request &middot; byroncalderon@aqua-biotics.com",
-                "now-label": "02 — Strategic Convergence",
+                "now-label": "02 â€” Strategic Convergence",
                 "now-title": "Four forces that align <span class='text-coral italic font-medium'>exactly now.</span>",
                 "now-card1-title": "Regulation",
-                "now-card1-text": "Chilean regulations DS N °90 and Resolution 613 Exenta force mussel plants to manage process waters at rising costs. Every liter discharged has a regulatory price.",
+                "now-card1-text": "Chilean regulations DS N Â°90 and Resolution 613 Exenta force mussel plants to manage process waters at rising costs. Every liter discharged has a regulatory price.",
                 "now-card2-title": "Market",
                 "now-card2-text": "The B2B high-value pet food segment grows over 6% annually and demands marine-origin, traceable, petroleum-free ingredients. Synthetic compound cannot meet this demand.",
                 "now-card3-title": "Technology",
@@ -2224,7 +2231,7 @@
                 "prop-col1-title": "Your byproduct turns into revenue",
                 "prop-col2-title": "The extract your market seeks",
                 "prop-col1-p": "Today, mussel cooking broth is a cost: treatment, disposal, risk of fines. AquaBiotics Sur transforms it into the raw material of a clean ingredient, with zero investment on your part.",
-                "prop-col2-p": "Synthetic extracts cannot be certified as organic. AquaBiotics Sur provides marine-origin, batch-traceable organic compound certified from Chiloé—the sole attribute that unlocks the high-value segment that your competitors cannot reach.",
+                "prop-col2-p": "Synthetic extracts cannot be certified as organic. AquaBiotics Sur provides marine-origin, batch-traceable organic compound certified from ChiloÃ©â€”the sole attribute that unlocks the high-value segment that your competitors cannot reach.",
                 "prop-col1-b1": "Elimination of byproduct management costs",
                 "prop-col1-b2": "Potential participation in the commercial upside",
                 "prop-col1-b3": "Certifiable sustainable seal for your sustainability report",
@@ -2242,7 +2249,7 @@
                 "ind-card3-desc": "Sustainable nutrition. Replacement of fishmeal with functional plant-based feeds supplemented with our marine compound.",
                 "ind-card4-title": "[ Nutraceuticals ]",
                 "ind-card4-desc": "High-purity organic compound for human heart health and athletic performance supplements.",
-                "ods-badge": "05 — Strategic Alignment",
+                "ods-badge": "05 â€” Strategic Alignment",
                 "ods-title": "UN Sustainable Development Goals (SDGs)",
                 "ods-subtitle": "Regenerative Model",
                 "ods-header-targets": "Targets & Alignment",
@@ -2270,7 +2277,7 @@
                 "ods-8-t2": "&bull; Target 8.4: Improve resource efficiency, decoupling growth from degradation.",
                 "mol-badge": "Bioinformatics & Digital Value",
                 "mol-title": "Bioinformatics & Advanced <span class='text-teal italic'>Process Intelligence</span>",
-                "mol-subtitle": "Structural exploration of marine metabolites and predictive AI engines for autonomous biorefinery control—presented as two complementary technical modules.",
+                "mol-subtitle": "Structural exploration of marine metabolites and predictive AI engines for autonomous biorefinery controlâ€”presented as two complementary technical modules.",
                 "mol-tab-structure": "Interactive Structural Model",
                 "mol-tab-ai": "Predictive AI Engines",
                 "mol-structure-desc": "3D exploration of target metabolites, receptors, and enzymatic complexes via 3Dmol.js.",
@@ -2281,7 +2288,7 @@
                 "ai-card1-stack": "XGBoost + 1D CNN",
                 "ai-card1-title": "Raw Material Prediction & Quality Control (XGBoost + 1D CNN)",
                 "ai-card1-desc": "XGBoost and 1D CNN models estimating metabolite concentrations in real time via NIR spectroscopy, delivering in-process analytics in under 60 seconds and reducing HPLC analysis frequency by 70%.",
-                "ai-card2-stack": "PPO + LSTM  · OPC-UA",
+                "ai-card2-stack": "PPO + LSTM  Â· OPC-UA",
                 "ai-card2-title": "Reinforcement Learning Membrane Control (PPO + LSTM)",
                 "ai-card2-desc": "Predictive LSTM fouling models and Proximal Policy Optimization (PPO) control integrated into Siemens S7-1500 PLCs via OPC-UA, increasing net permeate flux by 15% and forecasting membrane fouling 4 hours ahead.",
                 "ai-card3-stack": "ResNet-50 + Optuna",
@@ -2305,8 +2312,8 @@
                 "mol-interact": "&bull; Left-click to rotate | Right-click to drag | Scroll to zoom",
                 "mol-lit-title": "Academic Validation (OpenAlex)",
                 "mol-opt-taur": "Taurine (CID 1123)",
-                "team-badge": "06 — Origins",
-                "con-badge": "07 — Strategic Pilot",
+                "team-badge": "06 â€” Origins",
+                "con-badge": "07 â€” Strategic Pilot",
                 "con-title": "Accelerating our <span class='text-teal italic'>upcycling scale.</span>",
                 "con-desc": "We are constructing the first modular biorefinery pilot in Patagonia. Get in touch to discuss seed investment, product sampling, or aquaculture raw-material alliances.",
                 "con-mail": "Email Contact",
@@ -2327,14 +2334,14 @@
                 "form-success-title": "Message Received!",
                 "form-success-desc": "Thank you for reaching out. Our team will review your message and get back to you shortly.",
                 "form-reset": "Send Another Message",
-                "foot-region": "Los Lagos  · Chilean Patagonia",
+                "foot-region": "Los Lagos  Â· Chilean Patagonia",
                 "foot-quote": "\"Engineering bioactives to make industrial environmental compliance a business advantage.\"",
                 "foot-copy": "Blue bioeconomy through sustainable biotech innovation.",
                 "foot-privacy": "Privacy Policy",
                 "team-title": "The Los Lagos <span class='text-teal italic'>Paradox</span>",
                 "team-desc1": "AquaBiotics Sur was born in the heart of the Los Lagos Region in southern Chile, a territory known for its pristine fjords and thriving aquaculture industry. A paradox was recognized: while the mussel industry is a major economic driver, it also generates significant volumes of liquid byproduct that are currently discarded.",
                 "team-desc2": "This was seen not as a liability, but as an untapped reservoir of valuable marine biomolecules. The mission is to lead the <span class='text-teal font-bold'>Blue bioeconomy</span> through marine biotechnology.",
-                "team-alliance-desc": "Through the Volcanes Program —managed by Këtrawa Lab, the UC Innovation Center, and sponsored by CORFO— we directly articulate the first Letters of Intent (LOIs) with mussel processing plants associated with AmiChile, securing raw material supply and pilot scalability.",
+                "team-alliance-desc": "Through the Volcanes Program â€”managed by KÃ«trawa Lab, the UC Innovation Center, and sponsored by CORFOâ€” we directly articulate the first Letters of Intent (LOIs) with mussel processing plants associated with AmiChile, securing raw material supply and pilot scalability.",
                 "team-mission-title": "Mission",
                 "team-mission-desc": "To lead the Blue bioeconomy by sanitizing the coasts, replacing synthetics with sustainable purity, and positioning Patagonia as a global hub for biotech innovation.",
                 "team-vision-title": "Vision",
@@ -2368,71 +2375,71 @@
                 "nav-market": "Mercado",
                 "nav-sub": "NATURALEZA, REPLICADA.",
                 "nav-science": "Ciencia",
-                "nav-tech": "Tecnología",
+                "nav-tech": "TecnologÃ­a",
                 "nav-impact": "Impacto",
                 "nav-team": "Equipo",
                 "nav-contact": "Contacto",
                 "nav-cta": "Alianza Piloto",
                 "hero-title-1": "Taurina",
                 "hero-title-2": "Azul",
-                "hero-badge": "Innovación DeepTech Patagónica",
+                "hero-badge": "InnovaciÃ³n DeepTech PatagÃ³nica",
                 "hero-desc": "Valorizando corrientes de procesamiento marino en la Patagonia mediante bioprocesos para obtener extractos limpios de alto valor.",
                 "hero-cta-primary": "Explorar Oportunidad",
-                "hero-cta-science": "Respaldo Científico",
+                "hero-cta-science": "Respaldo CientÃ­fico",
                 "hero-cta-providers": "Para Alianzas Clave",
-                "hero-cta-secondary": "Escríbenos",
+                "hero-cta-secondary": "EscrÃ­benos",
                 "hero-scroll": "Desliza para explorar",
-                "hist-label": "01 — Por qué existimos",
+                "hist-label": "01 â€” Por quÃ© existimos",
                 "hist-title": "Donde otros ven un subproducto,<br>nosotros vemos el <span class='text-teal italic font-medium'>principio.</span>",
-                "hist-p1": "En Los Lagos, el mar no es solo un paisaje. Es una industria viva. Cada año, cientos de miles de toneladas de mejillón chileno son procesadas en plantas costeras que generan, como consecuencia inevitable, millones de litros de caldo de cocción.",
-                "hist-p2": "Ese caldo fue tratado durante décadas como un pasivo. Un problema. Un costo normativo creciente.",
-                "hist-p3": "AquaBiotics Sur nació de una pregunta diferente: ¿Y si ese subproducto fuera, en realidad, la materia prima más valiosa que Chile tiene para ofrecer al mundo?",
+                "hist-p1": "En Los Lagos, el mar no es solo un paisaje. Es una industria viva. Cada aÃ±o, cientos de miles de toneladas de mejillÃ³n chileno son procesadas en plantas costeras que generan, como consecuencia inevitable, millones de litros de caldo de cocciÃ³n.",
+                "hist-p2": "Ese caldo fue tratado durante dÃ©cadas como un pasivo. Un problema. Un costo normativo creciente.",
+                "hist-p3": "AquaBiotics Sur naciÃ³ de una pregunta diferente: Â¿Y si ese subproducto fuera, en realidad, la materia prima mÃ¡s valiosa que Chile tiene para ofrecer al mundo?",
                 "hist-card-badge": "El Pasivo Ambiental",
-                "hist-card-h4": "Efluentes de Cocción Industrial",
-                "hist-card-p": "La industria mitilicultora chilena genera vastos volúmenes de residuos líquidos de cocción. Estos efluentes, altamente concentrados en nitrógeno y fósforo orgánico, son descartados directamente en las aguas de la Patagonia, amenazando la frágil biodiversidad marina costera.",
-                "hist-metric1-tag": "RELACIÓN DE EFLUENTE DE COCCIÓN",
+                "hist-card-h4": "Efluentes de CocciÃ³n Industrial",
+                "hist-card-p": "La industria mitilicultora chilena genera vastos volÃºmenes de residuos lÃ­quidos de cocciÃ³n. Estos efluentes, altamente concentrados en nitrÃ³geno y fÃ³sforo orgÃ¡nico, son descartados directamente en las aguas de la Patagonia, amenazando la frÃ¡gil biodiversidad marina costera.",
+                "hist-metric1-tag": "RELACIÃ“N DE EFLUENTE DE COCCIÃ“N",
                 "hist-metric2-tag": "MULTAS REGULATORIAS POTENCIALES",
-                "hist-quote": "\"No somos una empresa de tratamiento.<br class='hidden sm:inline'>Somos una empresa que encontró valor donde nadie miraba.\"",
+                "hist-quote": "\"No somos una empresa de tratamiento.<br class='hidden sm:inline'>Somos una empresa que encontrÃ³ valor donde nadie miraba.\"",
                 "hist-card1-lbl": "2009",
                 "hist-card1-title": "Dragnes et al. confirman",
-                "hist-card1-text": "El compuesto objetivo se transfiere masivamente al agua de cocción durante el procesamiento del mejillón. El subproducto es un rico repositorio.",
-                "hist-card1-tech": "Pérdidas documentadas: hasta 100% de compuesto en el caudal",
-                "hist-card2-lbl": "2015–2019",
+                "hist-card1-text": "El compuesto objetivo se transfiere masivamente al agua de cocciÃ³n durante el procesamiento del mejillÃ³n. El subproducto es un rico repositorio.",
+                "hist-card1-tech": "PÃ©rdidas documentadas: hasta 100% de compuesto en el caudal",
+                "hist-card2-lbl": "2015â€“2019",
                 "hist-card2-title": "FONDEF UTFSM valida el proceso",
-                "hist-card2-text": "El primer proyecto público chileno demuestra que la ruta MF→UF→NF recupera el compuesto objetivo desde el subproducto conservero. El proceso fue financiado por el Estado.",
-                "hist-card2-tech": "Retención NF: ~65%  · Secuencia MF→UF→NF validada",
+                "hist-card2-text": "El primer proyecto pÃºblico chileno demuestra que la ruta MFâ†’UFâ†’NF recupera el compuesto objetivo desde el subproducto conservero. El proceso fue financiado por el Estado.",
+                "hist-card2-tech": "RetenciÃ³n NF: ~65%  Â· Secuencia MFâ†’UFâ†’NF validada",
                 "hist-card3-lbl": "2024",
                 "hist-card3-title": "WASEABI escala en Europa",
-                "hist-card3-text": "A escala piloto en Galicia, la nanofiltración concentra el compuesto objetivo desde agua de cocción de mejillón. El proceso de separación industrial existe.",
-                "hist-card3-tech": "Factor concentración: 5.2×  · Eliminación DQO: 98.2%",
+                "hist-card3-text": "A escala piloto en Galicia, la nanofiltraciÃ³n concentra el compuesto objetivo desde agua de cocciÃ³n de mejillÃ³n. El proceso de separaciÃ³n industrial existe.",
+                "hist-card3-tech": "Factor concentraciÃ³n: 5.2Ã—  Â· EliminaciÃ³n DQO: 98.2%",
                 "hist-card4-lbl": "2025",
                 "hist-card4-title": "AquaBiotics Sur",
-                "hist-card4-text": "Aplicar la separación en ciclo cerrado al subproducto específico de Mytilus chilensis de Los Lagos, para mercados B2B de alto valor.",
-                "backed-label": "Ecosistema — Aceleración DeepTech",
-                "backed-title": "Incubado en el Ecosistema de Innovación Azul",
-                "backed-subtitle": "Respaldados por una infraestructura de aceleración diseñada para viabilizar el escalamiento de bioprocesos en la Patagonia.",
+                "hist-card4-text": "Aplicar la separaciÃ³n en ciclo cerrado al subproducto especÃ­fico de Mytilus chilensis de Los Lagos, para mercados B2B de alto valor.",
+                "backed-label": "Ecosistema â€” AceleraciÃ³n DeepTech",
+                "backed-title": "Incubado en el Ecosistema de InnovaciÃ³n Azul",
+                "backed-subtitle": "Respaldados por una infraestructura de aceleraciÃ³n diseÃ±ada para viabilizar el escalamiento de bioprocesos en la Patagonia.",
                 "backed-volcanes-name": "Programa Volcanes",
-                "backed-volcanes-desc": "AquaBiotics Sur es parte de la convocatoria de aceleración del Programa Volcanes, una iniciativa gestionada por la consultora Këtrawa Lab en conjunto con el Centro de Innovación UC, y financiada por CORFO a través del programa 'Potencia'. A través de este marco de incubación, proyectamos la articulación estratégica y el levantamiento de las primeras Cartas de Intención (LOIs) de suministro con las plantas procesadoras del sector.",
+                "backed-volcanes-desc": "AquaBiotics Sur es parte de la convocatoria de aceleraciÃ³n del Programa Volcanes, una iniciativa gestionada por la consultora KÃ«trawa Lab en conjunto con el Centro de InnovaciÃ³n UC, y financiada por CORFO a travÃ©s del programa 'Potencia'. A travÃ©s de este marco de incubaciÃ³n, proyectamos la articulaciÃ³n estratÃ©gica y el levantamiento de las primeras Cartas de IntenciÃ³n (LOIs) de suministro con las plantas procesadoras del sector.",
                 "comp-badge": "Vector de Competencia",
                 "comp-title": "La Ventaja del Alto <span class='text-teal italic'>Valor</span>",
-                "comp-subtitle": "Comparando el compuesto sintético tradicional contra el extracto ecológico de AquaBiotics Sur en ciclo cerrado.",
-                "comp-syn-title": "Compuesto Sintético",
-                "comp-syn-badge": "(Estándar Actual)",
+                "comp-subtitle": "Comparando el compuesto sintÃ©tico tradicional contra el extracto ecolÃ³gico de AquaBiotics Sur en ciclo cerrado.",
+                "comp-syn-title": "Compuesto SintÃ©tico",
+                "comp-syn-badge": "(EstÃ¡ndar Actual)",
                 "comp-lbl-origin": "Origen / Fuente",
-                "comp-syn-origin": "Síntesis química (Petroquímicos)",
+                "comp-syn-origin": "SÃ­ntesis quÃ­mica (PetroquÃ­micos)",
                 "comp-lbl-cost": "Costo de Materia Prima",
-                "comp-syn-cost": "Volátil (Dependiente del petróleo crudo)",
-                "comp-lbl-footprint": "Huella de Agua / Energía",
+                "comp-syn-cost": "VolÃ¡til (Dependiente del petrÃ³leo crudo)",
+                "comp-lbl-footprint": "Huella de Agua / EnergÃ­a",
                 "comp-syn-footprint": "Muy Alta (Procesos pesados)",
                 "comp-lbl-trace": "Trazabilidad",
                 "comp-syn-trace": "Nula (Oculta en la cadena)",
                 "comp-lbl-impact": "Impacto Ambiental",
                 "comp-syn-impact": "Contaminante (Solventes)",
-                "comp-ferm-title": "Fermentación",
+                "comp-ferm-title": "FermentaciÃ³n",
                 "comp-ferm-badge": "(Microalgas)",
                 "comp-ferm-cost": "Alto (Medios de cultivo y nutrientes)",
-                "comp-ferm-footprint": "Alto (Energía constante y agua dulce)",
-                "comp-ferm-trace": "Media (Origen biológico)",
+                "comp-ferm-footprint": "Alto (EnergÃ­a constante y agua dulce)",
+                "comp-ferm-trace": "Media (Origen biolÃ³gico)",
                 "comp-ferm-impact": "Neutro (Requiere nuevos insumos)",
                 "comp-ab-title": "Taurina Azul",
                 "comp-ab-badge": "(Extracto Azul)",
@@ -2441,68 +2448,68 @@
                 "comp-ab-footprint": "Ultra-Baja (Captura flujos existentes)",
                 "comp-ab-trace": "Completa (Patagonia Deep-Tech)",
                 "comp-ab-impact": "Regenerativo (Sanea aguas de fiordos)",
-                "tech-badge": "03 — Bioproceso Propietario",
-                "tech-title": "Biorrefinería Modular <span class='text-teal italic'>en Cascada</span>",
-                "tech-desc": "Nuestra tecnología de separación molecular recupera biocompuestos sin químicos sintéticos, logrando ingredientes orgánicos marinos de etiqueta limpia.",
+                "tech-badge": "03 â€” Bioproceso Propietario",
+                "tech-title": "BiorrefinerÃ­a Modular <span class='text-teal italic'>en Cascada</span>",
+                "tech-desc": "Nuestra tecnologÃ­a de separaciÃ³n molecular recupera biocompuestos sin quÃ­micos sintÃ©ticos, logrando ingredientes orgÃ¡nicos marinos de etiqueta limpia.",
                 "step1-label": "Paso 1",
                 "step1-title": "Acondicionamiento Avanzado",
-                "step1-desc": "Filtración multietapa y clarificación de la matriz del caldo.",
+                "step1-desc": "FiltraciÃ³n multietapa y clarificaciÃ³n de la matriz del caldo.",
                 "step2-label": "Paso 2",
-                "step2-title": "Concentración Selectiva",
-                "step2-desc": "Filtración por membrana para retener macromoléculas y concentrar metabolitos objetivo.",
+                "step2-title": "ConcentraciÃ³n Selectiva",
+                "step2-desc": "FiltraciÃ³n por membrana para retener macromolÃ©culas y concentrar metabolitos objetivo.",
                 "step3-label": "Paso 3",
-                "step3-title": "Purificación Molecular Selectiva",
-                "step3-desc": "Purificación cromatográfica propietaria para aislar compuesto con 99%+ de pureza.",
+                "step3-title": "PurificaciÃ³n Molecular Selectiva",
+                "step3-desc": "PurificaciÃ³n cromatogrÃ¡fica propietaria para aislar compuesto con 99%+ de pureza.",
                 "step4-label": "Paso 4",
-                "step4-title": "Secado y Estabilización",
-                "step4-desc": "Formulación final en un ingrediente seco y estable.",
+                "step4-title": "Secado y EstabilizaciÃ³n",
+                "step4-desc": "FormulaciÃ³n final en un ingrediente seco y estable.",
                 "step5-label": "Paso 5",
                 "step5-title": "Mercado",
-                "step5-desc": "Integración en alimentos funcionales B2B y nutracéuticos.",
+                "step5-desc": "IntegraciÃ³n en alimentos funcionales B2B y nutracÃ©uticos.",
                 "mat-badge": "Hito de Desarrollo",
-                "mat-title": "Madurez Tecnológica y <span class='text-lavender italic'>Progreso</span>",
-                "mat-subtitle": "Cuantificando nuestro avance en la ejecución tecnológica, plan de negocios y validación comercial.",
-                "trl-title": "Madurez Tecnológica",
-                "trl-desc": "Hipótesis científica validada. Pruebas de laboratorio confirman la recuperación selectiva del compuesto en matrices de cocción reales.",
-                "crl-title": "Validación de Clientes",
-                "crl-desc": "Análisis de mercado inicial. Lanzamiento del feedback con fabricantes de pet food y alimentos acuícolas para levantar requerimientos específicos.",
+                "mat-title": "Madurez TecnolÃ³gica y <span class='text-lavender italic'>Progreso</span>",
+                "mat-subtitle": "Cuantificando nuestro avance en la ejecuciÃ³n tecnolÃ³gica, plan de negocios y validaciÃ³n comercial.",
+                "trl-title": "Madurez TecnolÃ³gica",
+                "trl-desc": "HipÃ³tesis cientÃ­fica validada. Pruebas de laboratorio confirman la recuperaciÃ³n selectiva del compuesto en matrices de cocciÃ³n reales.",
+                "crl-title": "ValidaciÃ³n de Clientes",
+                "crl-desc": "AnÃ¡lisis de mercado inicial. Lanzamiento del feedback con fabricantes de pet food y alimentos acuÃ­colas para levantar requerimientos especÃ­ficos.",
                 "brl-title": "Madurez de Negocios",
-                "brl-desc": "Modelo financiero inicial estructurado y plan comercial diseñado. Postulando a fondos de aceleración y subsidios públicos.",
-                "gauge-goal": "Meta: Validación en piloto",
-                "sci-label": "04 — Base Científica Verificada",
-                "sci-title": "Viabilidad técnica demostrada.",
-                "sci-subtitle": "Cada afirmación en este sitio tiene fuente verificada. Estas son las referencias que sostienen la viabilidad técnica de AquaBiotics Sur.",
-                "sci-ref1-title": "\"Chile: segundo productor mundial de mejillón\"",
-                "sci-ref1-info": "AMIChile / Diario Chiloé (2024)",
-                "sci-ref2-title": "\"Transferencia del compuesto al agua de cocción — pérdidas hasta 100%\"",
+                "brl-desc": "Modelo financiero inicial estructurado y plan comercial diseÃ±ado. Postulando a fondos de aceleraciÃ³n y subsidios pÃºblicos.",
+                "gauge-goal": "Meta: ValidaciÃ³n en piloto",
+                "sci-label": "04 â€” Base CientÃ­fica Verificada",
+                "sci-title": "Viabilidad tÃ©cnica demostrada.",
+                "sci-subtitle": "Cada afirmaciÃ³n en este sitio tiene fuente verificada. Estas son las referencias que sostienen la viabilidad tÃ©cnica de AquaBiotics Sur.",
+                "sci-ref1-title": "\"Chile: segundo productor mundial de mejillÃ³n\"",
+                "sci-ref1-info": "AMIChile / Diario ChiloÃ© (2024)",
+                "sci-ref2-title": "\"Transferencia del compuesto al agua de cocciÃ³n â€” pÃ©rdidas hasta 100%\"",
                 "sci-ref2-info": "Dragnes et al. (2009). Int. Journal of Food Sciences and Nutrition, 60(2), 143-152.",
-                "sci-ref3-title": "\"300–400 L caldo/ton mejillón  · factor concentración 5,2× validado\"",
-                "sci-ref3-info": "Pérez-Santaescolástica et al. (2024). Future Foods.",
-                "sci-ref4-title": "\"Compuesto objetivo: aminoácido libre más abundante en mejillón (32,7 mg/g peso seco)\"",
+                "sci-ref3-title": "\"300â€“400 L caldo/ton mejillÃ³n  Â· factor concentraciÃ³n 5,2Ã— validado\"",
+                "sci-ref3-info": "PÃ©rez-SantaescolÃ¡stica et al. (2024). Future Foods.",
+                "sci-ref4-title": "\"Compuesto objetivo: aminoÃ¡cido libre mÃ¡s abundante en mejillÃ³n (32,7 mg/g peso seco)\"",
                 "sci-ref4-info": "Bjerknes et al. (2024). Frontiers in Nutrition, 11:1443229.",
                 "sci-ref5-title": "\"Mercado global USD 1.150M (2024), CAGR 5,2%\"",
                 "sci-ref5-info": "Verified Market Reports (2024). Global Industry Analysis.",
-                "sci-footer": "Documento técnico completo disponible bajo solicitud &middot; byroncalderon@aqua-biotics.com",
-                "now-label": "02 — Convergencia Estratégica",
+                "sci-footer": "Documento tÃ©cnico completo disponible bajo solicitud &middot; byroncalderon@aqua-biotics.com",
+                "now-label": "02 â€” Convergencia EstratÃ©gica",
                 "now-title": "Cuatro fuerzas que se alinean <span class='text-coral italic font-medium'>exactamente ahora.</span>",
-                "now-card1-title": "Regulación",
-                "now-card1-text": "La normativa chilena DS N °90 y Resolución 613 Exenta obliga a las plantas mitilicultoras a gestionar los caudales de proceso a costo creciente. Cada litro descargado tiene precio regulatorio.",
+                "now-card1-title": "RegulaciÃ³n",
+                "now-card1-text": "La normativa chilena DS N Â°90 y ResoluciÃ³n 613 Exenta obliga a las plantas mitilicultoras a gestionar los caudales de proceso a costo creciente. Cada litro descargado tiene precio regulatorio.",
                 "now-card2-title": "Mercado",
-                "now-card2-text": "El segmento B2B de alto valor para pet food crece sobre 6% anual y exige ingredientes de origen marino, trazables y sin petroquímicos. El compuesto sintético no puede responder a esa demanda.",
-                "now-card3-title": "Tecnología",
-                "now-card3-text": "Los costos de membranas de nanofiltración han bajado notablemente. Procesos inviables hace cinco años hoy entregan márgenes positivos.",
+                "now-card2-text": "El segmento B2B de alto valor para pet food crece sobre 6% anual y exige ingredientes de origen marino, trazables y sin petroquÃ­micos. El compuesto sintÃ©tico no puede responder a esa demanda.",
+                "now-card3-title": "TecnologÃ­a",
+                "now-card3-text": "Los costos de membranas de nanofiltraciÃ³n han bajado notablemente. Procesos inviables hace cinco aÃ±os hoy entregan mÃ¡rgenes positivos.",
                 "now-card4-title": "Origen",
-                "now-card4-text": "Chile es el segundo productor de mejillón del mundo. La materia prima es disponible, continua y hoy se descarga sin valorizar. No es replicable en otro lugar.",
-                "prop-label": "Quiénes nos eligen",
+                "now-card4-text": "Chile es el segundo productor de mejillÃ³n del mundo. La materia prima es disponible, continua y hoy se descarga sin valorizar. No es replicable en otro lugar.",
+                "prop-label": "QuiÃ©nes nos eligen",
                 "prop-title": "Un proceso. <span class='text-teal font-semibold'>Dos problemas resueltos.</span>",
                 "prop-col1-tag": "PLANTA PROCESADORA DE MEJILLONES",
                 "prop-col2-tag": "FORMULADORES",
                 "prop-col1-title": "Tu subproducto se convierte en ingresos",
                 "prop-col2-title": "El extracto que su mercado busca",
-                "prop-col1-p": "Hoy, el caldo de cocción de mejillón es un costo: tratamiento, descarga, riesgo de multas. AquaBiotics Sur lo transforma en materia prima de un ingrediente premium, con cero inversión de su parte.",
-                "prop-col2-p": "Los extractos sintéticos no pueden certificarse como de origen orgánico. AquaBiotics Sur provee compuestos orgánicos de origen marino, trazables por lote desde Chiloé—el atributo único que abre el segmento de valor que su competencia no puede tocar.",
-                "prop-col1-b1": "Eliminación de costos de gestión del subproducto",
-                "prop-col1-b2": "Potencial participación en el retorno comercial",
+                "prop-col1-p": "Hoy, el caldo de cocciÃ³n de mejillÃ³n es un costo: tratamiento, descarga, riesgo de multas. AquaBiotics Sur lo transforma en materia prima de un ingrediente premium, con cero inversiÃ³n de su parte.",
+                "prop-col2-p": "Los extractos sintÃ©ticos no pueden certificarse como de origen orgÃ¡nico. AquaBiotics Sur provee compuestos orgÃ¡nicos de origen marino, trazables por lote desde ChiloÃ©â€”el atributo Ãºnico que abre el segmento de valor que su competencia no puede tocar.",
+                "prop-col1-b1": "EliminaciÃ³n de costos de gestiÃ³n del subproducto",
+                "prop-col1-b2": "Potencial participaciÃ³n en el retorno comercial",
                 "prop-col1-b3": "Sello sostenible certificable para su reporte de sustentabilidad",
                 "prop-col2-b1": "Origen marino certificado y trazable",
                 "prop-col2-b2": "Diferencial de margen justificado para su etiquetado",
@@ -2511,132 +2518,132 @@
                 "ind-title": "Industrias Objetivo",
                 "ind-subtitle": "Diversificando aplicaciones B2B.",
                 "ind-card1-title": "[ Bebidas Funcionales ]",
-                "ind-card1-desc": "Bebidas energéticas con etiqueta limpia y sostenibilidad certificada que buscan reemplazar aditivos sintéticos por alternativas marinas sostenibles.",
-                "ind-card2-title": "[ Nutrición Felina Especializada ]",
-                "ind-card2-desc": "Nutrición felina (nutriente esencial). Marcas de alimento para mascotas que buscan ingredientes de etiqueta limpia libres de síntesis química.",
+                "ind-card1-desc": "Bebidas energÃ©ticas con etiqueta limpia y sostenibilidad certificada que buscan reemplazar aditivos sintÃ©ticos por alternativas marinas sostenibles.",
+                "ind-card2-title": "[ NutriciÃ³n Felina Especializada ]",
+                "ind-card2-desc": "NutriciÃ³n felina (nutriente esencial). Marcas de alimento para mascotas que buscan ingredientes de etiqueta limpia libres de sÃ­ntesis quÃ­mica.",
                 "ind-card3-title": "[ Acuicultura ]",
-                "ind-card3-desc": "Nutrición sustentable. Reemplazo de harina de pescado con alimentos vegetales suplementados con el compuesto marino.",
-                "ind-card4-title": "[ Nutracéuticos ]",
+                "ind-card3-desc": "NutriciÃ³n sustentable. Reemplazo de harina de pescado con alimentos vegetales suplementados con el compuesto marino.",
+                "ind-card4-title": "[ NutracÃ©uticos ]",
                 "ind-card4-desc": "El compuesto de origen marino de alta pureza para suplementos de salud cardiovascular humana y rendimiento deportivo.",
-                "ods-badge": "05 — Alineación Estratégica",
+                "ods-badge": "05 â€” AlineaciÃ³n EstratÃ©gica",
                 "ods-title": "Objetivos de Desarrollo Sostenible (ODS)",
-                "ods-subtitle": "Operando en la intersección de la industria marina y la biotecnología.",
-                "ods-header-targets": "Metas y Alineación",
-                "ods-12-title": "Producción Responsable",
+                "ods-subtitle": "Operando en la intersecciÃ³n de la industria marina y la biotecnologÃ­a.",
+                "ods-header-targets": "Metas y AlineaciÃ³n",
+                "ods-12-title": "ProducciÃ³n Responsable",
                 "ods-12-subtitle": "Modelo Regenerativo",
-                "ods-12-t1": "&bull; Meta 12.5: Reducir sustancialmente la generación de subproductos mediante el reciclaje de corrientes de proceso.",
-                "ods-12-t2": "&bull; Meta 12.4: Lograr la gestión ecológicamente racional de los desechos a lo largo de su ciclo de vida.",
+                "ods-12-t1": "&bull; Meta 12.5: Reducir sustancialmente la generaciÃ³n de subproductos mediante el reciclaje de corrientes de proceso.",
+                "ods-12-t2": "&bull; Meta 12.4: Lograr la gestiÃ³n ecolÃ³gicamente racional de los desechos a lo largo de su ciclo de vida.",
                 "ods-14-title": "Vida Submarina",
-                "ods-14-subtitle": "Conservación de Océanos",
-                "ods-14-t1": "&bull; Meta 14.1: Prevenir y reducir significativamente la contaminación marina de origen terrestre.",
+                "ods-14-subtitle": "ConservaciÃ³n de OcÃ©anos",
+                "ods-14-t1": "&bull; Meta 14.1: Prevenir y reducir significativamente la contaminaciÃ³n marina de origen terrestre.",
                 "ods-14-t2": "&bull; Meta 14.2: Gestionar y proteger de manera sostenible los ecosistemas marinos y costeros.",
                 "ods-6-title": "Agua Limpia",
-                "ods-6-subtitle": "Gestión Sostenible del Agua",
-                "ods-6-t1": "&bull; Meta 6.3: Mejorar la calidad del agua reduciendo la contaminación y optimizando los recursos.",
-                "ods-9-title": "Innovación e Industria",
+                "ods-6-subtitle": "GestiÃ³n Sostenible del Agua",
+                "ods-6-t1": "&bull; Meta 6.3: Mejorar la calidad del agua reduciendo la contaminaciÃ³n y optimizando los recursos.",
+                "ods-9-title": "InnovaciÃ³n e Industria",
                 "ods-9-subtitle": "Fostering Resilient Ecosystems",
-                "ods-9-t1": "&bull; Meta 9.4: Modernizar industrias con tecnologías limpias y mayor eficiencia en el uso de recursos.",
-                "ods-9-t2": "&bull; Meta 9.5: Potenciar la investigación científica y mejorar las capacidades tecnológicas.",
-                "ods-13-title": "Acción por el Clima",
-                "ods-13-subtitle": "Combatiendo el Cambio Climático",
-                "ods-13-t1": "&bull; Meta 13.2: Integrar medidas de bioextracción bajas en carbono en las estrategias operativas.",
+                "ods-9-t1": "&bull; Meta 9.4: Modernizar industrias con tecnologÃ­as limpias y mayor eficiencia en el uso de recursos.",
+                "ods-9-t2": "&bull; Meta 9.5: Potenciar la investigaciÃ³n cientÃ­fica y mejorar las capacidades tecnolÃ³gicas.",
+                "ods-13-title": "AcciÃ³n por el Clima",
+                "ods-13-subtitle": "Combatiendo el Cambio ClimÃ¡tico",
+                "ods-13-t1": "&bull; Meta 13.2: Integrar medidas de bioextracciÃ³n bajas en carbono en las estrategias operativas.",
                 "ods-8-title": "Trabajo Decente",
                 "ods-8-subtitle": "Crecimiento Sostenible",
-                "ods-8-t1": "&bull; Meta 8.2: Lograr niveles más elevados de productividad económica mediante la actualización tecnológica.",
-                "ods-8-t2": "&bull; Meta 8.4: Mejorar la eficiencia de recursos, desvinculando el crecimiento de la degradación.",
-                "ods-12-i1": "<span class='text-teal font-semibold'>AquaBiotics:</span> Transformamos miles de toneladas de efluentes de la cocción de mejillones, convirtiendo un desecho en bioactivos de alto valor.",
-                "ods-12-i2": "<span class='text-teal font-semibold'>AquaBiotics:</span> Nuestra extracción libre de químicos trata los efluentes de manera limpia antes de devolverlos al ecosistema.",
-                "ods-14-i1": "<span class='text-teal font-semibold'>AquaBiotics:</span> Al remover hasta el 98% de la carga orgánica, prevenimos directamente la eutrofización costera.",
-                "ods-14-i2": "<span class='text-teal font-semibold'>AquaBiotics:</span> Protegemos la frágil biodiversidad marina de la Patagonia contra el vertido industrial nocivo.",
-                "ods-6-i1": "<span class='text-teal font-semibold'>AquaBiotics:</span> Nuestra biorrefinería purifica las corrientes de agua industrial, reduciendo drásticamente las descargas sin tratar.",
-                "ods-9-i1": "<span class='text-teal font-semibold'>AquaBiotics:</span> Proveemos a la industria local una tecnología verde y escalable para modernizar sus operaciones.",
-                "ods-9-i2": "<span class='text-teal font-semibold'>AquaBiotics:</span> Nuestra bioinformática y separación molecular con IA traen el DeepTech a la región.",
-                "ods-13-i1": "<span class='text-teal font-semibold'>AquaBiotics:</span> Nuestros procesos de extracción energéticamente eficientes tienen una huella de carbono mucho menor que las alternativas sintéticas.",
-                "ods-8-i1": "<span class='text-teal font-semibold'>AquaBiotics:</span> Creamos PI de alto valor y empleos tecnológicos en una economía tradicionalmente extractiva.",
-                "ods-8-i2": "<span class='text-teal font-semibold'>AquaBiotics:</span> Habilitamos el crecimiento económico a través del suprarreciclaje circular sin deterioro ambiental.",
-                "mol-badge": "Bioinformática y Valor Digital",
-                "mol-title": "Bioinformática e Inteligencia de <span class='text-teal italic'>Procesos Avanzada</span>",
-                "mol-subtitle": "Exploración estructural de metabolitos marinos y motores predictivos de IA para el control autónomo de la biorrefinería—presentados como dos módulos técnicos complementarios.",
+                "ods-8-t1": "&bull; Meta 8.2: Lograr niveles mÃ¡s elevados de productividad econÃ³mica mediante la actualizaciÃ³n tecnolÃ³gica.",
+                "ods-8-t2": "&bull; Meta 8.4: Mejorar la eficiencia de recursos, desvinculando el crecimiento de la degradaciÃ³n.",
+                "ods-12-i1": "<span class='text-teal font-semibold'>AquaBiotics:</span> Transformamos miles de toneladas de efluentes de la cocciÃ³n de mejillones, convirtiendo un desecho en bioactivos de alto valor.",
+                "ods-12-i2": "<span class='text-teal font-semibold'>AquaBiotics:</span> Nuestra extracciÃ³n libre de quÃ­micos trata los efluentes de manera limpia antes de devolverlos al ecosistema.",
+                "ods-14-i1": "<span class='text-teal font-semibold'>AquaBiotics:</span> Al remover hasta el 98% de la carga orgÃ¡nica, prevenimos directamente la eutrofizaciÃ³n costera.",
+                "ods-14-i2": "<span class='text-teal font-semibold'>AquaBiotics:</span> Protegemos la frÃ¡gil biodiversidad marina de la Patagonia contra el vertido industrial nocivo.",
+                "ods-6-i1": "<span class='text-teal font-semibold'>AquaBiotics:</span> Nuestra biorrefinerÃ­a purifica las corrientes de agua industrial, reduciendo drÃ¡sticamente las descargas sin tratar.",
+                "ods-9-i1": "<span class='text-teal font-semibold'>AquaBiotics:</span> Proveemos a la industria local una tecnologÃ­a verde y escalable para modernizar sus operaciones.",
+                "ods-9-i2": "<span class='text-teal font-semibold'>AquaBiotics:</span> Nuestra bioinformÃ¡tica y separaciÃ³n molecular con IA traen el DeepTech a la regiÃ³n.",
+                "ods-13-i1": "<span class='text-teal font-semibold'>AquaBiotics:</span> Nuestros procesos de extracciÃ³n energÃ©ticamente eficientes tienen una huella de carbono mucho menor que las alternativas sintÃ©ticas.",
+                "ods-8-i1": "<span class='text-teal font-semibold'>AquaBiotics:</span> Creamos PI de alto valor y empleos tecnolÃ³gicos en una economÃ­a tradicionalmente extractiva.",
+                "ods-8-i2": "<span class='text-teal font-semibold'>AquaBiotics:</span> Habilitamos el crecimiento econÃ³mico a travÃ©s del suprarreciclaje circular sin deterioro ambiental.",
+                "mol-badge": "BioinformÃ¡tica y Valor Digital",
+                "mol-title": "BioinformÃ¡tica e Inteligencia de <span class='text-teal italic'>Procesos Avanzada</span>",
+                "mol-subtitle": "ExploraciÃ³n estructural de metabolitos marinos y motores predictivos de IA para el control autÃ³nomo de la biorrefinerÃ­aâ€”presentados como dos mÃ³dulos tÃ©cnicos complementarios.",
                 "mol-tab-structure": "Modelo Estructural Interactivo",
                 "mol-tab-ai": "Motores Predictivos de IA",
-                "mol-structure-desc": "Exploración 3D de metabolitos objetivo, receptores y complejos enzimáticos mediante 3Dmol.js.",
-                "mol-ai-desc": "Arquitecturas industriales ML/RL para calidad en línea, control de membranas y gemelos digitales a escala de ecosistema.",
-                "ai-core-badge": "NÚCLEO DIGITAL INTELIGENTE",
-                "ai-core-title": "La Biorrefinería Autónoma",
-                "ai-core-subtitle": "Cuatro macro-arquitecturas que acoplan espectroscopía, aprendizaje por refuerzo, visión computacional y gemelos digitales a la cascada modular de membranas.",
+                "mol-structure-desc": "ExploraciÃ³n 3D de metabolitos objetivo, receptores y complejos enzimÃ¡ticos mediante 3Dmol.js.",
+                "mol-ai-desc": "Arquitecturas industriales ML/RL para calidad en lÃ­nea, control de membranas y gemelos digitales a escala de ecosistema.",
+                "ai-core-badge": "NÃšCLEO DIGITAL INTELIGENTE",
+                "ai-core-title": "La BiorrefinerÃ­a AutÃ³noma",
+                "ai-core-subtitle": "Cuatro macro-arquitecturas que acoplan espectroscopÃ­a, aprendizaje por refuerzo, visiÃ³n computacional y gemelos digitales a la cascada modular de membranas.",
                 "ai-card1-stack": "XGBoost + CNN 1D",
-                "ai-card1-title": "Predicción de Materia Prima y Control de Calidad (XGBoost + CNN 1D)",
-                "ai-card1-desc": "Modelos XGBoost y CNN 1D que estiman la concentración de metabolitos en tiempo real mediante espectroscopía NIR, con predicción analítica en menos de 60 s y eliminando el 70% de los análisis HPLC tradicionales.",
-                "ai-card2-stack": "PPO + LSTM  · OPC-UA",
-                "ai-card2-title": "Control Óptimo de Membranas (PPO + LSTM)",
-                "ai-card2-desc": "Modelos LSTM predictivos de fouling y control por Aprendizaje por Refuerzo (PPO) integrado a PLC Siemens S7-1500 vía OPC-UA, aumentando un 15% el flujo neto de permeado y anticipando el fouling con 4 horas de margen.",
+                "ai-card1-title": "PredicciÃ³n de Materia Prima y Control de Calidad (XGBoost + CNN 1D)",
+                "ai-card1-desc": "Modelos XGBoost y CNN 1D que estiman la concentraciÃ³n de metabolitos en tiempo real mediante espectroscopÃ­a NIR, con predicciÃ³n analÃ­tica en menos de 60 s y eliminando el 70% de los anÃ¡lisis HPLC tradicionales.",
+                "ai-card2-stack": "PPO + LSTM  Â· OPC-UA",
+                "ai-card2-title": "Control Ã“ptimo de Membranas (PPO + LSTM)",
+                "ai-card2-desc": "Modelos LSTM predictivos de fouling y control por Aprendizaje por Refuerzo (PPO) integrado a PLC Siemens S7-1500 vÃ­a OPC-UA, aumentando un 15% el flujo neto de permeado y anticipando el fouling con 4 horas de margen.",
                 "ai-card3-stack": "ResNet-50 + Optuna",
                 "ai-card4-stack": "PyTorch + MATLAB",
-                "ai-card3-title": "Visión Computacional de Bioproceso y Optimización Bayesiana (ResNet-50 + Optuna)",
-                "ai-card3-desc": "Monitoreo microscópico en tiempo real de densidad celular y reducción del 60% en experimentos de diseño de medios de cultivo mediante visión computacional ResNet-50 y optimización bayesiana Optuna.",
+                "ai-card3-title": "VisiÃ³n Computacional de Bioproceso y OptimizaciÃ³n Bayesiana (ResNet-50 + Optuna)",
+                "ai-card3-desc": "Monitoreo microscÃ³pico en tiempo real de densidad celular y reducciÃ³n del 60% en experimentos de diseÃ±o de medios de cultivo mediante visiÃ³n computacional ResNet-50 y optimizaciÃ³n bayesiana Optuna.",
                 "ai-card4-title": "Gemelo Digital del Ecosistema (PyTorch + MATLAB)",
-                "ai-card4-desc": "Simulación híbrida físico-química y predictiva en tiempo real con PyTorch y MATLAB para optimizar paradas de planta y la logística combinatoria de recolección de riles (VRP).",
-                "ip-roadmap-badge": "Protección Estratégica",
+                "ai-card4-desc": "SimulaciÃ³n hÃ­brida fÃ­sico-quÃ­mica y predictiva en tiempo real con PyTorch y MATLAB para optimizar paradas de planta y la logÃ­stica combinatoria de recolecciÃ³n de riles (VRP).",
+                "ip-roadmap-badge": "ProtecciÃ³n EstratÃ©gica",
                 "ip-roadmap-title": "Propiedad Intelectual y <span class='text-lavender italic'>Foso Defensivo</span>",
-                "ip-roadmap-desc": "Nuestra hoja de ruta tecnológica contempla un modelo de protección en capas (Cebolla IP) diseñado para blindar tanto los activos físicos como los desarrollos digitales antes de la fase de escalamiento industrial.",
-                "ip-roadmap-1-title": "Aislamiento Fisicoquímico y de Bioproceso",
-                "ip-roadmap-1-desc": "Protección mediante Patentes de Invención de la secuencia de biorrefinería modular y perfiles de composición estables de biocompuestos marinos (Taurina Azul, Prebióticos y Postbióticos).",
-                "ip-roadmap-2-title": "Software Autónomo y Arquitectura CII",
-                "ip-roadmap-2-desc": "Protección híbrida de modelos predictivos de control de procesos industriales: Patentes de Invención Implementadas por Computador (CII) para algoritmos con impacto físico en planta, y Secreto Industrial (Know-How) bajo estrictos acuerdos de gobernanza para modelos predictivos de calidad.",
+                "ip-roadmap-desc": "Nuestra hoja de ruta tecnolÃ³gica contempla un modelo de protecciÃ³n en capas (Cebolla IP) diseÃ±ado para blindar tanto los activos fÃ­sicos como los desarrollos digitales antes de la fase de escalamiento industrial.",
+                "ip-roadmap-1-title": "Aislamiento FisicoquÃ­mico y de Bioproceso",
+                "ip-roadmap-1-desc": "ProtecciÃ³n mediante Patentes de InvenciÃ³n de la secuencia de biorrefinerÃ­a modular y perfiles de composiciÃ³n estables de biocompuestos marinos (Taurina Azul, PrebiÃ³ticos y PostbiÃ³ticos).",
+                "ip-roadmap-2-title": "Software AutÃ³nomo y Arquitectura CII",
+                "ip-roadmap-2-desc": "ProtecciÃ³n hÃ­brida de modelos predictivos de control de procesos industriales: Patentes de InvenciÃ³n Implementadas por Computador (CII) para algoritmos con impacto fÃ­sico en planta, y Secreto Industrial (Know-How) bajo estrictos acuerdos de gobernanza para modelos predictivos de calidad.",
                 "ip-roadmap-3-title": "Equidad de Marca Territorial",
-                "ip-roadmap-3-desc": "Registro de marcas comerciales internacionales y estructuración de Indicaciones Geográficas (I.G.) que vinculen de forma exclusiva el valor biotecnológico del extracto al terroir de los fiordos de la Región de Los Lagos.",
+                "ip-roadmap-3-desc": "Registro de marcas comerciales internacionales y estructuraciÃ³n de Indicaciones GeogrÃ¡ficas (I.G.) que vinculen de forma exclusiva el valor biotecnolÃ³gico del extracto al terroir de los fiordos de la RegiÃ³n de Los Lagos.",
                 "mol-select": "Compuesto:",
                 "mol-style": "Estilo:",
                 "mol-loading": "Descargando Coordenadas 3D...",
                 "mol-interact": "&bull; Clic izquierdo: rotar | Clic derecho: arrastrar | Scroll: zoom",
-                "mol-lit-title": "Validación Académica (OpenAlex)",
+                "mol-lit-title": "ValidaciÃ³n AcadÃ©mica (OpenAlex)",
                 "mol-opt-taur": "Taurina (CID 1123)",
-                "team-badge": "06 — Orígenes",
-                "con-badge": "07 — Piloto Estratégico",
-                "con-title": "Acelerando nuestra <span class='text-teal italic'>escala de valorización.</span>",
-                "con-desc": "Estamos construyendo el primer piloto modular de biorrefinería en la Patagonia. Póngase en contacto para discutir inversión semilla, muestreo de productos o alianzas de materia prima acuícola.",
+                "team-badge": "06 â€” OrÃ­genes",
+                "con-badge": "07 â€” Piloto EstratÃ©gico",
+                "con-title": "Acelerando nuestra <span class='text-teal italic'>escala de valorizaciÃ³n.</span>",
+                "con-desc": "Estamos construyendo el primer piloto modular de biorrefinerÃ­a en la Patagonia. PÃ³ngase en contacto para discutir inversiÃ³n semilla, muestreo de productos o alianzas de materia prima acuÃ­cola.",
                 "con-mail": "Contacto por Email",
-                "con-loc": "Ubicación",
-                "con-loc-desc": "Región de Los Lagos, Sur de Chile",
+                "con-loc": "UbicaciÃ³n",
+                "con-loc-desc": "RegiÃ³n de Los Lagos, Sur de Chile",
                 "con-linkedin": "LinkedIn",
                 "con-linkedin-desc": "Seguir a Aquabiotics Sur",
                 "con-onepager-btn": "Descargar One-Pager Ejecutivo (ES)",
                 "form-name": "Nombre Completo",
-                "form-email": "Dirección de Correo",
-                "form-select-label": "Tipo de Alianza Estratégica",
-                "form-opt1": "Alianza Científica",
-                "form-opt2": "Proveedor de Materia Prima (Procesador de mejillón)",
+                "form-email": "DirecciÃ³n de Correo",
+                "form-select-label": "Tipo de Alianza EstratÃ©gica",
+                "form-opt1": "Alianza CientÃ­fica",
+                "form-opt2": "Proveedor de Materia Prima (Procesador de mejillÃ³n)",
                 "form-opt3": "Capital Semilla de Riesgo",
-                "form-opt4": "Otro Interés",
+                "form-opt4": "Otro InterÃ©s",
                 "form-msg": "Mensaje",
                 "form-submit": "Enviar Solicitud de Alianza",
-                "form-success-title": "¡Mensaje Recibido!",
-                "form-success-desc": "Gracias por contactarnos. Nuestro equipo revisará su mensaje y le responderá a la brevedad.",
+                "form-success-title": "Â¡Mensaje Recibido!",
+                "form-success-desc": "Gracias por contactarnos. Nuestro equipo revisarÃ¡ su mensaje y le responderÃ¡ a la brevedad.",
                 "form-reset": "Enviar Otro Mensaje",
-                "foot-region": "Los Lagos  · Patagonia Chilena",
-                "foot-quote": "\"Ingeniería en biocompuestos para transformar el cumplimiento ambiental industrial en una ventaja competitiva.\"",
-                "foot-copy": "bioeconomía azul a través de la innovación biotecnológica sostenible.",
-                "foot-privacy": "Política de Privacidad",
+                "foot-region": "Los Lagos  Â· Patagonia Chilena",
+                "foot-quote": "\"IngenierÃ­a en biocompuestos para transformar el cumplimiento ambiental industrial en una ventaja competitiva.\"",
+                "foot-copy": "bioeconomÃ­a azul a travÃ©s de la innovaciÃ³n biotecnolÃ³gica sostenible.",
+                "foot-privacy": "PolÃ­tica de Privacidad",
                 "team-title": "La Paradoja de <span class='text-teal italic'>Los Lagos</span>",
-                "team-desc1": "AquaBiotics Sur nace en el corazón de la Región de Los Lagos, sur de Chile, territorio conocido por sus fiordos prístinos y su pujante industria acuícola. Se reconoció una paradoja: mientras la mitilicultura es un motor económico clave, genera grandes volúmenes de subproductos líquidos que hoy se descartan.",
-                "team-desc2": "Esto se vio no como un pasivo, sino como un reservorio inexplorado de biomoléculas marinas valiosas. La misión es liderar la <span class='text-teal font-bold'>bioeconomía azul</span> a través de la biotecnología marina.",
-                "team-alliance-desc": "A través del Programa Volcanes —gestionado por Këtrawa Lab, el Centro de Innovación UC y patrocinado por CORFO— articulamos de forma directa las primeras Cartas de Intención (LOIs) con las plantas mitilicultoras asociadas a AmiChile, garantizando la viabilidad del suministro y el escalamiento del piloto.",
-                "team-mission-title": "Misión",
-                "team-mission-desc": "Liderar la bioeconomía azul saneando las costas, reemplazando sintéticos por pureza sostenible, y posicionando a la Patagonia como un polo global de biotecnología.",
-                "team-vision-title": "Visión",
-                "team-vision-desc": "Ser el referente global de metabolitos marinos upcycled, fijando el estándar de circularidad y excelencia biotecnológica desde el corazón de la Patagonia.",
-                "team-location-title": "Ubicación",
-                "team-location-desc": "Operaciones estratégicas en la Región de Los Lagos, Chile&mdash;epicentro de la mitilicultura nacional.",
+                "team-desc1": "AquaBiotics Sur nace en el corazÃ³n de la RegiÃ³n de Los Lagos, sur de Chile, territorio conocido por sus fiordos prÃ­stinos y su pujante industria acuÃ­cola. Se reconociÃ³ una paradoja: mientras la mitilicultura es un motor econÃ³mico clave, genera grandes volÃºmenes de subproductos lÃ­quidos que hoy se descartan.",
+                "team-desc2": "Esto se vio no como un pasivo, sino como un reservorio inexplorado de biomolÃ©culas marinas valiosas. La misiÃ³n es liderar la <span class='text-teal font-bold'>bioeconomÃ­a azul</span> a travÃ©s de la biotecnologÃ­a marina.",
+                "team-alliance-desc": "A travÃ©s del Programa Volcanes â€”gestionado por KÃ«trawa Lab, el Centro de InnovaciÃ³n UC y patrocinado por CORFOâ€” articulamos de forma directa las primeras Cartas de IntenciÃ³n (LOIs) con las plantas mitilicultoras asociadas a AmiChile, garantizando la viabilidad del suministro y el escalamiento del piloto.",
+                "team-mission-title": "MisiÃ³n",
+                "team-mission-desc": "Liderar la bioeconomÃ­a azul saneando las costas, reemplazando sintÃ©ticos por pureza sostenible, y posicionando a la Patagonia como un polo global de biotecnologÃ­a.",
+                "team-vision-title": "VisiÃ³n",
+                "team-vision-desc": "Ser el referente global de metabolitos marinos upcycled, fijando el estÃ¡ndar de circularidad y excelencia biotecnolÃ³gica desde el corazÃ³n de la Patagonia.",
+                "team-location-title": "UbicaciÃ³n",
+                "team-location-desc": "Operaciones estratÃ©gicas en la RegiÃ³n de Los Lagos, Chile&mdash;epicentro de la mitilicultura nacional.",
                 "spec-raw": "Materia Prima",
-                "spec-raw-desc": "Caldo de Cocción de Choritos <span class=\"text-muted text-xl italic font-light\">(Corriente de Procesamiento de Mejillón)</span>",
+                "spec-raw-desc": "Caldo de CocciÃ³n de Choritos <span class=\"text-muted text-xl italic font-light\">(Corriente de Procesamiento de MejillÃ³n)</span>",
                 "spec-product": "Producto Principal",
                 "spec-product-desc": "Extracto Azul <span class=\"text-muted text-xl italic font-light\">(Compuesto de Origen Marino)</span>",
-                "spec-quality": "Estándares de Calidad",
+                "spec-quality": "EstÃ¡ndares de Calidad",
                 "spec-quality-desc": ">95% Pureza HPLC &middot; Clean Label &middot; Upcycled",
                 "spec-onepager": "One-Pager Ejecutivo",
                 "spec-onepager-desc": "Descargar Documento",
                 "mol-error-title": "Error al Cargar la Estructura",
-                "mol-error-desc": "Por favor, verifica tu conexión a internet o sirve la página a través de un servidor local (http://) para cumplir con las políticas de CORS."
+                "mol-error-desc": "Por favor, verifica tu conexiÃ³n a internet o sirve la pÃ¡gina a travÃ©s de un servidor local (http://) para cumplir con las polÃ­ticas de CORS."
 }
         };
 
@@ -2650,14 +2657,14 @@
             const onepagerLinks = [document.getElementById('onepager-link'), document.getElementById('onepager-link-contact')];
             onepagerLinks.forEach(link => {
                 if (link) {
-                    link.href = lang === 'es' ? '../ONE-PAGER_AB_SUR.html' : '../ONE-PAGER_AB_SUR_EN.html';
+                    link.href = lang === 'es' ? './ONE-PAGER_AB_SUR.html' : './ONE-PAGER_AB_SUR_EN.html';
                 }
             });
 
             // Update privacy policy link href
             const privacyLink = document.getElementById('privacy-link');
             if (privacyLink) {
-                privacyLink.href = lang === 'es' ? '../es/privacy.html' : '../privacy.html';
+                privacyLink.href = lang === 'es' ? './es/privacy.html' : './privacy.html';
             }
 
             // Toggle active classes on lang switcher buttons
@@ -2666,12 +2673,12 @@
 
             // Update document title and meta description dynamically
             const docTitle = lang === 'es' 
-                ? 'AquaBiotics Sur | Biorrefinería Circular DeepTech | Taurina Azul' 
+                ? 'AquaBiotics Sur | BiorrefinerÃ­a Circular DeepTech | Taurina Azul' 
                 : 'AquaBiotics Sur | DeepTech Circular Biorefinery | Blue Taurine';
             document.title = docTitle;
                 
             const docDesc = lang === 'es'
-                ? 'Arquitectura DeepTech sostenible para la valorización de subproductos marinos en compuesto orgánico y compuestos bioactivos de alta pureza. Líder de la economía azul circular en Patagonia.'
+                ? 'Arquitectura DeepTech sostenible para la valorizaciÃ³n de subproductos marinos en compuesto orgÃ¡nico y compuestos bioactivos de alta pureza. LÃ­der de la economÃ­a azul circular en Patagonia.'
                 : 'Sustainable DeepTech architecture for upcycling industrial marine byproducts into high-purity organic compound and bioactive compounds. Patagonia\'s leading regenerative blue economy.';
 
             // Standard Meta
@@ -2719,7 +2726,7 @@
                     input.placeholder = lang === 'es' ? 'correo@empresa.com' : 'contact@company.com';
                 }
                 if (input.tagName === 'TEXTAREA') {
-                    input.placeholder = lang === 'es' ? 'Escribe aquí tu consulta o interés...' : 'Write your inquiry here...';
+                    input.placeholder = lang === 'es' ? 'Escribe aquÃ­ tu consulta o interÃ©s...' : 'Write your inquiry here...';
                 }
             });
 
@@ -2738,7 +2745,7 @@
         }
 
 
-        // ── 2. Lenis Smooth Scroll ──
+        // â”€â”€ 2. Lenis Smooth Scroll â”€â”€
         const lenis = new Lenis({
             duration: 1.2,
             easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -2756,7 +2763,7 @@
             ScrollTrigger.refresh();
         });
 
-        // ── 3. Navbar Scroll Effect & Smooth Anchors ──
+        // â”€â”€ 3. Navbar Scroll Effect & Smooth Anchors â”€â”€
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
@@ -2776,7 +2783,7 @@
             });
         });
 
-        // ── 4. Interactive Particle Canvas Background ──
+        // â”€â”€ 4. Interactive Particle Canvas Background â”€â”€
         const canvas = document.getElementById('particle-canvas');
         const ctx = canvas.getContext('2d');
         let particles = [];
@@ -2892,8 +2899,8 @@
         animateParticles();
 
 
-        // ── 5. HPLC Decode Scramble Effect (El Sabio) ──
-        const HPLC_CHARS = '0123456789ABCDEFÎ”Î¼Ïƒ ·Xx:'.split('');
+        // â”€â”€ 5. HPLC Decode Scramble Effect (El Sabio) â”€â”€
+        const HPLC_CHARS = '0123456789ABCDEFÃŽâ€ÃŽÂ¼ÃÆ’ Â·Xx:'.split('');
 
         function decodeHPLC(el) {
             const targetStr = el.getAttribute('data-target');
@@ -2953,7 +2960,7 @@
         });
 
 
-        // ── 6. Technology Timeline — Scroll-driven Progress Line ──
+        // â”€â”€ 6. Technology Timeline â€” Scroll-driven Progress Line â”€â”€
         gsap.to('#progress-line', {
             height: '100%',
             ease: 'none',
@@ -2966,9 +2973,9 @@
         });
 
 
-        // ── 7. GSAP Cinematic Orchestration (Extracto Azul) ──
+        // â”€â”€ 7. GSAP Cinematic Orchestration (Extracto Azul) â”€â”€
         
-        // ── Preloader close ──
+        // â”€â”€ Preloader close â”€â”€
         window.addEventListener('load', () => {
             const tl = gsap.timeline();
             tl.to('#preloader-progress', { width: '100%', duration: 1.2, ease: 'power3.inOut' })
@@ -2981,7 +2988,7 @@
         // Preloader Scramble Text
         const preText = document.getElementById('preloader-text');
         const preTitle = document.getElementById('preloader-title');
-        const HPLC_CHARS_PRE = '0123456789ABCDEFÎ”Î¼Ïƒ ·Xx:'.split('');
+        const HPLC_CHARS_PRE = '0123456789ABCDEFÃŽâ€ÃŽÂ¼ÃÆ’ Â·Xx:'.split('');
         let iteration = 0;
         const interval = setInterval(() => {
             preText.innerText = preText.innerText.split('').map((char, index) => {
@@ -3027,7 +3034,7 @@
                 opacity: 1, scale: 1, y: 0, duration: 0.9, ease: 'power3.out'
             }, 0.8);
 
-            // Phase 3: "Extracto" — luminous edge sweep + clip-path reveal
+            // Phase 3: "Extracto" â€” luminous edge sweep + clip-path reveal
             heroTL.to('#lumi-1', {
                 opacity: 1, x: 0, duration: 0.3, ease: 'power3.out'
             }, 1.2);
@@ -3041,7 +3048,7 @@
                 opacity: 0, duration: 0.4, ease: 'power2.out'
             }, 2.3);
 
-            // Phase 4: "Azul" — same reveal with slight delay + teal glow activation
+            // Phase 4: "Azul" â€” same reveal with slight delay + teal glow activation
             heroTL.to('#lumi-2', {
                 opacity: 1, x: 0, duration: 0.3, ease: 'power3.out'
             }, 1.9);
@@ -3167,7 +3174,7 @@
                 'M0,68 Q45,60 65,72 T100,68 L100,100 L0,100 Z', 12);
         }
 
-        // ── 8. Scroll revealing via GSAP ScrollTrigger ──
+        // â”€â”€ 8. Scroll revealing via GSAP ScrollTrigger â”€â”€
         document.querySelectorAll('.gsap-reveal').forEach(el => {
             gsap.to(el, {
                 scrollTrigger: {
@@ -3236,7 +3243,7 @@
         });
 
 
-        // ── 8b. 3Dmol resize when structural section enters view (both panels always visible) ──
+        // â”€â”€ 8b. 3Dmol resize when structural section enters view (both panels always visible) â”€â”€
         const molStructureSection = document.getElementById('mol-section-structure');
         if (molStructureSection && typeof ScrollTrigger !== 'undefined') {
             ScrollTrigger.create({
@@ -3255,7 +3262,7 @@
             });
         }
 
-        // ── 9. Interactive mouse positioning inside cards (Glow coordinates) ──
+        // â”€â”€ 9. Interactive mouse positioning inside cards (Glow coordinates) â”€â”€
         document.querySelectorAll('.glass-card').forEach(card => {
             card.addEventListener('mousemove', (e) => {
                 const rect = card.getBoundingClientRect();
@@ -3267,7 +3274,7 @@
         });
 
 
-        // ── 10. Mobile Menu triggers ──
+        // â”€â”€ 10. Mobile Menu triggers â”€â”€
         function toggleMenu() {
             const menu = document.getElementById('mobile-menu');
             const hamburger = document.getElementById('hamburger');
@@ -3295,37 +3302,37 @@
             }
         }
 
-        // ── 11. 3Dmol Molecular Viewer & OpenAlex Literature Dashboard ──
+        // â”€â”€ 11. 3Dmol Molecular Viewer & OpenAlex Literature Dashboard â”€â”€
         const moleculeData = {
             taur: {
                 name: { en: "Extract", es: "Extracto" },
-                formula: "C₂H₇NO₃S",
+                formula: "Câ‚‚Hâ‚‡NOâ‚ƒS",
                 type: "sdf",
                 url: "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/1123/record/SDF/?record_type=3d",
                 specs: {
                     en: [
                         { name: "IUPAC Name", value: "2-aminoethanesulfonic acid" },
                         { name: "Molecular Weight", value: "125.15 g/mol" },
-                        { name: "Melting Point", value: "305  °C" },
+                        { name: "Melting Point", value: "305  Â°C" },
                         { name: "Biological Origin", value: "Endogenous upcycled amino-sulfonic acid" },
                         { name: "Metabolic Function", value: "Bile acid conjugation, osmoregulation, calcium modulation" },
                         { name: "Purity Standard", value: ">99% HPLC Bio-Grade" }
                     ],
                     es: [
-                        { name: "Nombre IUPAC", value: "ácido 2-aminoetanosulfónico" },
+                        { name: "Nombre IUPAC", value: "Ã¡cido 2-aminoetanosulfÃ³nico" },
                         { name: "Peso Molecular", value: "125.15 g/mol" },
-                        { name: "Punto de Fusión", value: "305  °C" },
-                        { name: "Origen Biológico", value: "Amino-sulfónico endógeno revalorizado" },
-                        { name: "Función Metabólica", value: "Conjugación de ácidos biliares, osmorregulación, modulación de calcio" },
-                        { name: "Estándar de Pureza", value: ">99% Grado Bio-HPLC" }
+                        { name: "Punto de FusiÃ³n", value: "305  Â°C" },
+                        { name: "Origen BiolÃ³gico", value: "Amino-sulfÃ³nico endÃ³geno revalorizado" },
+                        { name: "FunciÃ³n MetabÃ³lica", value: "ConjugaciÃ³n de Ã¡cidos biliares, osmorregulaciÃ³n, modulaciÃ³n de calcio" },
+                        { name: "EstÃ¡ndar de Pureza", value: ">99% Grado Bio-HPLC" }
                     ]
                 },
                 openalexQuery: "mussel upcycling closed loop marine",
                 defaultRep: "stick"
             },
             dha: {
-                name: { en: "DHA (Docosahexaenoic Acid)", es: "DHA (Ácido Docosahexaenoico)" },
-                formula: "C₂₂H₃₂O₂",
+                name: { en: "DHA (Docosahexaenoic Acid)", es: "DHA (Ãcido Docosahexaenoico)" },
+                formula: "Câ‚‚â‚‚Hâ‚ƒâ‚‚Oâ‚‚",
                 type: "sdf",
                 url: "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/445580/record/SDF/?record_type=3d",
                 specs: {
@@ -3338,12 +3345,12 @@
                         { name: "Purity Standard", value: "High-purity Bio-lipid profile" }
                     ],
                     es: [
-                        { name: "Nombre IUPAC", value: "ácido (4Z,7Z,10Z,13Z,16Z,19Z)-docosa-4,7,10,13,16,19-hexaenoico" },
+                        { name: "Nombre IUPAC", value: "Ã¡cido (4Z,7Z,10Z,13Z,16Z,19Z)-docosa-4,7,10,13,16,19-hexaenoico" },
                         { name: "Peso Molecular", value: "328.5 g/mol" },
-                        { name: "Clase de Lípido", value: "Ácido graso poliinsaturado omega-3 (PUFA)" },
-                        { name: "Origen Biológico", value: "coproductos de fermentación de microalgas heterótrofas" },
-                        { name: "Función Metabólica", value: "Componente estructural de cerebro, piel y retina" },
-                        { name: "Estándar de Pureza", value: "Perfil de bio-lípido de alta pureza" }
+                        { name: "Clase de LÃ­pido", value: "Ãcido graso poliinsaturado omega-3 (PUFA)" },
+                        { name: "Origen BiolÃ³gico", value: "coproductos de fermentaciÃ³n de microalgas heterÃ³trofas" },
+                        { name: "FunciÃ³n MetabÃ³lica", value: "Componente estructural de cerebro, piel y retina" },
+                        { name: "EstÃ¡ndar de Pureza", value: "Perfil de bio-lÃ­pido de alta pureza" }
                     ]
                 },
                 openalexQuery: "docosahexaenoic acid microalgae fermentation heterotrophic",
@@ -3357,40 +3364,40 @@
                 specs: {
                     en: [
                         { name: "Classification", value: "Membrane transport protein" },
-                        { name: "Method", value: "Cryo-EM (Resolution 2.90 Å)" },
+                        { name: "Method", value: "Cryo-EM (Resolution 2.90 Ã…)" },
                         { name: "Organism", value: "Homo sapiens (expressed in Sf9 cells)" },
                         { name: "Function", value: "Sodium- and chloride-dependent high-affinity solute uptake" },
                         { name: "Biomedical Value", value: "Target for maintaining cellular solute balance" }
                     ],
                     es: [
-                        { name: "Clasificación", value: "Proteína de transporte de membrana" },
-                        { name: "Método", value: "Cryo-EM (Resolución 2.90 Å)" },
-                        { name: "Organismo", value: "Homo sapiens (expresado en células Sf9)" },
-                        { name: "Función", value: "Captación de soluto de alta afinidad dependiente de sodio y cloruro" },
-                        { name: "Valor Biomédico", value: "Blanco para mantener el balance celular del compuesto" }
+                        { name: "ClasificaciÃ³n", value: "ProteÃ­na de transporte de membrana" },
+                        { name: "MÃ©todo", value: "Cryo-EM (ResoluciÃ³n 2.90 Ã…)" },
+                        { name: "Organismo", value: "Homo sapiens (expresado en cÃ©lulas Sf9)" },
+                        { name: "FunciÃ³n", value: "CaptaciÃ³n de soluto de alta afinidad dependiente de sodio y cloruro" },
+                        { name: "Valor BiomÃ©dico", value: "Blanco para mantener el balance celular del compuesto" }
                     ]
                 },
                 openalexQuery: "TauT transporter structure cryo-em",
                 defaultRep: "cartoon"
             },
             cdo1: {
-                name: { en: "Cysteine Dioxygenase (CDO1)", es: "Cisteína Dioxigenasa (CDO1)" },
+                name: { en: "Cysteine Dioxygenase (CDO1)", es: "CisteÃ­na Dioxigenasa (CDO1)" },
                 formula: "PDB 2IC1",
                 type: "pdb",
                 url: "https://files.rcsb.org/view/2IC1.pdb",
                 specs: {
                     en: [
                         { name: "Classification", value: "Dioxygenase enzyme" },
-                        { name: "Method", value: "X-ray Diffraction (Resolution 1.50 Å)" },
+                        { name: "Method", value: "X-ray Diffraction (Resolution 1.50 Ã…)" },
                         { name: "Organism", value: "Homo sapiens" },
                         { name: "Function", value: "Initiates target compound synthesis by oxidizing cysteine to cysteine sulfinate" },
                         { name: "Active Site", value: "Mononuclear iron center" }
                     ],
                     es: [
-                        { name: "Clasificación", value: "Enzima dioxigenasa" },
-                        { name: "Método", value: "Difracción de Rayos X (Resolución 1.50 Å)" },
+                        { name: "ClasificaciÃ³n", value: "Enzima dioxigenasa" },
+                        { name: "MÃ©todo", value: "DifracciÃ³n de Rayos X (ResoluciÃ³n 1.50 Ã…)" },
                         { name: "Organismo", value: "Homo sapiens" },
-                        { name: "Función", value: "Inicia la síntesis del compuesto oxidando cisteína a cisteína sulfinato" },
+                        { name: "FunciÃ³n", value: "Inicia la sÃ­ntesis del compuesto oxidando cisteÃ­na a cisteÃ­na sulfinato" },
                         { name: "Sitio Activo", value: "Centro mononuclear de hierro" }
                     ]
                 },
@@ -3405,16 +3412,16 @@
                 specs: {
                     en: [
                         { name: "Classification", value: "Oxidoreductase / Prostaglandin Synthase" },
-                        { name: "Method", value: "X-ray Diffraction (Resolution 2.70 Å)" },
+                        { name: "Method", value: "X-ray Diffraction (Resolution 2.70 Ã…)" },
                         { name: "Ligand Bound", value: "Docosahexaenoic Acid (DHA)" },
                         { name: "Function", value: "Oxygenation of DHA, producing anti-inflammatory specialized mediators" },
                         { name: "Bio-Significance", value: "Explains structural basis of Omega-3 anti-inflammatory effects" }
                     ],
                     es: [
-                        { name: "Clasificación", value: "Oxidorreductasa / Prostaglandina Sintasa" },
-                        { name: "Método", value: "Difracción de Rayos X (Resolución 2.70 Å)" },
-                        { name: "Ligando Unido", value: "Ácido docosahexaenoico (DHA)" },
-                        { name: "Función", value: "Oxigenación de DHA, produciendo mediadores especializados antiinflamatorios" },
+                        { name: "ClasificaciÃ³n", value: "Oxidorreductasa / Prostaglandina Sintasa" },
+                        { name: "MÃ©todo", value: "DifracciÃ³n de Rayos X (ResoluciÃ³n 2.70 Ã…)" },
+                        { name: "Ligando Unido", value: "Ãcido docosahexaenoico (DHA)" },
+                        { name: "FunciÃ³n", value: "OxigenaciÃ³n de DHA, produciendo mediadores especializados antiinflamatorios" },
                         { name: "Bio-Significancia", value: "Explica las bases estructurales del efecto antiinflamatorio del Omega-3" }
                     ]
                 },
@@ -3626,7 +3633,7 @@
             const fallback = {
                 title: "Circular bioeconomy opportunities in marine industrial streams: Selective recovery and valorization",
                 journal: "Journal of Cleaner Production",
-                authors: "Calderón, B. et al.",
+                authors: "CalderÃ³n, B. et al.",
                 citations: 42,
                 link: "https://openalex.org"
             };
@@ -3678,10 +3685,10 @@
             if (!btn) return;
             
             if (isSpinning) {
-                btn.innerHTML = currentLang === 'es' ? 'Auto-Rotación: SÍ' : 'Auto-Spin: ON';
+                btn.innerHTML = currentLang === 'es' ? 'Auto-RotaciÃ³n: SÃ' : 'Auto-Spin: ON';
                 btn.classList.add('border-teal/30', 'text-teal');
             } else {
-                btn.innerHTML = currentLang === 'es' ? 'Auto-Rotación: NO' : 'Auto-Spin: OFF';
+                btn.innerHTML = currentLang === 'es' ? 'Auto-RotaciÃ³n: NO' : 'Auto-Spin: OFF';
                 btn.classList.remove('border-teal/30', 'text-teal');
             }
         }
@@ -3737,7 +3744,7 @@
                 .catch(error => {
                     console.error("Formspree AJAX error:", error);
                     alert(currentLang === 'es' 
-                        ? 'Ocurrió un error de red. Verifica tu conexión e inténtalo de nuevo.' 
+                        ? 'OcurriÃ³ un error de red. Verifica tu conexiÃ³n e intÃ©ntalo de nuevo.' 
                         : 'A network error occurred. Please check your connection and try again.');
                 });
             });
@@ -3783,4 +3790,5 @@
     </script>
 </body>
 </html>
+
 

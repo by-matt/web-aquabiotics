@@ -440,6 +440,43 @@
             pointer-events: none;
             will-change: transform;
         }
+
+        /* ── SCROLL INDICATOR ── */
+        .scroll-hint {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        .mouse-icon {
+            width: 22px;
+            height: 36px;
+            border: 2px solid var(--cream);
+            border-radius: 12px;
+            position: relative;
+        }
+        .mouse-wheel {
+            width: 2px;
+            height: 6px;
+            background: var(--teal);
+            position: absolute;
+            top: 6px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: scroll-wheel 2s infinite;
+        }
+        @keyframes scroll-wheel {
+            0% { opacity: 0; transform: translate(-50%, 0); }
+            30% { opacity: 1; }
+            100% { opacity: 0; transform: translate(-50%, 15px); }
+        }
+
+        /* Hide scroll indicator on short screens to avoid overlapping with Hero CTAs */
+        @media (max-height: 768px) {
+            #scroll-hint {
+                display: none !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -471,8 +508,10 @@
             <nav class="hidden lg:flex items-center gap-10">
                 <a href="#inicio" class="nav-link font-mono text-[11px] uppercase tracking-widest text-cream" data-translate="nav-home">Home</a>
                 <a href="#desafio" class="nav-link font-mono text-[11px] uppercase tracking-widest text-cream" data-translate="nav-challenge">Challenge</a>
+                <a href="#ciencia" class="nav-link font-mono text-[11px] uppercase tracking-widest text-cream" data-translate="nav-science">Science</a>
                 <a href="#tecnologia" class="nav-link font-mono text-[11px] uppercase tracking-widest text-cream" data-translate="nav-tech">Technology</a>
                 <a href="#ods" class="nav-link font-mono text-[11px] uppercase tracking-widest text-cream" data-translate="nav-impact">Impact</a>
+                <a href="#momento" class="nav-link font-mono text-[11px] uppercase tracking-widest text-cream" data-translate="nav-moment">Why now</a>
                 <a href="#nosotros" class="nav-link font-mono text-[11px] uppercase tracking-widest text-cream" data-translate="nav-team">Team</a>
                 <a href="#contacto" class="nav-link font-mono text-[11px] uppercase tracking-widest text-cream" data-translate="nav-contact">Contact</a>
             </nav>
@@ -505,8 +544,10 @@
     <div id="mobile-menu">
         <a href="#inicio" onclick="toggleMenu()" class="mobile-link" data-translate="nav-home">Home</a>
         <a href="#desafio" onclick="toggleMenu()" class="mobile-link" data-translate="nav-challenge">Challenge</a>
+        <a href="#ciencia" onclick="toggleMenu()" class="mobile-link" data-translate="nav-science">Science</a>
         <a href="#tecnologia" onclick="toggleMenu()" class="mobile-link" data-translate="nav-tech">Technology</a>
         <a href="#ods" onclick="toggleMenu()" class="mobile-link" data-translate="nav-impact">Impact</a>
+        <a href="#momento" onclick="toggleMenu()" class="mobile-link" data-translate="nav-moment">Why now</a>
         <a href="#nosotros" onclick="toggleMenu()" class="mobile-link" data-translate="nav-team">Team</a>
         <a href="#contacto" onclick="toggleMenu()" class="mobile-link" data-translate="nav-contact">Contact</a>
         <a href="#contacto" onclick="toggleMenu()" class="mt-8 px-8 py-3 rounded-full bg-teal text-navy font-mono text-xs tracking-widest uppercase font-bold hover:shadow-[0_0_25px_var(--teal)] transition-all" data-translate="nav-cta">Pilot Alliance</a>
@@ -583,11 +624,14 @@
 
             <!-- CTAs -->
             <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
-                <a href="#tecnologia" class="hero-cta-anim px-10 py-4 rounded-xl bg-gradient-to-r from-teal to-steel text-navy font-mono text-xs uppercase tracking-widest font-bold hover:shadow-[0_0_30px_rgba(58,191,178,0.5)] transform hover:-translate-y-1 transition-all duration-300" id="hero-cta-1" data-translate="hero-cta-primary">
-                    Explore Technology
+                <a href="#desafio" class="hero-cta-anim px-10 py-4 rounded-xl bg-gradient-to-r from-teal to-steel text-navy font-mono text-xs uppercase tracking-widest font-bold hover:shadow-[0_0_30px_rgba(58,191,178,0.5)] transform hover:-translate-y-1 transition-all duration-300" id="hero-cta-1" data-translate="hero-cta-primary">
+                    Explore Opportunity
                 </a>
-                <a href="#contacto" class="hero-cta-anim px-10 py-4 rounded-xl border border-white/20 bg-white/5 backdrop-blur-md text-cream font-mono text-xs uppercase tracking-widest font-semibold hover:bg-white/10 hover:border-teal transition-all duration-300" id="hero-cta-2" data-translate="hero-cta-secondary">
-                    Get in Touch
+                <a href="#ciencia" class="hero-cta-anim px-10 py-4 rounded-xl border border-white/20 bg-white/5 backdrop-blur-md text-cream font-mono text-xs uppercase tracking-widest font-semibold hover:bg-white/10 hover:border-teal transition-all duration-300" id="hero-cta-2" data-translate="hero-cta-science">
+                    Scientific Support
+                </a>
+                <a href="#propuesta" class="hero-cta-anim px-8 py-3.5 rounded-xl border border-coral/30 bg-coral/5 text-coral font-mono text-xs uppercase tracking-widest font-medium hover:bg-coral/10 hover:border-coral transition-all duration-300" id="hero-cta-3" data-translate="hero-cta-providers">
+                    For Providers
                 </a>
             </div>
         </div>
@@ -598,6 +642,72 @@
                 <div class="mouse-wheel"></div>
             </div>
             <span class="font-mono text-[9px] uppercase tracking-widest text-muted block" data-translate="hero-scroll">Scroll to Explore</span>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 1 — Historia de Marca -->
+    <!-- TODO: aplicar misma animación de entrada que secciones adyacentes -->
+    <section id="historia" class="py-32 bg-navy-mid/60 backdrop-blur-md relative border-t border-white/5">
+        <div class="container mx-auto px-8 lg:px-16">
+            <div class="flex flex-col lg:flex-row gap-16 items-start justify-between mb-16">
+                <div class="w-full lg:w-5/12">
+                    <div class="font-mono text-xs tracking-[0.2em] uppercase text-teal mb-4 gsap-reveal" data-translate="hist-label">01 — Why We Exist</div>
+                    <div class="brand-rule gsap-reveal"></div>
+                    <h2 class="font-display text-4xl md:text-5xl font-light mb-8 gsap-reveal leading-tight" data-translate="hist-title">
+                        Where others see waste,<br>
+                        we see the <span class="text-teal italic font-medium">beginning.</span>
+                    </h2>
+                </div>
+                <div class="w-full lg:w-7/12 space-y-6">
+                    <p class="font-body text-muted-strong text-lg leading-relaxed gsap-reveal" data-translate="hist-p1">
+                        In Los Lagos, the sea is not just a landscape. It is a living industry. Each year, hundreds of thousands of tons of Chilean mussel are processed in coastal plants that generate, as an inevitable consequence, millions of liters of cooking broth.
+                    </p>
+                    <p class="font-body text-muted-strong text-lg leading-relaxed gsap-reveal" data-translate="hist-p2">
+                        That broth was treated for decades as a liability. A problem. A rising regulatory cost.
+                    </p>
+                    <p class="font-body text-muted-strong text-lg leading-relaxed gsap-reveal" data-translate="hist-p3">
+                        AquaBiotics Sur was born from a different question: What if that waste were, in reality, the most valuable raw material Chile has to offer to the world?
+                    </p>
+                </div>
+            </div>
+
+            <div class="w-full my-16 gsap-reveal">
+                <blockquote class="font-display text-2xl md:text-3xl italic text-center border-y border-white/10 py-12 px-4 max-w-4xl mx-auto text-cream" data-translate="hist-quote">
+                    "We are not a waste treatment company.<br class="hidden sm:inline">
+                    We are a company that found value where no one was looking."
+                </blockquote>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Card 1 -->
+                <div class="glass-card border-l-2 !border-l-teal border-white/10 p-8 rounded-none transition-all duration-300 gsap-reveal">
+                    <div class="glow-overlay"></div>
+                    <div class="font-mono text-xs tracking-[0.15em] uppercase text-teal/80 mb-2" data-translate="hist-card1-lbl">2009</div>
+                    <h4 class="font-display text-2xl font-light text-cream mb-4" data-translate="hist-card1-title">Dragnes et al. confirm</h4>
+                    <p class="font-body text-muted-strong text-sm leading-relaxed" data-translate="hist-card1-text">Taurine transfers massively to cooking water during thermal processing of mussels. The effluent is not a waste — it is a repository.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="glass-card border-l-2 !border-l-coral border-white/10 p-8 rounded-none transition-all duration-300 gsap-reveal">
+                    <div class="glow-overlay"></div>
+                    <div class="font-mono text-xs tracking-[0.15em] uppercase text-coral/80 mb-2" data-translate="hist-card2-lbl">2015–2019</div>
+                    <h4 class="font-display text-2xl font-light text-cream mb-4" data-translate="hist-card2-title">FONDEF UTFSM validates process</h4>
+                    <p class="font-body text-muted-strong text-sm leading-relaxed" data-translate="hist-card2-text">The first Chilean public project demonstrates that the MF→UF→NF route recovers taurine from canning effluent. The science was already funded by the State.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="glass-card border-l-2 !border-l-teal border-white/10 p-8 rounded-none transition-all duration-300 gsap-reveal">
+                    <div class="glow-overlay"></div>
+                    <div class="font-mono text-xs tracking-[0.15em] uppercase text-teal/80 mb-2" data-translate="hist-card3-lbl">2024</div>
+                    <h4 class="font-display text-2xl font-light text-cream mb-4" data-translate="hist-card3-title">WASEABI scales in Europa</h4>
+                    <p class="font-body text-muted-strong text-sm leading-relaxed" data-translate="hist-card3-text">At pilot scale in Galicia, nanofiltration achieves a concentration factor of 5.2× from mussel cooking water. Industrial technology exists.</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="glass-card border-l-2 !border-l-lavender border-white/10 p-8 rounded-none transition-all duration-300 gsap-reveal">
+                    <div class="glow-overlay"></div>
+                    <div class="font-mono text-xs tracking-[0.15em] uppercase text-lavender/80 mb-2" data-translate="hist-card4-lbl">2025</div>
+                    <h4 class="font-display text-2xl font-light text-cream mb-4" data-translate="hist-card4-title">AquaBiotics Sur</h4>
+                    <p class="font-body text-muted-strong text-sm leading-relaxed" data-translate="hist-card4-text">Applying that knowledge to the specific effluent of Mytilus chilensis in Los Lagos, for the global premium petfood and nutraceutical market. The gap has not been closed.</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -830,6 +940,95 @@
                         <p class="text-muted text-sm md:text-base leading-relaxed font-light" data-translate="step5-desc">Integration into functional foods and nutraceuticals.</p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 2 — Respaldo Científico -->
+    <!-- TODO: aplicar misma animación de entrada que secciones adyacentes -->
+    <section id="ciencia" class="py-32 bg-navy/60 backdrop-blur-md relative border-t border-white/5">
+        <div class="container mx-auto px-8 lg:px-16">
+            <div class="text-center mb-16">
+                <div class="font-mono text-xs tracking-[0.2em] uppercase text-teal mb-4 gsap-reveal" data-translate="sci-label">Verified Scientific Support</div>
+                <div class="brand-rule mx-auto gsap-reveal"></div>
+                <h2 class="font-display text-4xl md:text-5xl font-light mb-4 gsap-reveal leading-tight" data-translate="sci-title">
+                    The process is not a hypothesis. <span class="text-teal italic font-medium">It has already been proven.</span>
+                </h2>
+                <p class="font-body text-muted text-base max-w-2xl mx-auto gsap-reveal mt-4" data-translate="sci-subtitle">
+                    Every statement on this site has a verified source. These are the five references that sustain the technical viability of AquaBiotics Sur.
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto space-y-4">
+                <!-- Item 1 -->
+                <div class="glass-card p-6 rounded-xl flex flex-col md:flex-row md:items-center justify-between gap-4 border border-white/5 hover:border-teal/20 transition-all duration-300 gsap-reveal">
+                    <div class="flex items-start gap-4">
+                        <span class="font-mono text-teal text-lg font-bold flex-shrink-0">[1]</span>
+                        <div>
+                            <h4 class="font-body font-medium text-cream text-base md:text-lg" data-translate="sci-ref1-title">"Chile: second largest mussel producer globally"</h4>
+                            <p class="text-muted text-sm mt-1" data-translate="sci-ref1-info">AMIChile / Diario Chiloé (2024)</p>
+                        </div>
+                    </div>
+                    <div class="font-mono text-xs text-teal/70 break-all md:text-right mt-2 md:mt-0">
+                        diariochiloe.cl/noticia/entrevista/2024/11/chile-lidera-el-mercado-mundial-del-chorito
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="glass-card p-6 rounded-xl flex flex-col md:flex-row md:items-center justify-between gap-4 border border-white/5 hover:border-teal/20 transition-all duration-300 gsap-reveal">
+                    <div class="flex items-start gap-4">
+                        <span class="font-mono text-teal text-lg font-bold flex-shrink-0">[2]</span>
+                        <div>
+                            <h4 class="font-body font-medium text-cream text-base md:text-lg" data-translate="sci-ref2-title">"Taurine transfer to cooking water — losses up to 100%"</h4>
+                            <p class="text-muted text-sm mt-1" data-translate="sci-ref2-info">Dragnes et al. (2009). Int. Journal of Food Sciences and Nutrition, 60(2), 143-152.</p>
+                        </div>
+                    </div>
+                    <div class="font-mono text-xs text-teal/70 break-all md:text-right mt-2 md:mt-0">
+                        DOI: 10.1080/09637480701621654 &middot; PubMed: 18608559
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="glass-card p-6 rounded-xl flex flex-col md:flex-row md:items-center justify-between gap-4 border border-white/5 hover:border-teal/20 transition-all duration-300 gsap-reveal">
+                    <div class="flex items-start gap-4">
+                        <span class="font-mono text-teal text-lg font-bold flex-shrink-0">[3]</span>
+                        <div>
+                            <h4 class="font-body font-medium text-cream text-base md:text-lg" data-translate="sci-ref3-title">"300–400 L effluent/ton mussel · 5.2× concentration factor validated"</h4>
+                            <p class="text-muted text-sm mt-1" data-translate="sci-ref3-info">Pérez-Santaescolástica et al. (2024). Future Foods.</p>
+                        </div>
+                    </div>
+                    <div class="font-mono text-xs text-teal/70 break-all md:text-right mt-2 md:mt-0">
+                        sciencedirect.com/science/article/pii/S2667010024000064
+                    </div>
+                </div>
+                <!-- Item 4 -->
+                <div class="glass-card p-6 rounded-xl flex flex-col md:flex-row md:items-center justify-between gap-4 border border-white/5 hover:border-teal/20 transition-all duration-300 gsap-reveal">
+                    <div class="flex items-start gap-4">
+                        <span class="font-mono text-teal text-lg font-bold flex-shrink-0">[4]</span>
+                        <div>
+                            <h4 class="font-body font-medium text-cream text-base md:text-lg" data-translate="sci-ref4-title">"Taurine: most abundant free amino acid in mussels (32.7 mg/g dry weight)"</h4>
+                            <p class="text-muted text-sm mt-1" data-translate="sci-ref4-info">Bjerknes et al. (2024). Frontiers in Nutrition, 11:1443229.</p>
+                        </div>
+                    </div>
+                    <div class="font-mono text-xs text-teal/70 break-all md:text-right mt-2 md:mt-0">
+                        DOI: 10.3389/fnut.2024.1443229 &middot; PMC: pmc.ncbi.nlm.nih.gov/articles/PMC11563823
+                    </div>
+                </div>
+                <!-- Item 5 -->
+                <div class="glass-card p-6 rounded-xl flex flex-col md:flex-row md:items-center justify-between gap-4 border border-white/5 hover:border-teal/20 transition-all duration-300 gsap-reveal">
+                    <div class="flex items-start gap-4">
+                        <span class="font-mono text-teal text-lg font-bold flex-shrink-0">[5]</span>
+                        <div>
+                            <h4 class="font-body font-medium text-cream text-base md:text-lg" data-translate="sci-ref5-title">"Global taurine market USD 1,150M (2024), CAGR 5.2%"</h4>
+                            <p class="text-muted text-sm mt-1" data-translate="sci-ref5-info">Verified Market Reports (2024). Taurine Market — Global Industry Analysis.</p>
+                        </div>
+                    </div>
+                    <div class="font-mono text-xs text-teal/70 break-all md:text-right mt-2 md:mt-0">
+                        verifiedmarketreports.com/product/taurine-market/
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12 font-mono text-xs text-muted gsap-reveal" data-translate="sci-footer">
+                Full technical document available upon request &middot; byroncalderon@aqua-biotics.com
             </div>
         </div>
     </section>
@@ -1082,6 +1281,140 @@
                             <li class="flex flex-col gap-1">
                                 <span class="font-mono text-xs text-teal font-bold uppercase tracking-wider" data-translate="comp-lbl-impact">Environmental Impact</span>
                                 <span data-translate="comp-ab-impact">Positive (Fjord sanitation / Eutrophication control)</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 3 — Por Qué Ahora -->
+    <!-- TODO: aplicar misma animación de entrada que secciones adyacentes -->
+    <section id="momento" class="py-32 bg-navy-mid/60 backdrop-blur-md relative border-t border-white/5">
+        <div class="container mx-auto px-8 lg:px-16">
+            <div class="text-center mb-20">
+                <div class="font-mono text-xs tracking-[0.2em] uppercase text-teal mb-4 gsap-reveal" data-translate="now-label">Strategic Convergence</div>
+                <div class="brand-rule mx-auto gsap-reveal"></div>
+                <h2 class="font-display text-4xl md:text-5xl font-light mb-8 gsap-reveal leading-tight" data-translate="now-title">
+                    Four forces that align <span class="text-coral italic font-medium">exactly now.</span>
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Card 1 -->
+                <div class="glass-card p-8 rounded-2xl relative overflow-hidden flex flex-col justify-between min-h-[280px] gsap-reveal">
+                    <div class="absolute -right-2 -bottom-2 font-display text-8xl text-teal/10 select-none pointer-events-none font-bold">1</div>
+                    <div>
+                        <div class="w-8 h-[2px] bg-teal mb-6"></div>
+                        <h4 class="font-display text-2xl font-light text-cream mb-4" data-translate="now-card1-title">Regulation</h4>
+                        <p class="font-body text-sm text-muted-strong leading-relaxed" data-translate="now-card1-text">
+                            Chilean regulations DS N°90 and Resolution 613 Exenta force mussel plants to manage effluents at rising costs. Every liter discharged has a regulatory price.
+                        </p>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="glass-card p-8 rounded-2xl relative overflow-hidden flex flex-col justify-between min-h-[280px] gsap-reveal">
+                    <div class="absolute -right-2 -bottom-2 font-display text-8xl text-teal/10 select-none pointer-events-none font-bold">2</div>
+                    <div>
+                        <h4 class="font-display text-2xl font-light text-cream mb-4" data-translate="now-card2-title">Market</h4>
+                        <p class="font-body text-sm text-muted-strong leading-relaxed" data-translate="now-card2-text">
+                            The premium pet food segment grows over 6% annually and demands natural, traceable, petroleum-free ingredients. Synthetic taurine cannot meet this demand.
+                        </p>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="glass-card p-8 rounded-2xl relative overflow-hidden flex flex-col justify-between min-h-[280px] gsap-reveal">
+                    <div class="absolute -right-2 -bottom-2 font-display text-8xl text-teal/10 select-none pointer-events-none font-bold">3</div>
+                    <div>
+                        <h4 class="font-display text-2xl font-light text-cream mb-4" data-translate="now-card3-title">Technology</h4>
+                        <p class="font-body text-sm text-muted-strong leading-relaxed" data-translate="now-card3-text">
+                            Nanofiltration membrane costs have dropped significantly. Processes that were economically unviable five years ago now yield positive margins.
+                        </p>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="glass-card p-8 rounded-2xl relative overflow-hidden flex flex-col justify-between min-h-[280px] gsap-reveal">
+                    <div class="absolute -right-2 -bottom-2 font-display text-8xl text-teal/10 select-none pointer-events-none font-bold">4</div>
+                    <div>
+                        <h4 class="font-display text-2xl font-light text-cream mb-4" data-translate="now-card4-title">Origin</h4>
+                        <p class="font-body text-sm text-muted-strong leading-relaxed" data-translate="now-card4-text">
+                            Chile is the second largest mussel producer in the world. The raw material is available, continuous, and currently discharged without valuation. It cannot be replicated anywhere else.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-16 p-8 border border-teal/20 bg-teal/5 rounded-2xl gsap-reveal">
+                <p class="font-display italic text-xl text-center text-cream/80" data-translate="now-footer">
+                    "AquaBiotics Sur arrives at the exact moment when the environmental problem, the market opportunity, and the technical viability align."
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 4 — Propuesta de Valor Dual (proveedores + compradores) -->
+    <!-- TODO: aplicar misma animación de entrada que secciones adyacentes -->
+    <section id="propuesta" class="py-32 bg-navy/60 backdrop-blur-md relative border-t border-white/5">
+        <div class="container mx-auto px-8 lg:px-16">
+            <div class="text-center mb-16">
+                <div class="font-mono text-xs tracking-[0.2em] uppercase text-teal mb-4 gsap-reveal" data-translate="prop-label">Who We Work For</div>
+                <div class="brand-rule mx-auto gsap-reveal"></div>
+                <h2 class="font-display text-4xl md:text-5xl font-light mb-8 gsap-reveal leading-tight" data-translate="prop-title">
+                    One process. <span class="text-teal font-semibold">Two problems solved.</span>
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Columna Izquierda: Proveedor -->
+                <div class="glass-card p-10 rounded-3xl border border-white/10 flex flex-col justify-between gsap-reveal">
+                    <div>
+                        <div class="mb-6">
+                            <span class="font-mono text-xs uppercase tracking-widest border border-teal text-teal px-3 py-1 rounded-sm" data-translate="prop-col1-tag">MUSSEL FARMING PLANT</span>
+                        </div>
+                        <h3 class="font-display text-3xl text-cream mb-6" data-translate="prop-col1-title">Your waste turns into revenue</h3>
+                        <p class="font-body text-base text-muted-strong leading-relaxed mb-8" data-translate="prop-col1-p">
+                            Today, mussel cooking broth is a cost: treatment, disposal, risk of fines. AquaBiotics Sur transforms it into the raw material of a premium ingredient, with zero investment on your part.
+                        </p>
+                        <ul class="space-y-4 font-body text-sm text-muted-strong">
+                            <li class="flex items-start gap-3">
+                                <span class="text-teal text-lg leading-none">&bull;</span>
+                                <span data-translate="prop-col1-b1">Elimination of effluent management costs</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-teal text-lg leading-none">&bull;</span>
+                                <span data-translate="prop-col1-b2">Potential participation in the commercial upside</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-teal text-lg leading-none">&bull;</span>
+                                <span data-translate="prop-col1-b3">Certifiable circular economy seal for your sustainability report</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Comprador B2B -->
+                <div class="glass-card p-10 rounded-3xl border border-white/10 flex flex-col justify-between gsap-reveal">
+                    <div>
+                        <div class="mb-6">
+                            <span class="font-mono text-xs uppercase tracking-widest border border-coral text-coral px-3 py-1 rounded-sm" data-translate="prop-col2-tag">PETFOOD / NUTRACEUTICAL FORMULATOR</span>
+                        </div>
+                        <h3 class="font-display text-3xl text-cream mb-6" data-translate="prop-col2-title">The ingredient your market seeks</h3>
+                        <p class="font-body text-base text-muted-strong leading-relaxed mb-8" data-translate="prop-col2-p">
+                            Synthetic taurine cannot be certified as natural. AquaBiotics Sur provides marine-origin, batch-traceable taurine certified from Chiloé—the sole attribute that unlocks the premium segment that your competitors cannot reach.
+                        </p>
+                        <ul class="space-y-4 font-body text-sm text-muted-strong">
+                            <li class="flex items-start gap-3">
+                                <span class="text-coral text-lg leading-none">&bull;</span>
+                                <span data-translate="prop-col2-b1">Certifiable and traceable marine origin</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-coral text-lg leading-none">&bull;</span>
+                                <span data-translate="prop-col2-b2">Justified premium differential for labeling</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-coral text-lg leading-none">&bull;</span>
+                                <span data-translate="prop-col2-b3">Direct contribution to the ESG profile of the final product</span>
                             </li>
                         </ul>
                     </div>
@@ -1627,6 +1960,8 @@
         const translations = {
             en: {
                 "nav-home": "Home",
+                "nav-science": "Science",
+                "nav-moment": "Why now",
                 "nav-sub": "NATURE, REPLICATED.",
                 "nav-challenge": "Challenge",
                 "nav-tech": "Technology",
@@ -1638,7 +1973,67 @@
                 "hero-title-2": "Taurine",
                 "hero-badge": "Patagonian DeepTech Circularity",
                 "hero-desc": "Upcycling industrial marine effluents in Patagonia into high-purity natural taurine and sustainable bioactive metabolites.",
-                "hero-cta-primary": "Explore Technology",
+                "hero-cta-primary": "Explore Opportunity",
+                "hero-cta-science": "Scientific Support",
+                "hero-cta-providers": "For Providers",
+                "hero-cta-secondary": "Get in Touch",
+                "hist-label": "01 — Why We Exist",
+                "hist-title": "Where others see waste,<br>we see the <span class='text-teal italic font-medium'>beginning.</span>",
+                "hist-p1": "In Los Lagos, the sea is not just a landscape. It is a living industry. Each year, hundreds of thousands of tons of Chilean mussel are processed in coastal plants that generate, as an inevitable consequence, millions of liters of cooking broth.",
+                "hist-p2": "That broth was treated for decades as a liability. A problem. A rising regulatory cost.",
+                "hist-p3": "AquaBiotics Sur was born from a different question: What if that waste were, in reality, the most valuable raw material Chile has to offer to the world?",
+                "hist-quote": "\"We are not a waste treatment company.<br class='hidden sm:inline'>We are a company that found value where no one was looking.\"",
+                "hist-card1-lbl": "2009",
+                "hist-card1-title": "Dragnes et al. confirm",
+                "hist-card1-text": "Taurine transfers massively to cooking water during thermal processing of mussels. The effluent is not a waste — it is a repository.",
+                "hist-card2-lbl": "2015–2019",
+                "hist-card2-title": "FONDEF UTFSM validates process",
+                "hist-card2-text": "The first Chilean public project demonstrates that the MF→UF→NF route recovers taurine from canning effluent. The science was already funded by the State.",
+                "hist-card3-lbl": "2024",
+                "hist-card3-title": "WASEABI scales in Europe",
+                "hist-card3-text": "At pilot scale in Galicia, nanofiltration achieves a concentration factor of 5.2× from mussel cooking water. Industrial technology exists.",
+                "hist-card4-lbl": "2025",
+                "hist-card4-title": "AquaBiotics Sur",
+                "hist-card4-text": "Applying that knowledge to the specific effluent of Mytilus chilensis in Los Lagos, for the global premium petfood and nutraceutical market. The gap has not been closed.",
+                "sci-label": "Verified Scientific Support",
+                "sci-title": "The process is not a hypothesis. <span class='text-teal italic font-medium'>It has already been proven.</span>",
+                "sci-subtitle": "Every statement on this site has a verified source. These are the five references that sustain the technical viability of AquaBiotics Sur.",
+                "sci-ref1-title": "\"Chile: second largest mussel producer globally\"",
+                "sci-ref1-info": "AMIChile / Diario Chiloé (2024)",
+                "sci-ref2-title": "\"Taurine transfer to cooking water — losses up to 100%\"",
+                "sci-ref2-info": "Dragnes et al. (2009). Int. Journal of Food Sciences and Nutrition, 60(2), 143-152.",
+                "sci-ref3-title": "\"300–400 L effluent/ton mussel · 5.2× concentration factor validated\"",
+                "sci-ref3-info": "Pérez-Santaescolástica et al. (2024). Future Foods.",
+                "sci-ref4-title": "\"Taurine: most abundant free amino acid in mussels (32.7 mg/g dry weight)\"",
+                "sci-ref4-info": "Bjerknes et al. (2024). Frontiers in Nutrition, 11:1443229.",
+                "sci-ref5-title": "\"Global taurine market USD 1,150M (2024), CAGR 5.2%\"",
+                "sci-ref5-info": "Verified Market Reports (2024). Taurine Market — Global Industry Analysis.",
+                "sci-footer": "Full technical document available upon request &middot; byroncalderon@aqua-biotics.com",
+                "now-label": "Strategic Convergence",
+                "now-title": "Four forces that align <span class='text-coral italic font-medium'>exactly now.</span>",
+                "now-card1-title": "Regulation",
+                "now-card1-text": "Chilean regulations DS N°90 and Resolution 613 Exenta force mussel plants to manage effluents at rising costs. Every liter discharged has a regulatory price.",
+                "now-card2-title": "Market",
+                "now-card2-text": "The premium pet food segment grows over 6% annually and demands natural, traceable, petroleum-free ingredients. Synthetic taurine cannot meet this demand.",
+                "now-card3-title": "Technology",
+                "now-card3-text": "Nanofiltration membrane costs have dropped significantly. Processes that were economically unviable five years ago now yield positive margins.",
+                "now-card4-title": "Origin",
+                "now-card4-text": "Chile is the second largest mussel producer in the world. The raw material is available, continuous, and currently discharged without valuation. It cannot be replicated anywhere else.",
+                "now-footer": "AquaBiotics Sur arrives at the exact moment when the environmental problem, the market opportunity, and the technical viability align.",
+                "prop-label": "Who We Work For",
+                "prop-title": "One process. <span class='text-teal font-semibold'>Two problems solved.</span>",
+                "prop-col1-tag": "MUSSEL FARMING PLANT",
+                "prop-col2-tag": "PETFOOD / NUTRACEUTICAL FORMULATOR",
+                "prop-col1-title": "Your waste turns into revenue",
+                "prop-col2-title": "The ingredient your market seeks",
+                "prop-col1-p": "Today, mussel cooking broth is a cost: treatment, disposal, risk of fines. AquaBiotics Sur transforms it into the raw material of a premium ingredient, with zero investment on your part.",
+                "prop-col2-p": "Synthetic taurine cannot be certified as natural. AquaBiotics Sur provides marine-origin, batch-traceable taurine certified from Chiloé—the sole attribute that unlocks the premium segment that your competitors cannot reach.",
+                "prop-col1-b1": "Elimination of effluent management costs",
+                "prop-col1-b2": "Potential participation in the commercial upside",
+                "prop-col1-b3": "Certifiable circular economy seal for your sustainability report",
+                "prop-col2-b1": "Certifiable and traceable marine origin",
+                "prop-col2-b2": "Justified premium differential for labeling",
+                "prop-col2-b3": "Direct contribution to the ESG profile of the final product",
                 "hero-cta-secondary": "Get in Touch",
                 "hero-scroll": "Scroll to Explore",
                 "backed-title": "Backed by & Powered at:",
@@ -1830,6 +2225,8 @@
             },
             es: {
                 "nav-home": "Inicio",
+                "nav-science": "Ciencia",
+                "nav-moment": "Por qué ahora",
                 "nav-sub": "NATURALEZA, REPLICADA.",
                 "nav-challenge": "Desafío",
                 "nav-tech": "Tecnología",
@@ -1841,7 +2238,67 @@
                 "hero-title-2": "Azul",
                 "hero-badge": "Circularidad DeepTech Patagónica",
                 "hero-desc": "Valorizando los efluentes industriales en la Patagonia mediante bioprocesos para obtener taurina natural y metabolitos bioactivos de alta pureza.",
-                "hero-cta-primary": "Explorar Tecnología",
+                "hero-cta-primary": "Explorar Oportunidad",
+                "hero-cta-science": "Respaldo Científico",
+                "hero-cta-providers": "Para Proveedores",
+                "hero-cta-secondary": "Escríbenos",
+                "hist-label": "01 — Por qué existimos",
+                "hist-title": "Donde otros ven un residuo,<br>nosotros vemos el <span class='text-teal italic font-medium'>principio.</span>",
+                "hist-p1": "En Los Lagos, el mar no es solo un paisaje. Es una industria viva. Cada año, cientos de miles de toneladas de mejillón chileno son procesadas en plantas costeras que generan, como consecuencia inevitable, millones de litros de caldo de cocción.",
+                "hist-p2": "Ese caldo fue tratado durante décadas como un pasivo. Un problema. Un costo normativo creciente.",
+                "hist-p3": "AquaBiotics Sur nació de una pregunta diferente: ¿Y si ese residuo fuera, en realidad, la materia prima más valiosa que Chile tiene para ofrecer al mundo?",
+                "hist-quote": "\"No somos una empresa de tratamiento de residuos.<br class='hidden sm:inline'>Somos una empresa que encontró valor donde nadie miraba.\"",
+                "hist-card1-lbl": "2009",
+                "hist-card1-title": "Dragnes et al. confirman",
+                "hist-card1-text": "La taurina se transfiere masivamente al agua de cocción durante el procesamiento térmico del mejillón. El efluente no es un desecho — es un repositorio.",
+                "hist-card2-lbl": "2015–2019",
+                "hist-card2-title": "FONDEF UTFSM valida el proceso",
+                "hist-card2-text": "El primer proyecto público chileno demuestra que la ruta MF→UF→NF recupera taurina desde efluente conservero. La ciencia ya fue financiada por el Estado.",
+                "hist-card3-lbl": "2024",
+                "hist-card3-title": "WASEABI escala en Europa",
+                "hist-card3-text": "A escala piloto en Galicia, nanofiltración logra factor de concentración 5,2× desde agua de cocción de mejillón. La tecnología industrial existe.",
+                "hist-card4-lbl": "2025",
+                "hist-card4-title": "AquaBiotics Sur",
+                "hist-card4-text": "Aplicar ese conocimiento al efluente específico de Mytilus chilensis de Los Lagos, para el mercado global de petfood premium y nutracéuticos. El gap no ha sido cerrado.",
+                "sci-label": "Base Científica Verificada",
+                "sci-title": "El proceso no es una hipótesis. <span class='text-teal italic font-medium'>Ya fue demostrado.</span>",
+                "sci-subtitle": "Cada afirmación en este sitio tiene fuente verificada. Estas son las cinco referencias que sostienen la viabilidad técnica de AquaBiotics Sur.",
+                "sci-ref1-title": "\"Chile: segundo productor mundial de mejillón\"",
+                "sci-ref1-info": "AMIChile / Diario Chiloé (2024)",
+                "sci-ref2-title": "\"Transferencia de taurina al agua de cocción — pérdidas hasta 100%\"",
+                "sci-ref2-info": "Dragnes et al. (2009). Int. Journal of Food Sciences and Nutrition, 60(2), 143-152.",
+                "sci-ref3-title": "\"300–400 L efluente/ton mejillón · factor concentración 5,2× validado\"",
+                "sci-ref3-info": "Pérez-Santaescolástica et al. (2024). Future Foods.",
+                "sci-ref4-title": "\"Taurina: aminoácido libre más abundante en mejillón (32,7 mg/g peso seco)\"",
+                "sci-ref4-info": "Bjerknes et al. (2024). Frontiers in Nutrition, 11:1443229.",
+                "sci-ref5-title": "\"Mercado global taurina USD 1.150M (2024), CAGR 5,2%\"",
+                "sci-ref5-info": "Verified Market Reports (2024). Taurine Market — Global Industry Analysis.",
+                "sci-footer": "Documento técnico completo disponible bajo solicitud &middot; byroncalderon@aqua-biotics.com",
+                "now-label": "Convergencia Estratégica",
+                "now-title": "Cuatro fuerzas que se alinean <span class='text-coral italic font-medium'>exactamente ahora.</span>",
+                "now-card1-title": "Regulación",
+                "now-card1-text": "La normativa chilena DS N°90 y Resolución 613 Exenta obliga a las plantas mitilicultoras a gestionar el efluente a costo creciente. Cada litro descargado tiene precio regulatorio.",
+                "now-card2-title": "Mercado",
+                "now-card2-text": "El segmento petfood premium crece sobre 6% anual y exige ingredientes naturales, trazables y sin derivados del petróleo. La taurina sintética no puede responder a esa demanda.",
+                "now-card3-title": "Tecnología",
+                "now-card3-text": "Los costos de membranas de nanofiltración han caído significativamente. Procesos que hace cinco años eran inviables económicamente, hoy tienen margen positivo.",
+                "now-card4-title": "Origen",
+                "now-card4-text": "Chile es el segundo productor mundial de mejillón. La materia prima existe, es continua, y hoy se descarga sin valorizar. No puede replicarse en otro lugar del mundo.",
+                "now-footer": "AquaBiotics Sur llega en el momento exacto en que el problema ambiental, la oportunidad de mercado y la viabilidad tecnológica se alinean.",
+                "prop-label": "Para Quién Trabajamos",
+                "prop-title": "Un proceso. <span class='text-teal font-semibold'>Dos problemas resueltos.</span>",
+                "prop-col1-tag": "PLANTA MITILICULTORA",
+                "prop-col2-tag": "FORMULADORA PETFOOD / NUTRACÉUTICOS",
+                "prop-col1-title": "Su residuo se convierte en ingreso",
+                "prop-col2-title": "El ingrediente que su mercado busca",
+                "prop-col1-p": "Hoy, el caldo de cocción del chorito es un costo: tratamiento, disposición, riesgo de multa. AquaBiotics Sur lo transforma en materia prima de un ingrediente premium, sin inversión de su parte.",
+                "prop-col2-p": "La taurina sintética no puede certificarse como natural. AquaBiotics Sur provee taurina marina, trazable por lote, con origen certificable desde Chiloé — el único atributo que abre el segmento premium que sus competidores no pueden alcanzar.",
+                "prop-col1-b1": "Eliminación del costo de gestión del RIL",
+                "prop-col1-b2": "Participación potencial en el upside comercial",
+                "prop-col1-b3": "Sello de economía circular certificable para su reporte de sustentabilidad",
+                "prop-col2-b1": "Origen marino certificable y trazable",
+                "prop-col2-b2": "Diferencial premium justificado para etiquetado",
+                "prop-col2-b3": "Contribución directa al perfil ESG del producto final",
                 "hero-cta-secondary": "Escríbenos",
                 "hero-scroll": "Desliza para explorar",
                 "backed-title": "Con el respaldo y aceleración de:",
@@ -2440,7 +2897,8 @@
             // Phase 7: CTAs & Scroll Hint
             heroTL.to('#hero-cta-1', { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' }, 3.4);
             heroTL.to('#hero-cta-2', { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' }, 3.55);
-            heroTL.to('#scroll-hint', { opacity: 0.6, y: 0, duration: 0.8 }, 3.7);
+            heroTL.to('#hero-cta-3', { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' }, 3.7);
+            heroTL.to('#scroll-hint', { opacity: 0.6, y: 0, duration: 0.8 }, 3.85);
 
             // Setup continuous drifts/breaths (Infinite loops)
             setupOrnamentsDrifts();
