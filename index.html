@@ -38,21 +38,12 @@
   "knowsAbout": ["Marine Biotechnology", "Circular Bioeconomy", "Blue Taurine", "DeepTech", "Biorefinery", "Upcycling"]
 }
 </script>
-<!-- Google Analytics GA4 — G-95YGFVTCSF (embed local, sin GTM) -->
+<!-- Google Analytics / GTM DataLayer Initialization -->
 <script>
-    /* 1. Inicializar dataLayer ANTES de cargar el script externo */
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-    /* 2. Configuración GA4 — Measurement ID hardcoded localmente */
-    gtag('config', 'G-95YGFVTCSF', {
-        'page_title': document.title,
-        'page_location': window.location.href,
-        'send_page_view': true
-    });
 </script>
-<!-- 3. Cargar librería gtag.js de forma asíncrona (no bloquea render) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-95YGFVTCSF"></script>
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
