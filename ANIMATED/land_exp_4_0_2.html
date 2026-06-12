@@ -1483,7 +1483,6 @@
 </div>
 <div class="pt-6 border-t border-white/5 flex items-center justify-between text-xs font-mono text-teal relative z-10">
 <span data-translate="gauge-goal">Target: TRL 5 (Pilot validation)</span>
-<span>Q4 2026</span>
 </div>
 </div>
 <!-- CRL Card -->
@@ -1509,7 +1508,6 @@
 </div>
 <div class="pt-6 border-t border-white/5 flex items-center justify-between text-xs font-mono text-coral relative z-10">
 <span data-translate="gauge-goal">Target: CRL 4 (Product testing)</span>
-<span>Q1 2027</span>
 </div>
 </div>
 <!-- BRL Card -->
@@ -1535,7 +1533,6 @@
 </div>
 <div class="pt-6 border-t border-white/5 flex items-center justify-between text-xs font-mono text-lavender relative z-10">
 <span data-translate="gauge-goal">Target: BRL 4 (Investment phase)</span>
-<span>Q2 2027</span>
 </div>
 </div>
 </div>
@@ -2900,7 +2897,7 @@
 
 
         // â”€â”€ 5. HPLC Decode Scramble Effect (El Sabio) â”€â”€
-        const HPLC_CHARS = '0123456789ABCDEFÃŽâ€ÃŽÂ¼ÃÆ’ Â·Xx:'.split('');
+        const HPLC_CHARS = '0123456789ABCDEFXx:'.split('');
 
         function decodeHPLC(el) {
             const targetStr = el.getAttribute('data-target');
@@ -2988,7 +2985,7 @@
         // Preloader Scramble Text
         const preText = document.getElementById('preloader-text');
         const preTitle = document.getElementById('preloader-title');
-        const HPLC_CHARS_PRE = '0123456789ABCDEFÃŽâ€ÃŽÂ¼ÃÆ’ Â·Xx:'.split('');
+        const HPLC_CHARS_PRE = '0123456789ABCDEFXx:'.split('');
         let iteration = 0;
         const interval = setInterval(() => {
             preText.innerText = preText.innerText.split('').map((char, index) => {
