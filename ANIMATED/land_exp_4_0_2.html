@@ -1084,9 +1084,13 @@
 <span class="font-mono text-xs text-coral font-bold uppercase tracking-wider" data-translate="comp-lbl-trace">Traceability</span>
 <span data-translate="comp-syn-trace">Zero (Hidden in supply chain)</span>
 </li>
-<li class="flex flex-col gap-1">
+<li class="flex flex-col gap-1 border-b border-white/5 pb-4">
 <span class="font-mono text-xs text-coral font-bold uppercase tracking-wider" data-translate="comp-lbl-impact">Environmental Impact</span>
 <span data-translate="comp-syn-impact">Polluting (Solvents)</span>
+</li>
+<li class="flex flex-col gap-1">
+<span class="font-mono text-xs text-coral font-bold uppercase tracking-wider" data-translate="comp-lbl-portfolio">Bioactive Portfolio</span>
+<span data-translate="comp-syn-portfolio">Single (Monoproduct. No capacity to generate functional co-products)</span>
 </li>
 </ul>
 </div>
@@ -1100,7 +1104,7 @@
 <ul class="space-y-6 text-sm font-medium">
 <li class="flex flex-col gap-1 border-b border-white/5 pb-4">
 <span class="font-mono text-xs text-lavender font-bold uppercase tracking-wider" data-translate="comp-lbl-origin">Origin / Source</span>
-<span data-translate="comp-syn-origin">Biotechnological culture (Bioreactors)</span>
+<span data-translate="comp-ferm-origin">Biotechnological culture (Bioreactors)</span>
 </li>
 <li class="flex flex-col gap-1 border-b border-white/5 pb-4">
 <span class="font-mono text-xs text-lavender font-bold uppercase tracking-wider" data-translate="comp-lbl-cost">Raw Material Cost</span>
@@ -1114,9 +1118,13 @@
 <span class="font-mono text-xs text-lavender font-bold uppercase tracking-wider" data-translate="comp-lbl-trace">Traceability</span>
 <span data-translate="comp-ferm-trace">Medium (Biological origin)</span>
 </li>
-<li class="flex flex-col gap-1">
+<li class="flex flex-col gap-1 border-b border-white/5 pb-4">
 <span class="font-mono text-xs text-lavender font-bold uppercase tracking-wider" data-translate="comp-lbl-impact">Environmental Impact</span>
 <span data-translate="comp-ferm-impact">Neutral (Requires new inputs)</span>
+</li>
+<li class="flex flex-col gap-1">
+<span class="font-mono text-xs text-lavender font-bold uppercase tracking-wider" data-translate="comp-lbl-portfolio">Bioactive Portfolio</span>
+<span data-translate="comp-ferm-portfolio">Limited (Focused on isolating a single metabolite; complex secondary extraction)</span>
 </li>
 </ul>
 </div>
@@ -1134,7 +1142,7 @@
 <span data-translate="comp-ab-origin">Upcycled Marine Source (local process streams)</span>
 </li>
 <li class="flex flex-col gap-1 border-b border-teal/10 pb-4">
-<span class="font-mono text-xs text-teal font-bold uppercase tracking-wider" data-translate="comp-ab-cost">Raw Material Cost</span>
+<span class="font-mono text-xs text-teal font-bold uppercase tracking-wider" data-translate="comp-lbl-cost">Raw Material Cost</span>
 <span data-translate="comp-ab-cost">Zero / Negative (Industrial liability)</span>
 </li>
 <li class="flex flex-col gap-1 border-b border-teal/10 pb-4">
@@ -1145,9 +1153,13 @@
 <span class="font-mono text-xs text-teal font-bold uppercase tracking-wider" data-translate="comp-lbl-trace">Traceability</span>
 <span data-translate="comp-ab-trace">100% Traceable (Local Mussel Processors)</span>
 </li>
-<li class="flex flex-col gap-1">
+<li class="flex flex-col gap-1 border-b border-teal/10 pb-4">
 <span class="font-mono text-xs text-teal font-bold uppercase tracking-wider" data-translate="comp-lbl-impact">Environmental Impact</span>
 <span data-translate="comp-ab-impact">Positive (Fjord sanitation / Eutrophication control)</span>
+</li>
+<li class="flex flex-col gap-1">
+<span class="font-mono text-xs text-teal font-bold uppercase tracking-wider" data-translate="comp-lbl-portfolio">Bioactive Portfolio</span>
+<span data-translate="comp-ab-portfolio">Broad & Synergistic (Simultaneous production of prebiotics, peptides, and functional protein extracts from the same matrix)</span>
 </li>
 </ul>
 </div>
@@ -2158,6 +2170,7 @@
                 "comp-syn-impact": "Polluting (Solvents)",
                 "comp-ferm-title": "Fermentation",
                 "comp-ferm-badge": "(Microalgae)",
+                "comp-ferm-origin": "Biotechnological culture (Bioreactors)",
                 "comp-ferm-cost": "High (Culture media and nutrients)",
                 "comp-ferm-footprint": "High (Constant energy and freshwater)",
                 "comp-ferm-trace": "Medium (Biological origin)",
@@ -2169,6 +2182,10 @@
                 "comp-ab-footprint": "Ultra-Low (Captures existing flow)",
                 "comp-ab-trace": "100% Traceable (Local Mussel Processors)",
                 "comp-ab-impact": "Positive (Fjord sanitation / Eutrophication control)",
+                "comp-lbl-portfolio": "Bioactive Portfolio",
+                "comp-syn-portfolio": "Single (Monoproduct. No capacity to generate functional co-products)",
+                "comp-ferm-portfolio": "Limited (Focused on isolating a single metabolite; complex secondary extraction)",
+                "comp-ab-portfolio": "Broad & Synergistic (Simultaneous production of prebiotics, peptides, and functional protein extracts from the same matrix)",
                 "tech-badge": "03 â€” Proprietary Bioprocess",
                 "tech-title": "Cascadic Modular <span class='text-teal italic'>Biorefinery</span>",
                 "tech-desc": "Our proprietary separation technology recovers biomolecules without chemicals, yielding clean-label, marine-origin ingredients.",
@@ -2434,6 +2451,7 @@
                 "comp-syn-impact": "Contaminante (Solventes)",
                 "comp-ferm-title": "FermentaciÃ³n",
                 "comp-ferm-badge": "(Microalgas)",
+                "comp-ferm-origin": "Cultivo biotecnolÃ³gico (Biorreactores)",
                 "comp-ferm-cost": "Alto (Medios de cultivo y nutrientes)",
                 "comp-ferm-footprint": "Alto (EnergÃ­a constante y agua dulce)",
                 "comp-ferm-trace": "Media (Origen biolÃ³gico)",
@@ -2445,6 +2463,10 @@
                 "comp-ab-footprint": "Ultra-Baja (Captura flujos existentes)",
                 "comp-ab-trace": "Completa (Patagonia Deep-Tech)",
                 "comp-ab-impact": "Regenerativo (Sanea aguas de fiordos)",
+                "comp-lbl-portfolio": "Portafolio de Bioactivos",
+                "comp-syn-portfolio": "Ãšnico (Monoproducto. Sin capacidad de generar coproductos funcionales)",
+                "comp-ferm-portfolio": "Limitado (Enfocado en aislar un solo metabolito; extracciÃ³n secundaria compleja)",
+                "comp-ab-portfolio": "Amplio y SinÃ©rgico (ObtenciÃ³n simultÃ¡nea de prebiÃ³ticos, pÃ©ptidos y extractos proteicos funcionales desde la misma matriz)",
                 "tech-badge": "03 â€” Bioproceso Propietario",
                 "tech-title": "BiorrefinerÃ­a Modular <span class='text-teal italic'>en Cascada</span>",
                 "tech-desc": "Nuestra tecnologÃ­a de separaciÃ³n molecular recupera biocompuestos sin quÃ­micos sintÃ©ticos, logrando ingredientes orgÃ¡nicos marinos de etiqueta limpia.",

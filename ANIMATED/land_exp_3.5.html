@@ -1211,9 +1211,13 @@
                                 <span class="font-mono text-xs text-coral font-bold uppercase tracking-wider" data-translate="comp-lbl-trace">Traceability</span>
                                 <span data-translate="comp-syn-trace">Zero (Hidden in supply chain)</span>
                             </li>
-                            <li class="flex flex-col gap-1">
+                            <li class="flex flex-col gap-1 border-b border-white/5 pb-4">
                                 <span class="font-mono text-xs text-coral font-bold uppercase tracking-wider" data-translate="comp-lbl-impact">Environmental Impact</span>
                                 <span data-translate="comp-syn-impact">Polluting (Solvents)</span>
+                            </li>
+                            <li class="flex flex-col gap-1">
+                                <span class="font-mono text-xs text-coral font-bold uppercase tracking-wider" data-translate="comp-lbl-portfolio">Bioactive Portfolio</span>
+                                <span data-translate="comp-syn-portfolio">Single (Monoproduct. No capacity to generate functional co-products)</span>
                             </li>
                         </ul>
                     </div>
@@ -1230,7 +1234,7 @@
                         <ul class="space-y-6 text-sm font-medium">
                             <li class="flex flex-col gap-1 border-b border-white/5 pb-4">
                                 <span class="font-mono text-xs text-lavender font-bold uppercase tracking-wider" data-translate="comp-lbl-origin">Origin / Source</span>
-                                <span data-translate="comp-syn-origin">Biotechnological culture (Bioreactors)</span>
+                                <span data-translate="comp-ferm-origin">Biotechnological culture (Bioreactors)</span>
                             </li>
                             <li class="flex flex-col gap-1 border-b border-white/5 pb-4">
                                 <span class="font-mono text-xs text-lavender font-bold uppercase tracking-wider" data-translate="comp-lbl-cost">Raw Material Cost</span>
@@ -1244,9 +1248,13 @@
                                 <span class="font-mono text-xs text-lavender font-bold uppercase tracking-wider" data-translate="comp-lbl-trace">Traceability</span>
                                 <span data-translate="comp-ferm-trace">Medium (Biological origin)</span>
                             </li>
-                            <li class="flex flex-col gap-1">
+                            <li class="flex flex-col gap-1 border-b border-white/5 pb-4">
                                 <span class="font-mono text-xs text-lavender font-bold uppercase tracking-wider" data-translate="comp-lbl-impact">Environmental Impact</span>
                                 <span data-translate="comp-ferm-impact">Neutral (Requires new inputs)</span>
+                            </li>
+                            <li class="flex flex-col gap-1">
+                                <span class="font-mono text-xs text-lavender font-bold uppercase tracking-wider" data-translate="comp-lbl-portfolio">Bioactive Portfolio</span>
+                                <span data-translate="comp-ferm-portfolio">Limited (Focused on isolating a single metabolite; complex secondary extraction)</span>
                             </li>
                         </ul>
                     </div>
@@ -1267,7 +1275,7 @@
                                 <span data-translate="comp-ab-origin">Upcycled Marine Source (Local effluents)</span>
                             </li>
                             <li class="flex flex-col gap-1 border-b border-teal/10 pb-4">
-                                <span class="font-mono text-xs text-teal font-bold uppercase tracking-wider" data-translate="comp-ab-cost">Raw Material Cost</span>
+                                <span class="font-mono text-xs text-teal font-bold uppercase tracking-wider" data-translate="comp-lbl-cost">Raw Material Cost</span>
                                 <span data-translate="comp-ab-cost">Zero / Negative (Industrial liability)</span>
                             </li>
                             <li class="flex flex-col gap-1 border-b border-teal/10 pb-4">
@@ -1278,9 +1286,13 @@
                                 <span class="font-mono text-xs text-teal font-bold uppercase tracking-wider" data-translate="comp-lbl-trace">Traceability</span>
                                 <span data-translate="comp-ab-trace">100% Traceable (Local Mussel Processors)</span>
                             </li>
-                            <li class="flex flex-col gap-1">
+                            <li class="flex flex-col gap-1 border-b border-teal/10 pb-4">
                                 <span class="font-mono text-xs text-teal font-bold uppercase tracking-wider" data-translate="comp-lbl-impact">Environmental Impact</span>
                                 <span data-translate="comp-ab-impact">Positive (Fjord sanitation / Eutrophication control)</span>
+                            </li>
+                            <li class="flex flex-col gap-1">
+                                <span class="font-mono text-xs text-teal font-bold uppercase tracking-wider" data-translate="comp-lbl-portfolio">Bioactive Portfolio</span>
+                                <span data-translate="comp-ab-portfolio">Broad & Synergistic (Simultaneous production of prebiotics, peptides, and functional protein extracts from the same matrix)</span>
                             </li>
                         </ul>
                     </div>
@@ -2146,6 +2158,7 @@
                 "comp-syn-impact": "Polluting (Solvents)",
                 "comp-ferm-title": "Fermentation",
                 "comp-ferm-badge": "(Microalgae)",
+                "comp-ferm-origin": "Biotechnological culture (Bioreactors)",
                 "comp-ferm-cost": "High (Culture media and nutrients)",
                 "comp-ferm-footprint": "High (Constant energy and freshwater)",
                 "comp-ferm-trace": "Medium (Biological origin)",
@@ -2157,6 +2170,10 @@
                 "comp-ab-footprint": "Ultra-Low (Captures existing flow)",
                 "comp-ab-trace": "Complete (Patagonia Deep-Tech)",
                 "comp-ab-impact": "Regenerative (Cleans fjord effluents)",
+                "comp-lbl-portfolio": "Bioactive Portfolio",
+                "comp-syn-portfolio": "Single (Monoproduct. No capacity to generate functional co-products)",
+                "comp-ferm-portfolio": "Limited (Focused on isolating a single metabolite; complex secondary extraction)",
+                "comp-ab-portfolio": "Broad & Synergistic (Simultaneous production of prebiotics, peptides, and functional protein extracts from the same matrix)",
                 "ind-badge": "Market Applications",
                 "ind-title": "Target Industries",
                 "ind-subtitle": "Diversifying high-value B2B applications.",
@@ -2411,6 +2428,7 @@
                 "comp-syn-impact": "Contaminante (Solventes)",
                 "comp-ferm-title": "Fermentación",
                 "comp-ferm-badge": "(Microalgas)",
+                "comp-ferm-origin": "Cultivo biotecnológico (Biorreactores)",
                 "comp-ferm-cost": "Alto (Medios de cultivo y nutrientes)",
                 "comp-ferm-footprint": "Alto (Energía constante y agua dulce)",
                 "comp-ferm-trace": "Media (Origen biológico)",
@@ -2422,6 +2440,10 @@
                 "comp-ab-footprint": "Ultra-Baja (Captura flujos existentes)",
                 "comp-ab-trace": "Completa (Patagonia Deep-Tech)",
                 "comp-ab-impact": "Regenerativo (Sanea efluentes de fiordos)",
+                "comp-lbl-portfolio": "Portafolio de Bioactivos",
+                "comp-syn-portfolio": "Único (Monoproducto. Sin capacidad de generar coproductos funcionales)",
+                "comp-ferm-portfolio": "Limitado (Enfocado en aislar un solo metabolito; extracción secundaria compleja)",
+                "comp-ab-portfolio": "Amplio y Sinérgico (Obtención simultánea de prebióticos, péptidos y extractos proteicos funcionales desde la misma matriz)",
                 "ind-badge": "Aplicaciones de Mercado",
                 "ind-title": "Industrias de Destino",
                 "ind-subtitle": "Diversificando aplicaciones B2B de alto valor.",
