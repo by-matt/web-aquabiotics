@@ -402,181 +402,7 @@
             width: 3px; height: 100%;
             transition: background 0.8s ease;
         }
-        .glass-card:hover {
-            background: rgba(20, 34, 54, 0.7);
-            transform: translateY(-4px);
-        }
-        .glass-card:hover::before {
-            background: linear-gradient(135deg, var(--teal), rgba(123, 125, 192, 0.3), transparent);
-        }
 
-        /* Glow Overlay */
-        .glow-overlay {
-            position: absolute;
-            inset: 0;
-            border-radius: inherit;
-            background: radial-gradient(circle 120px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(58, 191, 178, 0.12), transparent 80%);
-            opacity: 0;
-            transition: opacity 0.5s ease;
-            pointer-events: none;
-            z-index: 1;
-        }
-        .glass-card:hover .glow-overlay {
-            opacity: 1;
-        }
-
-        /* ── Typography & Links ── */
-        h1, h2, h3, h4, h5 {
-            color: var(--cream);
-            letter-spacing: -0.02em;
-        }
-        .text-glow-teal {
-            text-shadow: 0 0 35px rgba(58, 191, 178, 0.45);
-        }
-        .text-glow-coral {
-            text-shadow: 0 0 35px rgba(217, 113, 90, 0.45);
-        }
-
-        .nav-link {
-            position: relative;
-            transition: color 0.3s ease;
-        }
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -4px; left: 0;
-            width: 100%; height: 1px;
-            background: var(--teal);
-            transform: scaleX(0);
-            transform-origin: right;
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .nav-link:hover { color: var(--teal); }
-        .nav-link:hover::after {
-            transform: scaleX(1);
-            transform-origin: left;
-        }
-
-        /* Hamburger button */
-        .hamburger {
-            width: 28px;
-            height: 18px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            cursor: pointer;
-            z-index: 101;
-        }
-        .hamburger span {
-            width: 100%;
-            height: 1.5px;
-            background: var(--cream);
-            transition: all 0.3s ease;
-        }
-        .hamburger.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); background: var(--teal); }
-        .hamburger.active span:nth-child(2) { opacity: 0; }
-        .hamburger.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); background: var(--teal); }
-
-        /* Mobile Menu */
-        #mobile-menu {
-            position: fixed;
-            inset: 0;
-            background: rgba(10, 22, 40, 0.98);
-            backdrop-filter: blur(20px);
-            z-index: 100;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            pointer-events: none;
-            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        #mobile-menu.active {
-            opacity: 1;
-            pointer-events: auto;
-        }
-        .mobile-link {
-            font-family: var(--ff-display);
-            font-size: 2.2rem;
-            color: var(--cream);
-            margin: 0.8rem 0;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        #mobile-menu.active .mobile-link {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-
-
-        /* ── HPLC count scrambled elements ── */
-        .decode-text {
-            font-variant-numeric: tabular-nums;
-            font-family: var(--ff-mono);
-            letter-spacing: -0.05em;
-        }
-        .gsap-reveal {
-            opacity: 0;
-            transform: translateY(35px);
-        }
-
-        /* ── Process Flow Timeline ── */
-        #progress-line::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 50%;
-            transform: translate(-50%, 100%);
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: var(--teal);
-            box-shadow: 0 0 16px 6px rgba(58,191,178,0.6), 0 0 40px 12px rgba(58,191,178,0.25);
-            filter: blur(1px);
-            pointer-events: none;
-        }
-
-        /* ── Maturity Gauges ── */
-        .gauge-outer {
-            position: relative;
-            width: 90px;
-            height: 90px;
-        }
-        .gauge-svg {
-            transform: rotate(-90deg);
-        }
-        .gauge-bg {
-            fill: none;
-            stroke: rgba(247, 243, 237, 0.08);
-            stroke-width: 6;
-        }
-        .gauge-fill {
-            fill: none;
-            stroke: var(--teal);
-            stroke-width: 6;
-            stroke-linecap: round;
-            stroke-dasharray: 251.2; /* 2 * PI * 40 */
-            stroke-dashoffset: 251.2;
-            transition: stroke-dashoffset 1.5s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        /* ── Language Switch Indicator ── */
-        .lang-switch-btn {
-            transition: all 0.3s ease;
-        }
-        .lang-switch-btn.active {
-            color: var(--teal);
-            font-weight: 700;
-        }
-
-        /* ── Table Custom Styles ── */
-        .table-row-highlight {
-            background: rgba(58, 191, 178, 0.04);
-            border-left: 2px solid var(--teal);
-        }
 
         /* â• â•  HERO CINEMATIC SYSTEM (Pro Max) â• â•  */
 
@@ -680,77 +506,7 @@
             100% { opacity: 0; transform: translate(-50%, 15px); }
         }
 
-        /* Hide scroll indicator on short screens to avoid overlapping with Hero CTAs */
-        /* Floating brand dots (floating particles) */
-        .hero-dot {
-            position: absolute;
-            border-radius: 50%;
-            pointer-events: none;
-            opacity: 0;
-        }
 
-        /* Supporting text hidden states */
-        .hero-sub { opacity: 0; transform: translateY(20px); }
-        .hero-pill-anim { opacity: 0; transform: scale(0.85) translateY(12px); }
-        .hero-cta-anim { opacity: 0; transform: translateY(18px); }
-
-        /* Azul teal text glow */
-        .azul-glow {
-            text-shadow: 0 0 0px transparent;
-            transition: text-shadow 2s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .azul-glow.active {
-            text-shadow: 0 0 30px rgba(58,191,178,0.35), 0 0 60px rgba(58,191,178,0.15), 0 0 120px rgba(58,191,178,0.05);
-        }
-
-        /* Brand SVG ornaments — draw-on effect */
-        .hero-ornament path {
-            stroke-dasharray: 1000;
-            stroke-dashoffset: 1000;
-        }
-
-        /* NEW: Canvas for subtle background particles */
-        #particle-canvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            opacity: 0.08; /* Subtle opacity */
-            pointer-events: none;
-            will-change: transform;
-        }
-
-        /* ── SCROLL INDICATOR ── */
-        .scroll-hint {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-        }
-        .mouse-icon {
-            width: 22px;
-            height: 36px;
-            border: 2px solid var(--cream);
-            border-radius: 12px;
-            position: relative;
-        }
-        .mouse-wheel {
-            width: 2px;
-            height: 6px;
-            background: var(--teal);
-            position: absolute;
-            top: 6px;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: scroll-wheel 2s infinite;
-        }
-        @keyframes scroll-wheel {
-            0% { opacity: 0; transform: translate(-50%, 0); }
-            30% { opacity: 1; }
-            100% { opacity: 0; transform: translate(-50%, 15px); }
-        }
 
         /* Hide scroll indicator on short screens to avoid overlapping with Hero CTAs */
         @media (max-height: 768px) {
@@ -1446,11 +1202,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="flex items-center gap-2">
 <span class="text-muted uppercase text-[9px] tracking-wider" data-translate="mol-select">Target:</span>
 <select class="px-3 py-1.5 rounded-lg border border-white/10 bg-navy-mid text-cream focus:border-teal outline-none cursor-pointer" id="mol-selector" onchange="loadSelectedMolecule()">
-<option value="taur" data-translate="mol-opt-taur">Taurina (CID 1123)</option>
-<option value="dha">DHA (CID 445580)</option>
-<option value="taut">TauT Receptor (PDB 9K7B)</option>
-<option value="cdo1">Enzyme CDO1 (PDB 2IC1)</option>
-<option value="cox2">COX-2 + DHA (PDB 3HS7)</option>
+<option value="taur" data-translate="mol-opt-taur">Taurine (CID 1123)</option>
+<option value="dha" data-translate="mol-opt-dha">DHA (CID 445580)</option>
+<option value="taut" data-translate="mol-opt-taut">TauT Receptor (PDB 9K7B)</option>
+<option value="cdo1" data-translate="mol-opt-cdo1">Enzyme CDO1 (PDB 2IC1)</option>
+<option value="cox2" data-translate="mol-opt-cox2">COX-2 + DHA (PDB 3HS7)</option>
 </select>
 </div>
 <!-- Render Style Selector -->
@@ -1613,7 +1369,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </p>
 </div>
 <div class="pt-6 border-t border-white/5 flex items-center justify-between text-xs font-mono text-teal relative z-10">
-<span data-translate="gauge-goal">Target: TRL 5 (Pilot validation)</span>
+<span data-translate="gauge-goal-trl">Target: TRL 5 (Pilot validation)</span>
 </div>
 </div>
 <!-- CRL Card -->
@@ -1638,7 +1394,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </p>
 </div>
 <div class="pt-6 border-t border-white/5 flex items-center justify-between text-xs font-mono text-coral relative z-10">
-<span data-translate="gauge-goal">Target: CRL 4 (Product testing)</span>
+<span data-translate="gauge-goal-crl">Target: CRL 4 (Product testing)</span>
 </div>
 </div>
 <!-- BRL Card -->
@@ -1663,7 +1419,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </p>
 </div>
 <div class="pt-6 border-t border-white/5 flex items-center justify-between text-xs font-mono text-lavender relative z-10">
-<span data-translate="gauge-goal">Target: BRL 4 (Investment phase)</span>
+<span data-translate="gauge-goal-brl">Target: BRL 4 (Investment phase)</span>
 </div>
 </div>
 </div>
@@ -2332,7 +2088,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 "crl-desc": "Initial market analysis complete. Customer validation launched to gather requirements from pet food and aquaculture feed manufacturers.",
                 "brl-title": "Business Readiness",
                 "brl-desc": "Initial financial modeling designed. Strategic roadmap established. Applying for seed grants and local incubation programs.",
-                "gauge-goal": "Target: TRL 5 (Pilot validation)",
+                "gauge-goal-trl": "Target: TRL 5 (Pilot validation)",
+                "gauge-goal-crl": "Target: CRL 4 (Product testing)",
+                "gauge-goal-brl": "Target: BRL 4 (Investment phase)",
                 "sci-label": "04 — Verified Scientific Support",
                 "sci-title": "Proven technical viability.",
                 "sci-subtitle": "Every statement on this site has a verified source. These are the references that sustain the technical viability of AquaBiotics Sur.",
@@ -2445,7 +2203,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 "mol-interact": "&bull; Left-click to rotate | Right-click to drag | Scroll to zoom",
                 "mol-lit-title": "Academic Validation (OpenAlex)",
                 "mol-opt-taur": "Taurine (CID 1123)",
+                "mol-opt-dha": "DHA (CID 445580)",
+                "mol-opt-taut": "TauT Receptor (PDB 9K7B)",
+                "mol-opt-cdo1": "Enzyme CDO1 (PDB 2IC1)",
+                "mol-opt-cox2": "COX-2 + DHA (PDB 3HS7)",
                 "team-badge": "06 — Origins",
+                "ceo-label": "Biotech Pioneer",
+                "ceo-role": "CEO | Biotechnologist | Process Engineering",
+                "ceo-desc1": "Specialized in molecular biotechnology and sustainable chemical engineering. His work focuses on building circular extraction systems that process industrial streams into bio-products.",
+                "ceo-desc2": "At AquaBiotics Sur, he leads process scaling and technology validation, helping to replace toxic petro-synthetics with clean-label ingredients harvested from the clean currents of southern Chile.",
+                "ceo-quote": "\"We didn't set out to build a treatment plant; we discovered high-value molecules where everyone else saw process water.\"",
+                "geo-badge": "Patagonian Terroir",
+                "geo-title": "The only team with a <span class='text-teal italic'>mailing address.</span>",
+                "geo-desc": "99% of Chile's mussel cultivation is concentrated in the pristine fjords of the Los Lagos Region. Our bioactives are not synthesized in abstract chemical plants; they are traceable to specific coordinates in Patagonia, safeguarding natural ecosystems.",
                 "con-badge": "07 — Strategic Pilot",
                 "con-title": "Accelerating our <span class='text-teal italic'>upcycling scale.</span>",
                 "con-desc": "We are constructing the first modular biorefinery pilot in Patagonia. Get in touch to discuss seed investment, product sampling, or aquaculture raw-material alliances.",
@@ -2584,7 +2354,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 "comp-ab-origin": "Fuente Marina Reciclada (Corrientes locales)",
                 "comp-ab-cost": "Cero / Negativo (Pasivo industrial)",
                 "comp-ab-footprint": "Ultra-Baja (Captura flujos existentes)",
-                "comp-ab-trace": "Completa (Patagonia Deep-Tech)",
+                "comp-ab-trace": "100% Trazable (Procesadores Locales)",
                 "comp-ab-impact": "Regenerativo (Sanea aguas de fiordos)",
                 "comp-lbl-portfolio": "Portafolio de Bioactivos",
                 "comp-syn-portfolio": "Único (Monoproducto. Sin capacidad de generar coproductos funcionales)",
@@ -2617,7 +2387,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 "crl-desc": "Análisis de mercado inicial. Lanzamiento del feedback con fabricantes de pet food y alimentos acuícolas para levantar requerimientos específicos.",
                 "brl-title": "Madurez de Negocios",
                 "brl-desc": "Modelo financiero inicial estructurado y plan comercial diseñado. Postulando a fondos de aceleración y subsidios públicos.",
-                "gauge-goal": "Meta: Validación en piloto",
+                "gauge-goal-trl": "Meta: Validación en piloto (TRL 5)",
+                "gauge-goal-crl": "Meta: Pruebas de producto (CRL 4)",
+                "gauge-goal-brl": "Meta: Fase de inversión (BRL 4)",
                 "sci-label": "04 — Base Científica Verificada",
                 "sci-title": "Viabilidad técnica demostrada.",
                 "sci-subtitle": "Cada afirmación en este sitio tiene fuente verificada. Estas son las referencias que sostienen la viabilidad técnica de AquaBiotics Sur.",
@@ -2683,7 +2455,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 "ods-6-subtitle": "Gestión Sostenible del Agua",
                 "ods-6-t1": "&bull; Meta 6.3: Mejorar la calidad del agua reduciendo la contaminación y optimizando los recursos.",
                 "ods-9-title": "Innovación e Industria",
-                "ods-9-subtitle": "Fostering Resilient Ecosystems",
+                "ods-9-subtitle": "Fomentar Ecosistemas Resilientes",
                 "ods-9-t1": "&bull; Meta 9.4: Modernizar industrias con tecnologías limpias y mayor eficiencia en el uso de recursos.",
                 "ods-9-t2": "&bull; Meta 9.5: Potenciar la investigación científica y mejorar las capacidades tecnológicas.",
                 "ods-13-title": "Acción por el Clima",
@@ -2740,7 +2512,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 "mol-interact": "&bull; Clic izquierdo: rotar | Clic derecho: arrastrar | Scroll: zoom",
                 "mol-lit-title": "Validación Académica (OpenAlex)",
                 "mol-opt-taur": "Taurina (CID 1123)",
+                "mol-opt-dha": "DHA (CID 445580)",
+                "mol-opt-taut": "Receptor TauT (PDB 9K7B)",
+                "mol-opt-cdo1": "Enzima CDO1 (PDB 2IC1)",
+                "mol-opt-cox2": "COX-2 + DHA (PDB 3HS7)",
                 "team-badge": "06 — Orígenes",
+                "ceo-label": "Pionero Biotecnológico",
+                "ceo-role": "CEO | Biotecnólogo | Ingeniería de Procesos",
+                "ceo-desc1": "Especializado en biotecnología molecular e ingeniería química sostenible. Su trabajo se enfoca en construir sistemas de extracción circular que procesan corrientes industriales en bioproductos.",
+                "ceo-desc2": "En AquaBiotics Sur, lidera el escalamiento de procesos y la validación tecnológica, ayudando a reemplazar petrosintéticos tóxicos con ingredientes de etiqueta limpia cosechados de las corrientes limpias del sur de Chile.",
+                "ceo-quote": "\"No nos propusimos construir una planta de tratamiento; descubrimos moléculas de alto valor donde todos los demás veían agua de proceso.\"",
+                "geo-badge": "Terroir Patagónico",
+                "geo-title": "El único equipo con <span class='text-teal italic'>dirección postal.</span>",
+                "geo-desc": "El 99% del cultivo de mejillón en Chile se concentra en los fiordos prístinos de la Región de Los Lagos. Nuestros compuestos bioactivos no se sintetizan en plantas químicas abstractas; son trazables a coordenadas específicas en la Patagonia, salvaguardando los ecosistemas naturales.",
                 "con-badge": "07 — Piloto Estratégico",
                 "con-title": "Acelerando nuestra <span class='text-teal italic'>escala de valorización.</span>",
                 "con-desc": "Estamos construyendo el primer piloto modular de biorrefinería en la Patagonia. Póngase en contacto para discutir inversión semilla, muestreo de productos o alianzas de materia prima acuícola.",
@@ -3907,6 +3691,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 }, 50);
                             }, 500);
                         }
+                    } else {
+                        response.json().then(data => {
+                            if (data && data.errors) {
+                                alert(data.errors.map(error => error.message).join(", "));
+                            } else {
+                                alert(currentLang === 'es' 
+                                    ? 'Ocurrió un error al enviar el formulario. Inténtalo de nuevo.' 
+                                    : 'There was an error submitting the form. Please try again.');
+                            }
+                        }).catch(() => {
+                            alert(currentLang === 'es' 
+                                ? 'Ocurrió un error al enviar el formulario. Inténtalo de nuevo.' 
+                                : 'There was an error submitting the form. Please try again.');
+                        });
                     }
                 })
                 .catch(error => {
