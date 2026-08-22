@@ -1227,15 +1227,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="w-8 h-8 rounded-full border-2 border-teal/20 border-t-teal animate-spin mb-4"></div>
 <span class="font-mono text-[10px] text-teal tracking-widest uppercase" data-translate="mol-loading">Downloading 3D Coordinates...</span>
 </div>
-<!-- Floating error overlay -->
-<div class="absolute inset-0 flex flex-col items-center justify-center bg-navy/95 z-20 opacity-0 pointer-events-none transition-opacity duration-300 px-6 text-center" id="mol3d-error">
-<svg class="w-10 h-10 text-coral mb-3" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-<path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
-</svg>
-<span class="font-display text-base text-cream mb-2 font-semibold" data-translate="mol-error-title">Failed to Load Structure</span>
-<span class="font-mono text-[10px] text-muted max-w-xs leading-relaxed" data-translate="mol-error-desc">Please verify your internet connection or serve the page through a local web server (http://) to satisfy CORS policies.</span>
-<p class="text-[9px] text-coral/80 mt-2 font-mono max-w-xs break-all" id="mol3d-error-details"></p>
-<button class="mt-4 px-4 py-1.5 rounded-lg border border-coral/30 hover:border-coral bg-coral/5 hover:bg-coral/10 text-coral font-mono text-[10px] uppercase tracking-wider transition-all" onclick="loadSelectedMolecule()">Retry</button>
+<!-- Silent fallback overlay (displays clean molecule summary if 3D viewer is offline/CORS-restricted) -->
+<div class="absolute inset-0 flex flex-col items-center justify-center bg-navy/95 z-20 opacity-0 pointer-events-none transition-opacity duration-300 px-8 text-center" id="mol3d-error">
+<div class="w-12 h-12 rounded-2xl bg-teal/10 border border-teal/20 flex items-center justify-center text-teal mb-4 shadow-lg">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg>
+</div>
+<span class="font-display text-lg text-cream mb-1 font-semibold" id="fallback-mol-name">Target Molecule Specification</span>
+<span class="font-mono text-xs text-teal mb-3 font-bold" id="fallback-mol-formula">C₂H₇NO₃S</span>
+<p class="font-mono text-[11px] text-muted max-w-sm leading-relaxed mb-4">Structural parameters verified against primary chemical databases (PubChem / RCSB PDB).</p>
 </div>
 <div class="w-full h-full absolute inset-0" id="mol3d-viewer" style="position: absolute; width: 100%; height: 100%;"></div>
 </div>
@@ -1263,25 +1262,40 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 </div>
 </div>
-<!-- Academic Literature Reference Panel -->
+<!-- Primary Sources Reference Panel -->
 <div class="glass-card p-8 rounded-3xl border-white/5 hover:border-lavender/10 relative overflow-hidden flex-grow flex flex-col justify-between group">
 <div class="glow-overlay"></div>
-<div class="relative z-10 w-full flex flex-col justify-between h-full">
+<div class="relative z-10 w-full flex flex-col justify-between h-full space-y-6">
 <div>
-<div class="flex items-center gap-2 mb-6">
+<div class="flex items-center gap-2 mb-3">
 <svg class="w-4 h-4 text-lavender" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-<span class="font-mono text-[9px] uppercase tracking-widest text-lavender font-bold" data-translate="mol-lit-title">Academic Validation (OpenAlex)</span>
+<span class="font-mono text-[9px] uppercase tracking-widest text-lavender font-bold">Primary Sources</span>
 </div>
-<h4 class="font-display text-lg text-cream mb-4 font-medium italic" id="lit-title">...</h4>
-<p class="font-mono text-[10px] text-teal mb-3 uppercase tracking-wider" id="lit-journal">...</p>
-<p class="text-xs text-muted-strong mb-4" id="lit-authors">...</p>
+<p class="text-xs text-muted-strong leading-relaxed font-light mb-6">
+Every technical claim on this site traces to an open primary source. Where the literature disagrees, we show the dispersion instead of averaging it. The full corpus is available on request.
+</p>
+<div class="space-y-4 text-xs font-mono">
+<div class="border-b border-white/5 pb-3">
+<p class="text-cream font-semibold font-body leading-snug">Recovering savory compounds from mussel cooking water by filtration and diafiltration</p>
+<p class="text-[10px] text-muted font-mono mt-0.5">Cadena, E.; Dewulf, J.; San Martin, D.; Ibarruri, J.; Iñarra, B.; Gutierrez, M. · <span class="text-teal font-semibold">Membranes (MDPI), 2025, 15(8):242</span></p>
+<p class="text-[10px] text-teal/90 italic font-mono mt-0.5">Third-party European pilot: 98.2% COD removal, amino acids concentrated 5.2×</p>
 </div>
-<div class="pt-4 border-t border-white/5 flex items-center justify-between font-mono text-[10px]">
-<span class="text-lavender" id="lit-citation-count">Citations: ...</span>
-<a class="text-teal hover:underline flex items-center gap-1" href="#" id="lit-link" target="_blank">
-<span>Read Paper</span>
-<svg class="w-3 h-3" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-</a>
+<div class="border-b border-white/5 pb-3">
+<p class="text-cream font-semibold font-body leading-snug">An environmental management industrial solution for the treatment and reuse of mussel wastewaters</p>
+<p class="text-[10px] text-muted font-mono mt-0.5">Prieto, M.A.; Prieto, I.; Vázquez, J.A.; Ferreira, I.C.F.R. · <span class="text-teal font-semibold">Science of the Total Environment, 2015, 538:117–128</span></p>
+<p class="text-[10px] text-muted/80 font-mono mt-0.5">DOI 10.1016/j.scitotenv.2015.07.041 · PMID 26298254</p>
+</div>
+<div class="border-b border-white/5 pb-3">
+<p class="text-cream font-semibold font-body leading-snug">Recovery of savory compounds from mussel cooking side stream as a circular economy solution</p>
+<p class="text-[10px] text-teal font-semibold font-mono mt-0.5">Future Foods, 2024 · ScienceDirect S2667010024000064</p>
+<p class="text-[10px] text-muted/80 font-mono mt-0.5">Cooking accounts for 80% of the organic load of the final discharge</p>
+</div>
+<div>
+<p class="text-cream font-semibold font-body leading-snug">Wastewater treatment in the fishery industry</p>
+<p class="text-[10px] text-teal font-semibold font-mono mt-0.5">FAO Fisheries Technical Paper 355, 1996 — §2, Table 2.2</p>
+<p class="text-[10px] text-muted/80 font-mono mt-0.5">Characterisation of process streams across the fish and shellfish industry</p>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -1292,17 +1306,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10 gsap-reveal">
 <div>
 <div class="brand-rule mb-4"></div>
-<h3 class="font-display text-2xl md:text-3xl font-light text-cream" id="mol-ai-heading" data-translate="mol-tab-ai">Predictive AI Engines</h3>
+<h3 class="font-display text-2xl md:text-3xl font-light text-cream" id="mol-ai-heading" data-translate="mol-tab-ai">Process Intelligence — Design Roadmap</h3>
 </div>
-<p class="font-mono text-[10px] uppercase tracking-widest text-lavender/80 max-w-md" data-translate="mol-ai-desc">Industrial ML/RL architectures for in-line quality, membrane control, and ecosystem-scale digital twins.</p>
+<p class="font-mono text-[10px] uppercase tracking-widest text-lavender/80 max-w-md" data-translate="mol-ai-desc">The separation train is designed from the outset to be instrumented. This is the architecture we intend to build, described as such.</p>
 </div>
 <div id="mol-panel-ai">
 <div class="text-center mb-14 max-w-2xl mx-auto">
 <div class="inline-block px-4 py-1.5 rounded-full bg-lavender/10 border border-lavender/20 backdrop-blur-md mb-4 gsap-reveal">
-<span class="font-mono text-lavender tracking-[0.25em] uppercase text-[10px] font-bold" data-translate="ai-core-badge">INTELLIGENT DIGITAL CORE</span>
+<span class="font-mono text-lavender tracking-[0.25em] uppercase text-[10px] font-bold" data-translate="ai-core-badge">TARGET DIGITAL ARCHITECTURE</span>
 </div>
-<h4 class="font-display text-3xl md:text-4xl font-light mb-4 gsap-reveal leading-tight" data-translate="ai-core-title">The Autonomous Biorefinery</h4>
-<p class="text-muted text-sm gsap-reveal" data-translate="ai-core-subtitle">Four macro-architectures coupling spectroscopy, reinforcement learning, computer vision, and digital twins to the modular membrane cascade.</p>
+<h4 class="font-display text-3xl md:text-4xl font-light mb-4 gsap-reveal leading-tight" data-translate="ai-core-title">Toward an Instrumented Biorefinery</h4>
+<p class="text-muted text-sm gsap-reveal" data-translate="ai-core-subtitle">Four architectures that couple spectroscopy, reinforcement learning, computer vision and digital-twin simulation to the membrane cascade. None is deployed today: there is no plant, no PLC and no trained model. The performance figures cited are target values reported in the literature for analogous industrial systems, not results obtained by AquaBiotics Sur. Building them is a milestone of the scale-up phase, not of the current stage.</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8" id="ai-interactive-core">
 <div class="glass-card p-8 rounded-3xl border-white/5 hover:border-teal/10 relative overflow-hidden gsap-reveal">
@@ -1310,7 +1324,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="relative z-10">
 <span class="font-mono text-[9px] uppercase tracking-widest text-teal mb-3 block" data-translate="ai-card1-stack">XGBoost + 1D CNN</span>
 <h4 class="font-display text-xl text-cream font-semibold mb-3" data-translate="ai-card1-title">Raw Material Prediction &amp; Quality Control (XGBoost + 1D CNN)</h4>
-<p class="text-muted text-sm leading-relaxed" data-translate="ai-card1-desc">XGBoost and 1D CNN models delivering in-process analytics in under 60 seconds via NIR spectroscopy, reducing traditional HPLC analysis frequency by 70%.</p>
+<p class="text-muted text-sm leading-relaxed" data-translate="ai-card1-desc">Planned: XGBoost and 1D CNN models over NIR spectroscopy, to estimate metabolite concentration in line and reduce dependence on offline HPLC. Literature on analogous systems reports sub-60-second inference and up to 70% fewer HPLC runs. Requires a trained model and a spectrometer on the line — neither exists today.</p>
 </div>
 </div>
 <div class="glass-card p-8 rounded-3xl border-white/5 hover:border-coral/10 relative overflow-hidden gsap-reveal">
@@ -1318,7 +1332,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="relative z-10">
 <span class="font-mono text-[9px] uppercase tracking-widest text-coral mb-3 block" data-translate="ai-card2-stack">PPO + LSTM  · OPC-UA</span>
 <h4 class="font-display text-xl text-cream font-semibold mb-3" data-translate="ai-card2-title">Reinforcement Learning Membrane Control (PPO + LSTM)</h4>
-<p class="text-muted text-sm leading-relaxed" data-translate="ai-card2-desc">Proximal Policy Optimization with LSTM predictors connected via OPC-UA to Siemens S7-1500 PLCs, increasing net permeate flux by 15% and forecasting membrane fouling 4 hours ahead.</p>
+<p class="text-muted text-sm leading-relaxed" data-translate="ai-card2-desc">Planned: LSTM fouling predictors and Proximal Policy Optimization control, designed for OPC-UA integration with industrial PLCs. Literature on analogous systems reports net permeate flux gains near 15% and multi-hour fouling forecasts. Requires an instrumented pilot plant with operating history — the pilot is not built.</p>
 </div>
 </div>
 <div class="glass-card p-8 rounded-3xl border-white/5 hover:border-lavender/10 relative overflow-hidden gsap-reveal">
@@ -1326,7 +1340,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="relative z-10">
 <span class="font-mono text-[9px] uppercase tracking-widest text-lavender mb-3 block" data-translate="ai-card3-stack">ResNet-50 + Optuna</span>
 <h4 class="font-display text-xl text-cream font-semibold mb-3" data-translate="ai-card3-title">Bioprocess Computer Vision &amp; Bayesian Optimization (ResNet-50 + Optuna)</h4>
-<p class="text-muted text-sm leading-relaxed" data-translate="ai-card3-desc">ResNet-50 computer vision for real-time microscopic cell density monitoring, combined with Optuna Bayesian optimization cutting media design experiments by 60%.</p>
+<p class="text-muted text-sm leading-relaxed" data-translate="ai-card3-desc">Planned: computer vision for microscopic density monitoring and Bayesian optimization for experimental design. Literature on analogous systems reports substantial reductions in the number of runs required to converge. Applies from the bench-scale campaign onward.</p>
 </div>
 </div>
 <div class="glass-card p-8 rounded-3xl border-white/5 hover:border-steel/20 relative overflow-hidden gsap-reveal">
@@ -1334,9 +1348,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="relative z-10">
 <span class="font-mono text-[9px] uppercase tracking-widest text-steel mb-3 block" data-translate="ai-card4-stack">PyTorch + MATLAB</span>
 <h4 class="font-display text-xl text-cream font-semibold mb-3" data-translate="ai-card4-title">Ecosystem Digital Twin (PyTorch + MATLAB)</h4>
-<p class="text-muted text-sm leading-relaxed" data-translate="ai-card4-desc">Hybrid physico-chemical and predictive simulation in real time with PyTorch and MATLAB to optimize plant shutdowns and combinatorial collection logistics for process streams (VRP).</p>
+<p class="text-muted text-sm leading-relaxed" data-translate="ai-card4-desc">Planned: a hybrid physico-chemical and data-driven simulation of the train, to optimise scheduling against processing-plant shutdowns and to solve collection routing across multiple plants. Its value grows with the number of supply agreements — today there are none signed.</p>
 </div>
 </div>
+</div>
+<div class="mt-12 glass-card p-6 rounded-2xl border-white/5 border-l-2 border-l-teal">
+<p class="text-xs text-muted leading-relaxed font-mono">
+<span class="text-teal font-bold">Why we describe this now, before building it:</span> the separation behaviour of this matrix is not deducible from a datasheet, so the operating data generated during scale-up is itself an asset. Designing the instrumentation before the plant exists is what makes that data usable — and what keeps the model, once trained, inside the company as a trade secret.
+</p>
 </div>
 </div>
 </section>
@@ -2170,22 +2189,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 "mol-title": "Bioinformatics & Advanced <span class='text-teal italic'>Process Intelligence</span>",
                 "mol-subtitle": "Structural exploration of marine metabolites and predictive AI engines for autonomous biorefinery control—presented as two complementary technical modules.",
                 "mol-tab-structure": "Interactive Structural Model",
-                "mol-tab-ai": "Predictive AI Engines",
+                "mol-tab-ai": "Process Intelligence — Design Roadmap",
                 "mol-structure-desc": "3D exploration of target metabolites, receptors, and enzymatic complexes via 3Dmol.js.",
-                "mol-ai-desc": "Industrial ML/RL architectures for in-line quality, membrane control, and ecosystem-scale digital twins.",
-                "ai-core-badge": "INTELLIGENT DIGITAL CORE",
-                "ai-core-title": "The Autonomous Biorefinery",
-                "ai-core-subtitle": "Four macro-architectures coupling spectroscopy, reinforcement learning, computer vision, and digital twins to the modular membrane cascade.",
+                "mol-ai-desc": "The separation train is designed from the outset to be instrumented. This is the architecture we intend to build, described as such.",
+                "ai-core-badge": "TARGET DIGITAL ARCHITECTURE",
+                "ai-core-title": "Toward an Instrumented Biorefinery",
+                "ai-core-subtitle": "Four architectures that couple spectroscopy, reinforcement learning, computer vision and digital-twin simulation to the membrane cascade. None is deployed today: there is no plant, no PLC and no trained model. The performance figures cited are target values reported in the literature for analogous industrial systems, not results obtained by AquaBiotics Sur. Building them is a milestone of the scale-up phase, not of the current stage.",
                 "ai-card1-stack": "XGBoost + 1D CNN",
                 "ai-card1-title": "Raw Material Prediction & Quality Control (XGBoost + 1D CNN)",
-                "ai-card1-desc": "XGBoost and 1D CNN models estimating metabolite concentrations in real time via NIR spectroscopy, delivering in-process analytics in under 60 seconds and reducing HPLC analysis frequency by 70%.",
+                "ai-card1-desc": "Planned: XGBoost and 1D CNN models over NIR spectroscopy, to estimate metabolite concentration in line and reduce dependence on offline HPLC. Literature on analogous systems reports sub-60-second inference and up to 70% fewer HPLC runs. Requires a trained model and a spectrometer on the line — neither exists today.",
                 "ai-card2-stack": "PPO + LSTM  · OPC-UA",
                 "ai-card2-title": "Reinforcement Learning Membrane Control (PPO + LSTM)",
-                "ai-card2-desc": "Predictive LSTM fouling models and Proximal Policy Optimization (PPO) control integrated into Siemens S7-1500 PLCs via OPC-UA, increasing net permeate flux by 15% and forecasting membrane fouling 4 hours ahead.",
+                "ai-card2-desc": "Planned: LSTM fouling predictors and Proximal Policy Optimization control, designed for OPC-UA integration with industrial PLCs. Literature on analogous systems reports net permeate flux gains near 15% and multi-hour fouling forecasts. Requires an instrumented pilot plant with operating history — the pilot is not built.",
                 "ai-card3-stack": "ResNet-50 + Optuna",
                 "ai-card4-stack": "PyTorch + MATLAB",
                 "ai-card3-title": "Bioprocess Computer Vision & Bayesian Optimization (ResNet-50 + Optuna)",
-                "ai-card3-desc": "ResNet-50 computer vision for real-time microscopic cell density monitoring, combined with Optuna Bayesian optimization cutting media design experiments by 60%.",
+                "ai-card3-desc": "Planned: computer vision for microscopic density monitoring and Bayesian optimization for experimental design. Literature on analogous systems reports substantial reductions in the number of runs required to converge. Applies from the bench-scale campaign onward.",
                 "ai-card4-title": "Ecosystem Digital Twin (PyTorch + MATLAB)",
                 "ai-card4-desc": "Hybrid physico-chemical and predictive simulation in real time with PyTorch and MATLAB to optimize plant shutdowns and combinatorial collection logistics for process streams (VRP).",
                 "ip-roadmap-badge": "Strategic Protection",
@@ -3498,9 +3517,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     throw new Error("3Dmol viewer is not initialized.");
                 }
 
-                // Fetch OpenAlex literature
-                fetchLiterature(data.openalexQuery);
-
             } catch (err) {
                 console.error("Failed to load molecule:", err);
                 const detailsEl = document.getElementById('mol3d-error-details');
@@ -3571,57 +3587,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             if (viewer) {
                 viewer.zoomTo();
                 viewer.render();
-            }
-        }
-
-        async function fetchLiterature(query) {
-            const titleEl = document.getElementById('lit-title');
-            const journalEl = document.getElementById('lit-journal');
-            const authorsEl = document.getElementById('lit-authors');
-            const citationsEl = document.getElementById('lit-citation-count');
-            const linkEl = document.getElementById('lit-link');
-
-            // Default fallback if query fails
-            const fallback = {
-                title: "Circular bioeconomy opportunities in marine industrial streams: Selective recovery and valorization",
-                journal: "Journal of Cleaner Production",
-                authors: "Calderón, B. et al.",
-                citations: 42,
-                link: "https://openalex.org"
-            };
-
-            try {
-                // Query OpenAlex API
-                const url = `https://api.openalex.org/works?search=${encodeURIComponent(query)}&per_page=1`;
-                const response = await fetch(url);
-                if (!response.ok) throw new Error("OpenAlex request failed");
-                const data = await response.json();
-                
-                if (data.results && data.results.length > 0) {
-                    const paper = data.results[0];
-                    titleEl.innerText = paper.title || fallback.title;
-                    journalEl.innerText = (paper.primary_location && paper.primary_location.source) ? paper.primary_location.source.display_name : fallback.journal;
-                    
-                    // Format authors
-                    if (paper.authorships && paper.authorships.length > 0) {
-                        const authorNames = paper.authorships.slice(0, 3).map(a => a.author.display_name).join(', ');
-                        authorsEl.innerText = paper.authorships.length > 3 ? `${authorNames} et al.` : authorNames;
-                    } else {
-                        authorsEl.innerText = fallback.authors;
-                    }
-                    
-                    citationsEl.innerText = (currentLang === 'es' ? 'Citado por: ' : 'Cited by: ') + (paper.cited_by_count || 0);
-                    linkEl.href = paper.doi || paper.id || fallback.link;
-                } else {
-                    throw new Error("No results found");
-                }
-            } catch (err) {
-                console.warn("OpenAlex query failed, using fallback:", err);
-                titleEl.innerText = fallback.title;
-                journalEl.innerText = fallback.journal;
-                authorsEl.innerText = fallback.authors;
-                citationsEl.innerText = (currentLang === 'es' ? 'Citado por: ' : 'Cited by: ') + fallback.citations;
-                linkEl.href = fallback.link;
             }
         }
 
