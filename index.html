@@ -1232,9 +1232,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="w-12 h-12 rounded-2xl bg-teal/10 border border-teal/20 flex items-center justify-center text-teal mb-4 shadow-lg">
 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg>
 </div>
-<span class="font-display text-lg text-cream mb-1 font-semibold" id="fallback-mol-name">Target Molecule Specification</span>
+<span class="font-display text-lg text-cream mb-1 font-semibold" id="fallback-mol-name" data-translate="mol-fallback-title">Target Molecule Specification</span>
 <span class="font-mono text-xs text-teal mb-3 font-bold" id="fallback-mol-formula">C₂H₇NO₃S</span>
-<p class="font-mono text-[11px] text-muted max-w-sm leading-relaxed mb-4">Structural parameters verified against primary chemical databases (PubChem / RCSB PDB).</p>
+<p class="font-mono text-[11px] text-muted max-w-sm leading-relaxed mb-4" data-translate="mol-fallback-desc">Structural parameters verified against primary chemical databases (PubChem / RCSB PDB).</p>
 </div>
 <div class="w-full h-full absolute inset-0" id="mol3d-viewer" style="position: absolute; width: 100%; height: 100%;"></div>
 </div>
@@ -1242,8 +1242,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="flex items-center justify-between mt-4 relative z-10 text-[10px] font-mono text-muted">
 <span data-translate="mol-interact">• Left-click to rotate | Right-click to drag | Scroll to zoom</span>
 <div class="flex gap-2">
-<button class="px-3 py-1 rounded-md border border-teal/30 text-teal hover:border-teal hover:bg-teal/5 transition-all" id="btn-toggle-spin" onclick="toggleSpin()">Auto-Spin: ON</button>
-<button class="px-3 py-1 rounded-md border border-white/10 hover:border-teal/30 hover:text-teal hover:bg-teal/5 transition-all" onclick="resetCamera()">Reset Cam</button>
+<button class="px-3 py-1 rounded-md border border-teal/30 text-teal hover:border-teal hover:bg-teal/5 transition-all" id="btn-toggle-spin" onclick="toggleSpin()" data-translate="btn-auto-spin">Auto-Spin: ON</button>
+<button class="px-3 py-1 rounded-md border border-white/10 hover:border-teal/30 hover:text-teal hover:bg-teal/5 transition-all" onclick="resetCamera()" data-translate="btn-reset-cam">Reset Cam</button>
 </div>
 </div>
 </div>
@@ -1269,31 +1269,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div>
 <div class="flex items-center gap-2 mb-3">
 <svg class="w-4 h-4 text-lavender" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-<span class="font-mono text-[9px] uppercase tracking-widest text-lavender font-bold">Primary Sources</span>
+<span class="font-mono text-[9px] uppercase tracking-widest text-lavender font-bold" data-translate="ps-badge">Primary Sources</span>
 </div>
-<p class="text-xs text-muted-strong leading-relaxed font-light mb-6">
+<p class="text-xs text-muted-strong leading-relaxed font-light mb-6" data-translate="ps-desc">
 Every technical claim on this site traces to an open primary source. Where the literature disagrees, we show the dispersion instead of averaging it. The full corpus is available on request.
 </p>
 <div class="space-y-4 text-xs font-mono">
 <div class="border-b border-white/5 pb-3">
-<p class="text-cream font-semibold font-body leading-snug">Recovering savory compounds from mussel cooking water by filtration and diafiltration</p>
-<p class="text-[10px] text-muted font-mono mt-0.5">Cadena, E.; Dewulf, J.; San Martin, D.; Ibarruri, J.; Iñarra, B.; Gutierrez, M. · <span class="text-teal font-semibold">Membranes (MDPI), 2025, 15(8):242</span></p>
-<p class="text-[10px] text-teal/90 italic font-mono mt-0.5">Third-party European pilot: 98.2% COD removal, amino acids concentrated 5.2×</p>
+<p class="text-cream font-semibold font-body leading-snug" data-translate="ps-p1-title">Recovering savory compounds from mussel cooking water by filtration and diafiltration</p>
+<p class="text-[10px] text-muted font-mono mt-0.5" data-translate="ps-p1-journal">Cadena, E.; Dewulf, J.; San Martin, D.; Ibarruri, J.; Iñarra, B.; Gutierrez, M. · <span class="text-teal font-semibold">Membranes (MDPI), 2025, 15(8):242</span></p>
+<p class="text-[10px] text-teal/90 italic font-mono mt-0.5" data-translate="ps-p1-note">Third-party European pilot: 98.2% COD removal, amino acids concentrated 5.2×</p>
 </div>
 <div class="border-b border-white/5 pb-3">
-<p class="text-cream font-semibold font-body leading-snug">An environmental management industrial solution for the treatment and reuse of mussel wastewaters</p>
-<p class="text-[10px] text-muted font-mono mt-0.5">Prieto, M.A.; Prieto, I.; Vázquez, J.A.; Ferreira, I.C.F.R. · <span class="text-teal font-semibold">Science of the Total Environment, 2015, 538:117–128</span></p>
-<p class="text-[10px] text-muted/80 font-mono mt-0.5">DOI 10.1016/j.scitotenv.2015.07.041 · PMID 26298254</p>
+<p class="text-cream font-semibold font-body leading-snug" data-translate="ps-p2-title">An environmental management industrial solution for the treatment and reuse of mussel wastewaters</p>
+<p class="text-[10px] text-muted font-mono mt-0.5" data-translate="ps-p2-journal">Prieto, M.A.; Prieto, I.; Vázquez, J.A.; Ferreira, I.C.F.R. · <span class="text-teal font-semibold">Science of the Total Environment, 2015, 538:117–128</span></p>
+<p class="text-[10px] text-muted/80 font-mono mt-0.5" data-translate="ps-p2-note">DOI 10.1016/j.scitotenv.2015.07.041 · PMID 26298254</p>
 </div>
 <div class="border-b border-white/5 pb-3">
-<p class="text-cream font-semibold font-body leading-snug">Recovery of savory compounds from mussel cooking side stream as a circular economy solution</p>
-<p class="text-[10px] text-teal font-semibold font-mono mt-0.5">Future Foods, 2024 · ScienceDirect S2667010024000064</p>
-<p class="text-[10px] text-muted/80 font-mono mt-0.5">Cooking accounts for 80% of the organic load of the final discharge</p>
+<p class="text-cream font-semibold font-body leading-snug" data-translate="ps-p3-title">Recovery of savory compounds from mussel cooking side stream as a circular economy solution</p>
+<p class="text-[10px] text-teal font-semibold font-mono mt-0.5" data-translate="ps-p3-journal">Future Foods, 2024 · ScienceDirect S2667010024000064</p>
+<p class="text-[10px] text-muted/80 font-mono mt-0.5" data-translate="ps-p3-note">Cooking accounts for 80% of the organic load of the final discharge</p>
 </div>
 <div>
-<p class="text-cream font-semibold font-body leading-snug">Wastewater treatment in the fishery industry</p>
-<p class="text-[10px] text-teal font-semibold font-mono mt-0.5">FAO Fisheries Technical Paper 355, 1996 — §2, Table 2.2</p>
-<p class="text-[10px] text-muted/80 font-mono mt-0.5">Characterisation of process streams across the fish and shellfish industry</p>
+<p class="text-cream font-semibold font-body leading-snug" data-translate="ps-p4-title">Wastewater treatment in the fishery industry</p>
+<p class="text-[10px] text-teal font-semibold font-mono mt-0.5" data-translate="ps-p4-journal">FAO Fisheries Technical Paper 355, 1996 — §2, Table 2.2</p>
+<p class="text-[10px] text-muted/80 font-mono mt-0.5" data-translate="ps-p4-note">Characterisation of process streams across the fish and shellfish industry</p>
 </div>
 </div>
 </div>
@@ -2264,6 +2264,25 @@ Every technical claim on this site traces to an open primary source. Where the l
                 "coo-role": "Co-Founder & COO | Marine Biotechnology & Aquaculture Engineer",
                 "coo-desc1": "Engineer in Marine Biotechnology and Aquaculture with extensive direct experience supervising processes and operations across Patagonia's primary salmon industry. Leads territorial operations, processing plant engagement, and raw stream collection logistics.",
                 "coo-quote": "\"Having managed live operations and supervised processing in Patagonia's salmon industry, I experienced the reality firsthand. True sustainability means transforming aquaculture from the inside out to generate a lasting positive impact.\"",
+                "mol-fallback-title": "Target Molecule Specification",
+                "mol-fallback-desc": "Structural parameters verified against primary chemical databases (PubChem / RCSB PDB).",
+                "btn-auto-spin": "Auto-Spin: ON",
+                "btn-reset-cam": "Reset Cam",
+                "ps-badge": "Primary Sources",
+                "ps-desc": "Every technical claim on this site traces to an open primary source. Where the literature disagrees, we show the dispersion instead of averaging it. The full corpus is available on request.",
+                "ps-p1-title": "Recovering savory compounds from mussel cooking water by filtration and diafiltration",
+                "ps-p1-journal": "Cadena, E.; Dewulf, J.; San Martin, D.; Ibarruri, J.; Iñarra, B.; Gutierrez, M. · <span class='text-teal font-semibold'>Membranes (MDPI), 2025, 15(8):242</span>",
+                "ps-p1-note": "Third-party European pilot: 98.2% COD removal, amino acids concentrated 5.2×",
+                "ps-p2-title": "An environmental management industrial solution for the treatment and reuse of mussel wastewaters",
+                "ps-p2-journal": "Prieto, M.A.; Prieto, I.; Vázquez, J.A.; Ferreira, I.C.F.R. · <span class='text-teal font-semibold'>Science of the Total Environment, 2015, 538:117–128</span>",
+                "ps-p2-note": "DOI 10.1016/j.scitotenv.2015.07.041 · PMID 26298254",
+                "ps-p3-title": "Recovery of savory compounds from mussel cooking side stream as a circular economy solution",
+                "ps-p3-journal": "Future Foods, 2024 · ScienceDirect S2667010024000064",
+                "ps-p3-note": "Cooking accounts for 80% of the organic load of the final discharge",
+                "ps-p4-title": "Wastewater treatment in the fishery industry",
+                "ps-p4-journal": "FAO Fisheries Technical Paper 355, 1996 — §2, Table 2.2",
+                "ps-p4-note": "Characterisation of process streams across the fish and shellfish industry",
+                "ai-disclaimer": "<span class='text-teal font-bold'>Why we describe this now, before building it:</span> the separation behaviour of this matrix is not deducible from a datasheet, so the operating data generated during scale-up is itself an asset. Designing the instrumentation before the plant exists is what makes that data usable — and what keeps the model, once trained, inside the company as a trade secret.",
                 "geo-badge": "Patagonian Terroir",
                 "geo-title": "The only team with a <span class='text-teal italic'>mailing address.</span>",
                 "geo-desc": "99% of Chile's mussel cultivation is concentrated in the pristine fjords of the Los Lagos Region. Our bioactives are not synthesized in abstract chemical plants; they are traceable to specific coordinates in Patagonia, safeguarding natural ecosystems.",
@@ -2577,6 +2596,25 @@ Every technical claim on this site traces to an open primary source. Where the l
                 "coo-role": "Cofundador & COO | Ingeniero en Biotecnología Marina y Acuicultura",
                 "coo-desc1": "Ingeniero en Biotecnología Marina y Acuicultura con amplia experiencia directa supervisando procesos y operaciones en la principal industria salmonera de la Patagonia. Lidera las operaciones territoriales, la vinculación con plantas procesadoras y la logística de captura de efluentes en terreno.",
                 "coo-quote": "\"Habiendo dirigido operaciones en terreno y supervisado procesos en la industria salmonera de la Patagonia, viví la realidad de primera mano. La verdadera sostenibilidad consiste en transformar los procesos acuícolas desde adentro para generar un impacto positivo duradero.\"",
+                "mol-fallback-title": "Especificación de la Molécula Objetivo",
+                "mol-fallback-desc": "Parámetros estructurales verificados contra bases de datos químicas primarias (PubChem / RCSB PDB).",
+                "btn-auto-spin": "Auto-Rotación: SÍ",
+                "btn-reset-cam": "Restablecer Cámara",
+                "ps-badge": "Fuentes Primarias",
+                "ps-desc": "Cada afirmación técnica en este sitio proviene de una fuente primaria abierta. Donde la literatura difiere, mostramos la dispersión en lugar de promediarla. El corpus completo está disponible a solicitud.",
+                "ps-p1-title": "Recuperación de compuestos sabrosos desde el agua de cocción de mejillón mediante filtración y diafiltración",
+                "ps-p1-journal": "Cadena, E.; Dewulf, J.; San Martin, D.; Ibarruri, J.; Iñarra, B.; Gutierrez, M. · <span class='text-teal font-semibold'>Membranes (MDPI), 2025, 15(8):242</span>",
+                "ps-p1-note": "Piloto europeo independiente: 98,2% remoción DQO, aminoácidos concentrados 5,2×",
+                "ps-p2-title": "Una solución industrial de gestión ambiental para el tratamiento y reúso de efluentes de mejillón",
+                "ps-p2-journal": "Prieto, M.A.; Prieto, I.; Vázquez, J.A.; Ferreira, I.C.F.R. · <span class='text-teal font-semibold'>Science of the Total Environment, 2015, 538:117–128</span>",
+                "ps-p2-note": "DOI 10.1016/j.scitotenv.2015.07.041 · PMID 26298254",
+                "ps-p3-title": "Recuperación de compuestos sabrosos desde la corriente secundaria de cocción de mejillón como solución de economía circular",
+                "ps-p3-journal": "Future Foods, 2024 · ScienceDirect S2667010024000064",
+                "ps-p3-note": "La cocción representa el 80% de la carga orgánica de la descarga final",
+                "ps-p4-title": "Tratamiento de aguas residuales en la industria pesquera",
+                "ps-p4-journal": "FAO Fisheries Technical Paper 355, 1996 — §2, Tabla 2.2",
+                "ps-p4-note": "Caracterización de corrientes de proceso en la industria pesquera y de mariscos",
+                "ai-disclaimer": "<span class='text-teal font-bold'>Por qué lo describimos ahora, antes de construirlo:</span> el comportamiento de separación de esta matriz no es deducible de una ficha técnica, por lo que los datos operativos generados durante el escalamiento son en sí mismos un activo. Diseñar la instrumentación antes de que la planta exista es lo que hace que esos datos sean utilizables — y lo que mantiene el modelo, una vez entrenado, dentro de la empresa como secreto industrial.",
                 "geo-badge": "Terroir Patagónico",
                 "geo-title": "El único equipo con <span class='text-teal italic'>dirección postal.</span>",
                 "geo-desc": "El 99% del cultivo de mejillón en Chile se concentra en los fiordos prístinos de la Región de Los Lagos. Nuestros compuestos bioactivos no se sintetizan en plantas químicas abstractas; son trazables a coordenadas específicas en la Patagonia, salvaguardando los ecosistemas naturales.",
